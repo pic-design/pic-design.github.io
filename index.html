@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PIC UI Prototype</title>
+    <link rel="stylesheet" href="css/kendo.common.min.css">
+    <link rel="stylesheet" href="css/kendo.blueopal.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  </head>
+  <style media="screen">
+    html {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+    .pic-layout * {
+      box-sizing: border-box;
+    }
+    .pic-layout {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: 12px;
+      font-family: "微軟正黑體", sans-serif;
+    }
+    .pic-header {
+      background-color: blue;
+      min-height: 36px;
+      display: flex;
+      color: white;
+      justify-content: space-between;
+    }
+    .pic-header_section {
+      padding: 0px 12px;
+      align-items: center;
+      display: flex;
+    }
+    .pic-logo {
+      font-size: 2em;
+    }
+    .pic-icon--lg {
+      font-size: 2em;
+    }
+    .pic-container {
+      flex: 1 0 auto;
+      display: flex;
+    }
+    .pic-sidebar {
+      background-color: purple;
+      width: 240px;
+    }
+    .pic-content {
+      background-color: silver;
+      flex: 1 0 auto;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .pic-button {
+      border-radius: 2px;
+      background-color: white;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <div class="pic-layout">
+      <header class="pic-header">
+        <div class="pic-header_section">
+          <i class="pic-icon--lg fa fa-bars"></i>
+          <div class="pic-logo">COSMED 康是美</div>
+        </div>
+        <div class="pic-header_section">
+          <div>
+            <span>使用者</span>
+            <span>您好！歡迎登入康是美系統。</span>
+          </div>
+          <button class="pic-button">登出</button>
+        </div>
+      </header>
+      <div class="pic-container">
+        <div class="pic-sidebar">
+
+        </div>
+        <div class="pic-content">
+
+        </div>
+
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js" charset="utf-8"></script>
+    <script src="js/kendo.all.min.js" charset="utf-8"></script>
+    <script>
+    $(document).ready(function() {
+      // create Calendar from div HTML element
+      $("#calendar").kendoCalendar();
+
+    });
+    </script>
+  </body>
+</html>
