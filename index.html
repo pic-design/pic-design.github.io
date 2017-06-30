@@ -66,6 +66,9 @@
       border-radius: 2px;
       background-color: white;
       border: 1px solid black;
+      padding: 4px;
+      font-size: 12px;
+      display: inline-block;
     }
     .pic-tabs {
       display: flex;
@@ -88,9 +91,24 @@
       overflow-x: hidden;
       background-color: white;
       flex: 1 0 0px;
+      padding: 4px;
+      flex-direction: column;
     }
     .pic-tab-content--show {
-      display: block;
+      display: flex;
+    }
+    .pic-toolbar {
+      display: flex;
+      background-color: rebeccapurple;
+      min-height: 32px;
+    }
+    .pic-button-group {
+      display: flex;
+      align-items: center;
+    }
+    .pic-panel {
+      min-height: 50px;
+      background-color: grey;
     }
   </style>
   <body>
@@ -184,7 +202,39 @@
           </div>
           <div class="pic-tab-contents">
             <div class="pic-tab-content pic-tab-content--show">
-              tab 1
+              <div class="pic-toolbar">
+                <div class="pic-button-group">
+                  <a href="#" class="pic-button">
+                    <i class="fa fa-search"></i>
+                    <span>查詢</span>
+                  </a>
+                  <a href="#" class="pic-button">
+                    <i class="fa fa-plus"></i>
+                    <span>新增</span>
+                  </a>
+                  <a href="#" class="pic-button">
+                    <i class="fa fa-trash"></i>
+                    <span>刪除</span>
+                  </a>
+                </div>
+                <div class="pic-button-group">
+                  <a href="#" class="pic-button">
+                    <i class="fa fa-check-circle-o"></i>
+                    <span>確認</span>
+                  </a>
+                  <a href="#" class="pic-button">
+                    <i class="fa fa-close"></i>
+                    <span>取消</span>
+                  </a>
+                </div>
+              </div>
+              <div class="pic-panel">
+
+              </div>
+              <div class="pic-grid">
+
+              </div>
+
             </div>
             <div class="pic-tab-content">
               tab 2
@@ -203,6 +253,43 @@
     <script>
     $(document).ready(function() {
       $(".pic-nav").kendoTreeView();
+      // $(".pic-tabs").on("click", function(event){
+      //   var currentTarget = $(event.currentTarget);
+      //   if (currentTarget === "tab") {
+      //     currentTarget.addClass();
+      //   }
+      // });
+      $(".pic-grid").kendoGrid({
+            dataSource: {
+                type: "odata",
+                transport: {
+                    read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers"
+                },
+                pageSize: 20
+            },
+            height: 550,
+            groupable: true,
+            sortable: true,
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 5
+            },
+            columns: [{
+                field: "ContactName",
+                title: "Contact Name",
+                width: 240
+            }, {
+                field: "ContactTitle",
+                title: "Contact Title"
+            }, {
+                field: "CompanyName",
+                title: "Company Name"
+            }, {
+                field: "Country",
+                width: 150
+            }]
+        });
     });
     </script>
   </body>
