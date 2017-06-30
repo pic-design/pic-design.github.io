@@ -51,7 +51,7 @@
       display: flex;
     }
     .pic-sidebar {
-      background-color: purple;
+      background-color: aliceblue;
       width: 240px;
     }
     .pic-content {
@@ -59,11 +59,38 @@
       flex: 1 0 auto;
       overflow-y: auto;
       overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
     }
     .pic-button {
       border-radius: 2px;
       background-color: white;
       border: 1px solid black;
+    }
+    .pic-tabs {
+      display: flex;
+    }
+    .pic-tab {
+      padding: 8px;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .pic-tab--selected {
+      border-bottom: 2px solid white;
+    }
+    .pic-tab-contents {
+      flex: 1 0 auto;
+      display: flex;
+    }
+    .pic-tab-content {
+      display: none;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: white;
+      flex: 1 0 0px;
+    }
+    .pic-tab-content--show {
+      display: block;
     }
   </style>
   <body>
@@ -150,7 +177,22 @@
           </ul>
         </div>
         <div class="pic-content">
-
+          <div class="pic-tabs">
+            <div class="pic-tab pic-tab--selected">現金日報</div>
+            <div class="pic-tab">檢核報表</div>
+            <div class="pic-tab">角色維護</div>
+          </div>
+          <div class="pic-tab-contents">
+            <div class="pic-tab-content pic-tab-content--show">
+              tab 1
+            </div>
+            <div class="pic-tab-content">
+              tab 2
+            </div>
+            <div class="pic-tab-content">
+              tab 3
+            </div>
+          </div>
         </div>
 
       </div>
@@ -160,7 +202,6 @@
     <script src="js/kendo.all.min.js" charset="utf-8"></script>
     <script>
     $(document).ready(function() {
-
       $(".pic-nav").kendoTreeView();
     });
     </script>
