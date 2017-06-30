@@ -83,7 +83,71 @@
       </header>
       <div class="pic-container">
         <div class="pic-sidebar">
-
+          <div class="pic-search">
+            <input class="pic-input--text k-input" placeholder="查詢">
+          </div>
+          <ul class="pic-nav">
+            <li class="pic-listitem">
+              檢核報表
+              <ul>
+                <li>
+                  <span>10541</span>
+                  <span>現金日報</span>
+                </li>
+                <li>
+                  <span>14836</span>
+                  <span>銷媒檢核報表</span>
+                </li>
+                <li>
+                  <span>95442</span>
+                  <span>檢核報表</span>
+                </li>
+                <li>
+                  <span>10533</span>
+                  <span>明細𢑥總表</span>
+                </li>
+                <li>
+                  <span>15860</span>
+                  <span>庫存盤點報表</span>
+                </li>
+                <li>
+                  <span>10584</span>
+                  <span>進銷存報表</span>
+                </li>
+              </ul>
+            </li>
+            <li class="pic-listitem">
+              未上傳門市作業
+              <ul>
+                <li>
+                  <span>10666</span>
+                  <span>未上傳門市檢核</span>
+                </li>
+              </ul>
+            </li>
+            <li class="pic-listitem">
+              權限管理
+              <ul>
+                <li>
+                  <span>10666</span>
+                  <span>角色維護</span>
+                </li>
+                <li>
+                  <span>20542</span>
+                  <span>使用者維護</span>
+                </li>
+              </ul>
+            </li>
+            <li class="pic-listitem">
+              參數管理
+              <ul>
+                <li>
+                  <span>10646</span>
+                  <span>參數維護</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
         <div class="pic-content">
 
@@ -96,9 +160,8 @@
     <script src="js/kendo.all.min.js" charset="utf-8"></script>
     <script>
     $(document).ready(function() {
-      // create Calendar from div HTML element
-      $("#calendar").kendoCalendar();
 
+      $(".pic-nav").kendoTreeView();
     });
     </script>
   </body>
