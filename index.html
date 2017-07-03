@@ -56,7 +56,7 @@
     }
     .pic-content {
       background-color: silver;
-      flex: 1 0 auto;
+      flex: 1 0 0px;
       overflow-y: auto;
       overflow-x: hidden;
       display: flex;
@@ -72,6 +72,7 @@
     }
     .pic-tabs {
       display: flex;
+      padding: 2px 4px 0 4px;
     }
     .pic-tab {
       padding: 8px;
@@ -80,6 +81,8 @@
     }
     .pic-tab--selected {
       border-bottom: 2px solid white;
+      background-color: white;
+      color: black;
     }
     .pic-tab-contents {
       flex: 1 0 auto;
@@ -107,8 +110,17 @@
       align-items: center;
     }
     .pic-panel {
+      min-height: 200px;
+      background-color: green;
+    }
+    .pic-grid {
       min-height: 50px;
-      background-color: grey;
+      flex: 1 0 0px;
+      display: flex;
+      flex-direction: column;
+    }
+    .pic-grid .k-grid-content {
+      flex: 1 0 0px;
     }
   </style>
   <body>
@@ -196,12 +208,12 @@
         </div>
         <div class="pic-content">
           <div class="pic-tabs">
-            <div class="pic-tab pic-tab--selected">現金日報</div>
-            <div class="pic-tab">檢核報表</div>
-            <div class="pic-tab">角色維護</div>
+            <div class="pic-tab pic-tab--selected" name="01">現金日報</div>
+            <div class="pic-tab" name="02">檢核報表</div>
+            <div class="pic-tab" name="03">角色維護</div>
           </div>
           <div class="pic-tab-contents">
-            <div class="pic-tab-content pic-tab-content--show">
+            <div class="pic-tab-content pic-tab-content--show" name="01">
               <div class="pic-toolbar">
                 <div class="pic-button-group">
                   <a href="#" class="pic-button">
@@ -236,10 +248,10 @@
               </div>
 
             </div>
-            <div class="pic-tab-content">
+            <div class="pic-tab-content" name="02">
               tab 2
             </div>
-            <div class="pic-tab-content">
+            <div class="pic-tab-content" name="03">
               tab 3
             </div>
           </div>
@@ -253,12 +265,16 @@
     <script>
     $(document).ready(function() {
       $(".pic-nav").kendoTreeView();
+
+      // Tab function
       // $(".pic-tabs").on("click", function(event){
-      //   var currentTarget = $(event.currentTarget);
-      //   if (currentTarget === "tab") {
-      //     currentTarget.addClass();
+      //   var target = $(event.target);
+      //   console.log(event);
+      //   if (!target.hasClass('pic-tab--selected')) {
+      //     target.addClass('pic-tab--selected');
       //   }
       // });
+
       $(".pic-grid").kendoGrid({
             dataSource: {
                 type: "odata",
