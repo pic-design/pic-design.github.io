@@ -19,11 +19,13 @@ body {
   font-family: "微軟正黑體", sans-serif;
 }
 .pic-header {
-  background-color: blue;
+  background-color: #BDA9DF;
   min-height: 36px;
   display: flex;
   color: white;
   justify-content: space-between;
+  /* border-bottom: 1px solid #82BEE6; */
+  /* box-shadow: 0 1px 3px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.24); */
 }
 .pic-header_section {
   padding: 0px 12px;
@@ -41,11 +43,12 @@ body {
   display: flex;
 }
 .pic-side {
-  background-color: steelblue;
-  width: 200px;
+  background-color: #f1f2f7;
+  /* width: 200px; */
+  /* border-right: 1px solid #d1d2d3; */
 }
 .pic-content {
-  background-color: #daecf4;
+  background-color: #82BEE6;
   flex: 1 0 0px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -61,6 +64,12 @@ body {
   display: inline-block;
   text-decoration: none;
   color: black;
+  cursor: pointer;
+  outline: none;
+}
+.pic-button--flat {
+  border: 0;
+  background-color: transparent;
 }
 .pic-tabs {
   display: flex;
@@ -69,7 +78,6 @@ body {
 .pic-tab {
   padding: 0 8px;
   cursor: pointer;
-  border: 1px solid transparent;
   line-height: 32px;
   height: 32px;
   color: #003f59;
@@ -80,8 +88,8 @@ body {
   margin-left: 4px;
 }
 .pic-tab--selected {
-  border-bottom: 1px solid white;
-  background-color: white;
+  border-bottom: 1px solid #fafafa;
+  background-color: #fafafa;
   color: black;
 }
 .pic-tab-contents {
@@ -92,7 +100,7 @@ body {
   display: none;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: white;
+  background-color: #fafafa;
   flex: 1 0 0px;
   padding: 4px;
   flex-direction: column;
@@ -147,20 +155,33 @@ body {
 .pic-form {
   padding: 8px 0;
 }
-.pic-form--inline {
-  display: flex;
-}
 .pic-form-group {
-  flex: 1 0 0px;
-  display: flex;
-  align-items: center;
   padding: 0 8px;
 }
 .pic-form-group label {
-  padding-right: 4px;
   color: #003f59;
 }
 .pic-form-control {
-  flex: 1 1 auto;
   border-radius: 2px;
+  /* height: 2em; */
+}
+
+.pic-form--inline {
+  display: flex;
+}
+.pic-form--inline .pic-form-group {
+  flex: 1 0 0px;
+  display: flex;
+  align-items: center;
+}
+.pic-form--inline .pic-form-group label {
+  padding-right: 4px;
+
+}
+.pic-form--inline .pic-form-group .pic-button {
+  align-self: stretch;
+  margin-left: 4px;
+}
+.pic-form--inline .pic-form-control {
+  flex: 1 0 auto;
 }
