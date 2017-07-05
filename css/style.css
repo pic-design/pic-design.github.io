@@ -40,12 +40,12 @@ body {
   flex: 1 0 auto;
   display: flex;
 }
-.pic-sidebar {
-  background-color: aliceblue;
-  width: 240px;
+.pic-side {
+  background-color: steelblue;
+  width: 200px;
 }
 .pic-content {
-  background-color: silver;
+  background-color: #daecf4;
   flex: 1 0 0px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -55,8 +55,8 @@ body {
 .pic-button {
   border-radius: 2px;
   background-color: white;
-  border: 1px solid black;
-  padding: 4px;
+  border: 1px solid #a3d0e4;
+  padding: 4px 8px;
   font-size: 12px;
   display: inline-block;
   text-decoration: none;
@@ -67,12 +67,20 @@ body {
   padding: 2px 4px 0 4px;
 }
 .pic-tab {
-  padding: 8px;
+  padding: 0 8px;
   cursor: pointer;
   border: 1px solid transparent;
+  line-height: 32px;
+  height: 32px;
+  color: #003f59;
+}
+.pic-tab:after {
+  content: '\f00d';
+  font-family: FontAwesome;
+  margin-left: 4px;
 }
 .pic-tab--selected {
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid white;
   background-color: white;
   color: black;
 }
@@ -98,6 +106,7 @@ body {
   min-height: 32px;
   padding-top: 4px;
   padding-bottom: 4px;
+  border: 1px solid #a3d0e4;
 }
 .pic-button-group {
   display: flex;
@@ -115,12 +124,11 @@ body {
   border-bottom-right-radius: 0px;
 }
 .pic-toolbar .pic-button-group:not(:first-child) {
-  border-left: 1px solid black;
+  border-left: 1px solid silver;
 
 }
 .pic-panel {
-  /* min-height: 200px; */
-  /* background-color: green; */
+  background-color: #daecf4;
 }
 .pic-grid {
   min-height: 50px;
@@ -150,6 +158,7 @@ body {
 }
 .pic-form-group label {
   padding-right: 4px;
+  color: #003f59;
 }
 .pic-form-control {
   flex: 1 1 auto;
