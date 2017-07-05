@@ -59,6 +59,8 @@ body {
   padding: 4px;
   font-size: 12px;
   display: inline-block;
+  text-decoration: none;
+  color: black;
 }
 .pic-tabs {
   display: flex;
@@ -92,12 +94,29 @@ body {
 }
 .pic-toolbar {
   display: flex;
-  background-color: rebeccapurple;
+  background-color: aliceblue;
   min-height: 32px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 .pic-button-group {
   display: flex;
+  padding: 0 8px;
   align-items: center;
+}
+
+.pic-button-group .pic-button:not(:first-child) {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: 0;
+}
+.pic-button-group .pic-button:not(:last-child) {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.pic-toolbar .pic-button-group:not(:first-child) {
+  border-left: 1px solid black;
+
 }
 .pic-panel {
   /* min-height: 200px; */
@@ -134,4 +153,5 @@ body {
 }
 .pic-form-control {
   flex: 1 1 auto;
+  border-radius: 2px;
 }
