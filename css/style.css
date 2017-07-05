@@ -19,8 +19,8 @@ body {
   font-family: "微軟正黑體", sans-serif;
 }
 .pic-header {
-  background-color: #BDA9DF;
-  min-height: 36px;
+  background-color: #82BEE6;
+  min-height: 40px;
   display: flex;
   color: white;
   justify-content: space-between;
@@ -35,8 +35,8 @@ body {
 .pic-logo {
   font-size: 2em;
 }
-.pic-icon--lg {
-  font-size: 2em;
+.pic-header .pic-button {
+  color: white;
 }
 .pic-container {
   flex: 1 0 auto;
@@ -48,7 +48,7 @@ body {
   /* border-right: 1px solid #d1d2d3; */
 }
 .pic-content {
-  background-color: #82BEE6;
+  background-color: #BDA9DF;
   flex: 1 0 0px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -59,18 +59,23 @@ body {
   border-radius: 2px;
   background-color: white;
   border: 1px solid #a3d0e4;
-  padding: 4px 8px;
+  padding: 0px 8px;
   font-size: 12px;
   display: inline-block;
   text-decoration: none;
   color: black;
   cursor: pointer;
   outline: none;
+  line-height: 2;
 }
 .pic-button--flat {
   border: 0;
   background-color: transparent;
 }
+.pic-button--lg {
+  font-size: 2em;
+}
+
 .pic-tabs {
   display: flex;
   padding: 2px 4px 0 4px;
@@ -78,9 +83,9 @@ body {
 .pic-tab {
   padding: 0 8px;
   cursor: pointer;
-  line-height: 32px;
-  height: 32px;
-  color: #003f59;
+  line-height: 2.67em;
+
+  color: white;
 }
 .pic-tab:after {
   content: '\f00d';
@@ -88,9 +93,8 @@ body {
   margin-left: 4px;
 }
 .pic-tab--selected {
-  border-bottom: 1px solid #fafafa;
   background-color: #fafafa;
-  color: black;
+  color: #003f59;
 }
 .pic-tab-contents {
   flex: 1 0 auto;
@@ -176,7 +180,7 @@ body {
 }
 .pic-form--inline .pic-form-group label {
   padding-right: 4px;
-
+  align-items: center;
 }
 .pic-form--inline .pic-form-group .pic-button {
   align-self: stretch;
