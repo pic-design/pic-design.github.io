@@ -2,13 +2,22 @@ $(document).ready(function() {
   $(".pic-nav").kendoTreeView();
 
   // Tab function
-  // $(".pic-tabs").on("click", function(event){
-  //   var target = $(event.target);
-  //   console.log(event);
-  //   if (!target.hasClass('pic-tab--selected')) {
-  //     target.addClass('pic-tab--selected');
-  //   }
-  // });
+  $(".pic-tabs").on("click", function(event){
+    var tabs = $('.pic-tabs');
+    var tabContents = $('.pic-tab-contents');
+    var target = $(event.target);
+    // console.log(event);
+    if (!target.hasClass('pic-tab--selected')) {
+      // If the clicked tab is not selected
+      // Set selected tab and tab-content to normal
+      $('.pic-tab--selected').removeClass('pic-tab--selected');
+      $('.pic-tab-content--show').removeClass('pic-tab-content--show');
+      // Show sected tab and tab-content
+      target.addClass('pic-tab--selected');
+      var tabContent = '.pic-tab-content[name='+ target.attr('name') +']';
+      $(tabContent).addClass('pic-tab-content--show');
+    }
+  });
 
   $(".pic-grid").kendoGrid({
         dataSource: {
@@ -19,12 +28,12 @@ $(document).ready(function() {
             pageSize: 20
         },
         height: 550,
-        groupable: true,
+
         sortable: true,
         pageable: {
-            refresh: true,
-            pageSizes: true,
-            buttonCount: 5
+            //refresh: true,
+            //pageSizes: true,
+            //buttonCount: 5
         },
         columns: [{
             field: "ContactName",
@@ -41,4 +50,5 @@ $(document).ready(function() {
             width: 150
         }]
     });
+
 });
