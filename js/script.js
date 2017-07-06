@@ -6,8 +6,8 @@ $(document).ready(function() {
     var tabs = $('.pic-tabs');
     var tabContents = $('.pic-tab-contents');
     var target = $(event.target);
-    // console.log(event);
-    if (!target.hasClass('pic-tab--selected')) {
+    console.log(event);
+    if (target.hasClass('pic-tab') && !target.hasClass('pic-tab--selected')) {
       // If the clicked tab is not selected
       // Set selected tab and tab-content to normal
       $('.pic-tab--selected').removeClass('pic-tab--selected');

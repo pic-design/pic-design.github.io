@@ -82,20 +82,45 @@ body {
 }
 .pic-tab {
   padding: 0 8px;
-  cursor: pointer;
+  cursor: default;
   line-height: 2.67em;
-
   color: white;
 }
-.pic-tab:after {
-  content: '\f00d';
-  font-family: FontAwesome;
-  margin-left: 4px;
+.pic-stack {
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  display: inline-block;
+  vertical-align: middle;
+}
+.pic-stack i {
+  position: absolute;
+  width: 100%;
+  /* left: 0; */
+  text-align: center;
+}
+.pic-stack .fa-circle {
+  color: transparent;
+  font-size: 1.5em;
+}
+.pic-stack .fa-remove {
+  line-height: 1.5em;
+}
+.pic-stack:hover .fa-circle {
+  color: #F5364E;
+}
+.pic-stack:hover .fa-remove {
+  color: white;
 }
 .pic-tab--selected {
   background-color: #fafafa;
   color: #003f59;
 }
+.pic-tab--selecte .pic-stack .fa-remove {
+  color: #003f59;
+}
+
 .pic-tab-contents {
   flex: 1 0 auto;
   display: flex;
