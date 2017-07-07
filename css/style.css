@@ -44,7 +44,7 @@ body {
 }
 .pic-side {
   background-color: #f1f2f7;
-  /* width: 200px; */
+  min-width: 212px;
   /* border-right: 1px solid #d1d2d3; */
 }
 .pic-content {
