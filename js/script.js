@@ -1,12 +1,12 @@
 $(document).ready(function() {
   $(".pic-nav").kendoTreeView();
-
+  var tabsOpened = ['aa', 'ab', 'ac'];
   // Tab function
   $(".pic-tabs").on("click", function(event){
     var tabs = $('.pic-tabs');
     var tabContents = $('.pic-tab-contents');
     var target = $(event.target);
-    console.log(event);
+    // console.log(event);
     if (target.hasClass('pic-tab') && !target.hasClass('pic-tab--selected')) {
       // If the clicked tab is not selected
       // Set selected tab and tab-content to normal
@@ -16,6 +16,30 @@ $(document).ready(function() {
       target.addClass('pic-tab--selected');
       var tabContent = '.pic-tab-content[name='+ target.attr('name') +']';
       $(tabContent).addClass('pic-tab-content--show');
+    } else if (target.hasClass('fa-remove')) {
+      // close tab
+      var targetTab = target.closest('.pic-tab');
+      var targetName = targetTab.attr('name');
+      // Get the tab's index number
+      var index = tabsOpened.indexOf(targetName);
+      // Remove tab and tab-content
+      $('.pic-tab-content[name=' + targetName + ']').remove();
+      targetTab.remove();
+      // Remove tab name from array
+      tabsOpened.splice(index, 1);
+      // console.log(tabsOpened);
+      // if no tab is selected, select the tab in front of the closed one
+      var tabSelected = tabs.find('.pic-tab--selected');
+      if(tabSelected.length === 0) {
+        var newSelectedTabIndex = index - 1;
+        if (newSelectedTabIndex < 0) {
+          newSelectedTabIndex = 0;
+        }
+        var newSelectedTabName = tabsOpened[newSelectedTabIndex];
+        $('.pic-tab[name=' + newSelectedTabName + ']').addClass('pic-tab--selected');
+        $('.pic-tab-content[name=' + newSelectedTabName + ']').addClass('pic-tab-content--show');
+      }
+
     }
   });
 
