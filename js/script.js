@@ -11,17 +11,45 @@ $(document).ready(function() {
     $('.pic-tab-contents').find('[name='+ tabName +']').addClass('pic-tab-content--show');
   };
 
+  var newTab = function(tabName, fName){
+    // add new value in tabsOpened array
+    tabsOpened.push(tabName);
+    // set selcted tab to un-selected
+    $('.pic-tab--selected').removeClass('pic-tab--selected');
+    $('.pic-tab-content--show').removeClass('pic-tab-content--show');
+    // add new tab
+    $('.pic-tabs').append(
+      '<div class="pic-tab pic-tab--selected" name="' + tabName + '">'
+      + fName
+      + '<span class="pic-stack">'
+      + '<i class="fa fa-circle"></i>'
+      + '<i class="fa fa-remove"></i>'
+      + '</span>'
+      + '</div>'
+    );
+    $('.pic-tab-contents').append(
+      '<div class="pic-tab-content pic-tab-content--show" name="' + tabName + '">'
+      + fName
+      + '</div>'
+    );
+  };
+
   var onSelect = function(event){
     var el = $(event.node);
     var name = el.attr('name');
+    // console.log(el);
     // Check if the selected function is opened
-    console.log($.inArray(name, tabsOpened));
-    if ($.inArray(name, tabsOpened) < 0) {
-      // function is not opened
-    } else {
-      // function is opened
-      // select the function
-      tabSwitch(name);
+    // console.log($.inArray(name, tabsOpened));
+    if(name){
+      if ($.inArray(name, tabsOpened) < 0) {
+        // function is not opened
+        // Create a new tab
+        newTab(name, el.find('.pic-function-name').text());
+      } else {
+        // function is opened
+        // switch to the function tab
+        tabSwitch(name);
+      }
     }
   };
 
