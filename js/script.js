@@ -1,6 +1,36 @@
 $(document).ready(function() {
-  $(".pic-nav").kendoTreeView();
-  var tabsOpened = ['aa', 'ab', 'ac'];
+  // A global variable on opend tabs
+  var tabsOpened = ['aa', 'ac', 'ca'];
+
+  var tabSwitch = function(tabName){
+    // Set selected tab and tab-content to normal
+    $('.pic-tab--selected').removeClass('pic-tab--selected');
+    $('.pic-tab-content--show').removeClass('pic-tab-content--show');
+    // Show selcted tab and tab-content
+    $('.pic-tabs').find('[name='+ tabName +']').addClass('pic-tab--selected');
+    $('.pic-tab-contents').find('[name='+ tabName +']').addClass('pic-tab-content--show');
+  };
+
+  var onSelect = function(event){
+    var el = $(event.node);
+    var name = el.attr('name');
+    // Check if the selected function is opened
+    console.log($.inArray(name, tabsOpened));
+    if ($.inArray(name, tabsOpened) < 0) {
+      // function is not opened
+    } else {
+      // function is opened
+      // select the function
+      tabSwitch(name);
+    }
+  };
+
+
+  $(".pic-nav").kendoTreeView({
+    select: onSelect
+  });
+
+
   // Tab function
   $(".pic-tabs").on("click", function(event){
     var tabs = $('.pic-tabs');
@@ -9,13 +39,8 @@ $(document).ready(function() {
     // console.log(event);
     if (target.hasClass('pic-tab') && !target.hasClass('pic-tab--selected')) {
       // If the clicked tab is not selected
-      // Set selected tab and tab-content to normal
-      $('.pic-tab--selected').removeClass('pic-tab--selected');
-      $('.pic-tab-content--show').removeClass('pic-tab-content--show');
-      // Show sected tab and tab-content
-      target.addClass('pic-tab--selected');
-      var tabContent = '.pic-tab-content[name='+ target.attr('name') +']';
-      $(tabContent).addClass('pic-tab-content--show');
+      tabSwitch(target.attr('name'));
+
     } else if (target.hasClass('fa-remove')) {
       // close tab
       var targetTab = target.closest('.pic-tab');
