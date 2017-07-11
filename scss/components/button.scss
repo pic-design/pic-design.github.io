@@ -1,0 +1,22 @@
+.pic-button {
+  background-color: white;
+  border-radius: 2px;
+  border: 1px solid #a3d0e4;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 2;
+  outline: none;
+  padding: 0px 8px;
+  text-decoration: none;
+}
+
+.pic-button--flat {
+  background-color: transparent;
+  border: 0;
+}
+
+.pic-button--lg {
+  font-size: 2em;
+}

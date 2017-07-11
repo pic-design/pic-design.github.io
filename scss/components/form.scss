@@ -1,0 +1,33 @@
+.pic-form {
+  padding: 8px 0;
+}
+.pic-form-group {
+  padding: 0 8px;
+}
+.pic-form-group label {
+  color: #003f59;
+}
+.pic-form-control {
+  border-radius: 2px;
+  /* height: 2em; */
+}
+
+.pic-form--inline {
+  display: flex;
+}
+.pic-form--inline .pic-form-group {
+  flex: 1 0 0px;
+  display: flex;
+  align-items: center;
+}
+.pic-form--inline .pic-form-group label {
+  padding-right: 4px;
+  align-items: center;
+}
+.pic-form--inline .pic-form-group .pic-button {
+  align-self: stretch;
+  margin-left: 4px;
+}
+.pic-form--inline .pic-form-control {
+  flex: 1 0 auto;
+}

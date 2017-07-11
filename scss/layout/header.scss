@@ -1,0 +1,21 @@
+.pic-header {
+  background-color: #82BEE6;
+  min-height: 40px;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+}
+
+.pic-header__section {
+  padding: 0px 12px;
+  align-items: center;
+  display: flex;
+}
+
+.pic-logo {
+  font-size: 2em;
+}
+
+.pic-header .pic-button {
+  color: white;
+}

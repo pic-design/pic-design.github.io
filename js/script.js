@@ -5,10 +5,10 @@ $(document).ready(function() {
   var tabSwitch = function(tabName){
     // Set selected tab and tab-content to normal
     $('.pic-tab--selected').removeClass('pic-tab--selected');
-    $('.pic-tab-content--show').removeClass('pic-tab-content--show');
+    $('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
     // Show selcted tab and tab-content
     $('.pic-tabs').find('[name='+ tabName +']').addClass('pic-tab--selected');
-    $('.pic-tab-contents').find('[name='+ tabName +']').addClass('pic-tab-content--show');
+    $('.pic-tab-contents').find('[name='+ tabName +']').addClass('pic-tab-content--selected');
   };
 
   var newTab = function(tabName, fName){
@@ -16,7 +16,7 @@ $(document).ready(function() {
     tabsOpened.push(tabName);
     // set selcted tab to un-selected
     $('.pic-tab--selected').removeClass('pic-tab--selected');
-    $('.pic-tab-content--show').removeClass('pic-tab-content--show');
+    $('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
     // add new tab
     $('.pic-tabs').append(
       '<div class="pic-tab pic-tab--selected" name="' + tabName + '">'
@@ -28,7 +28,7 @@ $(document).ready(function() {
       + '</div>'
     );
     $('.pic-tab-contents').append(
-      '<div class="pic-tab-content pic-tab-content--show" name="' + tabName + '">'
+      '<div class="pic-tab-content pic-tab-content--selected" name="' + tabName + '">'
       + fName
       + '</div>'
     );
@@ -90,7 +90,7 @@ $(document).ready(function() {
         }
         var newSelectedTabName = tabsOpened[newSelectedTabIndex];
         $('.pic-tab[name=' + newSelectedTabName + ']').addClass('pic-tab--selected');
-        $('.pic-tab-content[name=' + newSelectedTabName + ']').addClass('pic-tab-content--show');
+        $('.pic-tab-content[name=' + newSelectedTabName + ']').addClass('pic-tab-content--selected');
       }
 
     }
