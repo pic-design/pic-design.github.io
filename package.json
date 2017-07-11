@@ -1,0 +1,17 @@
+{
+  "name": "PIC-UI-Prototype",
+  "version": "1.0.0",
+  "description": "prototype site for PIC-UI",
+  "main": "index.js",
+  "author": "Yow-Long Lee <yowlonglee@pic.net.tw>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}
