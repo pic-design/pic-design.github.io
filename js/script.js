@@ -128,4 +128,12 @@ $(document).ready(function() {
         }]
     });
 
+    $('#ham').on('click', function(){
+      if ($('.pic-sidebar').hasClass('pic-sidebar--hidden')) {
+        $('.pic-sidebar').removeClass('pic-sidebar--hidden');
+      } else {
+        $('.pic-sidebar').addClass('pic-sidebar--hidden');
+      }
+    });
+
 });
