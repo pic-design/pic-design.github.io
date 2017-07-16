@@ -5,9 +5,11 @@ var notify = require('gulp-notify')
 var plumber = require('gulp-plumber')
 // var uglify = require('gulp-uglify')
 // var rename = require('gulp-rename')
+var shell = require('gulp-shell')
 var msgSass = 'Gulp is compiling Sass. _φ(･_･'
 var msgScript = 'Minifing JS'
 var msgError = 'Ouch! Gulp caught error! (╯°□°）╯︵ ┻━┻'
+var msgStyleGuide = 'New style guide complete'
 
 var styleDir = 'css'
 // var jsDir = 'js'
@@ -19,7 +21,7 @@ gulp.task('sass', function () {
       })
     }))
     .pipe(sass({
-      // outputStyle: 'compressed'
+      outputStyle: 'expanded'
     }))
     .pipe(notify(msgSass))
     .pipe(gulp.dest(styleDir))
@@ -36,6 +38,10 @@ gulp.task('sass', function () {
 //     .pipe(gulp.dest(jsDir))
 // })
 
+gulp.task('styleguide', shell.task([
+  'yarn run kss -- -c kss-config.json'
+]))
+
 gulp.task('js-watch', function (done) {
   browserSync.reload();
   done();
@@ -44,11 +50,12 @@ gulp.task('js-watch', function (done) {
 gulp.task('watch', function () {
   browserSync.init({
     server: true,
-    browser: 'Google Chrome Canary'
+    browser: 'Google Chrome'
   })
 
-  gulp.watch(['scss/*.scss', 'scss/*/*.scss'], ['sass'])
+  gulp.watch(['scss/*.scss', 'scss/*/*.scss'], ['sass', 'styleguide'])
   // gulp.watch(['/js/*.js'], ['js-watch'])
   gulp.watch(['*.html']).on('change', browserSync.reload)
 })
+
 gulp.task('default', ['watch'])
