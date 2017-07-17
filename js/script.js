@@ -35,11 +35,13 @@ $(document).ready(function() {
     // add new tab
     $('.pic-tabs').append(
       '<div class="pic-tab pic-tab--selected" name="' + tabName + '">'
+      + '<div class="pic-tab__inner">'
       + fName
-      + '<span class="pic-stack">'
+      + '<span class="pic-icon-stack">'
       + '<i class="fa fa-circle"></i>'
       + '<i class="fa fa-remove"></i>'
       + '</span>'
+      + '</div>'
       + '</div>'
     );
     $('.pic-tab-contents').append(
@@ -80,9 +82,9 @@ $(document).ready(function() {
     var tabContents = $('.pic-tab-contents');
     var target = $(event.target);
     // console.log(event);
-    if (target.hasClass('pic-tab') && !target.hasClass('pic-tab--selected')) {
+    if (target.parent('.pic-tab').length > 0 && target.parent('.pic-tab--selected').length === 0) {
       // If the clicked tab is not selected
-      tabSwitch(target.attr('name'));
+      tabSwitch(target.parent('.pic-tab').attr('name'));
 
     } else if (target.hasClass('fa-remove')) {
       // close tab
