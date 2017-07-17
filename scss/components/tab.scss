@@ -30,7 +30,6 @@
 .pic-icon-stack i {
   position: absolute;
   width: 100%;
-  /* left: 0; */
   text-align: center;
 }
 .pic-icon-stack .fa-circle {
@@ -39,12 +38,6 @@
 }
 .pic-icon-stack .fa-remove {
   line-height: 1.5em;
-}
-.pic-icon-stack:hover .fa-circle {
-  color: #F5364E;
-}
-.pic-icon-stack:hover .fa-remove {
-  color: white;
 }
 .pic-tab--selected{
   background-color: white;
@@ -56,6 +49,12 @@
 }
 .pic-tab--selected .pic-icon-stack .fa-remove {
   color: #003f59;
+}
+.pic-icon-stack:hover .fa-circle {
+  color: #F5364E;
+}
+.pic-icon-stack:hover .fa-remove {
+  color: white;
 }
 
 .pic-tab-contents {
