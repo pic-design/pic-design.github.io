@@ -1,3 +1,8 @@
 .pic-panel {
-  /* background-color: #daecf4; */
+  background-color: #fafafa;
+  border: 1px solid #d1d2d3;
+  padding: 8px 0;
+  &--borderless {
+    border: 0;
+  }
 }

@@ -99,8 +99,8 @@ body {
 }
 
 .pic-form {
-  padding: 8px 0;
-  background-color: #fafafa;
+  /* padding: 8px 0; */
+  /* background-color: #fafafa; */
 }
 
 .pic-form-group {
@@ -265,7 +265,13 @@ body {
 }
 
 .pic-panel {
-  /* background-color: #daecf4; */
+  background-color: #fafafa;
+  border: 1px solid #d1d2d3;
+  padding: 8px 0;
+}
+
+.pic-panel--borderless {
+  border: 0;
 }
 
 .pic-grid {
