@@ -50,7 +50,7 @@ gulp.task('js-watch', function (done) {
 gulp.task('watch', function () {
   browserSync.init({
     server: true,
-    browser: 'Google Chrome'
+    browser: 'Google Chrome Canary'
   })
 
   gulp.watch(['scss/*.scss', 'scss/*/*.scss'], ['sass', 'styleguide'])

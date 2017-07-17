@@ -1,8 +1,12 @@
 .pic-content {
-  background-color: #BDA9DF;
+  background-color: #f1f2f7;
   flex: 1 0 0px;
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  padding: 4px;
+  margin-right: 4px;
+  margin-left: 4px;
+  border: 1px solid black;
 }

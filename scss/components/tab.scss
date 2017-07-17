@@ -1,12 +1,13 @@
 .pic-tabs {
   display: flex;
-  padding: 2px 4px 0 4px;
 }
 .pic-tab {
   padding: 0 8px;
   cursor: default;
   line-height: 2.67em;
-  color: white;
+  color: purple;
+  border: 1px solid;
+  border-bottom: none;
 }
 .pic-stack {
   position: relative;
@@ -37,9 +38,9 @@
 }
 .pic-tab--selected {
   background-color: #fafafa;
-  color: #003f59;
+  color: black;
 }
-.pic-tab--selecte .pic-stack .fa-remove {
+.pic-tab--selected .pic-stack .fa-remove {
   color: #003f59;
 }
 
@@ -55,6 +56,7 @@
   flex: 1 0 0px;
   padding: 4px;
   flex-direction: column;
+  border: 1px solid black;
 }
 
 .pic-tab-content--selected {
