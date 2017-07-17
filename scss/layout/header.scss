@@ -1,10 +1,15 @@
 .pic-header {
-  background-color: #82BEE6;
+  background-color: #fac388;
   min-height: 40px;
+  min-width: 1024px;
+  background-image: url('../img/bg-header.jpg');
+  background-repeat: no-repeat;
   display: flex;
   color: white;
   justify-content: space-between;
   margin-bottom: 4px;
+  border-bottom: 1px solid #d1d2d3;
+  /* box-shadow: 0 2px 5px 0 rgba(0,0,0,.26); */
 }
 
 .pic-header__section {
@@ -13,10 +18,10 @@
   display: flex;
 }
 
-.pic-logo {
+/* .pic-logo {
   font-size: 2em;
-}
+} */
 
 .pic-header .pic-button {
-  color: white;
+  //color: white;
 }
