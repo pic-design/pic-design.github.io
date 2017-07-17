@@ -29,6 +29,14 @@
   background-image: none;
 }
 
+.pic-button--color-inherit {
+  color: inherit;
+}
 .pic-button--lg {
   font-size: 2em;
+}
+
+.pic-button:hover {
+  background-color: #ffe0be;
+  color: #9f5400;
 }
