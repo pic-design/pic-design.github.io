@@ -1,15 +1,25 @@
 .pic-tabs {
   display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  border-bottom: 1px solid #ffe0be;
 }
 .pic-tab {
-  padding: 0 8px;
   cursor: default;
-  line-height: 2.67em;
-  color: purple;
-  border: 1px solid;
+  color: #999a94;
+  border: 1px solid #d1d2d3;
   border-bottom: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
-.pic-stack {
+.pic-tab__inner {
+  line-height: 2.67em;
+  padding: 0 8px;
+  border-bottom: 1px solid #ffe0be;
+  margin-bottom: -1px;
+}
+.pic-icon-stack {
   position: relative;
   width: 1.5em;
   height: 1.5em;
@@ -17,30 +27,34 @@
   display: inline-block;
   vertical-align: middle;
 }
-.pic-stack i {
+.pic-icon-stack i {
   position: absolute;
   width: 100%;
   /* left: 0; */
   text-align: center;
 }
-.pic-stack .fa-circle {
+.pic-icon-stack .fa-circle {
   color: transparent;
   font-size: 1.5em;
 }
-.pic-stack .fa-remove {
+.pic-icon-stack .fa-remove {
   line-height: 1.5em;
 }
-.pic-stack:hover .fa-circle {
+.pic-icon-stack:hover .fa-circle {
   color: #F5364E;
 }
-.pic-stack:hover .fa-remove {
+.pic-icon-stack:hover .fa-remove {
   color: white;
 }
-.pic-tab--selected {
-  background-color: #fafafa;
-  color: black;
+.pic-tab--selected{
+  background-color: white;
+  color: #353630;
+  border-color: #ffe0be;
+  .pic-tab__inner {
+    border-bottom-color: white;
+  }
 }
-.pic-tab--selected .pic-stack .fa-remove {
+.pic-tab--selected .pic-icon-stack .fa-remove {
   color: #003f59;
 }
 
@@ -52,13 +66,15 @@
   display: none;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #fafafa;
+  background-color: white;
   flex: 1 0 0px;
   padding: 4px;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid #d1d2d3;
+  border-top: 0;
 }
 
 .pic-tab-content--selected {
   display: flex;
+  border-color: #ffe0be;
 }
