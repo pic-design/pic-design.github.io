@@ -87,11 +87,13 @@ body {
   outline: none;
   padding: 0px 8px;
   text-decoration: none;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0px, rgba(255, 255, 255, 0) 100%);
 }
 
 .pic-button--flat {
   background-color: transparent;
   border: 0;
+  background-image: none;
 }
 
 .pic-button--lg {
@@ -236,11 +238,12 @@ body {
 
 .pic-toolbar {
   display: flex;
-  /* background-color: aliceblue; */
+  background-color: #f5f5f5;
   min-height: 32px;
   padding-top: 4px;
   padding-bottom: 4px;
   border: 1px solid #d1d2d3;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0px, rgba(255, 255, 255, 0) 100%);
 }
 
 .pic-button-group {
@@ -267,6 +270,8 @@ body {
 .pic-panel {
   background-color: #fafafa;
   border: 1px solid #d1d2d3;
+  border-top: 0;
+  border-bottom: 0;
   padding: 8px 0;
 }
 
