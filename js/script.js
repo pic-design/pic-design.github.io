@@ -114,35 +114,52 @@ $(document).ready(function() {
   });
 
   $(".pic-grid").kendoGrid({
-        dataSource: {
-            type: "odata",
-            transport: {
-                read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers"
-            },
-            pageSize: 20
-        },
+        dataSource:[
+          {"group_id":"TST08","group_name":"維護無刪除","create_date":"2017-07-17T13:46:54.787","create_id":"AMIS","upd_date":"2017-07-17T13:46:54.787","upd_id":"AMIS"},
+          {"group_id":"SR001","group_name":"理貨一般","create_date":"2017-07-17T13:46:55.293","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.293","upd_id":"AMIS"},
+          {"group_id":"TS004","group_name":"只有修改","create_date":"2017-07-17T13:46:55.33","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.33","upd_id":"AMIS"},
+          {"group_id":"RU","group_name":"執行編輯","create_date":"2017-07-17T13:46:55.367","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.367","upd_id":"AMIS"},
+          {"group_id":"MIS01","group_name":"管理者","create_date":"2017-07-17T13:46:55.397","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.397","upd_id":"AMIS"},
+          {"group_id":"SR002","group_name":"理貨管理","create_date":"2017-07-17T13:46:55.43","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.43","upd_id":"AMIS"},
+          {"group_id":"TS002","group_name":"只有新增","create_date":"2017-07-17T13:46:55.577","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.577","upd_id":"AMIS"},
+          {"group_id":"TS001","group_name":"只有查詢","create_date":"2017-07-17T13:46:55.69","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.69","upd_id":"AMIS"},
+          {"group_id":"TS003","group_name":"只有刪除","create_date":"2017-07-17T13:46:55.733","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.733","upd_id":"AMIS"},
+          {"group_id":"TS005","group_name":"只有列印","create_date":"2017-07-17T13:46:55.8","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.8","upd_id":"AMIS"},
+          {"group_id":"AC003","group_name":"驗收MIS1","create_date":"2017-07-17T13:46:55.86","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.86","upd_id":"AMIS"}
+        ],
         height: 550,
-
         sortable: true,
         pageable: {
             //refresh: true,
-            //pageSizes: true,
+            pageSize: 20,
             //buttonCount: 5
         },
-        columns: [{
-            field: "ContactName",
-            title: "Contact Name",
-            width: 240
-        }, {
-            field: "ContactTitle",
-            title: "Contact Title"
-        }, {
-            field: "CompanyName",
-            title: "Company Name"
-        }, {
-            field: "Country",
-            width: 150
-        }]
+        columns: [
+          {
+            field: "group_id",
+            title: "群組代號"
+          },
+          {
+            field: "group_name",
+            title: "群組名稱"
+          },
+          {
+            field: "create_date",
+            title: "建立日期"
+          },
+          {
+            field: "create_id",
+            title: "建立人員"
+          },
+          {
+            field: "upd_date",
+            title: "異動日期"
+          },
+          {
+            field: "upd_id",
+            title: "異動人員"
+          }
+        ]
     });
 
     $('#ham').on('click', function(){
