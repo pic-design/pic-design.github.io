@@ -52,9 +52,9 @@ body {
 }
 
 .pic-sidebar {
-  background-color: #f1f2f7;
+  background-color: #fff6ed;
   min-width: 212px;
-  border: 1px solid black;
+  border: 1px solid #d1d2d3;
   /* border-right: 1px solid #d1d2d3; */
 }
 
@@ -63,7 +63,7 @@ body {
 }
 
 .pic-content {
-  background-color: #f1f2f7;
+  background-color: #fafafa;
   flex: 1 0 0px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -72,13 +72,13 @@ body {
   padding: 4px;
   margin-right: 4px;
   margin-left: 4px;
-  border: 1px solid black;
+  border: 1px solid #d1d2d3;
 }
 
 .pic-button {
-  background-color: white;
+  background-color: transparent;
   border-radius: 2px;
-  border: 1px solid #a3d0e4;
+  border: 1px solid #d1d2d3;
   color: black;
   cursor: pointer;
   display: inline-block;
@@ -100,6 +100,7 @@ body {
 
 .pic-form {
   padding: 8px 0;
+  background-color: #fafafa;
 }
 
 .pic-form-group {
@@ -112,6 +113,7 @@ body {
 
 .pic-form-control {
   border-radius: 2px;
+  border-color: #d1d2d3 !important;
   /* height: 2em; */
 }
 

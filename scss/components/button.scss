@@ -9,9 +9,9 @@
 // Style guide: button
 
 .pic-button {
-  background-color: white;
+  background-color: transparent;
   border-radius: 2px;
-  border: 1px solid #a3d0e4;
+  border: 1px solid #d1d2d3;
   color: black;
   cursor: pointer;
   display: inline-block;
@@ -20,7 +20,7 @@
   outline: none;
   padding: 0px 8px;
   text-decoration: none;
-  
+
 }
 
 .pic-button--flat {
