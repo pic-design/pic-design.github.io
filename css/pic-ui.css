@@ -113,7 +113,7 @@ body {
 
 .pic-form-control {
   border-radius: 2px;
-  border-color: #d1d2d3 !important;
+  border-color: #d1d2d3;
   /* height: 2em; */
 }
 
@@ -264,4 +264,8 @@ body {
 .pic-grid .k-grid-content {
   flex: 1 0 0px;
   min-height: 90px;
+}
+
+.k-header {
+  background-color: #f7e5e5;
 }
