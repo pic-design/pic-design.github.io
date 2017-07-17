@@ -28,6 +28,43 @@ body {
   display: flex;
 }
 
+.pic-layout--login .pic-container {
+  background-color: #fafafa;
+  justify-content: center;
+  align-items: center;
+}
+
+.pic-layout--login .pic-panel {
+  min-width: 1024px;
+  min-height: 768px;
+  background-image: url("../img/bg-login.jpg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.pic-layout--login .pic-form {
+  min-width: 420px;
+  min-height: 430px;
+  border: 1px solid white;
+  border-radius: 10px;
+  align-self: flex-end;
+}
+
+.login-section {
+  /* width: 100%; */
+  flex: 1 1 40px;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.blur-me {
+  filter: blur(5px);
+}
+
 .pic-header {
   background-color: #fac388;
   min-height: 40px;
@@ -150,6 +187,10 @@ body {
 
 .pic-form--inline .pic-form-control {
   flex: 1 0 auto;
+}
+
+label.hide {
+  display: none;
 }
 
 .pic-tabs {
