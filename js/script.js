@@ -1,4 +1,19 @@
 $(document).ready(function() {
+
+  $('.datepicker').kendoDatePicker();
+  $(".fabric").kendoComboBox({
+      dataTextField: "text",
+      dataValueField: "value",
+      dataSource: [
+          { text: "Cotton", value: "1" },
+          { text: "Polyester", value: "2" },
+          { text: "Cotton/Polyester", value: "3" },
+          { text: "Rib Knit", value: "4" }
+      ],
+      filter: "contains",
+      suggest: true,
+      index: 3
+  });
   // A global variable on opend tabs
   var tabsOpened = ['aa', 'ac', 'ca'];
 
