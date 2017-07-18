@@ -193,27 +193,22 @@ $(document).ready(function() {
   	  $("[client-id='btn_query']").on("click", function(event){
         event.preventDefault();
   		  var pre_mode = $("[client-id='pageMode']").attr('data-value');
-  		  if(pre_mode == 'Add')
-  		  {
+  		  if(pre_mode == 'Add') {
   				$.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
-  				if (confirmed) {
-  					 query_mode();
-  				}
-  			})
+    				if (confirmed) {
+    					 query_mode();
+    				}
+		      })
   		  }
   		  else if(pre_mode == 'Edit'){
   				$.when(open_confirm('是否放棄儲存現在的資料?', '確認')).then(function (confirmed) {
-  				if (confirmed) {
-  					 query_mode();
-  				}
-  			})
-  		  }
-  		  else
-  		  {
+    				if (confirmed) {
+    					 query_mode();
+    				}
+    			})
+        } else {
   			  query_mode();
   		  }
-
-
   	  });
 
   	  //新增事件
@@ -234,9 +229,7 @@ $(document).ready(function() {
   					 add_mode();
   				}
   			})
-  		  }
-  		  else
-  		  {
+  		  } else {
   			  add_mode();
   		  }
   	  });
@@ -257,59 +250,55 @@ $(document).ready(function() {
   	  //確認事件
   	  $("[client-id='btn_confirm']").on("click", function(event){
         event.preventDefault();
-  		var pageMode = $("[client-id='pageMode']").attr('data-value');
-  		switch(pageMode)
-  		{
-  			case "Add":
-  				$("#foo").val("");
-  				$("#foe").val("");
-  				open_message('新增資料成功','提示');
-  				result_mode();
-  				break;
-  			case "Edit":
-  				$("#foo").val("");
-  				$("#foe").val("");
-  				open_message('異動資料成功','提示');
-  				result_mode();
-  				break;
-  			case "Query":
-  				result_mode();
-  				break;
-  		}
+    		var pageMode = $("[client-id='pageMode']").attr('data-value');
+    		switch(pageMode) {
+    			case "Add":
+    				$("#foo").val("");
+    				$("#foe").val("");
+    				open_message('新增資料成功','提示');
+    				result_mode();
+    				break;
+    			case "Edit":
+    				$("#foo").val("");
+    				$("#foe").val("");
+    				open_message('異動資料成功','提示');
+    				result_mode();
+    				break;
+    			case "Query":
+    				result_mode();
+    				break;
+  	    }
   	  });
 
   	  //取消事件
   	  $("[client-id='btn_cancel']").on("click", function(event){
         event.preventDefault();
-  		var pageMode = $("[client-id='pageMode']").attr('data-value');
-  		switch(pageMode)
-  		{
-  			case "Add":
-  				$.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
-  					if (confirmed) {
-  						switch($("[client-id='pageMode']").attr('pre-value'))
-  						{
-  							case "Query":
-  								query_mode();
-  								break;
-  							case "Result":
-  								result_mode();
-  								break;
-  						}
-  					}
-  				});
-  				break;
-  			case "Edit":
-  				$.when(open_confirm('是否放棄儲存現在的資料?', '確認')).then(function (confirmed) {
-  					if (confirmed) {
-  						$("#foo").val("");
-  						$("#foe").val("");
-  						result_mode();
-  					}
-  				});
-
-  				break;
-  		}
+    		var pageMode = $("[client-id='pageMode']").attr('data-value');
+    		switch(pageMode) {
+    			case "Add":
+    				$.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
+    					if (confirmed) {
+    						switch($("[client-id='pageMode']").attr('pre-value')) {
+    							case "Query":
+    								query_mode();
+    								break;
+    							case "Result":
+    								result_mode();
+    								break;
+    						}
+    					}
+    				});
+    				break;
+    			case "Edit":
+    				$.when(open_confirm('是否放棄儲存現在的資料?', '確認')).then(function (confirmed) {
+    					if (confirmed) {
+    						$("#foo").val("");
+    						$("#foe").val("");
+    						result_mode();
+    					}
+    				});
+    				break;
+    		}
   	  });
 
   	//查詢模式
