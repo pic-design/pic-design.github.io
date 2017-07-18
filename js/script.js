@@ -238,14 +238,14 @@ query_mode();
 
     //查詢事件
   	  $("[client-id='btn_query']").on("click", function(event){
-        console.log("query");
+        // console.log("query");
         event.preventDefault();
-        var formEl = $(event.currentTarget).closest('.pic-tab-content').find('.pic-form');
-        var validate = isValidated(formEl);
+        // var formEl = $(event.currentTarget).closest('.pic-tab-content').find('.pic-form');
+        // var validate = isValidated(formEl);
         var disabled = isDisabled($(event.currentTarget));
 
-        if (validate && !disabled) {
-          console.log("pass");
+        if (!disabled) {
+          // console.log("pass");
           var pre_mode = $("[client-id='pageMode']").attr('data-value');
           if(pre_mode == 'Add') {
             $.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
@@ -270,30 +270,36 @@ query_mode();
   	  //新增事件
   	  $("[client-id='btn_add']").on("click", function(event){
         event.preventDefault();
-  		  var pre_mode = $("[client-id='pageMode']").attr('data-value');
-  		  if(pre_mode == 'Add')
-  		  {
-  				$.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
-  				if (confirmed) {
-  					add_mode();
-  				}
-  			})
-  		  }
-  		  else if(pre_mode == 'Edit'){
-  				$.when(open_confirm('是否放棄儲存現在的資料?', '確認')).then(function (confirmed) {
-  				if (confirmed) {
-  					 add_mode();
-  				}
-  			})
-  		  } else {
-  			  add_mode();
+        var disabled = isDisabled($(event.currentTarget));
+
+        if (!disabled) {
+    		  var pre_mode = $("[client-id='pageMode']").attr('data-value');
+    		  if(pre_mode == 'Add')
+    		  {
+    				$.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
+    				if (confirmed) {
+    					add_mode();
+    				}
+    			})
+    		  }
+    		  else if(pre_mode == 'Edit'){
+    				$.when(open_confirm('是否放棄儲存現在的資料?', '確認')).then(function (confirmed) {
+    				if (confirmed) {
+    					 add_mode();
+    				}
+    			})
+    		  } else {
+    			  add_mode();
+    		  }
   		  }
   	  });
 
   	  //刪除事件
   	  $("[client-id='btn_delete']").on("click", function(event){
         event.preventDefault();
-        if (isDisabled($(event.currentTarget)) === false) {
+        var disabled = isDisabled($(event.currentTarget));
+
+        if (!disabled) {
           $.when(open_confirm('是否確定要刪除?', '確認')).then(function (confirmed) {
             if (confirmed) {
               open_message('刪除資料成功','提示');
@@ -367,12 +373,15 @@ query_mode();
 	  //報表事件
 	  $("[client-id='btn_print']").on("click", function(event){
       event.preventDefault();
-			kendo.ui.progress($(".pic-tab-contents"), true);
-			setTimeout(function(){
-            kendo.ui.progress($(".pic-tab-contents"), false);
-			window.open('/群組資訊.xlsx');
-			}, 2000);
+      var disabled = isDisabled($(event.currentTarget));
 
+      if (!disabled) {
+  			kendo.ui.progress($(".pic-tab-contents"), true);
+  			setTimeout(function(){
+              kendo.ui.progress($(".pic-tab-contents"), false);
+  	         window.open('/群組資訊.xlsx');
+  			}, 2000);
+      }
 		});
 
 
