@@ -153,7 +153,7 @@ $(document).ready(function() {
     {"group_id":"AC003","group_name":"驗收MIS1","create_date":"2017-07-17 T13:46:55.86","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.86","upd_id":"AMIS"}
   ];
 
-  $(".pic-grid").kendoGrid({
+  $("#main-grid").kendoGrid({
         dataSource: [],
         height: 550,
         sortable: true,
@@ -540,4 +540,47 @@ query_mode();
                   }]
               }).data("kendoDialog").open();
   	}
+
+    $('#md-grid').kendoGrid({
+      dataSource: gridData,
+      height: 550,
+      sortable: true,
+      pageable: {
+          //refresh: true,
+          pageSize: 20,
+          //buttonCount: 5
+      },
+      columns: [
+        {
+          template: "<input id='' class='k-checkbox' type='checkbox'><label class='k-checkbox-label' for=''></label>"
+        },
+        {
+          template: "<button class='pic-button' client-id='btn_edit'>編輯</button>"
+        },
+        {
+          field: "group_id",
+          title: "群組代號"
+        },
+        {
+          field: "group_name",
+          title: "群組名稱"
+        },
+        {
+          field: "create_date",
+          title: "建立日期"
+        },
+        {
+          field: "create_id",
+          title: "建立人員"
+        },
+        {
+          field: "upd_date",
+          title: "異動日期"
+        },
+        {
+          field: "upd_id",
+          title: "異動人員"
+        }
+      ]
+    });
 });

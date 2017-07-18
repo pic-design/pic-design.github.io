@@ -291,7 +291,7 @@ label.hide {
   display: none;
 }
 
-.pic-tabs {
+.pic-tabs, .pic-md-tabs {
   display: flex;
   list-style: none;
   padding-left: 0;
@@ -299,7 +299,7 @@ label.hide {
   border-bottom: 1px solid #ffe0be;
 }
 
-.pic-tab {
+.pic-tab, .pic-md-tab {
   cursor: default;
   color: #999a94;
   border: 1px solid #d1d2d3;
@@ -339,17 +339,17 @@ label.hide {
   line-height: 1.5em;
 }
 
-.pic-tab--selected {
+.pic-tab--selected, .pic-md-tab--selected {
   background-color: white;
   color: #353630;
   border-color: #ffe0be;
 }
 
-.pic-tab--selected .pic-tab__inner {
+.pic-tab--selected .pic-tab__inner, .pic-md-tab--selected .pic-tab__inner {
   border-bottom-color: white;
 }
 
-.pic-tab--selected .pic-icon-stack .fa-remove {
+.pic-icon-stack .fa-remove {
   color: #003f59;
 }
 
@@ -361,12 +361,12 @@ label.hide {
   color: white;
 }
 
-.pic-tab-contents {
+.pic-tab-contents, .pic-md-tab-contents {
   flex: 1 0 auto;
   display: flex;
 }
 
-.pic-tab-content {
+.pic-tab-content, .pic-md-tab-content {
   display: none;
   overflow-y: auto;
   overflow-x: hidden;
@@ -378,7 +378,7 @@ label.hide {
   border-top: 0;
 }
 
-.pic-tab-content--selected {
+.pic-tab-content--selected, .pic-md-tab-content--selected {
   display: flex;
   border-color: #ffe0be;
 }
