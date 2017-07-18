@@ -82,6 +82,14 @@ $(document).ready(function() {
     select: onSelect
   });
 
+  $('.list-control').on('click', '.pic-button', function(event){
+    var currentTarget = $(event.currentTarget);
+    if (currentTarget.hasClass('open')) {
+      $(".pic-nav").data("kendoTreeView").expand(".k-item");
+    } else if (currentTarget.hasClass('fold')) {
+      $(".pic-nav").data("kendoTreeView").collapse(".k-item");
+    }
+  });
 
   // Tab function
   $(".pic-tabs").on("click", function(event){
@@ -209,7 +217,7 @@ $(document).ready(function() {
 
     var isValidated = function(el){
       var requires = el.find('.pic-form-control[required]');
-      console.log(requires);
+      // console.log(requires);
       requires.each(function () {
         if (!$(this).val()) {
           $(this).addClass('not');
