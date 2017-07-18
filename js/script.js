@@ -100,32 +100,32 @@ $(document).ready(function() {
   });
 
   var gridData = [
-    {"group_id":"TST08","group_name":"維護無刪除","create_date":"2017-07-17 T13:46:54.787","create_id":"AMIS","upd_date":"2017-07-17 T13:46:54.787","upd_id":"AMIS"},
-    {"group_id":"SR001","group_name":"理貨一般","create_date":"2017-07-17 T13:46:55.293","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.293","upd_id":"AMIS"},
-    {"group_id":"TS004","group_name":"只有修改","create_date":"2017-07-17 T13:46:55.33","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.33","upd_id":"AMIS"},
-    {"group_id":"RU","group_name":"執行編輯","create_date":"2017-07-17 T13:46:55.367","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.367","upd_id":"AMIS"},
-    {"group_id":"MIS01","group_name":"管理者","create_date":"2017-07-17 T13:46:55.397","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.397","upd_id":"AMIS"},
-    {"group_id":"SR002","group_name":"理貨管理","create_date":"2017-07-17 T13:46:55.43","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.43","upd_id":"AMIS"},
-    {"group_id":"TS002","group_name":"只有新增","create_date":"2017-07-17 T13:46:55.577","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.577","upd_id":"AMIS"},
-    {"group_id":"TS001","group_name":"只有查詢","create_date":"2017-07-17 T13:46:55.69","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.69","upd_id":"AMIS"},
-    {"group_id":"TS003","group_name":"只有刪除","create_date":"2017-07-17 T13:46:55.733","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.733","upd_id":"AMIS"},
-    {"group_id":"TS005","group_name":"只有列印","create_date":"2017-07-17 T13:46:55.8","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.8","upd_id":"AMIS"},
-    {"group_id":"AC003","group_name":"驗收MIS1","create_date":"2017-07-17 T13:46:55.86","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.86","upd_id":"AMIS"},
-    {"group_id":"TST08","group_name":"維護無刪除","create_date":"2017-07-17 T13:46:54.787","create_id":"AMIS","upd_date":"2017-07-17 T13:46:54.787","upd_id":"AMIS"},
-    {"group_id":"SR001","group_name":"理貨一般","create_date":"2017-07-17 T13:46:55.293","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.293","upd_id":"AMIS"},
-    {"group_id":"TS004","group_name":"只有修改","create_date":"2017-07-17 T13:46:55.33","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.33","upd_id":"AMIS"},
-    {"group_id":"RU","group_name":"執行編輯","create_date":"2017-07-17 T13:46:55.367","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.367","upd_id":"AMIS"},
-    {"group_id":"MIS01","group_name":"管理者","create_date":"2017-07-17 T13:46:55.397","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.397","upd_id":"AMIS"},
-    {"group_id":"SR002","group_name":"理貨管理","create_date":"2017-07-17 T13:46:55.43","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.43","upd_id":"AMIS"},
-    {"group_id":"TS002","group_name":"只有新增","create_date":"2017-07-17 T13:46:55.577","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.577","upd_id":"AMIS"},
-    {"group_id":"TS001","group_name":"只有查詢","create_date":"2017-07-17 T13:46:55.69","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.69","upd_id":"AMIS"},
-    {"group_id":"TS003","group_name":"只有刪除","create_date":"2017-07-17 T13:46:55.733","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.733","upd_id":"AMIS"},
-    {"group_id":"TS005","group_name":"只有列印","create_date":"2017-07-17 T13:46:55.8","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.8","upd_id":"AMIS"},
-    {"group_id":"AC003","group_name":"驗收MIS1","create_date":"2017-07-17 T13:46:55.86","create_id":"AMIS","upd_date":"2017-07-17 T13:46:55.86","upd_id":"AMIS"}
+    {"group_id":"TST08","group_name":"維護無刪除","create_date":"2017-07-17T13:46:54.787","create_id":"AMIS","upd_date":"2017-07-17T13:46:54.787","upd_id":"AMIS"},
+    {"group_id":"SR001","group_name":"理貨一般","create_date":"2017-07-17T13:46:55.293","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.293","upd_id":"AMIS"},
+    {"group_id":"TS004","group_name":"只有修改","create_date":"2017-07-17T13:46:55.33","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.33","upd_id":"AMIS"},
+    {"group_id":"RU","group_name":"執行編輯","create_date":"2017-07-17T13:46:55.367","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.367","upd_id":"AMIS"},
+    {"group_id":"MIS01","group_name":"管理者","create_date":"2017-07-17T13:46:55.397","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.397","upd_id":"AMIS"},
+    {"group_id":"SR002","group_name":"理貨管理","create_date":"2017-07-17T13:46:55.43","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.43","upd_id":"AMIS"},
+    {"group_id":"TS002","group_name":"只有新增","create_date":"2017-07-17T13:46:55.577","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.577","upd_id":"AMIS"},
+    {"group_id":"TS001","group_name":"只有查詢","create_date":"2017-07-17T13:46:55.69","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.69","upd_id":"AMIS"},
+    {"group_id":"TS003","group_name":"只有刪除","create_date":"2017-07-17T13:46:55.733","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.733","upd_id":"AMIS"},
+    {"group_id":"TS005","group_name":"只有列印","create_date":"2017-07-17T13:46:55.8","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.8","upd_id":"AMIS"},
+    {"group_id":"AC003","group_name":"驗收MIS1","create_date":"2017-07-17T13:46:55.86","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.86","upd_id":"AMIS"},
+    {"group_id":"TST08","group_name":"維護無刪除","create_date":"2017-07-17T13:46:54.787","create_id":"AMIS","upd_date":"2017-07-17T13:46:54.787","upd_id":"AMIS"},
+    {"group_id":"SR001","group_name":"理貨一般","create_date":"2017-07-17T13:46:55.293","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.293","upd_id":"AMIS"},
+    {"group_id":"TS004","group_name":"只有修改","create_date":"2017-07-17T13:46:55.33","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.33","upd_id":"AMIS"},
+    {"group_id":"RU","group_name":"執行編輯","create_date":"2017-07-17T13:46:55.367","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.367","upd_id":"AMIS"},
+    {"group_id":"MIS01","group_name":"管理者","create_date":"2017-07-17T13:46:55.397","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.397","upd_id":"AMIS"},
+    {"group_id":"SR002","group_name":"理貨管理","create_date":"2017-07-17T13:46:55.43","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.43","upd_id":"AMIS"},
+    {"group_id":"TS002","group_name":"只有新增","create_date":"2017-07-17T13:46:55.577","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.577","upd_id":"AMIS"},
+    {"group_id":"TS001","group_name":"只有查詢","create_date":"2017-07-17T13:46:55.69","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.69","upd_id":"AMIS"},
+    {"group_id":"TS003","group_name":"只有刪除","create_date":"2017-07-17T13:46:55.733","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.733","upd_id":"AMIS"},
+    {"group_id":"TS005","group_name":"只有列印","create_date":"2017-07-17T13:46:55.8","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.8","upd_id":"AMIS"},
+    {"group_id":"AC003","group_name":"驗收MIS1","create_date":"2017-07-17T13:46:55.86","create_id":"AMIS","upd_date":"2017-07-17T13:46:55.86","upd_id":"AMIS"}
   ];
 
   $(".pic-grid").kendoGrid({
-        dataSource: [],
+        dataSource: gridData,
         height: 550,
         sortable: true,
         pageable: {
@@ -175,23 +175,13 @@ $(document).ready(function() {
       }
     });
 
-    // $('body').on('click', '.pic-button--disabled', function(event) {
-    //   event.preventDefault();
-    //   console.log("prevent default");
-    // })
-
-    var isDisabled = function(el){
-      //console.log(el.hasClass('pic-button--disabled'));
-      if(el.hasClass('pic-button--disabled')) {
-        return true;
-      } else {
-        return false;
-      }
-    };
-
+    $('body').on('click', '.pic-button--disabled', function(event) {
+      event.preventDefault();
+      console.log("prevent default");
+    })
+query_mode();
     //查詢事件
   	  $("[client-id='btn_query']").on("click", function(event){
-        event.preventDefault();
   		  var pre_mode = $("[client-id='pageMode']").attr('data-value');
   		  if(pre_mode == 'Add')
   		  {
@@ -218,7 +208,6 @@ $(document).ready(function() {
 
   	  //新增事件
   	  $("[client-id='btn_add']").on("click", function(event){
-        event.preventDefault();
   		  var pre_mode = $("[client-id='pageMode']").attr('data-value');
   		  if(pre_mode == 'Add')
   		  {
@@ -243,20 +232,15 @@ $(document).ready(function() {
 
   	  //刪除事件
   	  $("[client-id='btn_delete']").on("click", function(event){
-        event.preventDefault();
-        //console.log("delete");
-        if( isDisabled($(event.currentTarget)) === false) {
-          $.when(open_confirm('是否確定要刪除?', '確認') ).then( function (confirmed) {
-            if (confirmed) {
-              open_message('刪除資料成功','提示');
-            }
-          })
-    		}
+  		 $.when(open_confirm('是否確定要刪除?', '確認')).then(function (confirmed) {
+  			if (confirmed) {
+  				open_message('刪除資料成功','提示');
+  			}
+  		});
   	  });
 
   	  //確認事件
   	  $("[client-id='btn_confirm']").on("click", function(event){
-        event.preventDefault();
   		var pageMode = $("[client-id='pageMode']").attr('data-value');
   		switch(pageMode)
   		{
@@ -280,7 +264,6 @@ $(document).ready(function() {
 
   	  //取消事件
   	  $("[client-id='btn_cancel']").on("click", function(event){
-        event.preventDefault();
   		var pageMode = $("[client-id='pageMode']").attr('data-value');
   		switch(pageMode)
   		{
@@ -311,6 +294,17 @@ $(document).ready(function() {
   				break;
   		}
   	  });
+	  
+	  //報表事件
+	  $("[client-id='btn_print']").on("click", function(event){
+			kendo.ui.progress($(".pic-tab-contents"), true);
+			setTimeout(function(){
+            kendo.ui.progress($(".pic-tab-contents"), false);
+			window.open('../pic-design.github.io-master/群組資訊.xlsx');
+			}, 2000);  
+		    
+		});
+	  
 
   	//查詢模式
   	function query_mode()
@@ -326,13 +320,13 @@ $(document).ready(function() {
   		//控制項權限
   		//查 確 新 編 取 刪 列
   		//E  E  E  D  D  D  D
-  		$("[client-id='btn_query']").prop("disabled", false);
-  		$("[client-id='btn_confirm']").prop("disabled", false);
-  		$("[client-id='btn_add']").prop("disabled", false);
-  		$("[client-id='btn_edit']").prop("disabled", true);
-  		$("[client-id='btn_cancel']").prop("disabled", true);
-  		$("[client-id='btn_delete']").prop("disabled", true);
-  		$("[client-id='btn_print']").prop("disabled", true);
+  		$("[client-id='btn_query']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_confirm']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_add']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_edit']").addClass("pic-button--disabled");
+  		$("[client-id='btn_cancel']").addClass("pic-button--disabled");
+  		$("[client-id='btn_delete']").addClass("pic-button--disabled");
+  		$("[client-id='btn_print']").addClass("pic-button--disabled");
   	}
 
   	//查詢結果模式
@@ -350,13 +344,13 @@ $(document).ready(function() {
   		//控制項權限
   		//查 確 新 編 取 刪 列
   		//E  D  E  E  D  E  E
-  		$("[client-id='btn_query']").prop("disabled", false);
-  		$("[client-id='btn_confirm']").prop("disabled", true);
-  		$("[client-id='btn_add']").prop("disabled", false);
-  		$("[client-id='btn_edit']").prop("disabled", false);
-  		$("[client-id='btn_cancel']").prop("disabled", true);
-  		$("[client-id='btn_delete']").prop("disabled", false);
-  		$("[client-id='btn_print']").prop("disabled", false);
+  		$("[client-id='btn_query']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_confirm']").addClass("pic-button--disabled");
+  		$("[client-id='btn_add']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_edit']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_cancel']").addClass("pic-button--disabled");
+  		$("[client-id='btn_delete']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_print']").removeClass("pic-button--disabled");
   	}
 
   	//編輯模式
@@ -370,13 +364,13 @@ $(document).ready(function() {
   		//控制項權限
   		//查 確 新 編 取 刪 列
   		//E  E  D  D  E  D  D
-  		$("[client-id='btn_query']").prop("disabled", false);
-  		$("[client-id='btn_confirm']").prop("disabled", false);
-  		$("[client-id='btn_add']").prop("disabled", true);
-  		$("[client-id='btn_edit']").prop("disabled", true);
-  		$("[client-id='btn_cancel']").prop("disabled", false);
-  		$("[client-id='btn_delete']").prop("disabled", true);
-  		$("[client-id='btn_print']").prop("disabled", true);
+  		$("[client-id='btn_query']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_confirm']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_add']").addClass("pic-button--disabled");
+  		$("[client-id='btn_edit']").addClass("pic-button--disabled");
+  		$("[client-id='btn_cancel']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_delete']").addClass("pic-button--disabled");
+  		$("[client-id='btn_print']").addClass("pic-button--disabled");
 
   		//查詢區帶入上方值
   		var row = $(Target).closest("tr");
@@ -398,14 +392,14 @@ $(document).ready(function() {
 
   		//控制項權限
   		//查 確 新 編 取 刪 列
-  		//E  E  E  D  D  E  D
-  		$("[client-id='btn_query']").prop("disabled", false);
-  		$("[client-id='btn_confirm']").prop("disabled", false);
-  		$("[client-id='btn_add']").prop("disabled", false);
-  		$("[client-id='btn_edit']").prop("disabled", true);
-  		$("[client-id='btn_cancel']").prop("disabled", true);
-  		$("[client-id='btn_delete']").prop("disabled", false);
-  		$("[client-id='btn_print']").prop("disabled", true);
+  		//E  E  E  D  E  D  D
+  		$("[client-id='btn_query']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_confirm']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_add']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_edit']").addClass("pic-button--disabled");
+  		$("[client-id='btn_cancel']").removeClass("pic-button--disabled");
+  		$("[client-id='btn_delete']").addClass("pic-button--disabled");
+  		$("[client-id='btn_print']").addClass("pic-button--disabled");
   	}
 
   	//顯示確認的視窗
