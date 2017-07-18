@@ -32,16 +32,18 @@ body {
     background-color: #fafafa;
     justify-content: center;
     align-items: center;
+    background-image: url('../img/bg-login.jpg');
+    background-size: cover;
   }
   .pic-panel {
     min-width: 1024px;
     min-height: 768px;
-    background-image: url('../img/bg-login.jpg');
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background-color: transparent;
   }
   .pic-form {
     min-width: 420px;

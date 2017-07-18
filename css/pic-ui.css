@@ -32,17 +32,19 @@ body {
   background-color: #fafafa;
   justify-content: center;
   align-items: center;
+  background-image: url("../img/bg-login.jpg");
+  background-size: cover;
 }
 
 .pic-layout--login .pic-panel {
   min-width: 1024px;
   min-height: 768px;
-  background-image: url("../img/bg-login.jpg");
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background-color: transparent;
 }
 
 .pic-layout--login .pic-form {
