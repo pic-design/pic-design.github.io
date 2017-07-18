@@ -3,10 +3,9 @@
   /* background-color: #fafafa; */
 }
 .pic-form-group {
-
   margin-bottom: 8px;
 }
-.pic-form-group--no-margin {
+.no-margin .pic-form-group {
   margin-bottom: 0;
 }
 .pic-form-group label {
@@ -37,9 +36,16 @@
   align-items: center;
   padding: 0 8px;
 }
-.pic-form--inline .pic-form-group label {
-  padding-right: 4px;
-  align-items: center;
+.pic-form--inline .pic-form-group {
+  label, .pic-form-label {
+    padding-right: 4px;
+    align-items: center;
+  }
+  .pic-form-icon {
+    align-items: center;
+    font-size: 1.3em;
+    padding: 0 8px;
+  }
 }
 .pic-form--inline .pic-form-group .pic-button {
   align-self: stretch;

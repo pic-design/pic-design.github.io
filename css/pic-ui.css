@@ -222,7 +222,7 @@ body {
   margin-bottom: 8px;
 }
 
-.pic-form-group--no-margin {
+.no-margin .pic-form-group {
   margin-bottom: 0;
 }
 
@@ -256,9 +256,15 @@ body {
   padding: 0 8px;
 }
 
-.pic-form--inline .pic-form-group label {
+.pic-form--inline .pic-form-group label, .pic-form--inline .pic-form-group .pic-form-label {
   padding-right: 4px;
   align-items: center;
+}
+
+.pic-form--inline .pic-form-group .pic-form-icon {
+  align-items: center;
+  font-size: 1.3em;
+  padding: 0 8px;
 }
 
 .pic-form--inline .pic-form-group .pic-button {
