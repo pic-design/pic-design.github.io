@@ -26,21 +26,24 @@ $(document).ready(function() {
   var mdTabsOpend = ['aaa', 'bbb'];
 
   var tabSwitch = function(tabName, tabs){
+    // console.log(tabName);
+    // console.log(tabs.siblings('.pic-tab-contents'));
     // Set selected tab and tab-content to normal
     tabs.find('.pic-tab--selected').removeClass('pic-tab--selected');
-    tabs.siblings('.pic-tab-contents').find('.pic-tab-content--selected').first().removeClass('pic-tab-content--selected');
+    tabs.siblings('.pic-tab-contents').children('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
     // Show selcted tab and tab-content
     tabs.find('[name='+ tabName +']').addClass('pic-tab--selected');
-    tabs.siblings('.pic-tab-contents').find('[name='+ tabName +']').addClass('pic-tab-content--selected');
+    tabs.siblings('.pic-tab-contents').children('[name='+ tabName +']').addClass('pic-tab-content--selected');
   };
 
   var newTab = function(tabName, fName){
     // add new value in tabsOpened array
     tabsOpened.push(tabName);
     var tabs = $('.pic-tabs').first();
+
     // set selcted tab to un-selected
-    tabs.find('.pic-tab--selected').removeClass('pic-tab--selected');
-    tabs.siblings('.pic-tab-contents').find('.pic-tab-content--selected').first().removeClass('pic-tab-content--selected');
+    tabs.children('.pic-tab--selected').removeClass('pic-tab--selected');
+    tabs.siblings('.pic-tab-contents').children('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
     // add new tab
     tabs.append(
       '<div class="pic-tab pic-tab--selected" name="' + tabName + '">'
@@ -53,7 +56,7 @@ $(document).ready(function() {
       + '</div>'
       + '</div>'
     );
-    $('.pic-tab-contents').append(
+    tabs.siblings('.pic-tab-contents').append(
       '<div class="pic-tab-content pic-tab-content--selected" name="' + tabName + '">'
       + fName
       + '</div>'
@@ -123,7 +126,7 @@ $(document).ready(function() {
       tabsArray.splice(index, 1);
       // console.log(tabsArray);
       // if no tab is selected, select the tab in front of the closed one
-      var tabSelected = tabs.find('.pic-tab--selected');
+      var tabSelected = tabs.children('.pic-tab--selected');
       if(tabSelected.length === 0) {
         var newSelectedTabIndex = index - 1;
         if (newSelectedTabIndex < 0) {
