@@ -20,6 +20,7 @@
   outline: none;
   padding: 0px 8px;
   text-decoration: none;
+  font-family: inherit;
   background-image: linear-gradient(to bottom, rgba(255,255,255,.45) 0px, rgba(255,255,255,0) 100%);
 }
 
@@ -46,4 +47,20 @@
 .pic-button:hover {
   background-color: #ffe0be;
   color: #9f5400;
+}
+
+.pic-button--disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+.pic-button--disabled:hover {
+  background-color: currentColor;
+  color: auto;
+}
+
+.text-brand {
+  color: #ef850d;
+}
+.text-brand--light {
+  color: #dd9540;
 }
