@@ -54,7 +54,11 @@
 .pic-form--inline .pic-form-control {
   flex: 1 0 auto;
 }
-
+.pic-form-control[readonly] {
+  background-color: #d1d2d3 !important;
+  box-shadow: none !important;
+  border: 1px solid #d1d2d3 !important;
+}
 label.hide {
   display: none;
 }
