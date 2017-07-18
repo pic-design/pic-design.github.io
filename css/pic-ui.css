@@ -51,6 +51,7 @@ body {
   border: 1px solid white;
   border-radius: 10px;
   align-self: flex-end;
+  padding: 40px;
 }
 
 .login-section {
@@ -138,7 +139,15 @@ body {
 }
 
 .pic-button--lg {
-  font-size: 2em;
+  font-size: 1.5em;
+  width: 100%;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.pic-button--brand {
+  background-color: #ef850d;
+  color: white;
 }
 
 .pic-button:hover {
@@ -152,7 +161,11 @@ body {
 }
 
 .pic-form-group {
-  padding: 0 8px;
+  margin-bottom: 8px;
+}
+
+.pic-form-group--no-margin {
+  margin-bottom: 0;
 }
 
 .pic-form-group label {
@@ -165,6 +178,15 @@ body {
   /* height: 2em; */
 }
 
+.pic-form-control.pic-form-control--lg {
+  border-radius: 4px;
+  height: 48px;
+  width: 100%;
+  font-size: 1.5em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .pic-form--inline {
   display: flex;
 }
@@ -173,6 +195,7 @@ body {
   flex: 1 0 0px;
   display: flex;
   align-items: center;
+  padding: 0 8px;
 }
 
 .pic-form--inline .pic-form-group label {

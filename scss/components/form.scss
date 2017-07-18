@@ -3,7 +3,11 @@
   /* background-color: #fafafa; */
 }
 .pic-form-group {
-  padding: 0 8px;
+
+  margin-bottom: 8px;
+}
+.pic-form-group--no-margin {
+  margin-bottom: 0;
 }
 .pic-form-group label {
   color: #003f59;
@@ -12,6 +16,16 @@
   border-radius: 2px;
   border-color: #d1d2d3;
   /* height: 2em; */
+
+}
+
+.pic-form-control.pic-form-control--lg {
+  border-radius: 4px;
+  height: 48px;
+  width: 100%;
+  font-size: 1.5em;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .pic-form--inline {
@@ -21,6 +35,7 @@
   flex: 1 0 0px;
   display: flex;
   align-items: center;
+  padding: 0 8px;
 }
 .pic-form--inline .pic-form-group label {
   padding-right: 4px;
