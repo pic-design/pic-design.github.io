@@ -282,6 +282,10 @@ body {
   border: 1px solid #d1d2d3 !important;
 }
 
+.pic-form-control.not {
+  border-color: #f5364e;
+}
+
 label.hide {
   display: none;
 }

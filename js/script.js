@@ -13,7 +13,7 @@ $(document).ready(function() {
       {text: '林月如', number: 5}
     ],
     select: function(event){
-      console.log(event);
+      //console.log(event);
       var number = event.dataItem.number;
       var sender = event.sender;
       var display = sender.element.closest('.pic-form-group').find('.combobox-display');
@@ -196,18 +196,28 @@ $(document).ready(function() {
       }
     });
 
-    // $('body').on('click', '.pic-button--disabled', function(event) {
-    //   event.preventDefault();
-    //   console.log("prevent default");
-    // })
-
     var isDisabled = function(el){
        //console.log(el.hasClass('pic-button--disabled'));
        if(el.hasClass('pic-button--disabled')) {
+         // button is disabled
          return true;
        } else {
+         // button is not disabled
          return false;
        }
+    };
+
+    var isValidated = function(el){
+      var requires = el.find('.pic-form-control[required]');
+      console.log(requires);
+      requires.each(function () {
+        if (!$(this).val()) {
+          $(this).addClass('not');
+        }else{
+          $(this).removeClass('not');
+        }
+
+      });
     };
 
 query_mode();
@@ -215,23 +225,30 @@ query_mode();
     //查詢事件
   	  $("[client-id='btn_query']").on("click", function(event){
         event.preventDefault();
-  		  var pre_mode = $("[client-id='pageMode']").attr('data-value');
-  		  if(pre_mode == 'Add') {
-  				$.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
-    				if (confirmed) {
-    					 query_mode();
-    				}
-		      })
-  		  }
-  		  else if(pre_mode == 'Edit'){
-  				$.when(open_confirm('是否放棄儲存現在的資料?', '確認')).then(function (confirmed) {
-    				if (confirmed) {
-    					 query_mode();
-    				}
-    			})
-        } else {
-  			  query_mode();
-  		  }
+        var formEl = $(event.currentTarget).closest('.pic-tab-content').find('.pic-form');
+        var validate = isValidated(formEl);
+        var disabled = isDisabled($(event.currentTarget));
+
+        if (validate && !disabled) {
+          var pre_mode = $("[client-id='pageMode']").attr('data-value');
+          if(pre_mode == 'Add') {
+            $.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
+              if (confirmed) {
+                query_mode();
+              }
+            })
+          }
+          else if(pre_mode == 'Edit'){
+            $.when(open_confirm('是否放棄儲存現在的資料?', '確認')).then(function (confirmed) {
+              if (confirmed) {
+                query_mode();
+              }
+            })
+          } else {
+            query_mode();
+          }
+        }
+
   	  });
 
   	  //新增事件
