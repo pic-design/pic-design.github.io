@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>康是美 UI Prototype</title>
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="css/kendo.common.min.css">
+    <link rel="stylesheet" href="css/kendo.custom.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/pic-ui.css">
+  </head>
+  <body>
+    <div class="pic-layout">
+      <header class="pic-header">
+        <div class="pic-header__section">
+          <a href="#" id="ham" class="pic-button pic-button--flat">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        <div class="pic-header__section">
+          <div>
+            <button class="pic-button pic-button--flat pic-button--color-inherit">
+              <i class="fa fa-user-o"></i>
+              <span>使用者</span>
+            </button>
+            <span>您好！歡迎登入康是美系統。</span>
+          </div>
+          <a class="pic-button pic-button--flat pic-button--color-inherit" href="index.html">
+            <i class="fa fa-power-off"></i>
+            登出
+          </a>
+        </div>
+      </header>
+      <div class="pic-container">
+        <div class="pic-sidebar">
+          <div class="pic-panel pic-panel--borderless">
+            <div class="pic-form pic-form--inline">
+              <div class="pic-form-group">
+                <input class="pic-form-control k-textbox" placeholder="輸入功能號碼">
+                <button class="pic-button">查詢</button>
+              </div>
+            </div>
+          </div>
+          <ul class="pic-nav">
+            <li class="pic-listitem">
+              檢核報表
+              <ul>
+                <li name="aa">
+                  <span class="pic-function-id">10541</span>
+                  <span class="pic-function-name">現金日報</span>
+                </li>
+                <li name="ab">
+                  <span class="pic-function-id">14836</span>
+                  <span class="pic-function-name">銷媒檢核報表</span>
+                </li>
+                <li name="ac">
+                  <span class="pic-function-id">95442</span>
+                  <span class="pic-function-name">檢核報表</span>
+                </li>
+                <li name="ad">
+                  <span class="pic-function-id">10533</span>
+                  <span class="pic-function-name">明細𢑥總表</span>
+                </li>
+                <li name="ae">
+                  <span class="pic-function-id">15860</span>
+                  <span class="pic-function-name">庫存盤點報表</span>
+                </li>
+                <li name="af">
+                  <span class="pic-function-id">10584</span>
+                  <span class="pic-function-name">進銷存報表</span>
+                </li>
+              </ul>
+            </li>
+            <li class="pic-listitem">
+              未上傳門市作業
+              <ul>
+                <li name="ba">
+                  <span class="pic-function-id">10666</span>
+                  <span class="pic-function-name">未上傳門市檢核</span>
+                </li>
+              </ul>
+            </li>
+            <li class="pic-listitem">
+              權限管理
+              <ul>
+                <li name="ca">
+                  <span class="pic-function-id">10666</span>
+                  <span class="pic-function-name">角色維護</span>
+                </li>
+                <li name="cb">
+                  <span class="pic-function-id">20542</span>
+                  <span class="pic-function-name">使用者維護</span>
+                </li>
+              </ul>
+            </li>
+            <li class="pic-listitem">
+              參數管理
+              <ul>
+                <li name="da">
+                  <span class="pic-function-id">10646</span>
+                  <span class="pic-function-name">參數維護</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="pic-content">
+          <ul class="pic-tabs">
+            <li class="pic-tab pic-tab--selected" name="aa">
+              <div class="pic-tab__inner">
+                現金日報
+                <span class="pic-icon-stack">
+                  <i class="fa fa-circle"></i>
+                  <i class="fa fa-remove"></i>
+                </span>
+              </div>
+            </li>
+            <li class="pic-tab" name="ac">
+              <div class="pic-tab__inner">
+                檢核報表
+                <span class="pic-icon-stack">
+                  <i class="fa fa-circle"></i>
+                  <i class="fa fa-remove"></i>
+                </span>
+              </div>
+            </li>
+            <li class="pic-tab" name="ca">
+              <div class="pic-tab__inner">
+                角色維護
+                <span class="pic-icon-stack">
+                  <i class="fa fa-circle"></i>
+                  <i class="fa fa-remove"></i>
+                </span>
+              </div>
+            </li>
+          </ul>
+          <div class="pic-tab-contents">
+            <div class="pic-tab-content pic-tab-content--selected" name="aa">
+              <div class="pic-toolbar">
+                <div class="pic-button-group">
+                  <a href="#" class="pic-button">
+                    <i class="fa fa-search"></i>
+                    <span>查詢</span>
+                  </a>
+                  <a href="#" class="pic-button">
+                    <i class="fa fa-plus"></i>
+                    <span>新增</span>
+                  </a>
+                  <a href="#" class="pic-button">
+                    <i class="fa fa-trash"></i>
+                    <span>刪除</span>
+                  </a>
+                </div>
+                <div class="pic-button-group">
+                  <a href="#" class="pic-button">
+                    <i class="fa fa-check-circle-o"></i>
+                    <span>確認</span>
+                  </a>
+                  <a href="#" class="pic-button">
+                    <i class="fa fa-close"></i>
+                    <span>取消</span>
+                  </a>
+                </div>
+              </div>
+              <div class="pic-panel">
+                <div class="pic-form pic-form--inline">
+                  <div class="pic-form-group">
+                    <label for="foo">群組代號</label>
+                    <input id="foo" class="pic-form-control k-textbox" type="text" placeholder="輸入群組代號">
+                  </div>
+                  <div class="pic-form-group">
+                    <label for="foe">群組名稱</label>
+                    <input id="foe" class="pic-form-control k-textbox" type="text" placeholder="輸入群組名稱">
+                  </div>
+                </div>
+              </div>
+              <div class="pic-grid">
+
+              </div>
+
+            </div>
+            <div class="pic-tab-content" name="ac">
+              <div class="pic-panel">
+                <div class="datepicker">
+
+                </div>
+              </div>
+              <div class="pic-panel">
+                <div class="fabric">
+
+                </div>
+              </div>
+            </div>
+            <div class="pic-tab-content" name="ca">
+              tab 3
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js" charset="utf-8"></script>
+    <!-- <script src="js/bootstrap.min.js" charset="utf-8"></script> -->
+    <script src="js/kendo.all.min.js" charset="utf-8"></script>
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
