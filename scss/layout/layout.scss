@@ -36,8 +36,8 @@ body {
     background-size: cover;
   }
   .pic-panel {
-    min-width: 1024px;
-    min-height: 768px;
+    width: 1024px;
+    height: 768px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,7 +47,7 @@ body {
   }
   .pic-form {
     min-width: 420px;
-    min-height: 430px;
+    /* min-height: 430px; */
     border: 1px solid white;
     border-radius: 10px;
     align-self: flex-end;
@@ -56,8 +56,7 @@ body {
 }
 
 .login-section {
-  /* width: 100%; */
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   min-width: 100px;
   min-height: 40px;
   display: flex;
