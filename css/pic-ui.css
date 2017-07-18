@@ -10,10 +10,6 @@ body {
   width: 100%;
 }
 
-.pic-layout * {
-  box-sizing: border-box;
-}
-
 .pic-layout {
   display: flex;
   flex-direction: column;
@@ -95,6 +91,7 @@ body {
   background-color: #fff6ed;
   min-width: 214px;
   border: 1px solid #d1d2d3;
+  box-sizing: border-box;
   /* border-right: 1px solid #d1d2d3; */
 }
 
@@ -337,6 +334,7 @@ label.hide {
   padding-top: 4px;
   padding-bottom: 4px;
   border: 1px solid #d1d2d3;
+  box-sizing: border-box;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0px, rgba(255, 255, 255, 0) 100%);
 }
 
@@ -367,6 +365,7 @@ label.hide {
   border-top: 0;
   border-bottom: 0;
   padding: 8px 0;
+  box-sizing: border-box;
 }
 
 .pic-panel--borderless {
