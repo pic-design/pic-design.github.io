@@ -224,20 +224,28 @@ $(document).ready(function() {
         }else{
           $(this).removeClass('not');
         }
-
       });
+
+      var length = el.find('.not').length;
+      if (length > 0) {
+        return false;
+      } else {
+        return true;
+      }
     };
 
 query_mode();
 
     //查詢事件
   	  $("[client-id='btn_query']").on("click", function(event){
+        console.log("query");
         event.preventDefault();
         var formEl = $(event.currentTarget).closest('.pic-tab-content').find('.pic-form');
         var validate = isValidated(formEl);
         var disabled = isDisabled($(event.currentTarget));
 
         if (validate && !disabled) {
+          console.log("pass");
           var pre_mode = $("[client-id='pageMode']").attr('data-value');
           if(pre_mode == 'Add') {
             $.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
@@ -297,24 +305,32 @@ query_mode();
   	  //確認事件
   	  $("[client-id='btn_confirm']").on("click", function(event){
         event.preventDefault();
-    		var pageMode = $("[client-id='pageMode']").attr('data-value');
-    		switch(pageMode) {
-    			case "Add":
-    				$("#foo").val("");
-    				$("#foe").val("");
-    				open_message('新增資料成功','提示');
-    				result_mode();
-    				break;
-    			case "Edit":
-    				$("#foo").val("");
-    				$("#foe").val("");
-    				open_message('異動資料成功','提示');
-    				result_mode();
-    				break;
-    			case "Query":
-    				result_mode();
-    				break;
-  	    }
+        // console.log("confirm");
+        var formEl = $(event.currentTarget).closest('.pic-tab-content').find('.pic-form');
+        var validate = isValidated(formEl);
+        var disabled = isDisabled($(event.currentTarget));
+
+        if (validate && !disabled) {
+          // console.log("confirm pass");
+      		var pageMode = $("[client-id='pageMode']").attr('data-value');
+      		switch(pageMode) {
+      			case "Add":
+      				$("#foo").val("");
+      				$("#foe").val("");
+      				open_message('新增資料成功','提示');
+      				result_mode();
+      				break;
+      			case "Edit":
+      				$("#foo").val("");
+      				$("#foe").val("");
+      				open_message('異動資料成功','提示');
+      				result_mode();
+      				break;
+      			case "Query":
+      				result_mode();
+      				break;
+    	    }
+        }
   	  });
 
   	  //取消事件
