@@ -35,8 +35,8 @@
       <div class="pic-container">
         <div class="pic-sidebar">
           <div class="pic-panel pic-panel--borderless">
-            <div class="pic-form pic-form--inline">
-              <div class="pic-form-group pic-form-group--no-margin">
+            <div class="pic-form pic-form--inline no-margin">
+              <div class="pic-form-group">
                 <input class="pic-form-control k-textbox" placeholder="輸入功能號碼">
                 <button class="pic-button">查詢</button>
               </div>
@@ -222,13 +222,13 @@
             </div>
             <div class="pic-tab-content" name="ab">
               <!-- master-detail -->
-              <div class="pic-md-tabs">
-                <div class="pic-md-tab pic-md-tab--selected">
+              <ul class="pic-tabs">
+                <li class="pic-tab pic-tab--selected" name="aaa">
                   <div class="pic-tab__inner">
                     澳盛銀行ibon紅利兌換
                   </div>
-                </div>
-                <div class="pic-md-tab">
+                </li>
+                <li class="pic-tab" name="bbb">
                   <div class="pic-tab__inner">
                     澳盛銀行ibon紅利兌換明細
                     <span class="pic-icon-stack">
@@ -236,12 +236,11 @@
                       <i class="fa fa-remove"></i>
                     </span>
                   </div>
+                </li>
+              </ul>
+              <div class="pic-tab-contents">
 
-                </div>
-              </div>
-              <div class="pic-md-tab-contents">
-
-                <div class="pic-md-tab-content pic-md-tab-content--selected" name="aaa">
+                <div class="pic-tab-content pic-tab-content--selected" name="aaa">
                   <div class="pic-toolbar">
                     <div class="pic-button-group">
                       <a href="#" class="pic-button" client-id="btn_query">
@@ -283,24 +282,21 @@
                     <div class="pic-form">
                       <div class="pic-form--inline">
                         <div class="pic-form-group">
-                          <label for="foo">群組代號</label>
-                          <input id="foo" class="pic-form-control k-textbox" type="text" placeholder="輸入群組代號" required>
+                          <label for="">群組代號</label>
+                          <input id="" class="pic-form-control k-textbox" type="text" placeholder="輸入群組代號" required>
                         </div>
                         <div class="pic-form-group">
-                          <label for="foe">群組名稱</label>
-                          <input id="foe" class="pic-form-control k-textbox" type="text" placeholder="輸入群組名稱" required>
+                          <label for="">群組名稱</label>
+                          <input id="" class="pic-form-control k-textbox" type="text" placeholder="輸入群組名稱" required>
                         </div>
                       </div>
 
                     </div>
                   </div>
-                  <div class="pic-grid" id="md-grid">
-
-                  </div>
-
+                  <div class="pic-grid" id="md-grid"> </div>
                 </div>
-                <div class="pic-md-tab-content">
-
+                <div class="pic-tab-content" name="bbb">
+                  澳盛銀行ibon紅利兌換明細
                 </div>
 
               </div>

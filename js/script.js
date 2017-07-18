@@ -23,24 +23,26 @@ $(document).ready(function() {
 
   // A global variable on opend tabs
   var tabsOpened = ['aa', 'ab', 'ca'];
+  var mdTabsOpend = ['aaa', 'bbb'];
 
-  var tabSwitch = function(tabName){
+  var tabSwitch = function(tabName, tabs){
     // Set selected tab and tab-content to normal
-    $('.pic-tab--selected').removeClass('pic-tab--selected');
-    $('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
+    tabs.find('.pic-tab--selected').removeClass('pic-tab--selected');
+    tabs.siblings('.pic-tab-contents').find('.pic-tab-content--selected').first().removeClass('pic-tab-content--selected');
     // Show selcted tab and tab-content
-    $('.pic-tabs').find('[name='+ tabName +']').addClass('pic-tab--selected');
-    $('.pic-tab-contents').find('[name='+ tabName +']').addClass('pic-tab-content--selected');
+    tabs.find('[name='+ tabName +']').addClass('pic-tab--selected');
+    tabs.siblings('.pic-tab-contents').find('[name='+ tabName +']').addClass('pic-tab-content--selected');
   };
 
   var newTab = function(tabName, fName){
     // add new value in tabsOpened array
     tabsOpened.push(tabName);
+    var tabs = $('.pic-tabs').first();
     // set selcted tab to un-selected
-    $('.pic-tab--selected').removeClass('pic-tab--selected');
-    $('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
+    tabs.find('.pic-tab--selected').removeClass('pic-tab--selected');
+    tabs.siblings('.pic-tab-contents').find('.pic-tab-content--selected').first().removeClass('pic-tab-content--selected');
     // add new tab
-    $('.pic-tabs').append(
+    tabs.append(
       '<div class="pic-tab pic-tab--selected" name="' + tabName + '">'
       + '<div class="pic-tab__inner">'
       + fName
@@ -92,27 +94,34 @@ $(document).ready(function() {
   });
 
   // Tab function
-  $(".pic-tabs").on("click", function(event){
-    var tabs = $('.pic-tabs');
-    var tabContents = $('.pic-tab-contents');
+  $(".pic-tabs").on("click", '.pic-tab', function(event){
+    var tabs = $(event.delegateTarget);
+    var tabContents = tabs.siblings('.pic-tab-contents');
+    var currentTarget = $(event.currentTarget);
     var target = $(event.target);
+    var name = currentTarget.attr('name');
     // console.log(event);
-    if (target.parent('.pic-tab').length > 0 && target.parent('.pic-tab--selected').length === 0) {
-      // If the clicked tab is not selected
-      tabSwitch(target.parent('.pic-tab').attr('name'));
 
-    } else if (target.hasClass('fa-remove')) {
+    var tabsArray = '';
+    if (currentTarget.parents('.pic-tab-content').length > 0) {
+      // master-detail tab
+      tabsArray = mdTabsOpend;
+    } else {
+      tabsArray = tabsOpened;
+    }
+
+
+    if (target.hasClass('fa-remove')) {
       // close tab
-      var targetTab = target.closest('.pic-tab');
-      var targetName = targetTab.attr('name');
       // Get the tab's index number
-      var index = tabsOpened.indexOf(targetName);
+      var index = tabsOpened.indexOf(name);
       // Remove tab and tab-content
-      $('.pic-tab-content[name=' + targetName + ']').remove();
-      targetTab.remove();
+      $('.pic-tab-content[name=' + name + ']').remove();
+      currentTarget.remove();
+
       // Remove tab name from array
-      tabsOpened.splice(index, 1);
-      // console.log(tabsOpened);
+      tabsArray.splice(index, 1);
+      // console.log(tabsArray);
       // if no tab is selected, select the tab in front of the closed one
       var tabSelected = tabs.find('.pic-tab--selected');
       if(tabSelected.length === 0) {
@@ -120,10 +129,14 @@ $(document).ready(function() {
         if (newSelectedTabIndex < 0) {
           newSelectedTabIndex = 0;
         }
-        var newSelectedTabName = tabsOpened[newSelectedTabIndex];
+        var newSelectedTabName = tabsArray[newSelectedTabIndex];
         $('.pic-tab[name=' + newSelectedTabName + ']').addClass('pic-tab--selected');
         $('.pic-tab-content[name=' + newSelectedTabName + ']').addClass('pic-tab-content--selected');
       }
+
+    } else if (!currentTarget.hasClass('pic-tab--selected')) {
+      // If the clicked tab is not selected
+      tabSwitch(name, tabs);
 
     }
   });
@@ -153,6 +166,20 @@ $(document).ready(function() {
     {"group_id":"AC003","group_name":"驗收MIS1","create_date":"2017-07-17","create_id":"AMIS","upd_date":"2017-07-17","upd_id":"AMIS","count":"100"}
   ];
 
+  var mdData = [
+    {"group_id":"123","group_name":"大富翁","number":"222","quantity":"1","price":"244","sale":"20"},
+    {"group_id":"124","group_name":"蛋黃哥","number":"221","quantity":"2","price":"534","sale":"10"},
+    {"group_id":"111","group_name":"玉山送大杯拿鐵","number":"224","quantity":"3","price":"12","sale":"10"},
+    {"group_id":"543","group_name":"樂天送跑車","number":"225","quantity":"4","price":"8656","sale":"30"},
+    {"group_id":"32","group_name":"天使帝國","number":"556","quantity":"5","price":"354","sale":"20"},
+    {"group_id":"776","group_name":"樂天送房子","number":"667","quantity":"6","price":"674","sale":"0"},
+    {"group_id":"887","group_name":"集點換大獎","number":"887","quantity":"7","price":"2354","sale":"20"},
+    {"group_id":"443","group_name":"大天使之劍","number":"663","quantity":"8","price":"87","sale":"10"},
+    {"group_id":"334","group_name":"鬥陣特攻","number":"889","quantity":"9","price":"34","sale":"10"},
+    {"group_id":"665","group_name":"蜘蛛人電影","number":"995","quantity":"10","price":"134","sale":"10"},
+    {"group_id":"666","group_name":"神鬼奇航","number":"332","quantity":"11","price":"758","sale":"15"}
+  ]
+
   $("#main-grid").kendoGrid({
         dataSource: [],
         height: 550,
@@ -163,8 +190,8 @@ $(document).ready(function() {
             //buttonCount: 5
         },
         columns:[
-          { 
-            selectable: true, 
+          {
+            selectable: true,
             width: 40
           },
           {
@@ -561,7 +588,7 @@ query_mode();
   	}
 
     $('#md-grid').kendoGrid({
-      dataSource: gridData,
+      dataSource: mdData,
       height: 550,
       sortable: true,
       pageable: {
@@ -578,27 +605,27 @@ query_mode();
         },
         {
           field: "group_id",
-          title: "群組代號"
+          title: "活動代號"
         },
         {
           field: "group_name",
-          title: "群組名稱"
+          title: "活動名稱"
         },
         {
-          field: "create_date",
-          title: "建立日期"
+          field: "number",
+          title: "作業簡號"
         },
         {
-          field: "create_id",
-          title: "建立人員"
+          field: "quantity",
+          title: "數量"
         },
         {
-          field: "upd_date",
-          title: "異動日期"
+          field: "price",
+          title: "金額"
         },
         {
-          field: "upd_id",
-          title: "異動人員"
+          field: "sale",
+          title: "廠商折扣"
         }
       ]
     });

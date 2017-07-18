@@ -1,11 +1,11 @@
-.pic-tabs, .pic-md-tabs {
+.pic-tabs {
   display: flex;
   list-style: none;
   padding-left: 0;
   margin: 0;
   border-bottom: 1px solid #ffe0be;
 }
-.pic-tab, .pic-md-tab {
+.pic-tab {
   cursor: default;
   color: #999a94;
   border: 1px solid #d1d2d3;
@@ -39,7 +39,7 @@
 .pic-icon-stack .fa-remove {
   line-height: 1.5em;
 }
-.pic-tab--selected, .pic-md-tab--selected{
+.pic-tab--selected {
   background-color: white;
   color: #353630;
   border-color: #ffe0be;
@@ -57,11 +57,11 @@
   color: white;
 }
 
-.pic-tab-contents, .pic-md-tab-contents {
+.pic-tab-contents {
   flex: 1 0 auto;
   display: flex;
 }
-.pic-tab-content, .pic-md-tab-content {
+.pic-tab-content {
   display: none;
   overflow-y: auto;
   overflow-x: hidden;
@@ -73,7 +73,7 @@
   border-top: 0;
 }
 
-.pic-tab-content--selected, .pic-md-tab-content--selected {
+.pic-tab-content--selected {
   display: flex;
   border-color: #ffe0be;
 }
