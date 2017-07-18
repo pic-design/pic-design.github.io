@@ -11,8 +11,16 @@
 }
 
 .pic-function-id {
-  padding: 0 8px;
-  /* &:before {
-    content: 
-  } */
+  padding-right: 8px;
+  &:before {
+    content: '\f111';
+    font-family: FontAwesome;
+    padding-right: 8px;
+    color: #999a94;
+    font-size: 0.9em;
+  }
+}
+
+.k-treeview .k-icon {
+  background-image: none !important;
 }
