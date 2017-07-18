@@ -319,14 +319,14 @@ html .km-pane-wrapper .k-header {
 .k-pager-numbers .k-current-page .k-link:after,
 .k-scheduler-toolbar > ul.k-scheduler-views > li.k-current-view > .k-link:after,
 .k-gantt-views > .k-current-view > .k-link:after {
-  background-image: url('none/sprite.png');
+  background-image: url('BlueOpal/sprite.png');
   border-color: transparent;
 }
 /* IE will ignore the above selectors if these are added too */
 .k-mobile-list .k-check:checked,
 .k-mobile-list .k-edit-field [type=checkbox]:checked,
 .k-mobile-list .k-edit-field [type=radio]:checked {
-  background-image: url('none/sprite.png');
+  background-image: url('BlueOpal/sprite.png');
   border-color: transparent;
 }
 .k-loading,
@@ -334,11 +334,11 @@ html .km-pane-wrapper .k-header {
 .p-i-loading,
 .k-state-hover .k-loading,
 .k-state-hover .k-i-loading {
-  background-image: url('none/loading.gif');
+  background-image: url('BlueOpal/loading.gif');
   background-position: 50% 50%;
 }
 .k-loading-image {
-  background-image: url('none/loading-image.gif');
+  background-image: url('BlueOpal/loading-image.gif');
 }
 .k-loading-color {
   background-color: #ffffff;
@@ -744,7 +744,7 @@ div.k-filebrowser-dropzone em,
   background-position: 50% 50%;
 }
 .k-tool-icon {
-  background-image: url('none/sprite.png');
+  background-image: url('BlueOpal/sprite.png');
 }
 .k-state-hover > .k-link,
 .k-other-month.k-state-hover .k-link,
@@ -820,7 +820,7 @@ div.k-filebrowser-dropzone em {
 }
 /* Progressbar */
 .k-progressbar-indeterminate {
-  background: url('none/indeterminate.gif');
+  background: url('BlueOpal/indeterminate.gif');
 }
 .k-progressbar-indeterminate .k-progress-status-wrap,
 .k-progressbar-indeterminate .k-state-selected {
@@ -834,10 +834,10 @@ div.k-filebrowser-dropzone em {
   background-color: #ef850d;
 }
 .k-slider-horizontal .k-tick {
-  background-image: url('none/slider-h.gif');
+  background-image: url('BlueOpal/slider-h.gif');
 }
 .k-slider-vertical .k-tick {
-  background-image: url('none/slider-v.gif');
+  background-image: url('BlueOpal/slider-v.gif');
 }
 /* Tooltip */
 .k-widget.k-tooltip {
@@ -972,7 +972,7 @@ div.k-filebrowser-dropzone em {
 .k-filebrowser .k-tile .k-file,
 .k-filebrowser .k-tile .k-i-folder,
 .k-filebrowser .k-tile .k-i-file {
-  background-image: url('none/imagebrowser.png');
+  background-image: url('BlueOpal/imagebrowser.png');
   background-size: auto auto;
 }
 /* TreeMap */
@@ -1175,7 +1175,7 @@ div.k-filebrowser-dropzone em {
 .k-i-kpi-hold,
 .k-i-kpi-increase,
 .k-i-kpi-open {
-  background-image: url('none/sprite_kpi.png');
+  background-image: url('BlueOpal/sprite_kpi.png');
 }
 /* Border radius */
 .k-block,
@@ -1824,7 +1824,7 @@ textarea.k-textbox,
   .k-mobile-list .k-check:checked,
   .k-mobile-list .k-edit-field [type=checkbox]:checked,
   .k-mobile-list .k-edit-field [type=radio]:checked {
-    background-image: url('none/sprite_2x.png');
+    background-image: url('BlueOpal/sprite_2x.png');
     background-size: 340px 336px;
   }
   .k-dropdown-wrap .k-input,
@@ -1838,7 +1838,7 @@ textarea.k-textbox,
   .k-i-kpi-hold,
   .k-i-kpi-increase,
   .k-i-kpi-open {
-    background-image: url('none/sprite_kpi_2x.png');
+    background-image: url('BlueOpal/sprite_kpi_2x.png');
     background-size: 96px 16px;
   }
 }
@@ -2084,11 +2084,11 @@ textarea.k-textbox,
 }
 /* Map */
 .k-map .k-marker {
-  background-image: url("none/markers.png");
+  background-image: url("BlueOpal/markers.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.2), only screen and (min-device-pixel-ratio: 1.2) {
   .k-map .k-marker {
-    background-image: url("none/markers_2x.png");
+    background-image: url("BlueOpal/markers_2x.png");
   }
 }
 .k-map .k-attribution {
