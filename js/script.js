@@ -35,7 +35,7 @@ $(document).ready(function() {
 
   // A global variable on opend tabs
   var tabsOpened = ['aa', 'ab', 'ca'];
-  var mdTabsOpend = ['aaa', 'bbb'];
+  var mdTabsOpend = ['aaa'];
 
   var tabSwitch = function(tabName, tabs){
     // console.log(tabName);
@@ -209,18 +209,24 @@ $(document).ready(function() {
         template: "<button class='pic-button' client-id='btn_edit'>編輯</button>",
         width:70,
         attributes: {
-          "class": "pic-text-center"
+          "class": "align-center"
         },
       },
       {
         field: "group_id",
         title: "群組代號",
-        width:230
+        width:230,
+        attributes: {
+          "class": "align-center"
+        }
       },
       {
         field: "group_name",
         title: "群組名稱",
-        width:230
+        width: 230,
+        attributes: {
+          "class": "align-center"
+        }
       },
       {
         field:"count",
@@ -233,22 +239,34 @@ $(document).ready(function() {
       {
         field: "create_date",
         title: "建立日期",
-        width:170
+        width:170,
+        attributes: {
+          "class": "align-center"
+        }
       },
       {
         field: "create_id",
         title: "建立人員",
-        width:170
+        width:170,
+        attributes: {
+          "class": "align-center"
+        }
       },
       {
         field: "upd_date",
         title: "異動日期",
-        width:170
+        width:170,
+        attributes: {
+          "class": "align-center"
+        }
       },
       {
         field: "upd_id",
         title: "異動人員",
-        width:170
+        width:170,
+        attributes: {
+          "class": "align-center"
+        }
       }
     ]
   });
@@ -506,8 +524,8 @@ $(document).ready(function() {
 
 		//查詢區帶入上方值
 		var row = $(Target).closest("tr");
-        var grid = $(".pic-grid").data("kendoGrid");
-        var dataItem = grid.dataItem(row);
+    var grid = row.closest(".pic-grid").data("kendoGrid");
+    var dataItem = grid.dataItem(row);
 		$("#foo").val(dataItem.group_id);
 		$("#foe").val(dataItem.group_name);
 	}
@@ -601,25 +619,36 @@ $(document).ready(function() {
     },
     columns: [
       {
-        template: "<input id='' class='k-checkbox' type='checkbox'><label class='k-checkbox-label' for=''></label>"
+        selectable: true,
+        width: 40
       },
       {
-        template: "<button class='pic-button' client-id='btn_edit'>編輯</button>"
+        template: "<button class='pic-button edit' >編輯</button>",
+        width: 70,
+        attributes: {
+          "class": "align-center"
+        }
       },
       {
         field: "group_id",
         title: "活動代號",
+        width: 100,
         attributes: {
         	"class": "align-right"
         }
       },
       {
         field: "group_name",
-        title: "活動名稱"
+        title: "活動名稱",
+        width: 230,
+        attributes: {
+        	"class": "align-center"
+        }
       },
       {
         field: "number",
         title: "作業簡號",
+        width: 100,
         attributes: {
         	"class": "align-right"
         }
@@ -627,6 +656,7 @@ $(document).ready(function() {
       {
         field: "quantity",
         title: "數量",
+        width: 80,
         attributes: {
         	"class": "align-right"
         }
@@ -634,6 +664,7 @@ $(document).ready(function() {
       {
         field: "price",
         title: "金額",
+        width: 80,
         attributes: {
         	"class": "align-right"
         }
@@ -641,10 +672,47 @@ $(document).ready(function() {
       {
         field: "sale",
         title: "廠商折扣",
+        width: 80,
         attributes: {
         	"class": "align-right"
         }
       }
     ]
   });
+
+  var editDetail = function(event){
+    var currentTarget = $(event.currentTarget);
+    var currentRow = currentTarget.closest('tr');
+    var grid = currentRow.closest(".pic-grid");
+    var dataGrid = grid.data("kendoGrid");
+    var dataItem = dataGrid.dataItem(currentRow);
+
+    var id = dataItem.group_id;
+    var name = dataItem.group_name;
+    console.log(id);
+    // open a new detail tab
+    mdTabsOpend.push(id);
+
+    var masterContents = grid.closest('.pic-tab-contents');
+    var wrapper = masterContents.closest('.pic-tab-content');
+    var masterTabs = wrapper.children('.pic-tabs');
+
+    masterTabs.children('.pic-tab--selected').removeClass('pic-tab--selected');
+    masterContents.children('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
+
+    masterTabs.append(
+      '<div class="pic-tab pic-tab--selected" name="' + id + '">'
+      + '<div class="pic-tab__inner">'
+      + name
+      + '<span class="pic-icon-stack">'
+      + '<i class="fa fa-circle"></i>'
+      + '<i class="fa fa-remove"></i>'
+      + '</span>'
+      + '</div>'
+      + '</div>'
+    );
+    masterContents.append();
+  };
+
+  $(".pic-button.edit").on('click', editDetail);
 });

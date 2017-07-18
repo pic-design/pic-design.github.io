@@ -68,6 +68,10 @@ body {
   text-align: right;
 }
 
+.align-center {
+  text-align: center;
+}
+
 .pic-header {
   background-color: #fac388;
   min-height: 40px;
