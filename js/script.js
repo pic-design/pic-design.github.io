@@ -125,7 +125,7 @@ $(document).ready(function() {
   ];
 
   $(".pic-grid").kendoGrid({
-        dataSource: gridData,
+        dataSource: [],
         height: 550,
         sortable: true,
         pageable: {
@@ -175,13 +175,23 @@ $(document).ready(function() {
       }
     });
 
-    $('body').on('click', '.pic-button--disabled', function(event) {
-      event.preventDefault();
-      console.log("prevent default");
-    })
+    // $('body').on('click', '.pic-button--disabled', function(event) {
+    //   event.preventDefault();
+    //   console.log("prevent default");
+    // })
+
+    var isDisabled = function(el){
+      //console.log(el.hasClass('pic-button--disabled'));
+      if(el.hasClass('pic-button--disabled')) {
+        return true;
+      } else {
+        return false;
+      }
+    };
 
     //查詢事件
   	  $("[client-id='btn_query']").on("click", function(event){
+        event.preventDefault();
   		  var pre_mode = $("[client-id='pageMode']").attr('data-value');
   		  if(pre_mode == 'Add')
   		  {
@@ -208,6 +218,7 @@ $(document).ready(function() {
 
   	  //新增事件
   	  $("[client-id='btn_add']").on("click", function(event){
+        event.preventDefault();
   		  var pre_mode = $("[client-id='pageMode']").attr('data-value');
   		  if(pre_mode == 'Add')
   		  {
@@ -232,15 +243,20 @@ $(document).ready(function() {
 
   	  //刪除事件
   	  $("[client-id='btn_delete']").on("click", function(event){
-  		 $.when(open_confirm('是否確定要刪除?', '確認')).then(function (confirmed) {
-  			if (confirmed) {
-  				open_message('刪除資料成功','提示');
-  			}
-  		});
+        event.preventDefault();
+        //console.log("delete");
+        if( isDisabled($(event.currentTarget)) === false) {
+          $.when(open_confirm('是否確定要刪除?', '確認') ).then( function (confirmed) {
+            if (confirmed) {
+              open_message('刪除資料成功','提示');
+            }
+          })
+    		}
   	  });
 
   	  //確認事件
   	  $("[client-id='btn_confirm']").on("click", function(event){
+        event.preventDefault();
   		var pageMode = $("[client-id='pageMode']").attr('data-value');
   		switch(pageMode)
   		{
@@ -264,6 +280,7 @@ $(document).ready(function() {
 
   	  //取消事件
   	  $("[client-id='btn_cancel']").on("click", function(event){
+        event.preventDefault();
   		var pageMode = $("[client-id='pageMode']").attr('data-value');
   		switch(pageMode)
   		{
