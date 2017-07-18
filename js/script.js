@@ -300,7 +300,7 @@ query_mode();
 			kendo.ui.progress($(".pic-tab-contents"), true);
 			setTimeout(function(){
             kendo.ui.progress($(".pic-tab-contents"), false);
-			window.open('../pic-design.github.io-master/群組資訊.xlsx');
+			window.open('/群組資訊.xlsx');
 			}, 2000);  
 		    
 		});
