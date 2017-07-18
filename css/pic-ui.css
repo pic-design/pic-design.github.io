@@ -99,6 +99,13 @@ body {
   display: none;
 }
 
+.pic-function-id {
+  padding: 0 8px;
+  /* &:before {
+    content: 
+  } */
+}
+
 .pic-content {
   background-color: #fafafa;
   flex: 1 0 0px;
@@ -113,7 +120,7 @@ body {
 }
 
 .pic-button {
-  background-color: transparent;
+  background-color: #fafafa;
   border-radius: 2px;
   border: 1px solid #d1d2d3;
   color: black;
@@ -376,6 +383,10 @@ label.hide {
   border: 0;
 }
 
+.pic-tab-content .pic-panel {
+  padding: 16px 0;
+}
+
 .pic-grid {
   min-height: 50px;
   flex: 1 0 0px;
@@ -392,6 +403,6 @@ label.hide {
   min-height: 90px;
 }
 
-.k-grid-header {
+.k-header, .k-grid-header {
   background-color: #f7e5e5;
 }
