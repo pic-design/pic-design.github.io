@@ -17,3 +17,10 @@
   border-left: 1px solid silver;
 
 }
+.pic-toolbar .pic-button-group.empty {
+  border-left: 0;
+  flex: 1 0 0px;
+}
+.pic-toolbar .pic-button-group.last {
+  border-left: 0;
+}
