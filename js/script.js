@@ -181,4 +181,8 @@ $(document).ready(function() {
       }
     });
 
+    $('body').on('click', '.pic-button--disabled', function(event) {
+      event.preventDefault();
+      console.log("prevent default");
+    })
 });

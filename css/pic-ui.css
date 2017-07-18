@@ -162,8 +162,8 @@ body {
 }
 
 .pic-button--disabled:hover {
-  background-color: currentColor;
-  color: auto;
+  background-color: transparent;
+  color: black;
 }
 
 .text-brand {
