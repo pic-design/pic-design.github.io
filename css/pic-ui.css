@@ -100,19 +100,10 @@ body {
 }
 
 .pic-function-id {
-  padding-right: 8px;
-}
-
-.pic-function-id:before {
-  content: '\f111';
-  font-family: FontAwesome;
-  padding-right: 8px;
-  color: #999a94;
-  font-size: 0.9em;
-}
-
-.k-treeview .k-icon {
-  background-image: none !important;
+  padding: 0 8px;
+  /* &:before {
+    content: 
+  } */
 }
 
 .pic-content {
@@ -159,11 +150,7 @@ body {
   width: 100%;
   text-align: center;
   border-radius: 4px;
-}
-
-.pic-button--lg.pic-button--flat {
-  font-size: 2em;
-  line-height: 1;
+  /* line-height: 2.6; */
 }
 
 .pic-button--brand {
@@ -198,21 +185,6 @@ body {
   margin-bottom: 1px;
 }
 
-.pic-label {
-  background-color: #00a1de;
-  border-radius: 2px;
-  border: 1px solid #00a1de;
-  color: white;
-  display: inline-block;
-  font-size: 12px;
-  line-height: 2;
-  outline: none;
-  padding: 0px 8px;
-  text-decoration: none;
-  font-family: inherit;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0px, rgba(255, 255, 255, 0) 100%);
-}
-
 .pic-form {
   /* padding: 8px 0; */
   /* background-color: #fafafa; */
@@ -222,7 +194,7 @@ body {
   margin-bottom: 8px;
 }
 
-.no-margin .pic-form-group {
+.pic-form-group--no-margin {
   margin-bottom: 0;
 }
 
@@ -256,15 +228,9 @@ body {
   padding: 0 8px;
 }
 
-.pic-form--inline .pic-form-group label, .pic-form--inline .pic-form-group .pic-form-label {
+.pic-form--inline .pic-form-group label {
   padding-right: 4px;
   align-items: center;
-}
-
-.pic-form--inline .pic-form-group .pic-form-icon {
-  align-items: center;
-  font-size: 1.3em;
-  padding: 0 8px;
 }
 
 .pic-form--inline .pic-form-group .pic-button {
@@ -274,17 +240,6 @@ body {
 
 .pic-form--inline .pic-form-control {
   flex: 1 0 auto;
-}
-
-.pic-form-control[readonly] {
-  background-color: #d1d2d3 !important;
-  box-shadow: none !important;
-  border: 1px solid #d1d2d3 !important;
-}
-
-.pic-form-control.not {
-  border-color: #f5364e;
-  background-color: #fff8ed !important;
 }
 
 label.hide {
@@ -413,15 +368,6 @@ label.hide {
 
 .pic-toolbar .pic-button-group:not(:first-child) {
   border-left: 1px solid silver;
-}
-
-.pic-toolbar .pic-button-group.empty {
-  border-left: 0;
-  flex: 1 0 0px;
-}
-
-.pic-toolbar .pic-button-group.last {
-  border-left: 0;
 }
 
 .pic-panel {
