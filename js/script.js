@@ -197,7 +197,7 @@ $(document).ready(function() {
     sortable: true,
     pageable: {
         //refresh: true,
-        pageSize: 20,
+        pageSize: 10,
         //buttonCount: 5
     },
     columns:[
