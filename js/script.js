@@ -125,7 +125,7 @@ $(document).ready(function() {
     if (target.hasClass('fa-remove')) {
       // close tab
       // Get the tab's index number
-      var index = tabsOpened.indexOf(name);
+      var index = tabsArray.indexOf(name);
       // Remove tab and tab-content
       $('.pic-tab-content[name=' + name + ']').remove();
       currentTarget.remove();
@@ -714,6 +714,13 @@ $(document).ready(function() {
         + '</div>'
       );
       $('.pic-template').children('.pic-tab-content').clone().appendTo(masterContents).addClass('pic-tab-content--selected').attr('name', id);
+      var form = masterContents.children('.pic-tab-content--selected').find('.pic-form');
+      form.find('[name=group_id]').val(id);
+      form.find('[name=group_name]').val(name);
+      form.find('[name=number]').val(dataItem.number);
+      form.find('[name=quantity]').val(dataItem.quantity);
+      form.find('[name=price]').val(dataItem.price);
+      form.find('[name=sale]').val(dataItem.sale);
     } else {
       // switch to the tab
       tabSwitch(id, masterTabs);
