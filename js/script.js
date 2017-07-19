@@ -623,11 +623,8 @@ $(document).ready(function() {
         width: 40
       },
       {
-        template: "<button class='pic-button edit' >編輯</button>",
-        width: 70,
-        attributes: {
-          "class": "align-center"
-        }
+        template: "<button class='pic-button edit' >編輯</button><button class='pic-button detail' style='margin-left:4px;' >明細</button>",
+        width: 80,
       },
       {
         field: "group_id",
@@ -641,9 +638,6 @@ $(document).ready(function() {
         field: "group_name",
         title: "活動名稱",
         width: 230,
-        attributes: {
-        	"class": "align-center"
-        }
       },
       {
         field: "number",
@@ -659,7 +653,8 @@ $(document).ready(function() {
         width: 80,
         attributes: {
         	"class": "align-right"
-        }
+        },
+        format: "{0:n}"
       },
       {
         field: "price",
@@ -667,7 +662,8 @@ $(document).ready(function() {
         width: 80,
         attributes: {
         	"class": "align-right"
-        }
+        },
+        format: "{0:n}"
       },
       {
         field: "sale",
@@ -680,7 +676,7 @@ $(document).ready(function() {
     ]
   });
 
-  var editDetail = function(event){
+  var detailTab = function(event){
     var currentTarget = $(event.currentTarget);
     var currentRow = currentTarget.closest('tr');
     var grid = currentRow.closest(".pic-grid");
@@ -721,6 +717,75 @@ $(document).ready(function() {
       form.find('[name=quantity]').val(dataItem.quantity);
       form.find('[name=price]').val(dataItem.price);
       form.find('[name=sale]').val(dataItem.sale);
+      var grid = masterContents.children('.pic-tab-content--selected').find('.pic-grid');
+      grid.kendoGrid({
+        dataSource: mdData,
+        height: 550,
+        sortable: true,
+        pageable: {
+          //refresh: true,
+          pageSize: 20,
+          //buttonCount: 5
+        },
+        columns: [
+          {
+            selectable: true,
+            width: 40
+          },
+          {
+            template: "<button class='pic-button edit' >編輯</button>",
+            width: 60,
+          },
+          {
+            field: "group_id",
+            title: "活動代號",
+            width: 100,
+            attributes: {
+            	"class": "align-right"
+            }
+          },
+          {
+            field: "group_name",
+            title: "活動名稱",
+            width: 230,
+          },
+          {
+            field: "number",
+            title: "作業簡號",
+            width: 100,
+            attributes: {
+            	"class": "align-right"
+            }
+          },
+          {
+            field: "quantity",
+            title: "數量",
+            width: 80,
+            attributes: {
+            	"class": "align-right"
+            },
+            format: "{0:n}"
+          },
+          {
+            field: "price",
+            title: "金額",
+            width: 80,
+            attributes: {
+            	"class": "align-right"
+            },
+            format: "{0:n}"
+          },
+          {
+            field: "sale",
+            title: "廠商折扣",
+            width: 80,
+            attributes: {
+            	"class": "align-right"
+            }
+          }
+        ]
+      });
+
     } else {
       // switch to the tab
       tabSwitch(id, masterTabs);
@@ -728,5 +793,5 @@ $(document).ready(function() {
 
   };
 
-  $(".pic-button.edit").on('click', editDetail);
+  $(".pic-button.detail").on('click', detailTab);
 });
