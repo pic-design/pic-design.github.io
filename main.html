@@ -7,7 +7,7 @@
     <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
     <link rel="stylesheet" href="css/kendo.common.min.css">
     <link rel="stylesheet" href="css/kendo.custom.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/pic-ui.css">
   </head>
   <body>
@@ -182,7 +182,7 @@
                 <div class="pic-button-group empty">
                 </div>
                 <div class="pic-button-group last">
-                  <a href="#" class="pic-label">
+                  <a href="#" class="pic-badge">
                     <span client-id="pageMode" data-value="Init" pre-value="Init">初始</span>
                   </a>
                 </div>
@@ -223,15 +223,20 @@
             <div class="pic-tab-content" name="ab">
               <!-- master-detail -->
               <ul class="pic-tabs">
-                <li class="pic-tab pic-tab--selected" name="aaa">
+                <li class="pic-tab pic-tab--selected" name="master">
                   <div class="pic-tab__inner">
-                    澳盛銀行ibon紅利兌換
+                    Master
+                  </div>
+                </li>
+                <li class="pic-tab" name="detail">
+                  <div class="pic-tab__inner">
+                    明細維護
                   </div>
                 </li>
               </ul>
               <div class="pic-tab-contents">
 
-                <div class="pic-tab-content pic-tab-content--selected" name="aaa">
+                <div class="pic-tab-content pic-tab-content--selected" name="master">
                   <div class="pic-toolbar">
                     <div class="pic-button-group">
                       <a href="#" class="pic-button" client-id="btn_query">
@@ -264,7 +269,7 @@
                     <div class="pic-button-group empty">
                     </div>
                     <div class="pic-button-group last">
-                      <a href="#" class="pic-label">
+                      <a href="#" class="pic-badge">
                         <span client-id="pageMode" data-value="Init" pre-value="Init">初始</span>
                       </a>
                     </div>
@@ -283,7 +288,83 @@
                       </div>
                     </div>
                   </div>
-                  <div class="pic-grid md-grid" id="md-grid"> </div>
+                  <div class="pic-grid md-grid" id="master-grid"> </div>
+                </div>
+                <div class="pic-tab-content" name="detail">
+                  <div class="pic-toolbar">
+                    <div class="pic-button-group">
+                      <a href="#" class="pic-button pic-button--disabled" client-id="btn_query">
+                        <i class="fa fa-search"></i>
+                        <span>查詢</span>
+                      </a>
+                      <a href="#" class="pic-button pic-button--disabled" client-id="btn_add">
+                        <i class="fa fa-plus"></i>
+                        <span>新增</span>
+                      </a>
+                      <a href="#" class="pic-button pic-button--disabled" client-id="btn_delete">
+                        <i class="fa fa-trash"></i>
+                        <span>刪除</span>
+                      </a>
+                      <a href="#" class="pic-button" client-id="btn_print">
+                        <i class="fa fa-print"></i>
+                        <span>列印</span>
+                      </a>
+                    </div>
+                    <div class="pic-button-group">
+                      <a href="#" class="pic-button" client-id="btn_confirm">
+                        <i class="fa fa-check-circle-o"></i>
+                        <span>確認</span>
+                      </a>
+                      <a href="#" class="pic-button" client-id="btn_cancel">
+                        <i class="fa fa-close"></i>
+                        <span>取消</span>
+                      </a>
+                    </div>
+                    <div class="pic-button-group empty">
+                    </div>
+                    <div class="pic-button-group last">
+                      <a href="#" class="pic-badge">
+                        <span client-id="pageMode" data-value="Init" pre-value="Init">初始</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="pic-panel">
+                    <div class="pic-form">
+                      <div class="pic-form--inline">
+                        <div class="pic-form-group">
+                          <label for="">活動代號</label>
+                          <input name="group_id" class="pic-form-control k-textbox" type="text" placeholder="輸入活動代號" required>
+                        </div>
+                        <div class="pic-form-group">
+                          <label for="">活動名稱</label>
+                          <input name="group_name" class="pic-form-control k-textbox" type="text" placeholder="輸入活動名稱" >
+                        </div>
+                      </div>
+                      <div class="pic-form--inline">
+                        <div class="pic-form-group">
+                          <label for="">作業簡號</label>
+                          <input name="number" class="pic-form-control k-textbox" type="text" placeholder="輸入作業簡號">
+                        </div>
+                        <div class="pic-form-group">
+                          <label for="">數量</label>
+                          <input name="quantity" class="pic-form-control k-textbox" type="text" placeholder="輸入數量">
+                        </div>
+                      </div>
+                      <div class="pic-form--inline">
+                        <div class="pic-form-group">
+                          <label for="">金額</label>
+                          <input name="price" class="pic-form-control k-textbox" type="text" placeholder="輸入金額">
+                        </div>
+                        <div class="pic-form-group">
+                          <label for="">廠商折扣</label>
+                          <input name="sale" class="pic-form-control k-textbox" type="text" placeholder="輸入廠商折扣">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pic-grid" id="detail-grid">
+
+                  </div>
                 </div>
               </div>
             </div>
@@ -294,89 +375,12 @@
         </div>
 
       </div>
-      <div class="hidden pic-template">
-        <div class="pic-tab-content" name="">
-          <div class="pic-toolbar">
-            <div class="pic-button-group">
-              <a href="#" class="pic-button pic-button--disabled" client-id="btn_query">
-                <i class="fa fa-search"></i>
-                <span>查詢</span>
-              </a>
-              <a href="#" class="pic-button pic-button--disabled" client-id="btn_add">
-                <i class="fa fa-plus"></i>
-                <span>新增</span>
-              </a>
-              <a href="#" class="pic-button pic-button--disabled" client-id="btn_delete">
-                <i class="fa fa-trash"></i>
-                <span>刪除</span>
-              </a>
-              <a href="#" class="pic-button" client-id="btn_print">
-                <i class="fa fa-print"></i>
-                <span>列印</span>
-              </a>
-            </div>
-            <div class="pic-button-group">
-              <a href="#" class="pic-button" client-id="btn_confirm">
-                <i class="fa fa-check-circle-o"></i>
-                <span>確認</span>
-              </a>
-              <a href="#" class="pic-button" client-id="btn_cancel">
-                <i class="fa fa-close"></i>
-                <span>取消</span>
-              </a>
-            </div>
-            <div class="pic-button-group empty">
-            </div>
-            <div class="pic-button-group last">
-              <a href="#" class="pic-label">
-                <span client-id="pageMode" data-value="Init" pre-value="Init">初始</span>
-              </a>
-            </div>
-          </div>
-          <div class="pic-panel">
-            <div class="pic-form">
-              <div class="pic-form--inline">
-                <div class="pic-form-group">
-                  <label for="">活動代號</label>
-                  <input name="group_id" class="pic-form-control k-textbox" type="text" placeholder="輸入活動代號" required>
-                </div>
-                <div class="pic-form-group">
-                  <label for="">活動名稱</label>
-                  <input name="group_name" class="pic-form-control k-textbox" type="text" placeholder="輸入活動名稱" >
-                </div>
-              </div>
-              <div class="pic-form--inline">
-                <div class="pic-form-group">
-                  <label for="">作業簡號</label>
-                  <input name="number" class="pic-form-control k-textbox" type="text" placeholder="輸入作業簡號">
-                </div>
-                <div class="pic-form-group">
-                  <label for="">數量</label>
-                  <input name="quantity" class="pic-form-control k-textbox" type="text" placeholder="輸入數量">
-                </div>
-              </div>
-              <div class="pic-form--inline">
-                <div class="pic-form-group">
-                  <label for="">金額</label>
-                  <input name="price" class="pic-form-control k-textbox" type="text" placeholder="輸入金額">
-                </div>
-                <div class="pic-form-group">
-                  <label for="">廠商折扣</label>
-                  <input name="sale" class="pic-form-control k-textbox" type="text" placeholder="輸入廠商折扣">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pic-grid">
-
-          </div>
-        </div>
-      </div>
     </div>
 
     <script src="js/jquery.min.js" charset="utf-8"></script>
-    <!-- <script src="js/bootstrap.min.js" charset="utf-8"></script> -->
     <script src="js/kendo.all.min.js" charset="utf-8"></script>
+    <script src="js/datasource.js" charset="utf-8"></script>
+    <script src="js/tab.js" charset="utf-8"></script>
     <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
