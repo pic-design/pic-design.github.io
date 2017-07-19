@@ -74,7 +74,7 @@
 
 .pic-label {
   background-color: #00a1de;
-  border-radius: 2px;
+  border-radius: 20px;
   border: 1px solid #00a1de;
   color: white;
   display: inline-block;
@@ -84,5 +84,6 @@
   padding: 0px 8px;
   text-decoration: none;
   font-family: inherit;
-  background-image: linear-gradient(to bottom, rgba(255,255,255,.45) 0px, rgba(255,255,255,0) 100%);
+  cursor: default;
+  //background-image: linear-gradient(to bottom, rgba(255,255,255,.45) 0px, rgba(255,255,255,0) 100%);
 }
