@@ -197,7 +197,7 @@ $(document).ready(function() {
     sortable: true,
     pageable: {
         //refresh: true,
-        pageSize: 20,
+        pageSize: 10,
         //buttonCount: 5
     },
     columns:[
@@ -471,14 +471,14 @@ $(document).ready(function() {
 
 		//控制項權限
 		//查 確 新 編 取 刪 列
-		//E  E  E  D  D  D  D
+		//E  E  E  D  D  D  E
 		$("[client-id='btn_query']").removeClass("pic-button--disabled");
 		$("[client-id='btn_confirm']").removeClass("pic-button--disabled");
 		$("[client-id='btn_add']").removeClass("pic-button--disabled");
 		$("[client-id='btn_edit']").addClass("pic-button--disabled");
 		$("[client-id='btn_cancel']").addClass("pic-button--disabled");
 		$("[client-id='btn_delete']").addClass("pic-button--disabled");
-		$("[client-id='btn_print']").addClass("pic-button--disabled");
+		$("[client-id='btn_print']").removeClass("pic-button--disabled");
 	}
 
 	//查詢結果模式
@@ -494,14 +494,14 @@ $(document).ready(function() {
 
 		//控制項權限
 		//查 確 新 編 取 刪 列
-		//E  D  E  E  D  E  E
+		//E  D  E  E  D  E  D
 		$("[client-id='btn_query']").removeClass("pic-button--disabled");
 		$("[client-id='btn_confirm']").addClass("pic-button--disabled");
 		$("[client-id='btn_add']").removeClass("pic-button--disabled");
 		$("[client-id='btn_edit']").removeClass("pic-button--disabled");
 		$("[client-id='btn_cancel']").addClass("pic-button--disabled");
 		$("[client-id='btn_delete']").removeClass("pic-button--disabled");
-		$("[client-id='btn_print']").removeClass("pic-button--disabled");
+		$("[client-id='btn_print']").addClass("pic-button--disabled");
 	}
 
 	//編輯模式
