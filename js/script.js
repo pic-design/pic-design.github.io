@@ -363,8 +363,6 @@ $(document).ready(function() {
     }
     var dfd = jQuery.Deferred();
     var result = false;
-    console.log(Title);
-    console.log(Message);
     $("#Confirm").kendoDialog({
       title: Title,
       animation: false,
@@ -405,6 +403,7 @@ $(document).ready(function() {
       title: Title,
       content: Message,
       closable: false,
+      buttonLayout: 'normal',
       actions: [{
         text: "確定",
         action: function (e) {
