@@ -218,7 +218,7 @@ body {
   margin-bottom: 1px;
 }
 
-.pic-label {
+.pic-badge {
   background-color: #00a1de;
   border-radius: 20px;
   border: 1px solid #00a1de;
@@ -397,6 +397,10 @@ body {
 .pic-tab-content--selected {
   display: flex;
   border-color: #ffe0be;
+}
+
+.pic-tab[name=master], .pic-tab[name=detail] {
+  width: 100px;
 }
 
 .pic-toolbar {

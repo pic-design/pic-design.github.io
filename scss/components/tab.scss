@@ -77,3 +77,6 @@
   display: flex;
   border-color: #ffe0be;
 }
+.pic-tab[name=master], .pic-tab[name=detail] {
+  width: 100px;
+}
