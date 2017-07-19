@@ -76,6 +76,14 @@ body {
   display: none !important;
 }
 
+.k-dialog {
+  min-width: 300px;
+}
+
+.k-dialog .k-content {
+  text-align: center;
+}
+
 .pic-header {
   background-color: #fac388;
   min-height: 40px;

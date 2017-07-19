@@ -77,3 +77,10 @@ body {
 .hidden {
   display: none !important;
 }
+
+.k-dialog {
+  min-width: 300px;
+}
+.k-dialog .k-content {
+  text-align: center;
+}
