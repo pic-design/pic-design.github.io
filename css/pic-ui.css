@@ -72,6 +72,10 @@ body {
   text-align: center;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .pic-header {
   background-color: #fac388;
   min-height: 40px;
@@ -293,10 +297,6 @@ body {
 .pic-form-control.not {
   border-color: #f5364e;
   background-color: #fff8ed !important;
-}
-
-label.hide {
-  display: none;
 }
 
 .pic-tabs {

@@ -690,8 +690,6 @@ $(document).ready(function() {
     var id = dataItem.group_id;
     var name = dataItem.group_name;
     console.log(id);
-    // open a new detail tab
-    mdTabsOpend.push(id);
 
     var masterContents = grid.closest('.pic-tab-contents');
     var wrapper = masterContents.closest('.pic-tab-content');
@@ -700,18 +698,27 @@ $(document).ready(function() {
     masterTabs.children('.pic-tab--selected').removeClass('pic-tab--selected');
     masterContents.children('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
 
-    masterTabs.append(
-      '<div class="pic-tab pic-tab--selected" name="' + id + '">'
-      + '<div class="pic-tab__inner">'
-      + name
-      + '<span class="pic-icon-stack">'
-      + '<i class="fa fa-circle"></i>'
-      + '<i class="fa fa-remove"></i>'
-      + '</span>'
-      + '</div>'
-      + '</div>'
-    );
-    masterContents.append();
+    if ($.inArray(id, mdTabsOpend) < 0) {
+      // create a new detail tab
+      mdTabsOpend.push(id);
+
+      masterTabs.append(
+        '<div class="pic-tab pic-tab--selected" name="' + id + '">'
+        + '<div class="pic-tab__inner">'
+        + name
+        + '<span class="pic-icon-stack">'
+        + '<i class="fa fa-circle"></i>'
+        + '<i class="fa fa-remove"></i>'
+        + '</span>'
+        + '</div>'
+        + '</div>'
+      );
+      $('.pic-template').children('.pic-tab-content').clone().appendTo(masterContents).addClass('pic-tab-content--selected').attr('name', id);
+    } else {
+      // switch to the tab
+      tabSwitch(id, masterTabs);
+    }
+
   };
 
   $(".pic-button.edit").on('click', editDetail);
