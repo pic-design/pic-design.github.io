@@ -16,7 +16,7 @@ body {
 .pic-layout {
   display: flex;
   flex-direction: column;
-  font-family: "微軟正黑體", sans-serif;
+  font-family: -apple-system, "微軟正黑體", sans-serif;
   font-size: 12px;
   height: 100%;
   width: 100%;
@@ -80,7 +80,31 @@ body {
 
 .k-dialog {
   min-width: 300px;
+  font-family: -apple-system, "微軟正黑體", sans-serif;
+  .k-content {
+    text-align: center;
+  }
+  .k-dialog-titlebar {
+    padding: 8px;
+    color: white;
+    .k-dialog-title {
+      font-size: 0.9em;
+    }
+  }
+  .k-dialog-buttongroup {
+    &.k-dialog-button-layout-normal {
+      text-align: center;
+    }
+    .k-button {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
 }
-.k-dialog .k-content {
-  text-align: center;
+
+.k-dialog-titlebar {
+  .dialog-danger & {
+    background-color: #F5364E;
+  }
+
 }

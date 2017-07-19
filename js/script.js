@@ -363,13 +363,19 @@ $(document).ready(function() {
     }
     var dfd = jQuery.Deferred();
     var result = false;
-
+    console.log(Title);
+    console.log(Message);
     $("#Confirm").kendoDialog({
       title: Title,
       animation: false,
       content: Message,
+      closable: false,
+      buttonLayout: 'normal',
       open: function (e) {
-          $('#Confirm').parent().find(".k-button-group").find(".k-button.k-primary").addClass("confirm-button");
+          var dialog = $('#Confirm').parent('.k-dialog');
+          dialog.addClass('dialog-danger');
+          dialog.find(".k-button-group").find(".k-button.k-primary").addClass("confirm-button");
+          dialog.find(".k-button-group").find(".k-button").first().addClass('pic-button--danger');
       },
       actions: [{
         text: "確定",
@@ -385,7 +391,7 @@ $(document).ready(function() {
     }).data("kendoDialog").open();
 
     return dfd.promise();
-  }
+  };
 
   //顯示訊息的視窗
   window.open_message = function (Message, Title) {
@@ -398,6 +404,7 @@ $(document).ready(function() {
     $("#ShowMessage").kendoDialog({
       title: Title,
       content: Message,
+      closable: false,
       actions: [{
         text: "確定",
         action: function (e) {
@@ -407,10 +414,10 @@ $(document).ready(function() {
           $("#ShowMessage").data("kendoDialog").close();
             return true;
           },
-          primary: true
-      }]
-    }).data("kendoDialog").open();
-  }
+      primary: true
+    }]
+  }).data("kendoDialog").open();
+};
 
 query_mode();
 });

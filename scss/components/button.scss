@@ -53,6 +53,15 @@
   color: #9f5400;
 }
 
+.pic-button--danger {
+  background-color: #f5364e;
+  color: white;
+}
+.pic-button--danger:hover {
+  background-color: rgba(245, 54, 78, .4);
+
+}
+
 .pic-button--disabled {
   opacity: .4;
   cursor: not-allowed;
