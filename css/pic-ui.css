@@ -92,6 +92,7 @@ body {
 
 .k-dialog .k-dialog-titlebar .k-dialog-title {
   font-size: 0.9em;
+  left: 1.8em;
 }
 
 .k-dialog .k-dialog-buttongroup.k-dialog-button-layout-normal {
@@ -107,12 +108,27 @@ body {
   background-color: #F5364E;
 }
 
+.dialog-danger .k-dialog-titlebar:before {
+  content: '\f071';
+  font-family: FontAwesome;
+}
+
 .dialog-warning .k-dialog-titlebar {
   background-color: #F39A1E;
 }
 
+.dialog-warning .k-dialog-titlebar:before {
+  content: '\f12a';
+  font-family: FontAwesome;
+}
+
 .dialog-success .k-dialog-titlebar {
   background-color: #69BE28;
+}
+
+.dialog-success .k-dialog-titlebar:before {
+  content: '\f00c';
+  font-family: FontAwesome;
 }
 
 .pic-header {

@@ -89,6 +89,7 @@ body {
     color: white;
     .k-dialog-title {
       font-size: 0.9em;
+      left: 1.8em;
     }
   }
   .k-dialog-buttongroup {
@@ -105,11 +106,23 @@ body {
 .k-dialog-titlebar {
   .dialog-danger & {
     background-color: #F5364E;
+    &:before {
+      content:'\f071';
+      font-family: FontAwesome;
+    }
   }
   .dialog-warning & {
     background-color: #F39A1E;
+    &:before {
+      content:'\f12a';
+      font-family: FontAwesome;
+    }
   }
   .dialog-success & {
     background-color: #69BE28;
+    &:before {
+      content:'\f00c';
+      font-family: FontAwesome;
+    }
   }
 }
