@@ -15,18 +15,18 @@ $("[client-id='btn_query']").on("click", function(event){
     if(pre_mode == 'Add') {
       $.when(open_confirm('是否放棄現有的新增?', '確認', 'add')).then(function (confirmed) {
         if (confirmed) {
-          query_mode();
+          query_mode(content);
         }
       })
     }
     else if(pre_mode == 'Edit'){
       $.when(open_confirm('是否放棄儲存現在的資料?', '確認', 'edit')).then(function (confirmed) {
         if (confirmed) {
-          query_mode();
+          query_mode(content);
         }
       })
     } else {
-      query_mode();
+      query_mode(content);
     }
   }
 });
@@ -43,18 +43,18 @@ $("[client-id='btn_add']").on("click", function(event){
     {
       $.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
       if (confirmed) {
-        add_mode();
+        add_mode(content);
       }
     })
     }
     else if(pre_mode == 'Edit'){
       $.when(open_confirm('是否放棄儲存現在的資料?', '確認')).then(function (confirmed) {
       if (confirmed) {
-         add_mode();
+         add_mode(content);
       }
     })
     } else {
-      add_mode();
+      add_mode(content);
     }
   }
 });
@@ -79,7 +79,7 @@ $("[client-id='btn_delete']").on("click", function(event){
 $("[client-id='btn_confirm']").on("click", function(event){
   event.preventDefault();
   var content = $(event.currentTarget).closest('.pic-tab-content');
-
+  var grid = content.find('.pic-grid')[0].id;
   var formEl = content.children('.pic-panel').children('.pic-form');
   var validate = isValidated(formEl);
   var disabled = isDisabled($(event.currentTarget));
@@ -94,17 +94,17 @@ $("[client-id='btn_confirm']").on("click", function(event){
           $(this).val('');
         });
         open_message('新增資料成功','提示', 'add');
-        result_mode();
+        result_mode(content);
         break;
       case "Edit":
         formEl.find('.pic-form-control').each(function(){
           $(this).val('');
         });
         open_message('異動資料成功','提示', 'edit');
-        result_mode();
+        result_mode(content);
         break;
       case "Query":
-        result_mode();
+        result_mode(content);
         break;
     }
   }
@@ -114,6 +114,7 @@ $("[client-id='btn_confirm']").on("click", function(event){
 $("[client-id='btn_cancel']").on("click", function(event){
   event.preventDefault();
   var content = $(event.currentTarget).closest('.pic-tab-content');
+  var grid = content.find('.pic-grid')[0].id;
   var formEl = content.children('.pic-panel').children('.pic-form');
   var pageMode = content.children('.pic-toolbar').find("[client-id=pageMode]").attr('data-value');
   switch(pageMode) {
@@ -122,10 +123,10 @@ $("[client-id='btn_cancel']").on("click", function(event){
         if (confirmed) {
           switch(content.children('.pic-toolbar').find("[client-id=pageMode]").attr('pre-value')) {
             case "Query":
-              query_mode();
+              query_mode(content);
               break;
             case "Result":
-              result_mode();
+              result_mode(content);
               break;
           }
         }
@@ -137,7 +138,7 @@ $("[client-id='btn_cancel']").on("click", function(event){
           formEl.find('.pic-form-control').each(function(){
             $(this).val('');
           });
-          result_mode();
+          result_mode(content);
         }
       });
       break;

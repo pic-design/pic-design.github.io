@@ -96,7 +96,7 @@ $(document).ready(function() {
   });
 
   $('#master-grid').kendoGrid({
-    dataSource: mdData,
+    dataSource: [],
     height: 550,
     sortable: true,
     pageable: {
@@ -264,95 +264,117 @@ $(document).ready(function() {
 
 
   //查詢模式
-  window.query_mode = function () {
+  window.query_mode = function (content) {
     //換至此模式時清空查詢結果區與所有查詢欄位
     $("#foo").val("");
     $("#foe").val("");
-    $("#main-grid").data("kendoGrid").dataSource.data([]);
-    $("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
-    $("[client-id='pageMode']").attr('data-value', 'Query');
-    $("[client-id='pageMode']").text('查詢');
+	var grid = content.find('.pic-grid')[0].id;
+	if(typeof $("#" + grid).data("kendoGrid") != 'undefined')
+	{
+		if(grid == 'master-grid' || grid == 'detail-grid-grid')
+		{
+			$("#" + grid).data("kendoGrid").dataSource.data([]);
+		}
+		else
+		{
+
+			$("#" + grid).data("kendoGrid").dataSource.data([]);
+		
+		}
+	}
+    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('data-value', 'Query');
+    content.find("[client-id='pageMode']").text('查詢');
 
     //控制項權限
     //查 確 新 編 取 刪 列
     //E  E  E  D  D  D  E
-    $("[client-id='btn_query']").removeClass("pic-button--disabled");
-    $("[client-id='btn_confirm']").removeClass("pic-button--disabled");
-    $("[client-id='btn_add']").removeClass("pic-button--disabled");
-    $("[client-id='btn_edit']").addClass("pic-button--disabled");
-    $("[client-id='btn_cancel']").addClass("pic-button--disabled");
-    $("[client-id='btn_delete']").addClass("pic-button--disabled");
-    $("[client-id='btn_print']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_query']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_confirm']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_add']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_edit']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_cancel']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_delete']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_print']").removeClass("pic-button--disabled");
   }
 
   //查詢結果模式
-  window.result_mode = function () {
-    //預設帶入第一筆資料
-    $(".pic-grid").data("kendoGrid").dataSource.data(gridData);
-    $("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
-    $("[client-id='pageMode']").attr('data-value', 'Result');
-    $("[client-id='pageMode']").text('查詢結果');
-    $("[client-id='btn_edit']").on("click", function(event) {
+  window.result_mode = function (content) {
+    var grid = content.find('.pic-grid')[0].id;
+	if(grid == 'master-grid' || grid == 'detail-grid-grid')
+	{
+		$("#" + grid).data("kendoGrid").dataSource.data(mdData);
+	}
+	else
+	{
+		 $("#" + grid).data("kendoGrid").dataSource.data(gridData);
+	}
+   
+    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('data-value', 'Result');
+    content.find("[client-id='pageMode']").text('查詢結果');
+    content.find("[client-id='btn_edit']").on("click", function(event) {
         edit_mode(event.currentTarget);
     });
 
     //控制項權限
     //查 確 新 編 取 刪 列
     //E  D  E  E  D  E  D
-    $("[client-id='btn_query']").removeClass("pic-button--disabled");
-    $("[client-id='btn_confirm']").addClass("pic-button--disabled");
-    $("[client-id='btn_add']").removeClass("pic-button--disabled");
-    $("[client-id='btn_edit']").removeClass("pic-button--disabled");
-    $("[client-id='btn_cancel']").addClass("pic-button--disabled");
-    $("[client-id='btn_delete']").removeClass("pic-button--disabled");
-    $("[client-id='btn_print']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_query']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_confirm']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_add']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_edit']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_cancel']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_delete']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_print']").addClass("pic-button--disabled");
   }
 
   //編輯模式
   window.edit_mode = function (Target) {
+    var row = $(Target).closest("tr");
+    var grid = row.closest(".pic-grid").data("kendoGrid");  
+	var content = row.closest(".pic-grid").parent();
     //換至此模式時清空查詢欄位資料
-    $("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
-    $("[client-id='pageMode']").attr('data-value', 'Edit');
-    $("[client-id='pageMode']").text('編輯');
-
-    //控制項權限
-    //查 確 新 編 取 刪 列
-    //E  E  D  D  E  D  D
-    $("[client-id='btn_query']").removeClass("pic-button--disabled");
-    $("[client-id='btn_confirm']").removeClass("pic-button--disabled");
-    $("[client-id='btn_add']").addClass("pic-button--disabled");
-    $("[client-id='btn_edit']").addClass("pic-button--disabled");
-    $("[client-id='btn_cancel']").removeClass("pic-button--disabled");
-    $("[client-id='btn_delete']").addClass("pic-button--disabled");
-    $("[client-id='btn_print']").addClass("pic-button--disabled");
+    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('data-value', 'Edit');
+    content.find("[client-id='pageMode']").text('編輯');
 
     //查詢區帶入上方值
-    var row = $(Target).closest("tr");
-    var grid = row.closest(".pic-grid").data("kendoGrid");
     var dataItem = grid.dataItem(row);
     $("#foo").val(dataItem.group_id);
     $("#foe").val(dataItem.group_name);
+	
+    //控制項權限
+    //查 確 新 編 取 刪 列
+    //E  E  D  D  E  D  D
+    content.find("[client-id='btn_query']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_confirm']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_add']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_edit']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_cancel']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_delete']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_print']").addClass("pic-button--disabled");
   }
 
   //新增模式
-  window.add_mode = function () {
+  window.add_mode = function (content) {
     //換至此模式時清空查詢欄位資料
     $("#foo").val("");
     $("#foe").val("");
-    $("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
-    $("[client-id='pageMode']").attr('data-value', 'Add');
-    $("[client-id='pageMode']").text('新增');
-
+    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('data-value', 'Add');
+    content.find("[client-id='pageMode']").text('新增');
+    
     //控制項權限
     //查 確 新 編 取 刪 列
     //E  E  E  D  E  D  D
-    $("[client-id='btn_query']").removeClass("pic-button--disabled");
-    $("[client-id='btn_confirm']").removeClass("pic-button--disabled");
-    $("[client-id='btn_add']").removeClass("pic-button--disabled");
-    $("[client-id='btn_edit']").addClass("pic-button--disabled");
-    $("[client-id='btn_cancel']").removeClass("pic-button--disabled");
-    $("[client-id='btn_delete']").addClass("pic-button--disabled");
-    $("[client-id='btn_print']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_query']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_confirm']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_add']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_edit']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_cancel']").removeClass("pic-button--disabled");
+    content.find("[client-id='btn_delete']").addClass("pic-button--disabled");
+    content.find("[client-id='btn_print']").addClass("pic-button--disabled");
   }
 
   //顯示確認的視窗
@@ -447,5 +469,7 @@ $(document).ready(function() {
   }).data("kendoDialog").open();
 };
 
-query_mode();
+query_mode($("#main-grid").parent());
+query_mode($("#master-grid").parent());
+result_mode($('#detail-grid').parent());
 });
