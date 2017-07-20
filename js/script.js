@@ -110,7 +110,7 @@ $(document).ready(function() {
         width: 40
       },
       {
-        template: "<button class='pic-button edit' >編輯</button><button class='pic-button detail' style='margin-left:4px;' >明細</button>",
+        template: "<button class='pic-button edit' client-id='btn_edit'>編輯</button><button class='pic-button detail' style='margin-left:4px;' >明細</button>",
         width: 80,
       },
       {
@@ -178,7 +178,7 @@ $(document).ready(function() {
         width: 40
       },
       {
-        template: "<button class='pic-button edit' >編輯</button>",
+        template: "<button class='pic-button edit' client-id='btn_edit'>編輯</button>",
         width: 60,
       },
       {
@@ -271,7 +271,7 @@ $(document).ready(function() {
 	var grid = content.find('.pic-grid')[0].id;
 	if(typeof $("#" + grid).data("kendoGrid") != 'undefined')
 	{
-		if(grid == 'master-grid' || grid == 'detail-grid-grid')
+		if(grid == 'master-grid' || grid == 'detail-grid')
 		{
 			$("#" + grid).data("kendoGrid").dataSource.data([]);
 		}
@@ -301,7 +301,7 @@ $(document).ready(function() {
   //查詢結果模式
   window.result_mode = function (content) {
     var grid = content.find('.pic-grid')[0].id;
-	if(grid == 'master-grid' || grid == 'detail-grid-grid')
+	if(grid == 'master-grid' || grid == 'detail-grid')
 	{
 		$("#" + grid).data("kendoGrid").dataSource.data(mdData);
 	}
