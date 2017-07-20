@@ -106,5 +106,10 @@ body {
   .dialog-danger & {
     background-color: #F5364E;
   }
-
+  .dialog-warning & {
+    background-color: #F39A1E;
+  }
+  .dialog-success & {
+    background-color: #69BE28;
+  }
 }

@@ -13,14 +13,14 @@ $("[client-id='btn_query']").on("click", function(event){
     var pre_mode = content.children('.pic-toolbar').find("[client-id=pageMode]").attr('data-value');
     //console.log(pre_mode);
     if(pre_mode == 'Add') {
-      $.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
+      $.when(open_confirm('是否放棄現有的新增?', '確認', 'add')).then(function (confirmed) {
         if (confirmed) {
           query_mode();
         }
       })
     }
     else if(pre_mode == 'Edit'){
-      $.when(open_confirm('是否放棄儲存現在的資料?', '確認')).then(function (confirmed) {
+      $.when(open_confirm('是否放棄儲存現在的資料?', '確認', 'edit')).then(function (confirmed) {
         if (confirmed) {
           query_mode();
         }
@@ -66,9 +66,10 @@ $("[client-id='btn_delete']").on("click", function(event){
   var disabled = isDisabled($(event.currentTarget));
 
   if (disabled === false) {
-    $.when(open_confirm('是否確定要刪除?', '確認')).then(function (confirmed) {
+    $.when(open_confirm('是否確定要刪除?', '確認', 'delete')).then(function (confirmed) {
       if (confirmed) {
-        open_message('刪除資料成功','提示');
+        console.log();
+        open_message('刪除資料成功', '提示', 'success');
       }
     })
   }
@@ -92,14 +93,14 @@ $("[client-id='btn_confirm']").on("click", function(event){
         formEl.find('.pic-form-control').each(function(){
           $(this).val('');
         });
-        open_message('新增資料成功','提示');
+        open_message('新增資料成功','提示', 'add');
         result_mode();
         break;
       case "Edit":
         formEl.find('.pic-form-control').each(function(){
           $(this).val('');
         });
-        open_message('異動資料成功','提示');
+        open_message('異動資料成功','提示', 'edit');
         result_mode();
         break;
       case "Query":
@@ -117,7 +118,7 @@ $("[client-id='btn_cancel']").on("click", function(event){
   var pageMode = content.children('.pic-toolbar').find("[client-id=pageMode]").attr('data-value');
   switch(pageMode) {
     case "Add":
-      $.when(open_confirm('是否放棄現有的新增?', '確認')).then(function (confirmed) {
+      $.when(open_confirm('是否放棄現有的新增?', '確認', 'add')).then(function (confirmed) {
         if (confirmed) {
           switch(content.children('.pic-toolbar').find("[client-id=pageMode]").attr('pre-value')) {
             case "Query":
@@ -131,7 +132,7 @@ $("[client-id='btn_cancel']").on("click", function(event){
       });
       break;
     case "Edit":
-      $.when(open_confirm('是否放棄儲存現在的資料?', '確認')).then(function (confirmed) {
+      $.when(open_confirm('是否放棄儲存現在的資料?', '確認', 'edit')).then(function (confirmed) {
         if (confirmed) {
           formEl.find('.pic-form-control').each(function(){
             $(this).val('');

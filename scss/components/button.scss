@@ -59,7 +59,20 @@
 }
 .pic-button--danger:hover {
   background-color: rgba(245, 54, 78, .4);
-
+}
+.pic-button--warning {
+  background-color: #F39A1E;
+  color: white;
+}
+.pic-button--warning:hover {
+  background-color: rgba(243, 154, 30, 0.4);
+}
+.pic-button--success {
+  background-color: #69BE28;
+  color: white;
+}
+.pic-button--warning:hover {
+  background-color: rgba(105, 190, 40, 0.4);
 }
 
 .pic-button--disabled {

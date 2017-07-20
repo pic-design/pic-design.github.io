@@ -356,7 +356,7 @@ $(document).ready(function() {
   }
 
   //顯示確認的視窗
-  window.open_confirm = function (Message, Title) {
+  window.open_confirm = function (Message, Title, type) {
     if (document.getElementById("Confirm") == null) {
     $("<div id='Confirm'></div>")
       .appendTo("body");
@@ -370,10 +370,20 @@ $(document).ready(function() {
       closable: false,
       buttonLayout: 'normal',
       open: function (e) {
-          var dialog = $('#Confirm').parent('.k-dialog');
-          dialog.addClass('dialog-danger');
-          dialog.find(".k-button-group").find(".k-button.k-primary").addClass("confirm-button");
-          dialog.find(".k-button-group").find(".k-button").first().addClass('pic-button--danger');
+        var dialog = $('#Confirm').parent('.k-dialog');
+        var dialogType = '';
+        var buttonType = '';
+
+        if (type === 'delete') {
+            type = 'dialog-danger';
+            buttonType = 'pic-button--danger';
+        } else if ( type === 'add' || type === 'edit') {
+          type = 'dialog-warning';
+          buttonType = 'pic-button--warning';
+        }
+        dialog.addClass(type);
+        dialog.find(".k-button-group").find(".k-button.k-primary").addClass("confirm-button").removeClass('k-primary');
+        dialog.find(".k-button-group").find(".k-button").first().addClass(buttonType);
       },
       actions: [{
         text: "確定",
@@ -392,11 +402,11 @@ $(document).ready(function() {
   };
 
   //顯示訊息的視窗
-  window.open_message = function (Message, Title) {
+  window.open_message = function (Message, Title, type) {
     if (document.getElementById("ShowMessage") == null) {
-        $("<div id='ShowMessage'></div>").appendTo("body");
+      $("<div id='ShowMessage'></div>").appendTo("body");
     } else {
-        $("#ShowMessage").data("kendoDialog").close();
+      $("#ShowMessage").data("kendoDialog").close();
     }
 
     $("#ShowMessage").kendoDialog({
@@ -404,6 +414,25 @@ $(document).ready(function() {
       content: Message,
       closable: false,
       buttonLayout: 'normal',
+      open: function (e){
+        var dialog = $('#ShowMessage').parent('.k-dialog');
+        var dialogType = '';
+        var buttonType = '';
+
+        if (type === 'delete') {
+            type = 'dialog-danger';
+            buttonType = 'pic-button--danger';
+        } else if ( type === 'add' || type === 'edit') {
+          type = 'dialog-warning';
+          buttonType = 'pic-button--warning';
+        } else if (type === 'success') {
+          type = 'dialog-success';
+          buttonType = 'pic-button--success';
+        }
+        dialog.addClass(type);
+        dialog.find(".k-button-group").find(".k-button").first().addClass(buttonType);
+
+      },
       actions: [{
         text: "確定",
         action: function (e) {
