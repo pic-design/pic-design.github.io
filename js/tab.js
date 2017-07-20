@@ -148,7 +148,7 @@ $(document).ready(function(){
   });
 
   $("#master-grid").on('click', '.detail', function(event){
-    
+
     var currentTarget = $(event.currentTarget);
     var currentRow = currentTarget.closest('tr');
     var grid = currentRow.closest(".pic-grid");
@@ -165,6 +165,11 @@ $(document).ready(function(){
     masterTabs.children('.pic-tab--selected').removeClass('pic-tab--selected');
     masterContents.children('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
 
+    if (masterTabs.children('.hidden').length > 0) {
+      masterTabs.children('.hidden').removeClass('hidden');
+      masterContents.children('.hidden').removeClass('hidden');
+    }
+
     var form = masterContents.children('.pic-tab-content[name=detail]').find('.pic-form');
     form.find('[name=group_id]').val(id);
     form.find('[name=group_name]').val(name);
@@ -172,6 +177,7 @@ $(document).ready(function(){
     form.find('[name=quantity]').val(dataItem.quantity);
     form.find('[name=price]').val(dataItem.price);
     form.find('[name=sale]').val(dataItem.sale);
+
 
     tabSwitch('detail', masterTabs);
   });
