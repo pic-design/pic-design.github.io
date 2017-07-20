@@ -180,6 +180,7 @@ $(document).ready(function(){
 
 
     tabSwitch('detail', masterTabs);
+	result_mode($('#detail-grid').parent());
   });
 
 });
