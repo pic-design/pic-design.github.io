@@ -282,7 +282,7 @@ $(document).ready(function() {
 		
 		}
 	}
-    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
     content.find("[client-id='pageMode']").attr('data-value', 'Query');
     content.find("[client-id='pageMode']").text('查詢');
 
@@ -311,7 +311,7 @@ $(document).ready(function() {
 		 $("#" + grid).data("kendoGrid").dataSource.data(gridData);
 	}
    
-    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
     content.find("[client-id='pageMode']").attr('data-value', 'Result');
     content.find("[client-id='pageMode']").text('查詢結果');
     content.find("[client-id='btn_edit']").on("click", function(event) {
@@ -338,7 +338,7 @@ $(document).ready(function() {
     var grid = row.closest(".pic-grid").data("kendoGrid");  
 	var content = row.closest(".pic-grid").parent();
     //換至此模式時清空查詢欄位資料
-    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
     content.find("[client-id='pageMode']").attr('data-value', 'Edit');
     content.find("[client-id='pageMode']").text('編輯');
 
@@ -366,7 +366,7 @@ $(document).ready(function() {
     //換至此模式時清空查詢欄位資料
     $("#foo").val("");
     $("#foe").val("");
-    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
     content.find("[client-id='pageMode']").attr('data-value', 'Add');
     content.find("[client-id='pageMode']").text('新增');
     
@@ -380,6 +380,7 @@ $(document).ready(function() {
     content.find("[client-id='btn_cancel']").removeClass("pic-button--disabled");
     content.find("[client-id='btn_delete']").addClass("pic-button--disabled");
     content.find("[client-id='btn_print']").addClass("pic-button--disabled");
+	content.find("[client-id='btn_detail']").addClass("pic-button--disabled");
 	$("li[name='detail']").attr('disabled','disabled');
   }
 
