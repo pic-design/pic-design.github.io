@@ -296,6 +296,7 @@ $(document).ready(function() {
     content.find("[client-id='btn_cancel']").addClass("pic-button--disabled");
     content.find("[client-id='btn_delete']").addClass("pic-button--disabled");
     content.find("[client-id='btn_print']").removeClass("pic-button--disabled");
+	$("li[name='detail']").attr('disabled','disabled');
   }
 
   //查詢結果模式
@@ -314,7 +315,7 @@ $(document).ready(function() {
     content.find("[client-id='pageMode']").attr('data-value', 'Result');
     content.find("[client-id='pageMode']").text('查詢結果');
     content.find("[client-id='btn_edit']").on("click", function(event) {
-        edit_mode(event.currentTarget);
+    edit_mode(event.currentTarget);
     });
 
     //控制項權限
@@ -327,6 +328,7 @@ $(document).ready(function() {
     content.find("[client-id='btn_cancel']").addClass("pic-button--disabled");
     content.find("[client-id='btn_delete']").removeClass("pic-button--disabled");
     content.find("[client-id='btn_print']").addClass("pic-button--disabled");
+	$("li[name='detail']").attr('disabled','disabled');
   }
 
   //編輯模式
@@ -354,6 +356,7 @@ $(document).ready(function() {
     content.find("[client-id='btn_cancel']").removeClass("pic-button--disabled");
     content.find("[client-id='btn_delete']").addClass("pic-button--disabled");
     content.find("[client-id='btn_print']").addClass("pic-button--disabled");
+	$("li[name='detail']").attr('disabled','disabled');
   }
 
   //新增模式
@@ -375,6 +378,7 @@ $(document).ready(function() {
     content.find("[client-id='btn_cancel']").removeClass("pic-button--disabled");
     content.find("[client-id='btn_delete']").addClass("pic-button--disabled");
     content.find("[client-id='btn_print']").addClass("pic-button--disabled");
+	$("li[name='detail']").attr('disabled','disabled');
   }
 
   //顯示確認的視窗
