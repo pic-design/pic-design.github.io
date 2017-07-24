@@ -110,7 +110,7 @@ $(document).ready(function() {
         width: 40
       },
       {
-        template: "<button class='pic-button edit' client-id='btn_edit'>編輯</button><button class='pic-button detail' style='margin-left:4px;' >明細</button>",
+        template: "<button class='pic-button edit' client-id='btn_edit'>編輯</button><button class='pic-button detail' style='margin-left:4px;'   client-id='btn_detail'>明細</button>",
         width: 80,
       },
       {
@@ -328,6 +328,7 @@ $(document).ready(function() {
     content.find("[client-id='btn_cancel']").addClass("pic-button--disabled");
     content.find("[client-id='btn_delete']").removeClass("pic-button--disabled");
     content.find("[client-id='btn_print']").addClass("pic-button--disabled");
+	content.find("[client-id='btn_detail']").removeClass("pic-button--disabled");
 	$("li[name='detail']").attr('disabled','disabled');
   }
 
@@ -356,6 +357,7 @@ $(document).ready(function() {
     content.find("[client-id='btn_cancel']").removeClass("pic-button--disabled");
     content.find("[client-id='btn_delete']").addClass("pic-button--disabled");
     content.find("[client-id='btn_print']").addClass("pic-button--disabled");
+	content.find("[client-id='btn_detail']").addClass("pic-button--disabled");
 	$("li[name='detail']").attr('disabled','disabled');
   }
 
