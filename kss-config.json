@@ -9,6 +9,10 @@
     "../css/font-awesome.min.css",
     "../css/pic-ui.css"
   ],
-  "js": [],
+  "js": [
+    "../js/jquery.min.js",
+    "../js/kendo.all.min.js",
+    "../js/styleguide.js"
+  ],
   "title": "PIC Style Guide"
 }

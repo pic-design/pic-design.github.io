@@ -28,7 +28,7 @@ $(document).ready(function() {
       //console.log(event);
       var number = event.dataItem.number;
       var sender = event.sender;
-      var display = sender.element.closest('.pic-form-group').find('.combobox-display');
+      var display = sender.element.closest('.pic-form-element').find('.pic-input[readonly]');
       display.val(number);
     }
   });
@@ -279,7 +279,7 @@ $(document).ready(function() {
 		{
 
 			$("#" + grid).data("kendoGrid").dataSource.data([]);
-		
+
 		}
 	}
     content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
@@ -310,7 +310,7 @@ $(document).ready(function() {
 	{
 		 $("#" + grid).data("kendoGrid").dataSource.data(gridData);
 	}
-   
+
     content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
     content.find("[client-id='pageMode']").attr('data-value', 'Result');
     content.find("[client-id='pageMode']").text('查詢結果');
@@ -335,7 +335,7 @@ $(document).ready(function() {
   //編輯模式
   window.edit_mode = function (Target) {
     var row = $(Target).closest("tr");
-    var grid = row.closest(".pic-grid").data("kendoGrid");  
+    var grid = row.closest(".pic-grid").data("kendoGrid");
 	var content = row.closest(".pic-grid").parent();
     //換至此模式時清空查詢欄位資料
     content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
@@ -346,7 +346,7 @@ $(document).ready(function() {
     var dataItem = grid.dataItem(row);
     $("#foo").val(dataItem.group_id);
     $("#foe").val(dataItem.group_name);
-	
+
     //控制項權限
     //查 確 新 編 取 刪 列
     //E  E  D  D  E  D  D
@@ -369,7 +369,7 @@ $(document).ready(function() {
     content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
     content.find("[client-id='pageMode']").attr('data-value', 'Add');
     content.find("[client-id='pageMode']").text('新增');
-    
+
     //控制項權限
     //查 確 新 編 取 刪 列
     //E  E  E  D  E  D  D
