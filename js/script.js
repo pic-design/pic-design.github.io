@@ -110,7 +110,7 @@ $(document).ready(function() {
         width: 40
       },
       {
-        template: "<button class='pic-button edit' client-id='btn_edit'>編輯</button><button class='pic-button detail' style='margin-left:4px;'   client-id='btn_detail'>明細</button>",
+        template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button><button class='pic-btn detail' style='margin-left:4px;'   client-id='btn_detail'>明細</button>",
         width: 80,
       },
       {
@@ -178,7 +178,7 @@ $(document).ready(function() {
         width: 40
       },
       {
-        template: "<button class='pic-button edit' client-id='btn_edit'>編輯</button>",
+        template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button>",
         width: 60,
       },
       {
