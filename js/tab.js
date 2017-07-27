@@ -4,13 +4,13 @@ var mdTabsOpend = ['master', 'detail'];
 
 var tabSwitch = function(tabName, tabs){
   // console.log(tabName);
-  // console.log(tabs.siblings('.pic-tab-contents'));
+  // console.log(tabs.siblings('.pic-workareas'));
   // Set selected tab and tab-content to normal
   tabs.find('.pic-tab--selected').removeClass('pic-tab--selected');
-  tabs.siblings('.pic-tab-contents').children('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
+  tabs.siblings('.pic-workareas').children('.pic-workarea--selected').removeClass('pic-workarea--selected');
   // Show selcted tab and tab-content
   tabs.find('[name='+ tabName +']').addClass('pic-tab--selected');
-  tabs.siblings('.pic-tab-contents').children('[name='+ tabName +']').addClass('pic-tab-content--selected');
+  tabs.siblings('.pic-workareas').children('[name='+ tabName +']').addClass('pic-workarea--selected');
 };
 
 var newTab = function(tabName, fName){
@@ -20,21 +20,21 @@ var newTab = function(tabName, fName){
 
   // set selcted tab to un-selected
   tabs.children('.pic-tab--selected').removeClass('pic-tab--selected');
-  tabs.siblings('.pic-tab-contents').children('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
+  tabs.siblings('.pic-workareas').children('.pic-workarea--selected').removeClass('pic-workarea--selected');
   // add new tab
   tabs.append(
     '<div class="pic-tab pic-tab--selected" name="' + tabName + '">'
     + '<div class="pic-tab__inner">'
     + fName
-    + '<span class="pic-icon-stack">'
-    + '<i class="fa fa-circle"></i>'
-    + '<i class="fa fa-remove"></i>'
+    + '<span class="pic-stack">'
+    + '<i class="pic-stack__big fa fa-circle"></i>'
+    + '<i class="pic-stack__normal fa fa-remove"></i>'
     + '</span>'
     + '</div>'
     + '</div>'
   );
-  tabs.siblings('.pic-tab-contents').append(
-    '<div class="pic-tab-content pic-tab-content--selected" name="' + tabName + '">'
+  tabs.siblings('.pic-workareas').append(
+    '<div class="pic-workarea pic-workarea--selected" name="' + tabName + '">'
     + fName
     + '</div>'
   );
@@ -70,14 +70,14 @@ var detailTab = function(event){
   var id = dataItem.group_id;
   var name = dataItem.group_name;
 
-  var masterContents = grid.closest('.pic-tab-contents');
-  var wrapper = masterContents.closest('.pic-tab-content');
+  var masterContents = grid.closest('.pic-workareas');
+  var wrapper = masterContents.closest('.pic-workarea');
   var masterTabs = wrapper.children('.pic-tabs');
 
   masterTabs.children('.pic-tab--selected').removeClass('pic-tab--selected');
-  masterContents.children('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
+  masterContents.children('.pic-workarea--selected').removeClass('pic-workarea--selected');
 
-  var form = masterContents.children('.pic-tab-content[name=detail]').find('.pic-form');
+  var form = masterContents.children('.pic-workarea[name=detail]').find('.pic-form');
   form.find('[name=group_id]').val(id);
   form.find('[name=group_name]').val(name);
   form.find('[name=number]').val(dataItem.number);
@@ -103,14 +103,14 @@ $(document).ready(function(){
   // Tab function
   $(".pic-tabs").on("click", '.pic-tab', function(event){
     var tabs = $(event.delegateTarget);
-    var tabContents = tabs.siblings('.pic-tab-contents');
+    var tabContents = tabs.siblings('.pic-workareas');
     var currentTarget = $(event.currentTarget);
     var target = $(event.target);
     var name = currentTarget.attr('name');
 	if(!(currentTarget.attr('disabled') == 'disabled'))
 	{
 		var tabsArray = '';
-		if (currentTarget.parents('.pic-tab-content').length > 0) {
+		if (currentTarget.parents('.pic-workarea').length > 0) {
 		// master-detail tab
 		tabsArray = mdTabsOpend;
 		} else {
@@ -123,7 +123,7 @@ $(document).ready(function(){
 		// Get the tab's index number
 		var index = tabsArray.indexOf(name);
 		// Remove tab and tab-content
-		$('.pic-tab-content[name=' + name + ']').remove();
+		$('.pic-workarea[name=' + name + ']').remove();
 		currentTarget.remove();
 
 		// Remove tab name from array
@@ -138,8 +138,8 @@ $(document).ready(function(){
 			}
 			var newSelectedTabName = tabsArray[newSelectedTabIndex];
 			$('.pic-tab[name=' + newSelectedTabName + ']').addClass('pic-tab--selected');
-			$('.pic-tab-content[name=' + newSelectedTabName + ']').addClass('pic-tab-content--selected');
-		}	
+			$('.pic-workarea[name=' + newSelectedTabName + ']').addClass('pic-workarea--selected');
+		}
 
 		} else if (!currentTarget.hasClass('pic-tab--selected')) {
 		// If the clicked tab is not selected
@@ -159,27 +159,27 @@ $(document).ready(function(){
     var id = dataItem.group_id;
     var name = dataItem.group_name;
 
-    var masterContents = grid.closest('.pic-tab-contents');
-    var wrapper = masterContents.closest('.pic-tab-content');
+    var masterContents = grid.closest('.pic-workareas');
+    var wrapper = masterContents.closest('.pic-workarea');
     var masterTabs = wrapper.children('.pic-tabs');
 
     masterTabs.children('.pic-tab--selected').removeClass('pic-tab--selected');
-    masterContents.children('.pic-tab-content--selected').removeClass('pic-tab-content--selected');
+    masterContents.children('.pic-workarea--selected').removeClass('pic-workarea--selected');
 
     if (masterTabs.children('.hidden').length > 0) {
       masterTabs.children('.hidden').removeClass('hidden');
       masterContents.children('.hidden').removeClass('hidden');
     }
 
-    var form = masterContents.children('.pic-tab-content[name=detail]').find('.pic-form');
+    var form = masterContents.children('.pic-workarea[name=detail]').find('.pic-form');
     form.find('[name=group_id]').val(id);
     form.find('[name=group_name]').val(name);
     form.find('[name=number]').val(dataItem.number);
     form.find('[name=quantity]').val(dataItem.quantity);
     form.find('[name=price]').val(dataItem.price);
     form.find('[name=sale]').val(dataItem.sale);
-	
-	
+
+
     tabSwitch('detail', masterTabs);
 	result_mode($('#detail-grid').parent());
 	$("li[name='detail']").attr('disabled', null);

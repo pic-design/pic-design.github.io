@@ -718,6 +718,10 @@ button {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
 }
 
+.pic-input[disabled] {
+  cursor: not-allowed;
+}
+
 .pic-input--lg {
   font-size: 1.5em;
   border-radius: 4px;
