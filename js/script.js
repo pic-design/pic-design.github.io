@@ -110,7 +110,7 @@ $(document).ready(function() {
         width: 40
       },
       {
-        template: "<button class='pic-button edit' client-id='btn_edit'>編輯</button><button class='pic-button detail' style='margin-left:4px;' >明細</button>",
+        template: "<button class='pic-button edit' client-id='btn_edit'>編輯</button><button class='pic-button detail' style='margin-left:4px;'   client-id='btn_detail'>明細</button>",
         width: 80,
       },
       {
@@ -282,7 +282,7 @@ $(document).ready(function() {
 		
 		}
 	}
-    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
     content.find("[client-id='pageMode']").attr('data-value', 'Query');
     content.find("[client-id='pageMode']").text('查詢');
 
@@ -296,6 +296,7 @@ $(document).ready(function() {
     content.find("[client-id='btn_cancel']").addClass("pic-button--disabled");
     content.find("[client-id='btn_delete']").addClass("pic-button--disabled");
     content.find("[client-id='btn_print']").removeClass("pic-button--disabled");
+	$("li[name='detail']").attr('disabled','disabled');
   }
 
   //查詢結果模式
@@ -310,11 +311,11 @@ $(document).ready(function() {
 		 $("#" + grid).data("kendoGrid").dataSource.data(gridData);
 	}
    
-    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
     content.find("[client-id='pageMode']").attr('data-value', 'Result');
     content.find("[client-id='pageMode']").text('查詢結果');
     content.find("[client-id='btn_edit']").on("click", function(event) {
-        edit_mode(event.currentTarget);
+    edit_mode(event.currentTarget);
     });
 
     //控制項權限
@@ -327,6 +328,8 @@ $(document).ready(function() {
     content.find("[client-id='btn_cancel']").addClass("pic-button--disabled");
     content.find("[client-id='btn_delete']").removeClass("pic-button--disabled");
     content.find("[client-id='btn_print']").addClass("pic-button--disabled");
+	content.find("[client-id='btn_detail']").removeClass("pic-button--disabled");
+	$("li[name='detail']").attr('disabled','disabled');
   }
 
   //編輯模式
@@ -335,7 +338,7 @@ $(document).ready(function() {
     var grid = row.closest(".pic-grid").data("kendoGrid");  
 	var content = row.closest(".pic-grid").parent();
     //換至此模式時清空查詢欄位資料
-    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
     content.find("[client-id='pageMode']").attr('data-value', 'Edit');
     content.find("[client-id='pageMode']").text('編輯');
 
@@ -354,6 +357,8 @@ $(document).ready(function() {
     content.find("[client-id='btn_cancel']").removeClass("pic-button--disabled");
     content.find("[client-id='btn_delete']").addClass("pic-button--disabled");
     content.find("[client-id='btn_print']").addClass("pic-button--disabled");
+	content.find("[client-id='btn_detail']").addClass("pic-button--disabled");
+	$("li[name='detail']").attr('disabled','disabled');
   }
 
   //新增模式
@@ -361,7 +366,7 @@ $(document).ready(function() {
     //換至此模式時清空查詢欄位資料
     $("#foo").val("");
     $("#foe").val("");
-    content.find("[client-id='pageMode']").attr('pre-value', $("[client-id='pageMode']").attr('data-value'));
+    content.find("[client-id='pageMode']").attr('pre-value', content.find("[client-id='pageMode']").attr('data-value'));
     content.find("[client-id='pageMode']").attr('data-value', 'Add');
     content.find("[client-id='pageMode']").text('新增');
     
@@ -375,6 +380,8 @@ $(document).ready(function() {
     content.find("[client-id='btn_cancel']").removeClass("pic-button--disabled");
     content.find("[client-id='btn_delete']").addClass("pic-button--disabled");
     content.find("[client-id='btn_print']").addClass("pic-button--disabled");
+	content.find("[client-id='btn_detail']").addClass("pic-button--disabled");
+	$("li[name='detail']").attr('disabled','disabled');
   }
 
   //顯示確認的視窗

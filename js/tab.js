@@ -107,44 +107,45 @@ $(document).ready(function(){
     var currentTarget = $(event.currentTarget);
     var target = $(event.target);
     var name = currentTarget.attr('name');
-    // console.log(event);
+	if(!(currentTarget.attr('disabled') == 'disabled'))
+	{
+		var tabsArray = '';
+		if (currentTarget.parents('.pic-tab-content').length > 0) {
+		// master-detail tab
+		tabsArray = mdTabsOpend;
+		} else {
+		tabsArray = tabsOpened;
+		}
 
-    var tabsArray = '';
-    if (currentTarget.parents('.pic-tab-content').length > 0) {
-      // master-detail tab
-      tabsArray = mdTabsOpend;
-    } else {
-      tabsArray = tabsOpened;
-    }
 
+		if (target.hasClass('fa-remove')) {
+		// close tab
+		// Get the tab's index number
+		var index = tabsArray.indexOf(name);
+		// Remove tab and tab-content
+		$('.pic-tab-content[name=' + name + ']').remove();
+		currentTarget.remove();
 
-    if (target.hasClass('fa-remove')) {
-      // close tab
-      // Get the tab's index number
-      var index = tabsArray.indexOf(name);
-      // Remove tab and tab-content
-      $('.pic-tab-content[name=' + name + ']').remove();
-      currentTarget.remove();
+		// Remove tab name from array
+		tabsArray.splice(index, 1);
+		// console.log(tabsArray);
+		// if no tab is selected, select the tab in front of the closed one
+		var tabSelected = tabs.children('.pic-tab--selected');
+		if(tabSelected.length === 0) {
+			var newSelectedTabIndex = index - 1;
+			if (newSelectedTabIndex < 0) {
+			newSelectedTabIndex = 0;
+			}
+			var newSelectedTabName = tabsArray[newSelectedTabIndex];
+			$('.pic-tab[name=' + newSelectedTabName + ']').addClass('pic-tab--selected');
+			$('.pic-tab-content[name=' + newSelectedTabName + ']').addClass('pic-tab-content--selected');
+		}	
 
-      // Remove tab name from array
-      tabsArray.splice(index, 1);
-      // console.log(tabsArray);
-      // if no tab is selected, select the tab in front of the closed one
-      var tabSelected = tabs.children('.pic-tab--selected');
-      if(tabSelected.length === 0) {
-        var newSelectedTabIndex = index - 1;
-        if (newSelectedTabIndex < 0) {
-          newSelectedTabIndex = 0;
-        }
-        var newSelectedTabName = tabsArray[newSelectedTabIndex];
-        $('.pic-tab[name=' + newSelectedTabName + ']').addClass('pic-tab--selected');
-        $('.pic-tab-content[name=' + newSelectedTabName + ']').addClass('pic-tab-content--selected');
-      }
-
-    } else if (!currentTarget.hasClass('pic-tab--selected')) {
-      // If the clicked tab is not selected
-      tabSwitch(name, tabs);
-    }
+		} else if (!currentTarget.hasClass('pic-tab--selected')) {
+		// If the clicked tab is not selected
+		tabSwitch(name, tabs);
+		}
+	}
   });
 
   $("#master-grid").on('click', '.detail', function(event){
@@ -177,10 +178,11 @@ $(document).ready(function(){
     form.find('[name=quantity]').val(dataItem.quantity);
     form.find('[name=price]').val(dataItem.price);
     form.find('[name=sale]').val(dataItem.sale);
-
-
+	
+	
     tabSwitch('detail', masterTabs);
 	result_mode($('#detail-grid').parent());
+	$("li[name='detail']").attr('disabled', null);
   });
 
 });
