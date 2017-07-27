@@ -3,8 +3,8 @@ $(document).ready(function(){
 //查詢事件
 $("[client-id='btn_query']").on("click", function(event){
   event.preventDefault();
-  var content = $(event.currentTarget).closest('.pic-tab-content');
-  // var formEl = $(event.currentTarget).closest('.pic-tab-content').find('.pic-form');
+  var content = $(event.currentTarget).closest('.pic-workarea');
+  // var formEl = $(event.currentTarget).closest('.pic-workarea').find('.pic-form');
   // var validate = isValidated(formEl);
   var disabled = isDisabled($(event.currentTarget));
 
@@ -34,7 +34,7 @@ $("[client-id='btn_query']").on("click", function(event){
 //新增事件
 $("[client-id='btn_add']").on("click", function(event){
   event.preventDefault();
-  var content = $(event.currentTarget).closest('.pic-tab-content');
+  var content = $(event.currentTarget).closest('.pic-workarea');
   var disabled = isDisabled($(event.currentTarget));
 
   if (disabled === false) {
@@ -78,7 +78,7 @@ $("[client-id='btn_delete']").on("click", function(event){
 //確認事件
 $("[client-id='btn_confirm']").on("click", function(event){
   event.preventDefault();
-  var content = $(event.currentTarget).closest('.pic-tab-content');
+  var content = $(event.currentTarget).closest('.pic-workarea');
   var grid = content.find('.pic-grid')[0].id;
   var formEl = content.children('.pic-panel').children('.pic-form');
   var validate = isValidated(formEl);
@@ -90,14 +90,14 @@ $("[client-id='btn_confirm']").on("click", function(event){
     switch(pageMode) {
       case "Add":
         //console.log(formEl.find('.pic-form-control'));
-        formEl.find('.pic-form-control').each(function(){
+        formEl.find('.pic-input').each(function(){
           $(this).val('');
         });
         open_message('新增資料成功','提示', 'add');
         result_mode(content);
         break;
       case "Edit":
-        formEl.find('.pic-form-control').each(function(){
+        formEl.find('.pic-input').each(function(){
           $(this).val('');
         });
         open_message('異動資料成功','提示', 'edit');
@@ -113,7 +113,7 @@ $("[client-id='btn_confirm']").on("click", function(event){
 //取消事件
 $("[client-id='btn_cancel']").on("click", function(event){
   event.preventDefault();
-  var content = $(event.currentTarget).closest('.pic-tab-content');
+  var content = $(event.currentTarget).closest('.pic-workarea');
   var grid = content.find('.pic-grid')[0].id;
   var formEl = content.children('.pic-panel').children('.pic-form');
   var pageMode = content.children('.pic-toolbar').find("[client-id=pageMode]").attr('data-value');
@@ -135,7 +135,7 @@ $("[client-id='btn_cancel']").on("click", function(event){
     case "Edit":
       $.when(open_confirm('是否放棄儲存現在的資料?', '確認', 'edit')).then(function (confirmed) {
         if (confirmed) {
-          formEl.find('.pic-form-control').each(function(){
+          formEl.find('.pic-input').each(function(){
             $(this).val('');
           });
           result_mode(content);
@@ -148,13 +148,13 @@ $("[client-id='btn_cancel']").on("click", function(event){
 //報表事件
 $("[client-id='btn_print']").on("click", function(event){
   event.preventDefault();
-  var content = $(event.currentTarget).closest('.pic-tab-content');
+  var content = $(event.currentTarget).closest('.pic-workarea');
   var disabled = isDisabled($(event.currentTarget));
 
   if (disabled === false) {
-    kendo.ui.progress(content.parent(".pic-tab-contents"), true);
+    kendo.ui.progress(content.parent(".pic-workareas"), true);
     setTimeout(function(){
-          kendo.ui.progress(content.parent(".pic-tab-contents"), false);
+          kendo.ui.progress(content.parent(".pic-workareas"), false);
          window.open('/群組資訊.xlsx');
     }, 2000);
   }
