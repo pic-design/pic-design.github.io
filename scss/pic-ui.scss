@@ -1,14 +1,25 @@
+// base
+@import "normalize/import-now";
+@import "variables";
+@import "base";
+
 // layout
-@import "layout/layout.scss";
-@import "layout/header.scss";
-@import "layout/sidebar.scss";
-@import "layout/content.scss";
+@import "layout";
 
 // components
-@import "components/button.scss";
-@import "components/form.scss";
-@import "components/tab.scss";
-@import "components/toolbar.scss";
-@import "components/button-group.scss";
-@import "components/panel.scss";
-@import "components/grid.scss";
+@import "header";
+@import "sidebar";
+@import "content";
+@import "button";
+@import "form";
+@import "tab";
+@import "toolbar";
+@import "button-group";
+@import "panel";
+@import "grid";
+
+// other
+@import "other";
+
+// shame
+@import "shame";

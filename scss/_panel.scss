@@ -1,0 +1,10 @@
+.pic-panel {
+  background-color: $light-grey;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.pic-workarea > .pic-panel {
+  border-left: 1px solid $grey;
+  border-right: 1px solid $grey;
+}

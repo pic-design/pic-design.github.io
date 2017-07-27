@@ -1,0 +1,52 @@
+<div>複雜表單</div>
+<div class="" style="border: 1px solid black; margin-bottom: 20px;">
+  <div class="pic-form">
+    <div class="pic-form__inline">
+      <div class="pic-form-element">
+        <label class="pic-form-element__label pic-form-element__label--required" for="foo">群組代號</label>
+        <div class="pic-form-element__control">
+          <input id="foo" class="pic-input" type="text" placeholder="輸入群組代號" required>
+        </div>
+      </div>
+      <div class="pic-form-element">
+        <label class="pic-form-element__label pic-form-element__label--required" for="foe">群組名稱</label>
+        <div class="pic-form-element__control">
+          <input id="foe" class="pic-input" type="text" placeholder="輸入群組名稱" required>
+        </div>
+      </div>
+    </div>
+    <div class="pic-form__inline">
+      <div class="pic-form-element">
+        <span class="pic-form-element__label">建立日期</span>
+        <div class="pic-form-element__control">
+          <input class="datepicker pic-widget" name="start" value="" placeholder="請選擇起始日期">
+          <span class="pic-form-element__label">~</span>
+          <input class="datepicker pic-widget" name="end" value="" placeholder="請選擇結束日期">
+        </div>
+      </div>
+      <div class="pic-form-element">
+        <span class="pic-form-element__label">建立人員</span>
+        <div class="pic-form-element__control">
+          <input class="pic-widget" id="person" placeholder="選擇建立人員">
+          <span class="pic-form-element__label">員工編號</span>
+          <input class="pic-input pic-widget" type="text" name="" value="" readonly>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div>簡單表單</div>
+<div class="" style="border: 1px solid black; width: 300px;">
+  <div class="pic-form">
+    <div class="pic-form__inline">
+      <div class="pic-form-element">
+        <div class="pic-form-element__control">
+          <input class="pic-input pic-input--right-btn" placeholder="輸入功能號碼">
+          <button class="pic-btn">查詢</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

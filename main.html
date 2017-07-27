@@ -14,39 +14,43 @@
     <div class="pic-layout">
       <header class="pic-header">
         <div class="pic-header__section">
-          <a href="#" id="ham" class="pic-button pic-button--flat pic-button--lg">
+          <a href="#" id="ham" class="pic-btn pic-btn--flat pic-btn--lg">
             <i class="fa fa-bars"></i>
           </a>
         </div>
         <div class="pic-header__section">
           <div>
-            <button class="pic-button pic-button--flat pic-button--color-inherit">
+            <button class="pic-btn pic-btn--flat text-primary-dark">
               <i class="fa fa-user-o"></i>
               <span>使用者</span>
             </button>
             <span>您好！歡迎登入康是美系統。</span>
           </div>
-          <a class="pic-button pic-button--flat pic-button--color-inherit" href="index.html">
+          <a class="pic-btn pic-btn--flat text-primary-dark" href="index.html">
             <i class="fa fa-power-off"></i>
             登出
           </a>
         </div>
       </header>
-      <div class="pic-container">
+      <div class="pic-body">
         <div class="pic-sidebar">
-          <div class="pic-panel pic-panel--borderless">
-            <div class="pic-form pic-form--inline no-margin">
-              <div class="pic-form-group">
-                <input class="pic-form-control k-textbox" placeholder="輸入功能號碼">
-                <button class="pic-button">查詢</button>
+          <div class="pic-panel">
+            <div class="pic-form">
+              <div class="pic-form__inline">
+                <div class="pic-form-element">
+                  <div class="pic-form-element__control">
+                    <input class="pic-input pic-input--right-btn" placeholder="輸入功能號碼">
+                    <button class="pic-btn">查詢</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="list-control pic-panel pic-panel--borderless" style="text-align:center; background-color: transparent;">
-            <div class="pic-button open">
+          <div class="list-control pic-panel text-center" style="background-color: transparent;">
+            <div class="pic-btn open">
               展開選單
             </div>
-            <div class="pic-button fold">
+            <div class="pic-btn fold">
               收合選單
             </div>
           </div>
@@ -123,94 +127,101 @@
             <li class="pic-tab pic-tab--selected" name="aa">
               <div class="pic-tab__inner">
                 現金日報
-                <span class="pic-icon-stack">
-                  <i class="fa fa-circle"></i>
-                  <i class="fa fa-remove"></i>
+                <span class="pic-stack">
+                  <i class="pic-stack__big fa fa-circle"></i>
+                  <i class="pic-stack__normal fa fa-remove"></i>
                 </span>
               </div>
             </li>
             <li class="pic-tab" name="ab">
               <div class="pic-tab__inner">
                 Master-Detail
-                <span class="pic-icon-stack">
-                  <i class="fa fa-circle"></i>
-                  <i class="fa fa-remove"></i>
+                <span class="pic-stack">
+                  <i class="pic-stack__big fa fa-circle"></i>
+                  <i class="pic-stack__normal fa fa-remove"></i>
                 </span>
               </div>
             </li>
             <li class="pic-tab" name="ca">
               <div class="pic-tab__inner">
                 角色維護
-                <span class="pic-icon-stack">
-                  <i class="fa fa-circle"></i>
-                  <i class="fa fa-remove"></i>
+                <span class="pic-stack">
+                  <i class="pic-stack__big fa fa-circle"></i>
+                  <i class="pic-stack__normal fa fa-remove"></i>
                 </span>
               </div>
             </li>
           </ul>
-          <div class="pic-tab-contents">
-            <div class="pic-tab-content pic-tab-content--selected" name="aa">
+          <div class="pic-workareas">
+            <div class="pic-workarea pic-workarea--selected" name="aa">
               <div class="pic-toolbar">
-                <div class="pic-button-group">
-                  <a href="#" class="pic-button" client-id="btn_query">
+                <div class="pic-btn-group">
+                  <a href="#" class="pic-btn" client-id="btn_query">
                     <i class="fa fa-search"></i>
                     <span>查詢</span>
                   </a>
-                  <a href="#" class="pic-button" client-id="btn_add">
+                  <a href="#" class="pic-btn" client-id="btn_add">
                     <i class="fa fa-plus"></i>
                     <span>新增</span>
                   </a>
-                  <a href="#" class="pic-button pic-button--disabled" client-id="btn_delete">
+                  <a href="#" class="pic-btn disabled" client-id="btn_delete">
                     <i class="fa fa-trash"></i>
                     <span>刪除</span>
                   </a>
-                  <a href="#" class="pic-button" client-id="btn_print">
+                  <a href="#" class="pic-btn" client-id="btn_print">
                     <i class="fa fa-print"></i>
                     <span>列印</span>
                   </a>
                 </div>
-                <div class="pic-button-group">
-                  <a href="#" class="pic-button" client-id="btn_confirm">
+                <div class="pic-toolbar__divider"></div>
+                <div class="pic-btn-group">
+                  <a href="#" class="pic-btn" client-id="btn_confirm">
                     <i class="fa fa-check-circle-o"></i>
                     <span>確認</span>
                   </a>
-                  <a href="#" class="pic-button" client-id="btn_cancel">
+                  <a href="#" class="pic-btn" client-id="btn_cancel">
                     <i class="fa fa-close"></i>
                     <span>取消</span>
                   </a>
                 </div>
-                <div class="pic-button-group empty">
+                <div class="pic-toolbar__filler">
                 </div>
-                <div class="pic-button-group last">
-                  <a href="#" class="pic-badge">
-                    <span client-id="pageMode" data-value="Init" pre-value="Init">初始</span>
-                  </a>
+                <div class="pic-btn-group">
+                  <span class="pic-badge" client-id="pageMode" data-value="Init" pre-value="Init">初始</span>
                 </div>
               </div>
               <div class="pic-panel">
                 <div class="pic-form">
-                  <div class="pic-form--inline">
-                    <div class="pic-form-group">
-                      <label for="foo">群組代號</label>
-                      <input id="foo" class="pic-form-control k-textbox" type="text" placeholder="輸入群組代號" required>
+                  <div class="pic-form__inline">
+                    <div class="pic-form-element">
+                      <label class="pic-form-element__label pic-form-element__label--required" for="foo">群組代號</label>
+                      <div class="pic-form-element__control">
+                        <input id="foo" class="pic-input" type="text" placeholder="輸入群組代號" required>
+                      </div>
                     </div>
-                    <div class="pic-form-group">
-                      <label for="foe">群組名稱</label>
-                      <input id="foe" class="pic-form-control k-textbox" type="text" placeholder="輸入群組名稱" required>
+                    <div class="pic-form-element">
+                      <label class="pic-form-element__label pic-form-element__label--required" for="foe">群組名稱</label>
+                      <div class="pic-form-element__control">
+                        <input id="foe" class="pic-input" type="text" placeholder="輸入群組名稱" required>
+                      </div>
                     </div>
                   </div>
-                  <div class="pic-form--inline no-margin">
-                    <div class="pic-form-group">
-                      <span class="pic-form-label">建立日期</span>
-                      <input class="datepicker pic-form-control" name="start" value="" placeholder="請選擇起始日期">
-                      <span class="pic-form-icon">~</span>
-                      <input class="datepicker pic-form-control" name="end" value="" placeholder="請選擇結束日期">
+                  <div class="pic-form__inline">
+                    <div class="pic-form-element">
+                      <span class="pic-form-element__label">建立日期</span>
+                      <div class="pic-form-element__control">
+                        <input class="datepicker pic-widget" name="start" value="" placeholder="請選擇起始日期">
+                        <span class="pic-form-element__label">~</span>
+                        <input class="datepicker pic-widget" name="end" value="" placeholder="請選擇結束日期">
+                      </div>
                     </div>
-                    <div class="pic-form-group">
-                      <span class="pic-form-label">建立人員</span>
-                      <input class="pic-form-control" id="person" placeholder="選擇建立人員">
-                      <span class="pic-form-label">員工編號</span>
-                      <input class="combobox-display pic-form-control k-textbox" type="text" name="" value="" readonly>
+                    <div class="pic-form-element">
+                      <span class="pic-form-element__label">建立人員</span>
+                      <div class="pic-form-element__control">
+                        <input class="pic-widget" id="person" placeholder="選擇建立人員">
+                        <span class="pic-form-element__label">員工編號</span>
+                        <input class="pic-input pic-widget" type="text" name="" value="" readonly>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -220,55 +231,55 @@
               </div>
 
             </div>
-            <div class="pic-tab-content" name="ab">
+            <div class="pic-workarea" name="ab">
               <!-- master-detail -->
               <ul class="pic-tabs">
-                <li class="pic-tab pic-tab--selected" name="master">
+                <li class="pic-tab pic-tab--fixed-width pic-tab--selected" name="master">
                   <div class="pic-tab__inner">
                     Master
                   </div>
                 </li>
-                <li class="pic-tab hidden" name="detail">
+                <li class="pic-tab pic-tab--fixed-width hidden" name="detail">
                   <div class="pic-tab__inner">
                     明細維護
                   </div>
                 </li>
               </ul>
-              <div class="pic-tab-contents">
+              <div class="pic-workareas">
 
-                <div class="pic-tab-content pic-tab-content--selected" name="master">
+                <div class="pic-workarea pic-workarea--selected" name="master">
                   <div class="pic-toolbar">
-                    <div class="pic-button-group">
-                      <a href="#" class="pic-button" client-id="btn_query">
+                    <div class="pic-btn-group">
+                      <a href="#" class="pic-btn" client-id="btn_query">
                         <i class="fa fa-search"></i>
                         <span>查詢</span>
                       </a>
-                      <a href="#" class="pic-button" client-id="btn_add">
+                      <a href="#" class="pic-btn" client-id="btn_add">
                         <i class="fa fa-plus"></i>
                         <span>新增</span>
                       </a>
-                      <a href="#" class="pic-button pic-button--disabled" client-id="btn_delete">
+                      <a href="#" class="pic-btn pic-btn--disabled" client-id="btn_delete">
                         <i class="fa fa-trash"></i>
                         <span>刪除</span>
                       </a>
-                      <a href="#" class="pic-button" client-id="btn_print">
+                      <a href="#" class="pic-btn" client-id="btn_print">
                         <i class="fa fa-print"></i>
                         <span>列印</span>
                       </a>
                     </div>
-                    <div class="pic-button-group">
-                      <a href="#" class="pic-button" client-id="btn_confirm">
+                    <div class="pic-toolbar__divider"></div>
+                    <div class="pic-btn-group">
+                      <a href="#" class="pic-btn" client-id="btn_confirm">
                         <i class="fa fa-check-circle-o"></i>
                         <span>確認</span>
                       </a>
-                      <a href="#" class="pic-button" client-id="btn_cancel">
+                      <a href="#" class="pic-btn" client-id="btn_cancel">
                         <i class="fa fa-close"></i>
                         <span>取消</span>
                       </a>
                     </div>
-                    <div class="pic-button-group empty">
-                    </div>
-                    <div class="pic-button-group last">
+                    <div class="pic-toolbar__filler"></div>
+                    <div class="pic-btn-group">
                       <a href="#" class="pic-badge">
                         <span client-id="pageMode" data-value="Init" pre-value="Init">初始</span>
                       </a>
@@ -290,47 +301,45 @@
                   </div>
                   <div class="pic-grid md-grid" id="master-grid"> </div>
                 </div>
-                <div class="pic-tab-content hidden" name="detail">
+                <div class="pic-workarea hidden" name="detail">
                   <div class="pic-toolbar">
-                    <div class="pic-button-group">
-                      <a href="#" class="pic-button pic-button--disabled" client-id="btn_query">
+                    <div class="pic-btn-group">
+                      <a href="#" class="pic-btn disabled" client-id="btn_query">
                         <i class="fa fa-search"></i>
                         <span>查詢</span>
                       </a>
-                      <a href="#" class="pic-button pic-button--disabled" client-id="btn_add">
+                      <a href="#" class="pic-btn disabled" client-id="btn_add">
                         <i class="fa fa-plus"></i>
                         <span>新增</span>
                       </a>
-                      <a href="#" class="pic-button pic-button--disabled" client-id="btn_delete">
+                      <a href="#" class="pic-btn disabled" client-id="btn_delete">
                         <i class="fa fa-trash"></i>
                         <span>刪除</span>
                       </a>
-                      <a href="#" class="pic-button" client-id="btn_print">
+                      <a href="#" class="pic-btn" client-id="btn_print">
                         <i class="fa fa-print"></i>
                         <span>列印</span>
                       </a>
                     </div>
-                    <div class="pic-button-group">
-                      <a href="#" class="pic-button" client-id="btn_confirm">
+                    <div class="pic-toolbar__divider"></div>
+                    <div class="pic-btn-group">
+                      <a href="#" class="pic-btn" client-id="btn_confirm">
                         <i class="fa fa-check-circle-o"></i>
                         <span>確認</span>
                       </a>
-                      <a href="#" class="pic-button" client-id="btn_cancel">
+                      <a href="#" class="pic-btn" client-id="btn_cancel">
                         <i class="fa fa-close"></i>
                         <span>取消</span>
                       </a>
                     </div>
-                    <div class="pic-button-group empty">
-                    </div>
-                    <div class="pic-button-group last">
-                      <a href="#" class="pic-badge">
-                        <span client-id="pageMode" data-value="Init" pre-value="Init">初始</span>
-                      </a>
+                    <div class="pic-toolbar__filler"></div>
+                    <div class="pic-btn-group">
+                      <span class="pic-badge" client-id="pageMode" data-value="Init" pre-value="Init">初始</span>
                     </div>
                   </div>
                   <div class="pic-panel">
                     <div class="pic-form">
-                      <div class="pic-form--inline">
+                      <div class="pic-form__inline">
                         <div class="pic-form-group">
                           <label for="">活動代號</label>
                           <input name="group_id" class="pic-form-control k-textbox" type="text" placeholder="輸入活動代號" required>
@@ -340,7 +349,7 @@
                           <input name="group_name" class="pic-form-control k-textbox" type="text" placeholder="輸入活動名稱" >
                         </div>
                       </div>
-                      <div class="pic-form--inline">
+                      <div class="pic-form__inline">
                         <div class="pic-form-group">
                           <label for="">作業簡號</label>
                           <input name="number" class="pic-form-control k-textbox" type="text" placeholder="輸入作業簡號">
@@ -350,7 +359,7 @@
                           <input name="quantity" class="pic-form-control k-textbox" type="text" placeholder="輸入數量">
                         </div>
                       </div>
-                      <div class="pic-form--inline no-margin">
+                      <div class="pic-form__inline">
                         <div class="pic-form-group">
                           <label for="">金額</label>
                           <input name="price" class="pic-form-control k-textbox" type="text" placeholder="輸入金額">
@@ -368,7 +377,7 @@
                 </div>
               </div>
             </div>
-            <div class="pic-tab-content" name="ca">
+            <div class="pic-workarea" name="ca">
               tab 3
             </div>
           </div>

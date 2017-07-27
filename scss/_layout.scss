@@ -1,0 +1,52 @@
+// layout
+
+// 在 body 下一層的 div，控制版型的基本屬性
+.pic-layout {
+  display: flex;
+  flex-direction: column;
+  /* font-family: -apple-system, "微軟正黑體", Helvetica, Arial, sans-serif; */
+  /* font-size: 12px; */
+  height: 100%;
+  width: 100%;
+}
+
+.pic-body {
+  flex: 1 0 auto;
+  display: flex;
+}
+
+.pic-layout--login {
+  .pic-body {
+    background-color: $light-grey;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/bg-login.jpg');
+    background-size: cover;
+  }
+  .pic-panel {
+    width: 1024px;
+    height: 768px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent;
+  }
+  .pic-form {
+    min-width: 420px;
+    /* min-height: 430px; */
+    border: 1px solid $white;
+    border-radius: 10px;
+    align-self: flex-end;
+    padding: 40px;
+  }
+}
+
+.login-section {
+  flex: 1 0 auto;
+  min-width: 100px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}

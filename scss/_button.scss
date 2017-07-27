@@ -1,0 +1,96 @@
+// Buttons 按鈕
+//
+// 按鈕按下去後會有即刻的行動。
+//
+// :hover - hover
+// .pic-btn--primary - 以品牌主色為背景的按鈕
+// .pic-btn--success - 成功按鈕，綠色背景
+// .pic-btn--warning - 警告按鈕，黃色背景
+// .pic-btn--danger - 危險按鈕，紅色背景
+// .pic-btn--flat   - 沒有邊框的按鈕
+// .pic-btn--lg - 大型按鈕 (width:100%)
+// .pic-btn--disabled - 不能用的按鈕
+//
+//
+// Markup:
+// <button class="pic-btn {{modifier_class}}" type="button">Button</button>
+//
+// Style guide: 1
+
+.pic-btn {
+  /* background-color: $light-grey; */
+  background-image: $linear-gradient;
+  border-radius: 2px;
+  border: 1px solid $grey;
+  box-sizing: border-box;
+  color: $dark-grey;
+  cursor: pointer;
+  display: inline-block;
+  //font-family: -apple-system, "微軟正黑體", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 2;
+  outline: none;
+  padding: 0px 8px;
+  text-decoration: none;
+  &:hover {
+    /* background-color: rgba( $light-grey, .4 ); */
+    background-color: rgba( $primary, .4 );
+    color: $primary-dark;
+  }
+  &--primary {
+    background-color: $primary;
+    color: $white;
+    &:hover {
+      background-color: rgba( $primary, .4 );
+      color: $primary-dark;
+    }
+  }
+  &--success {
+    background-color: $success;
+    color: $white;
+    &:hover {
+      background-color: rgba( $success, .4 );
+    }
+  }
+  &--warning {
+    background-color: $warning;
+    color: $white;
+    &:hover {
+      background-color: rgba( $warning, .4 );
+    }
+  }
+  &--danger {
+    background-color: $danger;
+    color: $white;
+    &:hover {
+      background-color: rgba( $danger, .4 );
+    }
+  }
+  &--flat {
+    border: 0;
+    background-image: none;
+  }
+
+}
+
+
+.pic-btn--lg {
+  font-size: 1.5em;
+  width: 100%;
+  text-align: center;
+  border-radius: 4px;
+  &.pic-btn-flat {
+    font-size: 2em;
+    line-height: 1;
+  }
+}
+
+.pic-btn.disabled, .pic-btn[disabled] {
+  pointer-events: none;
+  opacity: .4;
+  //cursor: not-allowed;
+  /* &:hover {
+    background-color: transparent;
+    color: $black;
+  } */
+}

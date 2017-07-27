@@ -55,6 +55,7 @@ gulp.task('watch', function () {
 
   gulp.watch(['scss/*.scss', 'scss/*/*.scss'], ['sass', 'styleguide'])
   // gulp.watch(['/js/*.js'], ['js-watch'])
+  gulp.watch(['handelbars/*.hbs'], ['styleguide'])
   gulp.watch(['*.html']).on('change', browserSync.reload)
 })
 

@@ -1,0 +1,18 @@
+.pic-toolbar {
+  display: flex;
+  background-color: #f5f5f5;
+  /* background-color: #d1d1d1; */
+  min-height: 32px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border: 1px solid $grey;
+  box-sizing: border-box;
+  background-image: $linear-gradient;
+  &__divider {
+    border-left: 1px solid $grey;
+    border-right: 1px solid $white;
+  }
+  &__filler {
+    flex: 1 0 0px;
+  }
+}

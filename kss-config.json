@@ -4,9 +4,11 @@
 
   "//": "The css and js paths are URLs relative to the style guide destination.",
   "css": [
+    "../css/kendo.common.min.css",
+    "../css/kendo.custom.css",
+    "../css/font-awesome.min.css",
     "../css/pic-ui.css"
   ],
   "js": [],
-
   "title": "PIC Style Guide"
 }

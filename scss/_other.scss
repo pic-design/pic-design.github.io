@@ -1,0 +1,123 @@
+// other
+
+// helper classes
+.blur-me {
+  filter: blur(5px);
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.pull-right {
+  align-self: flex-end;
+}
+
+.pull-left {
+  align-self: flex-start;
+}
+
+.center-block {
+  align-self: center;
+}
+
+.text-primary {
+  color: $primary;
+}
+.text-primary-light {
+  color: $primary-light;
+}
+.text-primary-dark {
+  color: $primary-dark;
+}
+.text-info {
+  color: $info;
+}
+.text-success {
+  color: $success;
+}
+.text-warning {
+  color: $warning;
+}
+.text-danger {
+  color: $danger;
+}
+.bg-primary {
+  background-color: rgba($primary, .4);
+}
+.bg-info {
+  background-color: rgba($info, .4);
+}
+.bg-success {
+  background-color: rgba($success, .4);
+}
+.bg-warning {
+  background-color: rgba($warning, .4);
+}
+.bg-danger {
+  background-color: rgba($danger, .4);
+}
+
+// creat icon stack
+.pic-stack {
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  display: inline-block;
+  vertical-align: middle;
+  &__big {
+    color: transparent;
+    font-size: 1.5em;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+  &__normal {
+    line-height: 1.5em;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+  &:hover {
+    .pic-stack__big {
+      color: $danger;
+    }
+    .pic-stack__normal {
+      color: $white;
+    }
+  }
+}
+
+
+
+.pic-badge {
+  /* background-color: $grey; */
+  border-radius: 20px;
+  /* border: 1px solid $info; */
+  color: $info;
+  display: inline-block;
+  font-size: 1.2em;
+  line-height: 1.5;
+  outline: none;
+  /* padding: 0px 8px; */
+  /* text-decoration: none; */
+  /* font-family: inherit; */
+  /* cursor: default; */
+}

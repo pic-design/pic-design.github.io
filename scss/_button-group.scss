@@ -1,0 +1,15 @@
+.pic-btn-group {
+  display: flex;
+  padding: 0 8px;
+  align-items: center;
+}
+
+.pic-btn-group .pic-btn:not(:first-child) {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: 0;
+}
+.pic-btn-group .pic-btn:not(:last-child) {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
