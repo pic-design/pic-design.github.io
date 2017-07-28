@@ -714,6 +714,9 @@ button {
 
 .pic-input[disabled] {
   cursor: not-allowed;
+  background-color: #eee !important;
+  box-shadow: none !important;
+  border: 1px solid #D1D2D3 !important;
 }
 
 .pic-input--lg {
@@ -730,9 +733,7 @@ button {
 }
 
 .pic-input[readonly] {
-  background-color: #999A94 !important;
-  box-shadow: none !important;
-  border: 1px solid #D1D2D3 !important;
+  background-color: #eee !important;
 }
 
 .pic-input--right-el {

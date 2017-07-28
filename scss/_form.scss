@@ -55,6 +55,9 @@
   }
   &[disabled] {
     cursor: not-allowed;
+    background-color: #eee !important;
+    box-shadow: none !important;
+    border: 1px solid $grey !important;
   }
   &--lg {
     font-size: 1.5em;
@@ -68,9 +71,7 @@
     background-color: #fff8ed !important;
   }
   &[readonly] {
-    background-color: $medium-grey !important;
-    box-shadow: none !important;
-    border: 1px solid $grey !important;
+    background-color: #eee !important;
   }
   &--right-el {
     margin-right: 4px;
