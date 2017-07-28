@@ -647,7 +647,7 @@ button {
   font-size: 1.5em;
   width: 100%;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .pic-btn--lg.pic-btn-flat {
@@ -744,7 +744,7 @@ button {
 }
 
 .pic-input--right-el ~ * {
-  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .pic-form__inline .pic-form-element {
