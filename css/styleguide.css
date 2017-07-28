@@ -1,0 +1,11 @@
+/* Style fix on styleguide pages */
+
+
+.pic-form > .pic-form-element:first-child,
+.pic-form > .pic-form__inline:first-child .pic-form-element {
+  margin-top: 0;
+}
+
+.pic-form__inline .pic-form-element:first-child {
+  margin-left: 0;
+}

@@ -7,7 +7,8 @@
     "../css/kendo.common.min.css",
     "../css/kendo.custom.css",
     "../css/font-awesome.min.css",
-    "../css/pic-ui.css"
+    "../css/pic-ui.css",
+    "../css/styleguide.css"
   ],
   "js": [
     "../js/jquery.min.js",
