@@ -10,41 +10,51 @@
   </head>
   <body>
     <div class="pic-layout pic-layout--login">
-      <div class="pic-container">
-        <div class="pic-panel pic-panel--borderless">
+      <div class="pic-body">
+        <div class="pic-panel">
           <div class="login-section">
 
           </div>
-          <div class="login-form pic-form">
-            <img src="img/logo.png" alt="康是美" style="margin-bottom: 8px;">
-            <div class="pic-form-group">
+          <div class="pic-form">
+            <img src="img/logo.png" alt="康是美">
+            <div class="pic-form-element">
               <label class="hidden" for="foo">統一編號</label>
-              <input class="pic-form-control pic-form-control--lg k-textbox" type="text" name="foo" placeholder="請輸入營業統一編號">
-            </div>
-            <div class="pic-form-group">
-              <label class="hidden" for="foe">帳號</label>
-              <input class="pic-form-control pic-form-control--lg k-textbox" type="text" name="foe" placeholder="請輸入帳號">
-            </div>
-            <div class="pic-form-group">
-              <label class="hidden" for="password">密碼</label>
-              <input class="pic-form-control pic-form-control--lg k-textbox" type="password" name="password" placeholder="請輸入密碼">
-            </div>
-            <div class="pic-form--inline" >
-              <div class="pic-form-group" style="padding-left:0;">
-                <label class="hidden" for="captcha">驗證碼</label>
-                <input class="pic-form-control pic-form-control--lg k-textbox" type="password" name="captcha" placeholder="請輸入驗證碼">
-              </div>
-              <div class="pic-form-group" style="flex:0 0 auto;padding-right:0;">
-                <img src="img/captcha.jpg" alt="驗證碼" style="height: 48px;">
+              <div class="pic-form-element__control">
+                <input class="pic-input pic-input--lg" type="text" name="foo" placeholder="請輸入營業統一編號">
               </div>
             </div>
-            <div class="pic-form-group">
-              <a class="pic-button pic-button--flat text-brand--light" href="#">忘記密碼</a>
-              <a class="pic-button pic-button--flat text-brand--light" href="#">更新驗證碼</a>
+            <div class="pic-form-element">
+              <label class="hidden pic-form-element__label" for="foe">帳號</label>
+              <div class="pic-form-element__control">
+                <input class="pic-input pic-input--lg" type="text" name="foe" placeholder="請輸入帳號">
+              </div>
             </div>
-            <a class="pic-button pic-button--lg pic-button--brand" href="main.html">
-              登入
-            </a>
+            <div class="pic-form-element">
+              <label class="hidden pic-form-element__label" for="password">密碼</label>
+              <div class="pic-form-element__control">
+                <input class="pic-input pic-input--lg" type="password" name="password" placeholder="請輸入密碼">
+              </div>
+            </div>
+            <div class="pic-form__inline" >
+              <div class="pic-form-element">
+                <label class="hidden pic-form-element__label" for="captcha">驗證碼</label>
+                <div class="pic-form-element__control">
+                  <input class="pic-input pic-input--lg pic-input--right-el" type="password" name="captcha" placeholder="請輸入驗證碼">
+                  <div class="pic-form-element__el">
+                    <img class="" src="img/captcha.jpg" alt="驗證碼">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pic-form-element">
+              <a class="pic-btn pic-btn--flat text-primary-dark" href="#">忘記密碼</a>
+              <a class="pic-btn pic-btn--flat text-primary-dark" href="#">更新驗證碼</a>
+            </div>
+            <div class="pic-form-element">
+              <a class="pic-btn pic-btn--lg pic-btn--primary" href="main.html">
+                登入
+              </a>
+            </div>
           </div>
           <div class="login-section">
             <span>© 2018 President Information CORP. All Rights Reserved.</span>

@@ -105,7 +105,11 @@
   }
 }
 
-
+.pic-img-responsive {
+  display: block;
+  width: auto;
+  height: 100%;
+}
 
 .pic-badge {
   /* background-color: $grey; */

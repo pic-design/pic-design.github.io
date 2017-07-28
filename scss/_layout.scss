@@ -17,7 +17,6 @@
 
 .pic-layout--login {
   .pic-body {
-    background-color: $light-grey;
     justify-content: center;
     align-items: center;
     background-image: url('../img/bg-login.jpg');
@@ -25,7 +24,7 @@
   }
   .pic-panel {
     width: 1024px;
-    height: 768px;
+    max-height: 768px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,19 +33,19 @@
     background-color: transparent;
   }
   .pic-form {
-    min-width: 420px;
+    width: 420px;
     /* min-height: 430px; */
     border: 1px solid $white;
     border-radius: 10px;
     align-self: flex-end;
-    padding: 40px;
+    padding: 45px;
   }
 }
 
 .login-section {
   flex: 1 0 auto;
   min-width: 100px;
-  min-height: 40px;
+  min-height: 100px;
   display: flex;
   align-items: center;
 }
