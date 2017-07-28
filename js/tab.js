@@ -91,7 +91,7 @@ var detailTab = function(event){
 $(document).ready(function(){
 
   // Open a new tab when clicked on a treeview node
-  $('.list-control').on('click', '.pic-button', function(event){
+  $('.list-control').on('click', '.pic-btn', function(event){
     var currentTarget = $(event.currentTarget);
     if (currentTarget.hasClass('open')) {
       $(".pic-nav").data("kendoTreeView").expand(".k-item");
