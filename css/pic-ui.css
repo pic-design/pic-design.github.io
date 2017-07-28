@@ -730,7 +730,7 @@ button {
 }
 
 .pic-input[readonly] {
-  background-color: #D1D2D3 !important;
+  background-color: #999A94 !important;
   box-shadow: none !important;
   border: 1px solid #D1D2D3 !important;
 }
