@@ -669,17 +669,8 @@ button {
   padding: 16px 0;
 }
 
-.pic-form__inline {
-  display: flex;
-}
-
 .pic-form-element {
   box-sizing: border-box;
-}
-
-.pic-form > .pic-form-element:not(:first-child),
-.pic-form > .pic-form__inline:not(:first-child) .pic-form-element {
-  margin-top: 8px;
 }
 
 .pic-form-element__label {
@@ -738,6 +729,15 @@ button {
 
 .pic-input--right-el {
   margin-right: 4px;
+}
+
+.pic-form__inline {
+  display: flex;
+}
+
+.pic-form > .pic-form-element:not(:first-child),
+.pic-form > .pic-form__inline:not(:first-child) .pic-form-element {
+  margin-top: 8px;
 }
 
 .pic-form__inline .pic-form-element {

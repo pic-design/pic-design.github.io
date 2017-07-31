@@ -54,7 +54,7 @@ var onSelect = function(event){
     } else {
       // function is opened
       // switch to the function tab
-      tabSwitch(name);
+      tabSwitch(name, $('.pic-tabs').first());
     }
   }
 };

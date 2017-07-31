@@ -1,11 +1,16 @@
 // Forms 表單
 //
+// 表單由 .pic-form
+//
+// Style guide: 2
+
+//
 // 表單
 //
 // Markup: ../handelbars/form.hbs
 //
 //
-// Style guide: 2
+// Style guide: 2.1
 
 .pic-form {
   box-sizing: border-box;
@@ -13,17 +18,10 @@
   .pic-workarea & {
     padding: 16px 0;
   }
-  &__inline {
-    display: flex;
-  }
-  &-element {
-    box-sizing: border-box;
-  }
 }
 
-.pic-form > .pic-form-element:not(:first-child),
-.pic-form > .pic-form__inline:not(:first-child) .pic-form-element {
-  margin-top: 8px;
+.pic-form-element {
+  box-sizing: border-box;
 }
 
 .pic-form-element__label {
@@ -78,6 +76,23 @@
   }
 }
 
+// 水平表單
+//
+// text
+//
+// Markup: <div>form</div>
+//
+// Style guide: 2.2
+
+.pic-form__inline {
+  display: flex;
+}
+
+.pic-form > .pic-form-element:not(:first-child),
+.pic-form > .pic-form__inline:not(:first-child) .pic-form-element {
+  margin-top: 8px;
+}
+
 .pic-form__inline .pic-form-element {
   flex: 1 0 0px;
   display: flex;
@@ -93,6 +108,7 @@
   text-align: right;
   padding-right: 8px;
 }
+
 .pic-form__inline .pic-form-element__control {
   flex: 5 0 0px;
   display: flex;
