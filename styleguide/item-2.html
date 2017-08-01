@@ -43,13 +43,13 @@
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-2.html#kssref-2-1">
                   <span class="kss-nav__ref ">2.1</span
-                  ><span class="kss-nav__name">基礎表單</span>
+                  ><span class="kss-nav__name">Inline form 行內排列</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-2.html#kssref-2-2">
                   <span class="kss-nav__ref ">2.2</span
-                  ><span class="kss-nav__name">水平表單</span>
+                  ><span class="kss-nav__name">Vertical form 垂直排列</span>
                 </a>
               </li>
             </ul>
@@ -74,14 +74,90 @@
           </a>
         </h1>
 
+          <p class="kss-toolbar">
+            <a href="#kssref-2" data-kss-guides="true">
+              <span class="kss-toolbar__tooltip">Toggle example guides</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+              </svg>
+            </a>
+            <a href="#kssref-2" data-kss-markup="true">
+              <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+              </svg>
+            </a>
+          </p>
 
           <div class="kss-description">
-            <p>表單由表單元素 (form element) 所組成的說。</p>
+            <p>表單由表單元素 (form element) 所組成。
+表單提供三種排列方式：水平（預設值）、垂直及行內。</p>
 
           </div>
 
       </div>
 
+        <div class="kss-modifier__wrapper">
+          <div class="kss-modifier__heading kss-style">
+            Example
+          </div>
+
+
+          <div class="kss-modifier__example">
+            <div class="pic-form">
+  <div class="pic-form-element">
+    <label class="pic-form-element__label" for="foo">活動代號</label>
+    <div class="pic-form-element__control">
+      <input class="pic-input" id="foo" type="text" placeholder="輸入活動代號">
+    </div>
+  </div>
+  <div class="pic-form-element">
+    <label class="pic-form-element__label" for="foe">活動名稱</label>
+    <div class="pic-form-element__control">
+      <input class="pic-input" id="foe" type="text" placeholder="輸入活動名稱">
+    </div>
+  </div>
+</div>
+            <div class="kss-modifier__example-footer"></div>
+          </div>
+
+        </div>
+
+          <details class="kss-markup kss-style">
+            <summary>
+                Markup
+            </summary>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;&quot;pic-form&quot;&gt;
+  &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
+    &lt;label class&#x3D;&quot;pic-form-element__label&quot; for&#x3D;&quot;foo&quot;&gt;活動代號&lt;/label&gt;
+    &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
+      &lt;input class&#x3D;&quot;pic-input&quot; id&#x3D;&quot;foo&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入活動代號&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
+    &lt;label class&#x3D;&quot;pic-form-element__label&quot; for&#x3D;&quot;foe&quot;&gt;活動名稱&lt;/label&gt;
+    &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
+      &lt;input class&#x3D;&quot;pic-input&quot; id&#x3D;&quot;foe&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入活動名稱&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </details>
 
         <div class="kss-source kss-style">
           Source: <code>_form.scss</code>, line 1

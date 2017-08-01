@@ -54,7 +54,7 @@ gulp.task('watch', function () {
     browser: 'Google Chrome Canary'
   })
 
-  gulp.watch(['scss/*.scss', 'scss/*/*.scss'], ['sass'])
+  gulp.watch(['scss/*.scss', 'scss/*/*.scss'], ['sass', 'styleguide'])
   // gulp.watch(['/js/*.js'], ['js-watch'])
   gulp.watch(['handelbars/*.hbs'], ['sg-reload'])
 

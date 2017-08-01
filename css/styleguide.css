@@ -1,21 +1,25 @@
 /* Style fix on styleguide pages */
 
 
-.pic-form > .pic-form-element:first-child,
+.pic-form > .pic-form-element:first-child {
+  margin-top: 0 !important;
+}
+
+/* .pic-form > .pic-form-element:first-child,
 .pic-form > .pic-form__inline:first-child .pic-form-element {
   margin-top: 0;
-}
+} */
 
-.pic-form__inline .pic-form-element:first-child {
+/* .pic-form__inline .pic-form-element:first-child {
   margin-left: 0;
-}
+} */
 
 
-.code {
+.kss-description code {
   border: 1px solid #e3e3e3;
   font-family: Consolas, Menlo, 'Liberation Mono', Courier, monospace;
-  line-height: 1.5;
-  font-size: 13px;
+  /* line-height: 1.5; */
+  /* font-size: 13px; */
   padding: 1px 2px;
   vertical-align: 1px;
   background-color: #f7f7f7;

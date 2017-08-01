@@ -43,13 +43,13 @@
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-2.html#kssref-2-1">
                   <span class="kss-nav__ref ">2.1</span
-                  ><span class="kss-nav__name">基礎表單</span>
+                  ><span class="kss-nav__name">Inline form 行內排列</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-2.html#kssref-2-2">
                   <span class="kss-nav__ref ">2.2</span
-                  ><span class="kss-nav__name">水平表單</span>
+                  ><span class="kss-nav__name">Vertical form 垂直排列</span>
                 </a>
               </li>
             </ul>
@@ -74,14 +74,110 @@
           </a>
         </h1>
 
+          <p class="kss-toolbar">
+              <a href="#kssref-2" data-kss-fullscreen="kssref-2">
+                <span class="kss-toolbar__tooltip">Toggle full screen</span>
+                <svg class="off" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M64 0v26l-10-10-12 12-6-6 12-12-10-10zM28 42l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+                <svg class="on" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <path class="kss-toolbar__icon-fill" d="M28 36v26l-10-10-12 12-6-6 12-12-10-10zM64 6l-12 12 10 10h-26v-26l10 10 12-12z"></path>
+                </svg>
+              </a>
+              <a href="item-2.html" target="_blank">
+                <span class="kss-toolbar__tooltip">Open in new window</span>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                  <rect x="0" y="20" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M40,64l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="0" y="20" width="40" height="10"/>
+                  <rect x="24" y="0" width="40" height="44" fill="#fff"/>
+                  <path class="kss-toolbar__icon-fill" d="M64,44l-40,0l0,-44l40,0l0,44Zm-36,-40l0,36l32,0l0,-36l-32,0Z"/>
+                  <rect class="kss-toolbar__icon-fill" x="24" y="0" width="40" height="10"/>
+                </svg>
+              </a>
+            <a href="#kssref-2" data-kss-guides="true">
+              <span class="kss-toolbar__tooltip">Toggle example guides</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="35" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="21" width="5" height="9"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="5" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="0" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="5" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="54" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="49" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="5" y="49" width="5" height="15"/>
+                <rect class="kss-toolbar__icon-fill" x="0" y="54" width="15" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="35" y="54" width="9" height="5"/>
+                <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
+              </svg>
+            </a>
+            <a href="#kssref-2" data-kss-markup="true">
+              <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
+                <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
+                <path class="kss-toolbar__icon-fill" d="M26.445,17.761l-6.103,-6.103l-20.342,20.342l20.342,20.342l6.103,-6.103l-14.24,-14.239l14.24,-14.239Z"/>
+              </svg>
+            </a>
+          </p>
 
           <div class="kss-description">
-            <p>表單由表單元素 (form element) 所組成的說。</p>
+            <p>表單由表單元素 (form element) 所組成。
+表單提供三種排列方式：水平（預設值）、垂直及行內。</p>
 
           </div>
 
       </div>
 
+        <div class="kss-modifier__wrapper">
+          <div class="kss-modifier__heading kss-style">
+            Example
+          </div>
+
+
+          <div class="kss-modifier__example">
+            <div class="pic-form">
+  <div class="pic-form-element">
+    <label class="pic-form-element__label" for="foo">活動代號</label>
+    <div class="pic-form-element__control">
+      <input class="pic-input" id="foo" type="text" placeholder="輸入活動代號">
+    </div>
+  </div>
+  <div class="pic-form-element">
+    <label class="pic-form-element__label" for="foe">活動名稱</label>
+    <div class="pic-form-element__control">
+      <input class="pic-input" id="foe" type="text" placeholder="輸入活動名稱">
+    </div>
+  </div>
+</div>
+            <div class="kss-modifier__example-footer"></div>
+          </div>
+
+        </div>
+
+          <details class="kss-markup kss-style">
+            <summary>
+                Markup
+            </summary>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;&quot;pic-form&quot;&gt;
+  &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
+    &lt;label class&#x3D;&quot;pic-form-element__label&quot; for&#x3D;&quot;foo&quot;&gt;活動代號&lt;/label&gt;
+    &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
+      &lt;input class&#x3D;&quot;pic-input&quot; id&#x3D;&quot;foo&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入活動代號&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
+    &lt;label class&#x3D;&quot;pic-form-element__label&quot; for&#x3D;&quot;foe&quot;&gt;活動名稱&lt;/label&gt;
+    &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
+      &lt;input class&#x3D;&quot;pic-input&quot; id&#x3D;&quot;foe&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入活動名稱&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </details>
 
         <div class="kss-source kss-style">
           Source: <code>_form.scss</code>, line 1
@@ -99,7 +195,7 @@
                   #permalink
               </span>
             </span>
-            基礎表單
+            Inline form 行內排列
           </a>
         </h2>
 
@@ -154,6 +250,10 @@
             </a>
           </p>
 
+          <div class="kss-description">
+            <p>使用 <code>.pic-form__inline</code> 把要在同一行的 <code>.pic-form-element</code> 包起來。</p>
+
+          </div>
 
       </div>
 
@@ -164,25 +264,24 @@
 
 
           <div class="kss-modifier__example">
-            
-<div class="pic-form">
+            <div class="pic-form">
   <div class="pic-form__inline">
     <div class="pic-form-element">
-      <label class="pic-form-element__label pic-form-element__label--required" for="foo">群組代號</label>
+      <label class="pic-form-element__label" for="foo">活動代號</label>
       <div class="pic-form-element__control">
-        <input id="foo" class="pic-input" type="text" placeholder="輸入群組代號" required>
+        <input class="pic-input" id="foo" type="text" placeholder="輸入活動代號">
       </div>
     </div>
     <div class="pic-form-element">
-      <label class="pic-form-element__label pic-form-element__label--required" for="foe">群組名稱</label>
+      <label class="pic-form-element__label" for="foe">活動名稱</label>
       <div class="pic-form-element__control">
-        <input id="foe" class="pic-input" type="text" placeholder="輸入群組名稱" required>
+        <input class="pic-input" id="foe" type="text" placeholder="輸入活動名稱">
       </div>
     </div>
   </div>
   <div class="pic-form__inline">
     <div class="pic-form-element">
-      <span class="pic-form-element__label">建立日期</span>
+      <span class="pic-form-element__label">活動日期</span>
       <div class="pic-form-element__control">
         <input class="datepicker pic-widget" name="start" value="" placeholder="請選擇起始日期">
         <span class="pic-form-element__el">~</span>
@@ -190,29 +289,15 @@
       </div>
     </div>
     <div class="pic-form-element">
-      <span class="pic-form-element__label">建立人員</span>
+      <span class="pic-form-element__label">負責人員</span>
       <div class="pic-form-element__control">
         <input class="pic-widget" id="person" placeholder="選擇建立人員">
         <span class="pic-form-element__el">員工編號</span>
-        <input class="pic-input" type="text" name="" value="" readonly>
+        <input class="pic-input" type="text" readonly>
       </div>
     </div>
   </div>
 </div>
-
-
-
-<div class="pic-form">
-  <div class="pic-form__inline">
-    <div class="pic-form-element">
-      <div class="pic-form-element__control">
-        <input class="pic-input pic-input--right-el" placeholder="輸入功能號碼">
-        <button class="pic-btn">查詢</button>
-      </div>
-    </div>
-  </div>
-</div>
-
             <div class="kss-modifier__example-footer"></div>
           </div>
 
@@ -220,27 +305,26 @@
 
           <details class="kss-markup kss-style">
             <summary>
-                Markup: <code>../handelbars/form.hbs</code>
+                Markup
             </summary>
-            <pre class="prettyprint linenums lang-html"><code data-language="html">
-&lt;div class&#x3D;&quot;pic-form&quot;&gt;
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;&quot;pic-form&quot;&gt;
   &lt;div class&#x3D;&quot;pic-form__inline&quot;&gt;
     &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-      &lt;label class&#x3D;&quot;pic-form-element__label pic-form-element__label--required&quot; for&#x3D;&quot;foo&quot;&gt;群組代號&lt;/label&gt;
+      &lt;label class&#x3D;&quot;pic-form-element__label&quot; for&#x3D;&quot;foo&quot;&gt;活動代號&lt;/label&gt;
       &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
-        &lt;input id&#x3D;&quot;foo&quot; class&#x3D;&quot;pic-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入群組代號&quot; required&gt;
+        &lt;input class&#x3D;&quot;pic-input&quot; id&#x3D;&quot;foo&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入活動代號&quot;&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-      &lt;label class&#x3D;&quot;pic-form-element__label pic-form-element__label--required&quot; for&#x3D;&quot;foe&quot;&gt;群組名稱&lt;/label&gt;
+      &lt;label class&#x3D;&quot;pic-form-element__label&quot; for&#x3D;&quot;foe&quot;&gt;活動名稱&lt;/label&gt;
       &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
-        &lt;input id&#x3D;&quot;foe&quot; class&#x3D;&quot;pic-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入群組名稱&quot; required&gt;
+        &lt;input class&#x3D;&quot;pic-input&quot; id&#x3D;&quot;foe&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入活動名稱&quot;&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;pic-form__inline&quot;&gt;
     &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-      &lt;span class&#x3D;&quot;pic-form-element__label&quot;&gt;建立日期&lt;/span&gt;
+      &lt;span class&#x3D;&quot;pic-form-element__label&quot;&gt;活動日期&lt;/span&gt;
       &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
         &lt;input class&#x3D;&quot;datepicker pic-widget&quot; name&#x3D;&quot;start&quot; value&#x3D;&quot;&quot; placeholder&#x3D;&quot;請選擇起始日期&quot;&gt;
         &lt;span class&#x3D;&quot;pic-form-element__el&quot;&gt;~&lt;/span&gt;
@@ -248,33 +332,19 @@
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-      &lt;span class&#x3D;&quot;pic-form-element__label&quot;&gt;建立人員&lt;/span&gt;
+      &lt;span class&#x3D;&quot;pic-form-element__label&quot;&gt;負責人員&lt;/span&gt;
       &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
         &lt;input class&#x3D;&quot;pic-widget&quot; id&#x3D;&quot;person&quot; placeholder&#x3D;&quot;選擇建立人員&quot;&gt;
         &lt;span class&#x3D;&quot;pic-form-element__el&quot;&gt;員工編號&lt;/span&gt;
-        &lt;input class&#x3D;&quot;pic-input&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;&quot; value&#x3D;&quot;&quot; readonly&gt;
+        &lt;input class&#x3D;&quot;pic-input&quot; type&#x3D;&quot;text&quot; readonly&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-
-
-
-&lt;div class&#x3D;&quot;pic-form&quot;&gt;
-  &lt;div class&#x3D;&quot;pic-form__inline&quot;&gt;
-    &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-      &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
-        &lt;input class&#x3D;&quot;pic-input pic-input--right-el&quot; placeholder&#x3D;&quot;輸入功能號碼&quot;&gt;
-        &lt;button class&#x3D;&quot;pic-btn&quot;&gt;查詢&lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>_form.scss</code>, line 8
+          Source: <code>_form.scss</code>, line 121
         </div>
 
     </section>
@@ -289,7 +359,7 @@
                   #permalink
               </span>
             </span>
-            水平表單
+            Vertical form 垂直排列
           </a>
         </h2>
 
@@ -345,7 +415,7 @@
           </p>
 
           <div class="kss-description">
-            <p>text</p>
+            <p>在 <code>.pic-form</code> 加上 <code>.pic-form--horizontal</code>。</p>
 
           </div>
 
@@ -358,7 +428,20 @@
 
 
           <div class="kss-modifier__example">
-            <div>form</div>
+            <div class="pic-form pic-form--horizontal">
+  <div class="pic-form-element">
+    <label class="pic-form-element__label" for="foo">活動代號</label>
+    <div class="pic-form-element__control">
+      <input class="pic-input" id="foo" type="text" placeholder="輸入活動代號">
+    </div>
+  </div>
+  <div class="pic-form-element">
+    <label class="pic-form-element__label" for="foe">活動名稱</label>
+    <div class="pic-form-element__control">
+      <input class="pic-input" id="foe" type="text" placeholder="輸入活動名稱">
+    </div>
+  </div>
+</div>
             <div class="kss-modifier__example-footer"></div>
           </div>
 
@@ -368,11 +451,24 @@
             <summary>
                 Markup
             </summary>
-            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div&gt;form&lt;/div&gt;</code></pre>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;&quot;pic-form pic-form--horizontal&quot;&gt;
+  &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
+    &lt;label class&#x3D;&quot;pic-form-element__label&quot; for&#x3D;&quot;foo&quot;&gt;活動代號&lt;/label&gt;
+    &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
+      &lt;input class&#x3D;&quot;pic-input&quot; id&#x3D;&quot;foo&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入活動代號&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
+    &lt;label class&#x3D;&quot;pic-form-element__label&quot; for&#x3D;&quot;foe&quot;&gt;活動名稱&lt;/label&gt;
+    &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
+      &lt;input class&#x3D;&quot;pic-input&quot; id&#x3D;&quot;foe&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入活動名稱&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>_form.scss</code>, line 80
+          Source: <code>_form.scss</code>, line 180
         </div>
 
     </section>

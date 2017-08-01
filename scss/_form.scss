@@ -1,17 +1,26 @@
 // Forms 表單
 //
-// 表單由表單元素 (form element) 所組成的說。
+// 表單由表單元素 (form element) 所組成。
+// 表單提供三種排列方式：水平（預設值）、垂直及行內。
 //
+//
+// Markup:
+// <div class="pic-form">
+//   <div class="pic-form-element">
+//     <label class="pic-form-element__label" for="foo">活動代號</label>
+//     <div class="pic-form-element__control">
+//       <input class="pic-input" id="foo" type="text" placeholder="輸入活動代號">
+//     </div>
+//   </div>
+//   <div class="pic-form-element">
+//     <label class="pic-form-element__label" for="foe">活動名稱</label>
+//     <div class="pic-form-element__control">
+//       <input class="pic-input" id="foe" type="text" placeholder="輸入活動名稱">
+//     </div>
+//   </div>
+// </div>
 //
 // Style guide: 2
-
-//
-// 基礎表單
-//
-// Markup: ../handelbars/form.hbs
-//
-//
-// Style guide: 2.1
 
 .pic-form {
   box-sizing: border-box;
@@ -19,19 +28,51 @@
   .pic-workarea & {
     padding: 16px 0;
   }
+  > .pic-form-element:not(:first-child) {
+    margin-top: 8px;
+  }
 }
+
+/* .pic-form > .pic-form-element:not(:first-child),
+.pic-form > .pic-form__inline:not(:first-child) .pic-form-element {
+  margin-top: 8px;
+} */
+
 
 .pic-form-element {
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  /* &:not(:first-child) {
+    margin-left: 16px;
+  } */
 }
 
 .pic-form-element__label {
   color: $dark-grey;
   display: block;
+  flex: 1 0 0px;
+  text-align: right;
+  padding-right: 8px;
+
   &--required:before {
     content: '*';
     color: $danger;
     margin-right: 4px;
+  }
+}
+
+.pic-form-element__control {
+  flex: 5 0 0px;
+  display: flex;
+  align-items: center;
+  .pic-form-element__el {
+    flex: 0 0 auto;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  & > .pic-input, & > .pic-widget {
+    flex: 1 1 0px;
   }
 }
 
@@ -41,8 +82,8 @@
   border: 1px solid $grey;
   background: $white;
   outline: 0;
-  /* min-width: 12.4em; */
   box-sizing: border-box;
+
   width: 100%;
 
   height: 2.13em;
@@ -77,53 +118,94 @@
   }
 }
 
-// 水平表單
+// Inline form 行內排列
 //
-// text
+// 使用 `.pic-form__inline` 把要在同一行的 `.pic-form-element` 包起來。
 //
-// Markup: <div>form</div>
+// Markup:
+// <div class="pic-form">
+//   <div class="pic-form__inline">
+//     <div class="pic-form-element">
+//       <label class="pic-form-element__label" for="foo">活動代號</label>
+//       <div class="pic-form-element__control">
+//         <input class="pic-input" id="foo" type="text" placeholder="輸入活動代號">
+//       </div>
+//     </div>
+//     <div class="pic-form-element">
+//       <label class="pic-form-element__label" for="foe">活動名稱</label>
+//       <div class="pic-form-element__control">
+//         <input class="pic-input" id="foe" type="text" placeholder="輸入活動名稱">
+//       </div>
+//     </div>
+//   </div>
+//   <div class="pic-form__inline">
+//     <div class="pic-form-element">
+//       <span class="pic-form-element__label">活動日期</span>
+//       <div class="pic-form-element__control">
+//         <input class="datepicker pic-widget" name="start" value="" placeholder="請選擇起始日期">
+//         <span class="pic-form-element__el">~</span>
+//         <input class="datepicker pic-widget" name="end" value="" placeholder="請選擇結束日期">
+//       </div>
+//     </div>
+//     <div class="pic-form-element">
+//       <span class="pic-form-element__label">負責人員</span>
+//       <div class="pic-form-element__control">
+//         <input class="pic-widget" id="person" placeholder="選擇建立人員">
+//         <span class="pic-form-element__el">員工編號</span>
+//         <input class="pic-input" type="text" readonly>
+//       </div>
+//     </div>
+//   </div>
+// </div>
 //
-// Style guide: 2.2
+// Style guide: 2.1
 
 .pic-form__inline {
   display: flex;
+  .pic-form-element {
+    flex: 1 0 0px;
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+  }
+  .pic-input {
+    width: auto;
+  }
 }
 
-.pic-form > .pic-form-element:not(:first-child),
 .pic-form > .pic-form__inline:not(:first-child) .pic-form-element {
   margin-top: 8px;
 }
 
-.pic-form__inline .pic-form-element {
-  flex: 1 0 0px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  &:not(:first-child) {
-    margin-left: 16px;
-  }
-}
+// Vertical form 垂直排列
+//
+// 在 `.pic-form` 加上 `.pic-form--horizontal`。
+//
+// Markup:
+// <div class="pic-form pic-form--horizontal">
+//   <div class="pic-form-element">
+//     <label class="pic-form-element__label" for="foo">活動代號</label>
+//     <div class="pic-form-element__control">
+//       <input class="pic-input" id="foo" type="text" placeholder="輸入活動代號">
+//     </div>
+//   </div>
+//   <div class="pic-form-element">
+//     <label class="pic-form-element__label" for="foe">活動名稱</label>
+//     <div class="pic-form-element__control">
+//       <input class="pic-input" id="foe" type="text" placeholder="輸入活動名稱">
+//     </div>
+//   </div>
+// </div>
+//
+// Style guide: 2.2
 
-.pic-form__inline .pic-form-element__label {
-  flex: 1 0 0px;
-  text-align: right;
-  padding-right: 8px;
-}
-
-.pic-form__inline .pic-form-element__control {
-  flex: 5 0 0px;
-  display: flex;
-  align-items: center;
-  .pic-form-element__el {
-    flex: 0 0 auto;
-    padding: 0 8px;
-    box-sizing: border-box;
+.pic-form--horizontal {
+  .pic-form-element {
+    display: block;
   }
-  & > .pic-input, & > .pic-widget {
-    flex: 1 1 0px;
+  .pic-form-element__label {
+    padding-right: 0px;
+    text-align: left;
+    margin-bottom: 4px;
   }
-}
-
-.pic-form__inline .pic-input {
-  width: auto;
 }
