@@ -43,7 +43,7 @@
               <li class="kss-nav__menu-item">
                 <a class="kss-nav__menu-link" href="section-2.html#kssref-2-1">
                   <span class="kss-nav__ref ">2.1</span
-                  ><span class="kss-nav__name">表單</span>
+                  ><span class="kss-nav__name">基礎表單</span>
                 </a>
               </li>
               <li class="kss-nav__menu-item">
@@ -76,7 +76,7 @@
 
 
           <div class="kss-description">
-            <p>表單由 .pic-form</p>
+            <p>表單由表單元素 (form element) 所組成的說。</p>
 
           </div>
 
@@ -99,7 +99,7 @@
                   #permalink
               </span>
             </span>
-            表單
+            基礎表單
           </a>
         </h2>
 
@@ -164,54 +164,50 @@
 
 
           <div class="kss-modifier__example">
-            <div>複雜表單</div>
-<div class="" style="margin-bottom: 20px;">
-  <div class="pic-form">
-    <div class="pic-form__inline">
-      <div class="pic-form-element">
-        <label class="pic-form-element__label pic-form-element__label--required" for="foo">群組代號</label>
-        <div class="pic-form-element__control">
-          <input id="foo" class="pic-input" type="text" placeholder="輸入群組代號" required>
-        </div>
-      </div>
-      <div class="pic-form-element">
-        <label class="pic-form-element__label pic-form-element__label--required" for="foe">群組名稱</label>
-        <div class="pic-form-element__control">
-          <input id="foe" class="pic-input" type="text" placeholder="輸入群組名稱" required>
-        </div>
+            
+<div class="pic-form">
+  <div class="pic-form__inline">
+    <div class="pic-form-element">
+      <label class="pic-form-element__label pic-form-element__label--required" for="foo">群組代號</label>
+      <div class="pic-form-element__control">
+        <input id="foo" class="pic-input" type="text" placeholder="輸入群組代號" required>
       </div>
     </div>
-    <div class="pic-form__inline">
-      <div class="pic-form-element">
-        <span class="pic-form-element__label">建立日期</span>
-        <div class="pic-form-element__control">
-          <input class="datepicker pic-widget" name="start" value="" placeholder="請選擇起始日期">
-          <span class="pic-form-element__el">~</span>
-          <input class="datepicker pic-widget" name="end" value="" placeholder="請選擇結束日期">
-        </div>
-      </div>
-      <div class="pic-form-element">
-        <span class="pic-form-element__label">建立人員</span>
-        <div class="pic-form-element__control">
-          <input class="pic-widget" id="person" placeholder="選擇建立人員">
-          <span class="pic-form-element__el">員工編號</span>
-          <input class="pic-input" type="text" name="" value="" readonly>
-        </div>
+    <div class="pic-form-element">
+      <label class="pic-form-element__label pic-form-element__label--required" for="foe">群組名稱</label>
+      <div class="pic-form-element__control">
+        <input id="foe" class="pic-input" type="text" placeholder="輸入群組名稱" required>
       </div>
     </div>
   </div>
-
+  <div class="pic-form__inline">
+    <div class="pic-form-element">
+      <span class="pic-form-element__label">建立日期</span>
+      <div class="pic-form-element__control">
+        <input class="datepicker pic-widget" name="start" value="" placeholder="請選擇起始日期">
+        <span class="pic-form-element__el">~</span>
+        <input class="datepicker pic-widget" name="end" value="" placeholder="請選擇結束日期">
+      </div>
+    </div>
+    <div class="pic-form-element">
+      <span class="pic-form-element__label">建立人員</span>
+      <div class="pic-form-element__control">
+        <input class="pic-widget" id="person" placeholder="選擇建立人員">
+        <span class="pic-form-element__el">員工編號</span>
+        <input class="pic-input" type="text" name="" value="" readonly>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div>簡單表單</div>
-<div class="" style="width: 300px;">
-  <div class="pic-form">
-    <div class="pic-form__inline">
-      <div class="pic-form-element">
-        <div class="pic-form-element__control">
-          <input class="pic-input pic-input--right-el" placeholder="輸入功能號碼">
-          <button class="pic-btn">查詢</button>
-        </div>
+
+
+<div class="pic-form">
+  <div class="pic-form__inline">
+    <div class="pic-form-element">
+      <div class="pic-form-element__control">
+        <input class="pic-input pic-input--right-el" placeholder="輸入功能號碼">
+        <button class="pic-btn">查詢</button>
       </div>
     </div>
   </div>
@@ -226,54 +222,50 @@
             <summary>
                 Markup: <code>../handelbars/form.hbs</code>
             </summary>
-            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div&gt;複雜表單&lt;/div&gt;
-&lt;div class&#x3D;&quot;&quot; style&#x3D;&quot;margin-bottom: 20px;&quot;&gt;
-  &lt;div class&#x3D;&quot;pic-form&quot;&gt;
-    &lt;div class&#x3D;&quot;pic-form__inline&quot;&gt;
-      &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-        &lt;label class&#x3D;&quot;pic-form-element__label pic-form-element__label--required&quot; for&#x3D;&quot;foo&quot;&gt;群組代號&lt;/label&gt;
-        &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
-          &lt;input id&#x3D;&quot;foo&quot; class&#x3D;&quot;pic-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入群組代號&quot; required&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-        &lt;label class&#x3D;&quot;pic-form-element__label pic-form-element__label--required&quot; for&#x3D;&quot;foe&quot;&gt;群組名稱&lt;/label&gt;
-        &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
-          &lt;input id&#x3D;&quot;foe&quot; class&#x3D;&quot;pic-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入群組名稱&quot; required&gt;
-        &lt;/div&gt;
+            <pre class="prettyprint linenums lang-html"><code data-language="html">
+&lt;div class&#x3D;&quot;pic-form&quot;&gt;
+  &lt;div class&#x3D;&quot;pic-form__inline&quot;&gt;
+    &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
+      &lt;label class&#x3D;&quot;pic-form-element__label pic-form-element__label--required&quot; for&#x3D;&quot;foo&quot;&gt;群組代號&lt;/label&gt;
+      &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
+        &lt;input id&#x3D;&quot;foo&quot; class&#x3D;&quot;pic-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入群組代號&quot; required&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;pic-form__inline&quot;&gt;
-      &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-        &lt;span class&#x3D;&quot;pic-form-element__label&quot;&gt;建立日期&lt;/span&gt;
-        &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
-          &lt;input class&#x3D;&quot;datepicker pic-widget&quot; name&#x3D;&quot;start&quot; value&#x3D;&quot;&quot; placeholder&#x3D;&quot;請選擇起始日期&quot;&gt;
-          &lt;span class&#x3D;&quot;pic-form-element__el&quot;&gt;~&lt;/span&gt;
-          &lt;input class&#x3D;&quot;datepicker pic-widget&quot; name&#x3D;&quot;end&quot; value&#x3D;&quot;&quot; placeholder&#x3D;&quot;請選擇結束日期&quot;&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-        &lt;span class&#x3D;&quot;pic-form-element__label&quot;&gt;建立人員&lt;/span&gt;
-        &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
-          &lt;input class&#x3D;&quot;pic-widget&quot; id&#x3D;&quot;person&quot; placeholder&#x3D;&quot;選擇建立人員&quot;&gt;
-          &lt;span class&#x3D;&quot;pic-form-element__el&quot;&gt;員工編號&lt;/span&gt;
-          &lt;input class&#x3D;&quot;pic-input&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;&quot; value&#x3D;&quot;&quot; readonly&gt;
-        &lt;/div&gt;
+    &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
+      &lt;label class&#x3D;&quot;pic-form-element__label pic-form-element__label--required&quot; for&#x3D;&quot;foe&quot;&gt;群組名稱&lt;/label&gt;
+      &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
+        &lt;input id&#x3D;&quot;foe&quot; class&#x3D;&quot;pic-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入群組名稱&quot; required&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-
+  &lt;div class&#x3D;&quot;pic-form__inline&quot;&gt;
+    &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
+      &lt;span class&#x3D;&quot;pic-form-element__label&quot;&gt;建立日期&lt;/span&gt;
+      &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
+        &lt;input class&#x3D;&quot;datepicker pic-widget&quot; name&#x3D;&quot;start&quot; value&#x3D;&quot;&quot; placeholder&#x3D;&quot;請選擇起始日期&quot;&gt;
+        &lt;span class&#x3D;&quot;pic-form-element__el&quot;&gt;~&lt;/span&gt;
+        &lt;input class&#x3D;&quot;datepicker pic-widget&quot; name&#x3D;&quot;end&quot; value&#x3D;&quot;&quot; placeholder&#x3D;&quot;請選擇結束日期&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
+      &lt;span class&#x3D;&quot;pic-form-element__label&quot;&gt;建立人員&lt;/span&gt;
+      &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
+        &lt;input class&#x3D;&quot;pic-widget&quot; id&#x3D;&quot;person&quot; placeholder&#x3D;&quot;選擇建立人員&quot;&gt;
+        &lt;span class&#x3D;&quot;pic-form-element__el&quot;&gt;員工編號&lt;/span&gt;
+        &lt;input class&#x3D;&quot;pic-input&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;&quot; value&#x3D;&quot;&quot; readonly&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div&gt;簡單表單&lt;/div&gt;
-&lt;div class&#x3D;&quot;&quot; style&#x3D;&quot;width: 300px;&quot;&gt;
-  &lt;div class&#x3D;&quot;pic-form&quot;&gt;
-    &lt;div class&#x3D;&quot;pic-form__inline&quot;&gt;
-      &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-        &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
-          &lt;input class&#x3D;&quot;pic-input pic-input--right-el&quot; placeholder&#x3D;&quot;輸入功能號碼&quot;&gt;
-          &lt;button class&#x3D;&quot;pic-btn&quot;&gt;查詢&lt;/button&gt;
-        &lt;/div&gt;
+
+
+&lt;div class&#x3D;&quot;pic-form&quot;&gt;
+  &lt;div class&#x3D;&quot;pic-form__inline&quot;&gt;
+    &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
+      &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
+        &lt;input class&#x3D;&quot;pic-input pic-input--right-el&quot; placeholder&#x3D;&quot;輸入功能號碼&quot;&gt;
+        &lt;button class&#x3D;&quot;pic-btn&quot;&gt;查詢&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -282,7 +274,7 @@
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>_form.scss</code>, line 7
+          Source: <code>_form.scss</code>, line 8
         </div>
 
     </section>
@@ -380,7 +372,7 @@
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>_form.scss</code>, line 79
+          Source: <code>_form.scss</code>, line 80
         </div>
 
     </section>

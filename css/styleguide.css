@@ -9,3 +9,15 @@
 .pic-form__inline .pic-form-element:first-child {
   margin-left: 0;
 }
+
+
+.code {
+  border: 1px solid #e3e3e3;
+  font-family: Consolas, Menlo, 'Liberation Mono', Courier, monospace;
+  line-height: 1.5;
+  font-size: 13px;
+  padding: 1px 2px;
+  vertical-align: 1px;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}

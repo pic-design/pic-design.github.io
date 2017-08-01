@@ -38,14 +38,15 @@ gulp.task('sass', function () {
 //     .pipe(gulp.dest(jsDir))
 // })
 
+// run 'sg-reload' after styleguide task is finished
+gulp.task('sg-reload', ['styleguide'] ,function(){
+  browserSync.reload()
+})
+
 gulp.task('styleguide', shell.task([
   'yarn run kss -- -c kss-config.json'
 ]))
 
-gulp.task('js-watch', function (done) {
-  browserSync.reload();
-  done();
-})
 
 gulp.task('watch', function () {
   browserSync.init({
@@ -53,9 +54,10 @@ gulp.task('watch', function () {
     browser: 'Google Chrome Canary'
   })
 
-  gulp.watch(['scss/*.scss', 'scss/*/*.scss'], ['sass', 'styleguide'])
+  gulp.watch(['scss/*.scss', 'scss/*/*.scss'], ['sass'])
   // gulp.watch(['/js/*.js'], ['js-watch'])
-  gulp.watch(['handelbars/*.hbs'], ['styleguide'])
+  gulp.watch(['handelbars/*.hbs'], ['sg-reload'])
+
   gulp.watch(['*.html']).on('change', browserSync.reload)
 })
 
