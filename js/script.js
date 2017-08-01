@@ -48,7 +48,7 @@ $(document).ready(function() {
         width: 40
       },
       {
-        template: "<button class='pic-button' client-id='btn_edit'>編輯</button>",
+        template: "<button class='pic-btn' client-id='btn_edit'>編輯</button>",
         width:70,
         attributes: {
           "class": "align-center"
@@ -232,7 +232,7 @@ $(document).ready(function() {
   });
 
   window.isDisabled = function(el){
-     //console.log(el.hasClass('pic-button--disabled'));
+     //console.log(el.hasClass('pic-btn--disabled'));
      if(el.hasClass('disabled')) {
        // button is disabled
        return true;
@@ -405,10 +405,10 @@ $(document).ready(function() {
 
         if (type === 'delete') {
             type = 'dialog-danger';
-            buttonType = 'pic-button--danger';
+            buttonType = 'pic-btn--danger';
         } else if ( type === 'add' || type === 'edit') {
           type = 'dialog-warning';
-          buttonType = 'pic-button--warning';
+          buttonType = 'pic-btn--warning';
         }
         dialog.addClass(type);
         dialog.find(".k-button-group").find(".k-button.k-primary").addClass("confirm-button").removeClass('k-primary');
@@ -450,13 +450,13 @@ $(document).ready(function() {
 
         if (type === 'delete') {
             type = 'dialog-danger';
-            buttonType = 'pic-button--danger';
+            buttonType = 'pic-btn--danger';
         } else if ( type === 'add' || type === 'edit') {
           type = 'dialog-warning';
-          buttonType = 'pic-button--warning';
+          buttonType = 'pic-btn--warning';
         } else if (type === 'success') {
           type = 'dialog-success';
-          buttonType = 'pic-button--success';
+          buttonType = 'pic-btn--success';
         }
         dialog.addClass(type);
         dialog.find(".k-button-group").find(".k-button").first().addClass(buttonType);
