@@ -794,11 +794,11 @@ button {
   margin-top: 8px;
 }
 
-.pic-form--horizontal .pic-form-element {
+.pic-form--vertical .pic-form-element {
   display: block;
 }
 
-.pic-form--horizontal .pic-form-element__label {
+.pic-form--vertical .pic-form-element__label {
   padding-right: 0px;
   text-align: left;
   margin-bottom: 4px;

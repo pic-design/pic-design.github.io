@@ -180,12 +180,12 @@
 
 // Vertical form 垂直排列
 //
-// 在 `.pic-form` 加上 `.pic-form--horizontal`。垂直排列的表單適合用在登入及註冊頁面，
+// 在 `.pic-form` 加上 `.pic-form--vertical`。垂直排列的表單適合用在登入及註冊頁面，
 // `.pic-form-element__label` 及 `.pic-form-element__control` 會以堆疊方式呈現。
 // `.pic-form-element__label` 文字靠左對齊。
 //
 // Markup:
-// <div class="pic-form pic-form--horizontal">
+// <div class="pic-form pic-form--vertical">
 //   <div class="pic-form-element">
 //     <label class="pic-form-element__label" for="foo">活動代號</label>
 //     <div class="pic-form-element__control">
@@ -202,7 +202,7 @@
 //
 // Style guide: 2.2
 
-.pic-form--horizontal {
+.pic-form--vertical {
   .pic-form-element {
     display: block;
   }
