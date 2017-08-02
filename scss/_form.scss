@@ -1,7 +1,7 @@
 // Forms 表單
 //
 // 表單的基本組成物件是表單元素 (form element) 。
-// 表單元素由一個 `<label>` 以及 `<input>`、`<textarea>`、`<select>` 等輸入欄位所組成。
+// 表單元素由一個 `<label>` 以及 `<input>`、`<textarea>`、`<select>` 等輸入元素所組成。
 //
 // `<label>` 需加上 `.pic-form-element__label`。
 // 輸入欄位如果有一個以上，需要用 `<div class=".pic-form-element__control"/>` 的控制項包起來，以顯示設計好的佈局。
