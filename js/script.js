@@ -37,7 +37,47 @@ $(document).ready(function() {
   myWindow.kendoWindow({
     title: '員工資料查詢',
     width: '300px',
-    content: 'quick-search.html'
+    content: 'quick-search.html',
+    open: function(){
+      $('#qs-grid').kendoGrid({
+        dataSource: [],
+        height: 165,
+        columns: [
+          {
+            field: 'qs_num',
+            title: '門市代號',
+            attributes: {
+              "class": "qs-num"
+            }
+          },
+          {
+            field: 'qs_name',
+            title: '門市名稱',
+            attributes: {
+              "class": "qs-name"
+            }
+          }
+        ]
+      })
+    }
+  });
+  var qsData = [
+    {'qs_num':'001', 'qs_name':'亞洲分部'},
+    {'qs_num':'002', 'qs_name':'非洲分部'},
+    {'qs_num':'003', 'qs_name':'北美洲分部'},
+    {'qs_num':'004', 'qs_name':'南洲分部'},
+    {'qs_num':'005', 'qs_name':'歐洲分部'}
+  ];
+  myWindow.on('click', '.pic-btn', function () {
+    $('#qs-grid').data('kendoGrid').dataSource.data(qsData);
+  });
+
+  myWindow.on('click', 'tr', function(event){
+    var currentTarget = $(event.currentTarget);
+
+    $('.pic-quick-search').find('.pic-input[name="num"]').val(currentTarget.find('.qs-num').text());
+    $('.pic-quick-search').find('.pic-input[name="name"]').val(currentTarget.find('.qs-name').text());
+    myWindow.data('kendoWindow').close();
   });
 
   $('.pic-quick-search').on('click', '.pic-btn', function(){

@@ -78,6 +78,17 @@
   }
 }
 
+.pic-form--compact {
+  padding-right: 20px;
+  padding-left: 20px;
+  .pic-form-element__control {
+    flex: 4 0 0px;
+  }
+  .pic-form-element__label {
+    flex: 2 0 0px;
+  }
+}
+
 .pic-input {
   vertical-align: middle;
   border-radius: 2px;
