@@ -112,13 +112,16 @@ $(document).ready(function() {
       {
         template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button><button class='pic-btn detail' style='margin-left:4px;'   client-id='btn_detail'>明細</button>",
         width: 80,
+        attributes: {
+          "class": "pic-align-center"
+        }
       },
       {
         field: "group_id",
         title: "活動代號",
         width: 100,
         attributes: {
-          "class": "align-right"
+          "class": "pic-align-right"
         }
       },
       {
@@ -180,6 +183,9 @@ $(document).ready(function() {
       {
         template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button>",
         width: 60,
+        attributes: {
+          "class": "pic-align-center"
+        }
       },
       {
         field: "group_id",
@@ -192,7 +198,7 @@ $(document).ready(function() {
       {
         field: "group_name",
         title: "活動名稱",
-        width: 230,
+        width: 230
       },
       {
         field: "number",
@@ -232,12 +238,11 @@ $(document).ready(function() {
   });
 
   window.isDisabled = function(el){
-     //console.log(el.hasClass('pic-btn--disabled'));
-     if(el.hasClass('disabled')) {
-       // button is disabled
+     if(el.hasClass('disabled') || el.attr('disabled')) {
+       // element is disabled
        return true;
      } else {
-       // button is not disabled
+       // element is not disabled
        return false;
      }
   };
@@ -289,14 +294,14 @@ $(document).ready(function() {
     //控制項權限
     //查 確 新 編 取 刪 列
     //E  E  E  D  D  D  E
-    content.find("[client-id='btn_query']").removeClass("disabled");
-    content.find("[client-id='btn_confirm']").removeClass("disabled");
-    content.find("[client-id='btn_add']").removeClass("disabled");
-    content.find("[client-id='btn_edit']").addClass("disabled");
-    content.find("[client-id='btn_cancel']").addClass("disabled");
-    content.find("[client-id='btn_delete']").addClass("disabled");
-    content.find("[client-id='btn_print']").removeClass("disabled");
-	$("li[name='detail']").attr('disabled','disabled');
+    content.find("[client-id='btn_query']").attr("disabled", false);
+    content.find("[client-id='btn_confirm']").attr("disabled", false);
+    content.find("[client-id='btn_add']").attr("disabled", false);
+    content.find("[client-id='btn_edit']").attr("disabled", "disabled");
+    content.find("[client-id='btn_cancel']").attr("disabled", "disabled");
+    content.find("[client-id='btn_delete']").attr("disabled", "disabled");
+    content.find("[client-id='btn_print']").attr("disabled", false);
+	  $("li[name='detail']").attr('disabled','disabled');
   }
 
   //查詢結果模式
@@ -321,14 +326,14 @@ $(document).ready(function() {
     //控制項權限
     //查 確 新 編 取 刪 列
     //E  D  E  E  D  E  D
-    content.find("[client-id='btn_query']").removeClass("disabled");
-    content.find("[client-id='btn_confirm']").addClass("disabled");
-    content.find("[client-id='btn_add']").removeClass("disabled");
-    content.find("[client-id='btn_edit']").removeClass("disabled");
-    content.find("[client-id='btn_cancel']").addClass("disabled");
-    content.find("[client-id='btn_delete']").removeClass("disabled");
-    content.find("[client-id='btn_print']").addClass("disabled");
-	content.find("[client-id='btn_detail']").removeClass("disabled");
+    content.find("[client-id='btn_query']").attr("disabled", false);
+    content.find("[client-id='btn_confirm']").attr("disabled", "disabled");
+    content.find("[client-id='btn_add']").attr("disabled", false);
+    content.find("[client-id='btn_edit']").attr("disabled", false);
+    content.find("[client-id='btn_cancel']").attr("disabled", "disabled");
+    content.find("[client-id='btn_delete']").attr("disabled", false);
+    content.find("[client-id='btn_print']").attr("disabled", "disabled");
+	content.find("[client-id='btn_detail']").attr("disabled", false);
 	$("li[name='detail']").attr('disabled','disabled');
   }
 
@@ -350,14 +355,14 @@ $(document).ready(function() {
     //控制項權限
     //查 確 新 編 取 刪 列
     //E  E  D  D  E  D  D
-    content.find("[client-id='btn_query']").removeClass("disabled");
-    content.find("[client-id='btn_confirm']").removeClass("disabled");
-    content.find("[client-id='btn_add']").addClass("disabled");
-    content.find("[client-id='btn_edit']").addClass("disabled");
-    content.find("[client-id='btn_cancel']").removeClass("disabled");
-    content.find("[client-id='btn_delete']").addClass("disabled");
-    content.find("[client-id='btn_print']").addClass("disabled");
-	content.find("[client-id='btn_detail']").addClass("disabled");
+    content.find("[client-id='btn_query']").attr("disabled", false);
+    content.find("[client-id='btn_confirm']").attr("disabled", false);
+    content.find("[client-id='btn_add']").attr("disabled", "disabled");
+    content.find("[client-id='btn_edit']").attr("disabled", "disabled");
+    content.find("[client-id='btn_cancel']").attr("disabled", false);
+    content.find("[client-id='btn_delete']").attr("disabled", "disabled");
+    content.find("[client-id='btn_print']").attr("disabled", "disabled");
+	content.find("[client-id='btn_detail']").attr("disabled", "disabled");
 	$("li[name='detail']").attr('disabled','disabled');
   }
 
@@ -373,14 +378,14 @@ $(document).ready(function() {
     //控制項權限
     //查 確 新 編 取 刪 列
     //E  E  E  D  E  D  D
-    content.find("[client-id='btn_query']").removeClass("disabled");
-    content.find("[client-id='btn_confirm']").removeClass("disabled");
-    content.find("[client-id='btn_add']").removeClass("disabled");
-    content.find("[client-id='btn_edit']").addClass("disabled");
-    content.find("[client-id='btn_cancel']").removeClass("disabled");
-    content.find("[client-id='btn_delete']").addClass("disabled");
-    content.find("[client-id='btn_print']").addClass("disabled");
-	content.find("[client-id='btn_detail']").addClass("disabled");
+    content.find("[client-id='btn_query']").attr("disabled", false);
+    content.find("[client-id='btn_confirm']").attr("disabled", false);
+    content.find("[client-id='btn_add']").attr("disabled", false);
+    content.find("[client-id='btn_edit']").attr("disabled", "disabled");
+    content.find("[client-id='btn_cancel']").attr("disabled", false);
+    content.find("[client-id='btn_delete']").attr("disabled", "disabled");
+    content.find("[client-id='btn_print']").attr("disabled", "disabled");
+	content.find("[client-id='btn_detail']").attr("disabled", "disabled");
 	$("li[name='detail']").attr('disabled','disabled');
   }
 
