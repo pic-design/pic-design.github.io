@@ -539,7 +539,7 @@ button {
   font-size: 2em;
 } */
 .pic-sidebar {
-  background-color: #fff6ed;
+  background-color: rgba(255, 224, 190, 0.3);
   min-width: 214px;
   border: 1px solid #d1d2d3;
   box-sizing: border-box;
@@ -1073,6 +1073,10 @@ button {
 
 .pic-label--danger {
   background-color: #F5364E;
+}
+
+.k-alt {
+  background-color: rgba(255, 224, 190, 0.3);
 }
 
 .k-icon {
