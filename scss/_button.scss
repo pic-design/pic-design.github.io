@@ -1,8 +1,7 @@
 // Buttons 按鈕
 //
-// 按鈕按下去後會有即刻的行動。
+// 在 `<button>` 或者 `<a>` 加上 `.pic-btn`。
 //
-// :hover - hover
 // .pic-btn--primary - 以品牌主色為背景的按鈕
 // .pic-btn--success - 成功按鈕，綠色背景
 // .pic-btn--warning - 警告按鈕，黃色背景
@@ -13,6 +12,7 @@
 //
 //
 // Markup:
+// <a class="pic-btn {{modifier_class}}" href="#">Link</a>
 // <button class="pic-btn {{modifier_class}}" type="button">Button</button>
 //
 // Style guide: 1
@@ -23,10 +23,9 @@
   border-radius: 2px;
   border: 1px solid $grey;
   box-sizing: border-box;
-  color: $dark-grey;
   cursor: pointer;
+  color: $dark-grey;
   display: inline-block;
-  //font-family: -apple-system, "微軟正黑體", Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 2;
   outline: none;
@@ -35,8 +34,15 @@
   &:hover {
     /* background-color: rgba( $light-grey, .4 ); */
     background-color: rgba( $primary, .4 );
-    color: $primary-dark;
+    //color: $primary-dark;
   }
+  &:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .125)
+  }
+  /* &:focus {
+    outline: 2px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  } */
   &--primary {
     background-color: $primary;
     color: $white;
@@ -46,10 +52,10 @@
     }
   }
   &--success {
-    background-color: $success;
+    background-color: rgba( $success, .8 );
     color: $white;
     &:hover {
-      background-color: rgba( $success, .4 );
+      background-color: $success;
     }
   }
   &--warning {

@@ -581,19 +581,27 @@ button {
   border-radius: 2px;
   border: 1px solid #D1D2D3;
   box-sizing: border-box;
-  color: #353630;
   cursor: pointer;
+  color: #353630;
   display: inline-block;
   font-size: 12px;
   line-height: 2;
   outline: none;
   padding: 0px 8px;
   text-decoration: none;
+  /* &:focus {
+    outline: 2px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  } */
 }
 
 .pic-btn:hover {
   /* background-color: rgba( $light-grey, .4 ); */
   background-color: rgba(239, 133, 13, 0.4);
+}
+
+.pic-btn:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.125);
 }
 
 .pic-btn--primary {
