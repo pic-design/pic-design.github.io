@@ -540,10 +540,18 @@ button {
 } */
 .pic-sidebar {
   background-color: rgba(255, 224, 190, 0.3);
-  min-width: 214px;
+  /* min-width: 214px; */
   border: 1px solid #d1d2d3;
   box-sizing: border-box;
   /* border-right: 1px solid #d1d2d3; */
+  width: 214px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.pic-sidebar .k-treeview {
+  flex: 1 0 auto;
 }
 
 .pic-sidebar--hidden {
@@ -576,7 +584,7 @@ button {
 }
 
 .pic-btn {
-  /* background-color: $light-grey; */
+  background-color: #FAFAFA;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0px, rgba(255, 255, 255, 0) 100%);
   border-radius: 2px;
   border: 1px solid #D1D2D3;
@@ -641,9 +649,10 @@ button {
   background-color: rgba(245, 54, 78, 0.4);
 }
 
-.pic-btn--flat {
+.pic-btn--ghost {
   border: 0;
   background-image: none;
+  background-color: transparent;
 }
 
 .pic-btn--lg {
@@ -1083,10 +1092,9 @@ button {
   background-color: #F5364E;
 }
 
-.k-alt {
-  background-color: rgba(255, 224, 190, 0.3);
-}
-
+/* .k-alt {
+  background-color: rgba($primary-light, .3);
+} */
 .k-icon {
   margin-bottom: 1px;
 }
