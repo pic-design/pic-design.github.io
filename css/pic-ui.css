@@ -594,7 +594,6 @@ button {
 .pic-btn:hover {
   /* background-color: rgba( $light-grey, .4 ); */
   background-color: rgba(239, 133, 13, 0.4);
-  color: #9F5400;
 }
 
 .pic-btn--primary {
@@ -608,12 +607,12 @@ button {
 }
 
 .pic-btn--success {
-  background-color: #69BE28;
+  background-color: rgba(105, 190, 40, 0.8);
   color: #FFF;
 }
 
 .pic-btn--success:hover {
-  background-color: rgba(105, 190, 40, 0.4);
+  background-color: #69BE28;
 }
 
 .pic-btn--warning {
@@ -1044,19 +1043,36 @@ button {
   height: 100%;
 }
 
-.pic-badge {
-  /* background-color: $grey; */
-  border-radius: 20px;
-  /* border: 1px solid $info; */
-  color: #00A1DE;
+.pic-label {
+  background-color: #353630;
+  border-radius: 2px;
+  color: #FFF;
+  font-weight: 700;
   display: inline-block;
-  font-size: 1.2em;
-  line-height: 1.5;
+  /* font-size: 75%; */
+  line-height: 1;
   outline: none;
-  /* padding: 0px 8px; */
-  /* text-decoration: none; */
-  /* font-family: inherit; */
-  /* cursor: default; */
+  padding: .2em .6em;
+}
+
+.pic-label--primary {
+  background-color: #EF850D;
+}
+
+.pic-label--success {
+  background-color: #69BE28;
+}
+
+.pic-label--info {
+  background-color: #00A1DE;
+}
+
+.pic-label--warning {
+  background-color: #F39A1E;
+}
+
+.pic-label--danger {
+  background-color: #F5364E;
 }
 
 .k-icon {
