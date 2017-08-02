@@ -175,6 +175,9 @@ td.k-group-cell,
 .k-pivot-layout > tbody > tr:first-child > td:first-child {
   background-color: #ffffff;
 }
+.k-alt {
+  background-color: rgba(255,224,190,.3);
+}
 .k-pivot-rowheaders .k-alt .k-alt,
 .k-header.k-alt {
   background-color: #ebebeb;
