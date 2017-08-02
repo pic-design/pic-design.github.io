@@ -51,7 +51,7 @@ $(document).ready(function() {
         template: "<button class='pic-btn' client-id='btn_edit'>編輯</button>",
         width:70,
         attributes: {
-          "class": "align-center"
+          "class": "pic-align-center"
         },
       },
       {
@@ -68,7 +68,7 @@ $(document).ready(function() {
         field:"count",
         title:"使用數量",
         attributes: {
-        	"class": "align-right"
+        	"class": "pic-align-right"
         },
         width:80
       },
@@ -131,7 +131,7 @@ $(document).ready(function() {
         title: "作業簡號",
         width: 100,
         attributes: {
-          "class": "align-right"
+          "class": "pic-align-right"
         }
       },
       {
@@ -139,7 +139,7 @@ $(document).ready(function() {
         title: "數量",
         width: 80,
         attributes: {
-          "class": "align-right"
+          "class": "pic-align-right"
         },
         format: "{0:n}"
       },
@@ -148,7 +148,7 @@ $(document).ready(function() {
         title: "金額",
         width: 80,
         attributes: {
-          "class": "align-right"
+          "class": "pic-align-right"
         },
         format: "{0:n}"
       },
@@ -157,7 +157,7 @@ $(document).ready(function() {
         title: "廠商折扣",
         width: 80,
         attributes: {
-          "class": "align-right"
+          "class": "pic-align-right"
         }
       }
     ]
@@ -186,7 +186,7 @@ $(document).ready(function() {
         title: "活動代號",
         width: 100,
         attributes: {
-          "class": "align-right"
+          "class": "pic-align-right"
         }
       },
       {
@@ -199,7 +199,7 @@ $(document).ready(function() {
         title: "作業簡號",
         width: 100,
         attributes: {
-          "class": "align-right"
+          "class": "pic-align-right"
         }
       },
       {
@@ -207,7 +207,7 @@ $(document).ready(function() {
         title: "數量",
         width: 80,
         attributes: {
-          "class": "align-right"
+          "class": "pic-align-right"
         },
         format: "{0:n}"
       },
@@ -216,7 +216,7 @@ $(document).ready(function() {
         title: "金額",
         width: 80,
         attributes: {
-          "class": "align-right"
+          "class": "pic-align-right"
         },
         format: "{0:n}"
       },
@@ -225,7 +225,7 @@ $(document).ready(function() {
         title: "廠商折扣",
         width: 80,
         attributes: {
-          "class": "align-right"
+          "class": "pic-align-right"
         }
       }
     ]
