@@ -33,6 +33,17 @@ $(document).ready(function() {
     }
   });
 
+  var myWindow = $('#window');
+  myWindow.kendoWindow({
+    title: '員工資料查詢',
+    width: '300px',
+    content: 'quick-search.html'
+  });
+
+  $('.pic-quick-search').on('click', '.pic-btn', function(){
+    myWindow.data('kendoWindow').center().open();
+  })
+
   $("#main-grid").kendoGrid({
     dataSource: [],
     height: 550,

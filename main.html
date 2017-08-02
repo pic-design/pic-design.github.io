@@ -193,8 +193,12 @@
                   <div class="pic-form__inline">
                     <div class="pic-form-element">
                       <label class="pic-form-element__label pic-form-element__label--required" for="foo">群組代號</label>
-                      <div class="pic-form-element__control">
-                        <input id="foo" class="pic-input" type="text" placeholder="輸入群組代號" required>
+                      <div class="pic-quick-search pic-form-element__control">
+                        <input class="pic-input" id="foo" placeholder="請輸入群組代號" required>
+                        <button class="pic-btn" type="button" name="button">
+                          <i class="fa fa-ellipsis-h"></i>
+                        </button>
+                        <input class="pic-input" type="text" name="name" readonly>
                       </div>
                     </div>
                     <div class="pic-form-element">
@@ -397,7 +401,7 @@
 
       </div>
     </div>
-
+    <div class="" id="window"> </div>
     <script src="js/jquery.min.js" charset="utf-8"></script>
     <script src="js/kendo.all.min.js" charset="utf-8"></script>
     <script src="js/datasource.js" charset="utf-8"></script>

@@ -1092,6 +1092,11 @@ button {
   background-color: #F5364E;
 }
 
+.pic-quick-search .pic-btn {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 /* .k-alt {
   background-color: rgba($primary-light, .3);
 } */
