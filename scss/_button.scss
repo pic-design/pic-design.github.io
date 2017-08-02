@@ -18,7 +18,7 @@
 // Style guide: 1
 
 .pic-btn {
-  /* background-color: $light-grey; */
+  background-color: $light-grey;
   background-image: $linear-gradient;
   border-radius: 2px;
   border: 1px solid $grey;
@@ -72,9 +72,10 @@
       background-color: rgba( $danger, .4 );
     }
   }
-  &--flat {
+  &--ghost {
     border: 0;
     background-image: none;
+    background-color: transparent;
   }
 
 }
