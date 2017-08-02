@@ -673,10 +673,6 @@ button {
   margin-top: 8px;
 }
 
-/* .pic-form > .pic-form-element:not(:first-child),
-.pic-form > .pic-form__inline:not(:first-child) .pic-form-element {
-  margin-top: 8px;
-} */
 .pic-form-element {
   box-sizing: border-box;
   display: flex;

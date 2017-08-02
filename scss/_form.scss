@@ -1,7 +1,15 @@
 // Forms 表單
 //
-// 表單由表單元素 (form element) 所組成。
+// 表單的基本組成物件是表單元素 (form element) 。
+// 表單元素由一個 `<label>` 以及 `<input>`、`<textarea>`、`<select>` 等輸入欄位所組成。
+//
+// `<label>` 需加上 `.pic-form-element__label`。
+// 輸入欄位如果有一個以上，需要用 `<div class=".pic-form-element__control"/>` 的控制項包起來，以顯示設計好的佈局。
+// 在水平及行內排列時 `.pic-form-element__label` 及 `.pic-form-element__control` 的寬度比是1:5。
+//
 // 表單提供三種排列方式：水平（預設值）、垂直及行內。
+// 水平排列的表單 `.pic-form-element__label` 及 `.pic-form-element__control` 會在同一行，
+// `.pic-form-element__label` 文字靠右對齊。
 //
 //
 // Markup:
@@ -32,12 +40,6 @@
     margin-top: 8px;
   }
 }
-
-/* .pic-form > .pic-form-element:not(:first-child),
-.pic-form > .pic-form__inline:not(:first-child) .pic-form-element {
-  margin-top: 8px;
-} */
-
 
 .pic-form-element {
   box-sizing: border-box;
@@ -83,7 +85,6 @@
   background: $white;
   outline: 0;
   box-sizing: border-box;
-
   width: 100%;
 
   height: 2.13em;
@@ -179,7 +180,9 @@
 
 // Vertical form 垂直排列
 //
-// 在 `.pic-form` 加上 `.pic-form--horizontal`。
+// 在 `.pic-form` 加上 `.pic-form--horizontal`。垂直排列的表單適合用在登入及註冊頁面，
+// `.pic-form-element__label` 及 `.pic-form-element__control` 會以堆疊方式呈現。
+// `.pic-form-element__label` 文字靠左對齊。
 //
 // Markup:
 // <div class="pic-form pic-form--horizontal">
