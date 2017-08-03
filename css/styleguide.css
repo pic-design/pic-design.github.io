@@ -1,6 +1,21 @@
 /* Style fix on styleguide pages */
 
+/* button groups */
+.pic-btn-group .pic-btn {
+  border-radius: 0 !important;
+  border-left: 0 !important;
+}
+.pic-btn-group .pic-btn:last-child {
+  border-top-right-radius: 2px !important;
+  border-bottom-right-radius: 2px !important;
+}
+.pic-btn-group .pic-btn:first-child {
+  border-top-left-radius: 2px !important;
+  border-bottom-left-radius: 2px !important;
+  border-left: 1px solid #d1d2d3 !important;
+}
 
+/* form */
 .pic-form > .pic-form-element:first-child {
   margin-top: 0 !important;
 }

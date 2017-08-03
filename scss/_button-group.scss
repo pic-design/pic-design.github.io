@@ -1,3 +1,19 @@
+// Button groups
+//
+// 將相同系列的按鈕放在一起。
+//
+//
+// Markup:
+// <div class="pic-btn-group">
+//   <button class="pic-btn" type="button">Button</button>
+//   <button class="pic-btn" type="button">Button</button>
+//   <button class="pic-btn" type="button">Button</button>
+// </div>
+//
+//
+//
+// Style guide: 2
+
 .pic-btn-group {
   display: flex;
   padding: 0 8px;
