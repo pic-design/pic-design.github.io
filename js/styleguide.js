@@ -78,3 +78,67 @@ if(!(currentTarget.attr('disabled') == 'disabled'))
   }
 }
 });
+
+// data grid
+var gridData = [
+  {"group_id":"TST08","group_name":"維護無刪除","create_date":"2017-07-17","create_id":"AMIS","count":"100"},
+  {"group_id":"SR001","group_name":"理貨一般","create_date":"2017-07-17","create_id":"AMIS","count":"220"},
+  {"group_id":"TS004","group_name":"只有修改","create_date":"2017-07-17","create_id":"AMIS","count":"1123"},
+  {"group_id":"RU","group_name":"執行編輯","create_date":"2017-07-17","create_id":"AMIS","count":"197723"},
+  {"group_id":"MIS01","group_name":"管理者","create_date":"2017-07-17","create_id":"AMIS","count":"6446"},
+  {"group_id":"SR002","group_name":"理貨管理","create_date":"2017-07-17","create_id":"AMIS","count":"732"},
+  {"group_id":"TS002","group_name":"只有新增","create_date":"2017-07-17","create_id":"AMIS","count":"886333"},
+  {"group_id":"TS001","group_name":"只有查詢","create_date":"2017-07-17","create_id":"AMIS","count":"124435"},
+  {"group_id":"TS003","group_name":"只有刪除","create_date":"2017-07-17","create_id":"AMIS","count":"89567457"},
+  {"group_id":"TS005","group_name":"只有列印","create_date":"2017-07-17","create_id":"AMIS","count":"4356"},
+  {"group_id":"AC003","group_name":"驗收MIS1","create_date":"2017-07-17","create_id":"AMIS","count":"34235"},
+  {"group_id":"TST08","group_name":"維護無刪除","create_date":"2017-07-17","create_id":"AMIS","count":"3525"},
+  {"group_id":"SR001","group_name":"理貨一般","create_date":"2017-07-17","create_id":"AMIS","count":"532"},
+  {"group_id":"TS004","group_name":"只有修改","create_date":"2017-07-17","create_id":"AMIS","count":"8865"},
+  {"group_id":"RU","group_name":"執行編輯","create_date":"2017-07-17","create_id":"AMIS","count":"423"},
+  {"group_id":"MIS01","group_name":"管理者","create_date":"2017-07-17","create_id":"AMIS","count":"100"},
+  {"group_id":"SR002","group_name":"理貨管理","create_date":"2017-07-17","create_id":"AMIS","count":"100"},
+  {"group_id":"TS002","group_name":"只有新增","create_date":"2017-07-17","create_id":"AMIS","count":"100"},
+  {"group_id":"TS001","group_name":"只有查詢","create_date":"2017-07-17","create_id":"AMIS","count":"100"},
+  {"group_id":"TS003","group_name":"只有刪除","create_date":"2017-07-17","create_id":"AMIS","count":"100"},
+  {"group_id":"TS005","group_name":"只有列印","create_date":"2017-07-17","create_id":"AMIS","count":"100"},
+  {"group_id":"AC003","group_name":"驗收MIS1","create_date":"2017-07-17","create_id":"AMIS","count":"100"}
+];
+
+$(".pic-grid").kendoGrid({
+  dataSource: gridData,
+  height: 501,
+  //sortable: true,
+  pageable: {
+    pageSize: 10,
+  },
+  columns:[
+    {
+      selectable: true,
+      width: 40
+    },
+    {
+      field: "group_id",
+      title: "群組代號"
+    },
+    {
+      field: "group_name",
+      title: "群組名稱"
+    },
+    {
+      field:"count",
+      title:"使用數量",
+      attributes: {
+        "class": "pic-align-right"
+      }
+    },
+    {
+      field: "create_date",
+      title: "建立日期"
+    },
+    {
+      field: "create_id",
+      title: "建立人員"
+    }
+  ]
+});
