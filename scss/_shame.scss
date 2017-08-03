@@ -42,21 +42,21 @@
 
 .k-dialog-titlebar {
   .dialog-danger & {
-    background-color: #F5364E;
+    background-color: $danger;
     &:before {
       content:'\f071';
       font-family: FontAwesome;
     }
   }
   .dialog-warning & {
-    background-color: #F39A1E;
+    background-color: $warning;
     &:before {
       content:'\f12a';
       font-family: FontAwesome;
     }
   }
   .dialog-success & {
-    background-color: #69BE28;
+    /* background-color: $success; */
     &:before {
       content:'\f00c';
       font-family: FontAwesome;

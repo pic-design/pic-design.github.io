@@ -76,6 +76,9 @@
       background-color: rgba($black, .3);
     }
   }
+  &--block {
+    width: 100%;
+  }
 }
 
 
@@ -97,16 +100,16 @@
 // Button sizes
 //
 // 按鈕大小
-//
+// `.pic-btn--block` 會以 width: 100% 顯示。
 //
 // Markup:
 // <button class="pic-btn pic-btn--lg" type="button">Large Button</button>
+// <button class="pic-btn pic-btn--lg pic-btn--block" type="button">Large Block Button</button>
 //
 // Style guide: 1.2
 
 .pic-btn--lg {
   font-size: 1.5em;
-  /* width: 100%; */
   text-align: center;
   border-radius: 6px;
   &.pic-btn-flat {

@@ -44,20 +44,6 @@
         <a class="kss-nav__menu-link" href="section-3.html">
           <span class="kss-nav__ref">3</span><span class="kss-nav__name">Forms 表單</span>
         </a>
-            <ul class="kss-nav__menu-child">
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-3.html#kssref-3-1">
-                  <span class="kss-nav__ref ">3.1</span
-                  ><span class="kss-nav__name">Inline form 行內排列</span>
-                </a>
-              </li>
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-3.html#kssref-3-2">
-                  <span class="kss-nav__ref ">3.2</span
-                  ><span class="kss-nav__name">Vertical form 垂直排列</span>
-                </a>
-              </li>
-            </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-4.html">
@@ -74,23 +60,23 @@
 </div>
 <article role="main" class="kss-main">
 
-    <div id="kssref-3" class="kss-section kss-section--depth-1 is-fullscreen">
+    <div id="kssref-5" class="kss-section kss-section--depth-1 is-fullscreen">
 
       <div class="kss-style">
         <h1 class="kss-title kss-title--level-1">
-          <a class="kss-title__permalink" href="#kssref-3">
+          <a class="kss-title__permalink" href="#kssref-5">
             <span class="kss-title__ref">
-              3
+              5
               <span class="kss-title__permalink-hash">
                   #permalink
               </span>
             </span>
-            Forms 表單
+            Panel
           </a>
         </h1>
 
           <p class="kss-toolbar">
-            <a href="#kssref-3" data-kss-guides="true">
+            <a href="#kssref-5" data-kss-guides="true">
               <span class="kss-toolbar__tooltip">Toggle example guides</span>
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
@@ -111,7 +97,7 @@
                 <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
               </svg>
             </a>
-            <a href="#kssref-3" data-kss-markup="true">
+            <a href="#kssref-5" data-kss-markup="true">
               <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
@@ -121,14 +107,7 @@
           </p>
 
           <div class="kss-description">
-            <p>表單的基本組成物件是表單元素 (form element) 。
-表單元素由一個 <code>&lt;label&gt;</code> 以及 <code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code>、<code>&lt;select&gt;</code> 等輸入元素所組成。</p>
-<p><code>&lt;label&gt;</code> 需加上 <code>.pic-form-element__label</code>。
-輸入欄位如果有一個以上，需要用 <code>&lt;div class=&quot;.pic-form-element__control&quot;/&gt;</code> 的控制項包起來，以顯示設計好的佈局。
-在水平及行內排列時 <code>.pic-form-element__label</code> 及 <code>.pic-form-element__control</code> 的寬度比是1:5。</p>
-<p>表單提供三種排列方式：水平（預設值）、垂直及行內。
-水平排列的表單 <code>.pic-form-element__label</code> 及 <code>.pic-form-element__control</code> 會在同一行，
-<code>.pic-form-element__label</code> 文字靠右對齊。</p>
+            <p>將元件包在一起的區塊。</p>
 
           </div>
 
@@ -141,19 +120,7 @@
 
 
           <div class="kss-modifier__example">
-            <div class="pic-form">
-  <div class="pic-form-element">
-    <label class="pic-form-element__label" for="foo">活動代號</label>
-    <div class="pic-form-element__control">
-      <input class="pic-input" id="foo" type="text" placeholder="輸入活動代號">
-    </div>
-  </div>
-  <div class="pic-form-element">
-    <label class="pic-form-element__label" for="foe">活動名稱</label>
-    <div class="pic-form-element__control">
-      <input class="pic-input" id="foe" type="text" placeholder="輸入活動名稱">
-    </div>
-  </div>
+            <div class="pic-panel">
 </div>
             <div class="kss-modifier__example-footer"></div>
           </div>
@@ -164,24 +131,12 @@
             <summary>
                 Markup
             </summary>
-            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;&quot;pic-form&quot;&gt;
-  &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-    &lt;label class&#x3D;&quot;pic-form-element__label&quot; for&#x3D;&quot;foo&quot;&gt;活動代號&lt;/label&gt;
-    &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
-      &lt;input class&#x3D;&quot;pic-input&quot; id&#x3D;&quot;foo&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入活動代號&quot;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;pic-form-element&quot;&gt;
-    &lt;label class&#x3D;&quot;pic-form-element__label&quot; for&#x3D;&quot;foe&quot;&gt;活動名稱&lt;/label&gt;
-    &lt;div class&#x3D;&quot;pic-form-element__control&quot;&gt;
-      &lt;input class&#x3D;&quot;pic-input&quot; id&#x3D;&quot;foe&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;輸入活動名稱&quot;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;&quot;pic-panel&quot;&gt;
 &lt;/div&gt;</code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>_form.scss</code>, line 1
+          Source: <code>_panel.scss</code>, line 1
         </div>
 
     </div>
