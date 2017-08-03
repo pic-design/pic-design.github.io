@@ -93,11 +93,19 @@
 // Style guide: 1.1
 
 
-
+// Button sizes
+//
+// 按鈕大小
+//
+//
+// Markup:
+// <button class="pic-btn pic-btn--lg" type="button">Large Button</button>
+//
+// Style guide: 1.2
 
 .pic-btn--lg {
   font-size: 1.5em;
-  width: 100%;
+  /* width: 100%; */
   text-align: center;
   border-radius: 6px;
   &.pic-btn-flat {
@@ -116,7 +124,7 @@
 // <button class="pic-btn pic-btn--primary" type="button" disabled>Button</button>
 // <a class="pic-btn disabled" href="#" role="button">Link</a>
 //
-// Style guide: 1.2
+// Style guide: 1.3
 
 
 .pic-btn.disabled, .pic-btn[disabled] {
