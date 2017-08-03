@@ -1,3 +1,42 @@
+// Tabs
+//
+// 頁籤
+//
+//
+// Markup:
+// <div style="display:flex; flex-direction:column;">
+//   <div class="pic-tabs">
+//     <div class="pic-tab pic-tab--selected" name="foo">
+//       <div class="pic-tab__inner">
+//         Foo
+//       </div>
+//     </div>
+//     <div class="pic-tab" name="foe">
+//       <div class="pic-tab__inner">
+//         Foe
+//       </div>
+//     </div>
+//     <div class="pic-tab" name="fat">
+//       <div class="pic-tab__inner">
+//         Fat
+//       </div>
+//     </div>
+//   </div>
+//   <div class="pic-workareas">
+//     <div class="pic-workarea pic-workarea--selected" name="foo">
+//       foo tab
+//     </div>
+//     <div class="pic-workarea" name="foe">
+//       foe tab
+//     </div>
+//     <div class="pic-workarea" name="fat">
+//       fat tab
+//     </div>
+//   </div>
+// </div>
+//
+// Style guide: 6
+
 .pic-tabs {
   display: flex;
   list-style: none;

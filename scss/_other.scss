@@ -111,32 +111,7 @@
   height: 100%;
 }
 
-.pic-label {
-  background-color: $dark-grey;
-  border-radius: 2px;
-  color: $white;
-  font-weight: 700;
-  display: inline-block;
-  /* font-size: 75%; */
-  line-height: 1;
-  outline: none;
-  padding: .2em .6em;
-  &--primary {
-    background-color: $primary;
-  }
-  &--success {
-    background-color: $success;
-  }
-  &--info {
-    background-color: $info;
-  }
-  &--warning {
-    background-color: $warning;
-  }
-  &--danger {
-    background-color: $danger;
-  }
-}
+
 
 .pic-quick-search {
   .pic-btn {
