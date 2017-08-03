@@ -2,14 +2,6 @@
 //
 // 在 `<button>` 或者 `<a>` 加上 `.pic-btn`。
 //
-// .pic-btn--primary - 以品牌主色為背景的按鈕
-// .pic-btn--success - 成功按鈕，綠色背景
-// .pic-btn--warning - 警告按鈕，黃色背景
-// .pic-btn--danger - 危險按鈕，紅色背景
-// .pic-btn--flat   - 沒有邊框的按鈕
-// .pic-btn--lg - 大型按鈕 (width:100%)
-// .pic-btn--disabled - 不能用的按鈕
-//
 //
 // Markup:
 // <button class="pic-btn" type="button">Button</button>
@@ -43,11 +35,11 @@
     outline-offset: -2px;
   } */
   &--primary {
-    background-color: $primary;
-    color: $white;
+    background-color: rgba( $primary, .8 );
+    /* color: $white; */
+    color: $primary-dark;
     &:hover {
-      background-color: rgba( $primary, .4 );
-      color: $primary-dark;
+      background-color: $primary;
     }
   }
   &--success {
@@ -58,17 +50,17 @@
     }
   }
   &--warning {
-    background-color: $warning;
+    background-color: rgba( $warning, .8 );
     color: $white;
     &:hover {
-      background-color: rgba( $warning, .4 );
+      background-color: $warning;
     }
   }
   &--danger {
-    background-color: $danger;
+    background-color: rgba( $danger, .8 );
     color: $white;
     &:hover {
-      background-color: rgba( $danger, .4 );
+      background-color: $danger;
     }
   }
   &--flat {
@@ -87,6 +79,22 @@
 }
 
 
+// Button options
+//
+// 各種背景的按鈕
+//
+//
+// Markup:
+// <button class="pic-btn pic-btn--primary" type="button">Primary</button>
+// <button class="pic-btn pic-btn--success" type="button">Success</button>
+// <button class="pic-btn pic-btn--warning" type="button">Warning</button>
+// <button class="pic-btn pic-btn--danger" type="button">Danger</button>
+//
+// Style guide: 1.1
+
+
+
+
 .pic-btn--lg {
   font-size: 1.5em;
   width: 100%;
@@ -97,6 +105,19 @@
     line-height: 1;
   }
 }
+
+// Disabled button
+//
+// 無法使用的按鈕
+//
+//
+// Markup:
+// <button class="pic-btn" type="button" disabled>Button</button>
+// <button class="pic-btn pic-btn--primary" type="button" disabled>Button</button>
+// <a class="pic-btn disabled" href="#" role="button">Link</a>
+//
+// Style guide: 1.2
+
 
 .pic-btn.disabled, .pic-btn[disabled] {
   pointer-events: none;

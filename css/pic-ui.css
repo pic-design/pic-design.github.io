@@ -613,13 +613,13 @@ button {
 }
 
 .pic-btn--primary {
-  background-color: #EF850D;
-  color: #FFF;
+  background-color: rgba(239, 133, 13, 0.8);
+  /* color: $white; */
+  color: #9F5400;
 }
 
 .pic-btn--primary:hover {
-  background-color: rgba(239, 133, 13, 0.4);
-  color: #9F5400;
+  background-color: #EF850D;
 }
 
 .pic-btn--success {
@@ -632,21 +632,21 @@ button {
 }
 
 .pic-btn--warning {
-  background-color: #F39A1E;
+  background-color: rgba(243, 154, 30, 0.8);
   color: #FFF;
 }
 
 .pic-btn--warning:hover {
-  background-color: rgba(243, 154, 30, 0.4);
+  background-color: #F39A1E;
 }
 
 .pic-btn--danger {
-  background-color: #F5364E;
+  background-color: rgba(245, 54, 78, 0.8);
   color: #FFF;
 }
 
 .pic-btn--danger:hover {
-  background-color: rgba(245, 54, 78, 0.4);
+  background-color: #F5364E;
 }
 
 .pic-btn--flat {
