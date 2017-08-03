@@ -604,8 +604,8 @@ button {
 }
 
 .pic-btn:hover {
-  /* background-color: rgba( $light-grey, .4 ); */
-  background-color: rgba(239, 133, 13, 0.4);
+  background-color: rgba(209, 210, 211, 0.4);
+  /* background-color: rgba( $primary, .4 ); */
 }
 
 .pic-btn:active {
@@ -649,10 +649,20 @@ button {
   background-color: rgba(245, 54, 78, 0.4);
 }
 
-.pic-btn--ghost {
+.pic-btn--flat {
   border: 0;
   background-image: none;
   background-color: transparent;
+}
+
+.pic-btn--flat:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #FFF;
+}
+
+.pic-btn--flat:active {
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .pic-btn--lg {
@@ -1174,7 +1184,7 @@ button {
 }
 
 .dialog-success .k-dialog-titlebar {
-  background-color: #69BE28;
+  /* background-color: $success; */
 }
 
 .dialog-success .k-dialog-titlebar:before {
