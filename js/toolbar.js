@@ -48,7 +48,7 @@ $('.pic-toolbar').on('click', '.pic-btn', function (event) {
         deferred = PIC.confirm('是否放棄現有的新增?', 'warning', '警告訊息');
         deferred.then(function (confirmed) {
           if (confirmed) {
-            PIC.addMode(content);
+            PIC.addMode(wrapper);
           }
         })
       } else if (previousMode === 'edit') {
