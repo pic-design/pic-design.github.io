@@ -38,3 +38,17 @@
 .k-header .k-link {
   text-align: center;
 }
+
+.pic-grid.disabled {
+  position: relative;
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba( $grey, .6);
+    z-index: 2;
+  }
+}

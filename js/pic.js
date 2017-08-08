@@ -1,6 +1,10 @@
 window.PIC = (function () {
   // make the PIC object
   var PIC = {
+
+    disableGrid: function(grid){
+      grid.addClass('disabled');
+    },
     // show alert dialog (one button)
     alert: function (content, option, title) {
       var config = {
@@ -100,7 +104,8 @@ window.PIC = (function () {
           $(this).removeAttr('title');
           // destroy kendoTooltip object
           if($(this).data('kendoTooltip')) {
-            $(this).data('kendoTooltip').destroy();
+            // $(this).data('kendoTooltip').destroy();
+            $(this).kendoTooltip('destroy');
           }
         } else {
           $(this).addClass('pic-input--warning');
