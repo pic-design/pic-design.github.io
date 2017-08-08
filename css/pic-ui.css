@@ -680,15 +680,15 @@ button {
   line-height: 1;
 }
 
-.pic-btn.disabled, .pic-btn[disabled] {
+/* .pic-btn.disabled, .pic-btn[disabled] {
   pointer-events: none;
   opacity: .4;
-  /* &:hover {
+  //cursor: not-allowed;
+  &:hover {
     background-color: transparent;
     color: $black;
-  } */
-}
-
+  }
+} */
 .pic-form {
   box-sizing: border-box;
   padding: 8px 0;
@@ -1129,6 +1129,15 @@ button {
   margin-right: 8px;
 }
 
+.pic-btn.disabled, .pic-btn[disabled], .pic-tab.disabled {
+  pointer-events: none;
+  opacity: .4;
+  /* &:hover {
+    background-color: transparent;
+    color: $black;
+  } */
+}
+
 /* .k-alt {
   background-color: rgba($primary-light, .3);
 } */
@@ -1140,18 +1149,12 @@ button {
   background-image: none !important;
 }
 
-.k-dialog {
-  min-width: 300px;
-  font-family: -apple-system, "微軟正黑體", sans-serif;
-}
-
 .k-dialog .k-content {
   text-align: center;
 }
 
 .k-dialog .k-dialog-titlebar {
   padding: 8px;
-  color: white;
 }
 
 .k-dialog .k-dialog-titlebar .k-dialog-title {
@@ -1163,34 +1166,38 @@ button {
   text-align: center;
 }
 
-.k-dialog .k-dialog-buttongroup .k-button {
-  padding-left: 16px;
-  padding-right: 16px;
+.pic-dialog--info .k-dialog-titlebar {
+  background-color: #00A1DE;
 }
 
-.dialog-danger .k-dialog-titlebar {
-  background-color: #F5364E;
-}
-
-.dialog-danger .k-dialog-titlebar:before {
-  content: '\f071';
+.pic-dialog--info .k-dialog-titlebar:before {
+  content: '\f05a';
   font-family: FontAwesome;
 }
 
-.dialog-warning .k-dialog-titlebar {
+.pic-dialog--success .k-dialog-titlebar {
+  background-color: #69BE28;
+}
+
+.pic-dialog--success .k-dialog-titlebar:before {
+  content: '\f00c';
+  font-family: FontAwesome;
+}
+
+.pic-dialog--warning .k-dialog-titlebar {
   background-color: #F39A1E;
 }
 
-.dialog-warning .k-dialog-titlebar:before {
+.pic-dialog--warning .k-dialog-titlebar:before {
   content: '\f12a';
   font-family: FontAwesome;
 }
 
-.dialog-success .k-dialog-titlebar {
-  /* background-color: $success; */
+.pic-dialog--danger .k-dialog-titlebar {
+  background-color: #F5364E;
 }
 
-.dialog-success .k-dialog-titlebar:before {
-  content: '\f00c';
+.pic-dialog--danger .k-dialog-titlebar:before {
+  content: '\f071';
   font-family: FontAwesome;
 }

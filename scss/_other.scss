@@ -119,3 +119,13 @@
     margin-right: 8px;
   }
 }
+
+.pic-btn.disabled, .pic-btn[disabled], .pic-tab.disabled {
+  pointer-events: none;
+  opacity: .4;
+  //cursor: not-allowed;
+  /* &:hover {
+    background-color: transparent;
+    color: $black;
+  } */
+}

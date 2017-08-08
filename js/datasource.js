@@ -1,4 +1,4 @@
-var gridData = [
+var mainData = [
   {"group_id":"TST08","group_name":"維護無刪除","create_date":"2017-07-17","create_id":"AMIS","upd_date":"2017-07-17","upd_id":"AMIS","count":"100"},
   {"group_id":"SR001","group_name":"理貨一般","create_date":"2017-07-17","create_id":"AMIS","upd_date":"2017-07-17","upd_id":"AMIS","count":"100"},
   {"group_id":"TS004","group_name":"只有修改","create_date":"2017-07-17","create_id":"AMIS","upd_date":"2017-07-17","upd_id":"AMIS","count":"100"},

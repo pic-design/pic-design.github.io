@@ -16,14 +16,12 @@
 }
 
 .k-dialog {
-  min-width: 300px;
-  font-family: -apple-system, "微軟正黑體", sans-serif;
   .k-content {
     text-align: center;
   }
   .k-dialog-titlebar {
     padding: 8px;
-    color: white;
+    //color: white;
     .k-dialog-title {
       font-size: 0.9em;
       left: 1.8em;
@@ -33,32 +31,35 @@
     &.k-dialog-button-layout-normal {
       text-align: center;
     }
-    .k-button {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
   }
 }
 
 .k-dialog-titlebar {
-  .dialog-danger & {
-    background-color: $danger;
+  .pic-dialog--info & {
+    background-color: $info;
     &:before {
-      content:'\f071';
+      content:'\f05a';
       font-family: FontAwesome;
     }
   }
-  .dialog-warning & {
+  .pic-dialog--success & {
+    background-color: $success;
+    &:before {
+      content:'\f00c';
+      font-family: FontAwesome;
+    }
+  }
+  .pic-dialog--warning & {
     background-color: $warning;
     &:before {
       content:'\f12a';
       font-family: FontAwesome;
     }
   }
-  .dialog-success & {
-    /* background-color: $success; */
+  .pic-dialog--danger & {
+    background-color: $danger;
     &:before {
-      content:'\f00c';
+      content:'\f071';
       font-family: FontAwesome;
     }
   }
