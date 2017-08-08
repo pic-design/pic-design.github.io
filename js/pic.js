@@ -97,8 +97,19 @@ window.PIC = (function () {
       requires.each(function () {
         if ($(this).val()) {
           $(this).removeClass('pic-input--warning');
-        }else{
+          $(this).removeAttr('title');
+          // destroy kendoTooltip object
+          if($(this).data('kendoTooltip')) {
+            $(this).data('kendoTooltip').destroy();
+          }
+        } else {
           $(this).addClass('pic-input--warning');
+          // tooltip 的內容就是元素的 title 值
+          $(this).attr('title', '這個必填');
+          // 使用 Kendo Tooltip 來產生提示訊息
+          $(this).kendoTooltip({
+            position: 'top'
+          });
         }
       });
       // 檢查表單是不是還有 warning class 的欄位
