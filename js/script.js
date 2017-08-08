@@ -34,10 +34,12 @@ $(document).ready(function() {
   });
 
   var myWindow = $('#window');
+
   myWindow.kendoWindow({
     title: '員工資料查詢',
     width: '300px',
     content: 'quick-search.html',
+    visible: false,
     open: function(){
       $('#qs-grid').kendoGrid({
         dataSource: [],
@@ -61,6 +63,7 @@ $(document).ready(function() {
       })
     }
   });
+
   var qsData = [
     {'qs_num':'001', 'qs_name':'亞洲分部'},
     {'qs_num':'002', 'qs_name':'非洲分部'},
