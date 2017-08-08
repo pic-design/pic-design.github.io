@@ -466,6 +466,10 @@ button {
   background-color: transparent;
 }
 
+table {
+  font-size: 1em;
+}
+
 .pic-layout {
   display: flex;
   flex-direction: column;
