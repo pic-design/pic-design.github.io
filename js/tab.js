@@ -8,6 +8,7 @@ var tabSwitch = function(tabName, tabs){
   // Set selected tab and tab-content to normal
   tabs.find('.pic-tab--selected').removeClass('pic-tab--selected');
   tabs.siblings('.pic-workareas').children('.pic-workarea--selected').removeClass('pic-workarea--selected');
+
   // Show selcted tab and tab-content
   tabs.find('[name='+ tabName +']').addClass('pic-tab--selected');
   tabs.siblings('.pic-workareas').children('[name='+ tabName +']').addClass('pic-workarea--selected');
@@ -179,10 +180,9 @@ $(document).ready(function(){
     form.find('[name=price]').val(dataItem.price);
     form.find('[name=sale]').val(dataItem.sale);
 
-
     tabSwitch('detail', masterTabs);
-  	PIC.resultMode($('#detail-grid').parent());
-  	$("li[name='detail']").addClass('disabled');
+  	PIC.resultMode($('#detail-grid').parent('.pic-workarea'));
+  	// $("li[name='detail']").addClass('disabled');
   });
 
 });

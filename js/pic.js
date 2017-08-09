@@ -159,7 +159,6 @@ window.PIC = (function () {
     resultMode: function (workarea) {
       var grid = workarea.find('.pic-grid');
       var label = workarea.find("[client-id='pageMode']");
-
       // import data to grid
       if(grid.attr('id') === 'master-grid') {
         grid.data("kendoGrid").dataSource.data(mdData);

@@ -3,7 +3,7 @@ $(document).ready(function(){
 // 啟動功能就進入查詢模式
 PIC.queryMode($("#main-grid").parent('.pic-workarea'));
 PIC.queryMode($("#master-grid").parent('.pic-workarea'));
-// PIC.resultMode($('#detail-grid').parent());
+
 
 
 $('.pic-toolbar').on('click', '.pic-btn', function (event) {
