@@ -51,11 +51,13 @@
 }
 
 .pic-form-element__label {
+  box-sizing: border-box;
   color: $dark-grey;
   display: block;
-  flex: 1 0 0px;
+  flex: 0 0 88px;
   text-align: right;
   padding-right: 8px;
+  white-space: nowrap;
 
   &--required:before {
     content: '*';
@@ -65,7 +67,7 @@
 }
 
 .pic-form-element__control {
-  flex: 5 0 0px;
+  flex: 1 1 0px;
   display: flex;
   align-items: center;
   .pic-form-element__el {
@@ -77,7 +79,9 @@
     flex: 1 1 0px;
   }
 }
-
+.pic-widget {
+  width: 100%;
+}
 .pic-form--compact {
   padding-right: 20px;
   padding-left: 20px;
@@ -181,7 +185,7 @@
     }
   }
   .pic-input {
-    width: auto;
+  //  width: auto;
   }
 }
 

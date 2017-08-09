@@ -716,11 +716,13 @@ table {
 }
 
 .pic-form-element__label {
+  box-sizing: border-box;
   color: #353630;
   display: block;
-  flex: 1 0 0px;
+  flex: 0 0 88px;
   text-align: right;
   padding-right: 8px;
+  white-space: nowrap;
 }
 
 .pic-form-element__label--required:before {
@@ -730,7 +732,7 @@ table {
 }
 
 .pic-form-element__control {
-  flex: 5 0 0px;
+  flex: 1 1 0px;
   display: flex;
   align-items: center;
 }
@@ -743,6 +745,10 @@ table {
 
 .pic-form-element__control > .pic-input, .pic-form-element__control > .pic-widget {
   flex: 1 1 0px;
+}
+
+.pic-widget {
+  width: 100%;
 }
 
 .pic-form--compact {
@@ -814,10 +820,6 @@ table {
 
 .pic-form__inline .pic-form-element:not(:first-child) {
   margin-left: 16px;
-}
-
-.pic-form__inline .pic-input {
-  width: auto;
 }
 
 .pic-form > .pic-form__inline:not(:first-child) .pic-form-element {
