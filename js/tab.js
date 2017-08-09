@@ -181,8 +181,8 @@ $(document).ready(function(){
 
 
     tabSwitch('detail', masterTabs);
-  	result_mode($('#detail-grid').parent());
-  	$("li[name='detail']").attr('disabled', null);
+  	PIC.resultMode($('#detail-grid').parent());
+  	$("li[name='detail']").addClass('disabled');
   });
 
 });
