@@ -151,7 +151,7 @@ $(document).ready(function(){
 
   // 開啟明細頁
   $("#master-grid").on('click', '.detail', function(event){
-
+    
     var currentTarget = $(event.currentTarget);
     var currentRow = currentTarget.closest('tr');
     var grid = currentRow.closest(".pic-grid");
@@ -168,18 +168,24 @@ $(document).ready(function(){
     masterTabs.children('.pic-tab--selected').removeClass('pic-tab--selected');
     masterContents.children('.pic-workarea--selected').removeClass('pic-workarea--selected');
 
-    // 移除 detail tab 的 disabled 狀態
-    if (masterTabs.children('.disabled').length > 0) {
-      masterTabs.children('.disabled').removeClass('disabled');
+    if(currentTarget.hasClass('detail')){
+      // 移除 detail tab 的 disabled 狀態
+      if (masterTabs.children('.disabled').length > 0) {
+        masterTabs.children('.disabled').removeClass('disabled');
+      }
+  
+      var form = masterContents.children('.pic-workarea[name=detail]').find('.pic-form--readonly');
+      form.find('[name=contract_id]').val(id);
+      form.find('[name=contract_name]').val(name);
+  
+      tabSwitch('detail', masterTabs);
+      PIC.resultMode($('#detail-grid').parent('.pic-workarea'));
+      // $("li[name='detail']").addClass('disabled');
+    } else if (currentTarget.hasClass('edit')) {
+      var form = workarea.find('.pic-form');
+      form.find('[name=contract_id').val(id);
+      form.find('[name=contract_name').val(name);
     }
-
-    var form = masterContents.children('.pic-workarea[name=detail]').find('.pic-form--readonly');
-    form.find('[name=contract_id]').val(id);
-    form.find('[name=contract_name]').val(name);
-
-    tabSwitch('detail', masterTabs);
-  	PIC.resultMode($('#detail-grid').parent('.pic-workarea'));
-  	// $("li[name='detail']").addClass('disabled');
   });
 
 
@@ -195,7 +201,6 @@ $(document).ready(function(){
     var name = dataItem.group_name;
     var quantity = dataItem.quantity;
     var total = dataItem.total;
-    console.log([id, name, quantity, total]);
 
     var form = workarea.find('.pic-form:not(".pic-form--readonly")');
     form.find('[name=group_id]').val(id);

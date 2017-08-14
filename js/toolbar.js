@@ -71,27 +71,29 @@ $('.pic-toolbar').on('click', '.pic-btn', function (event) {
         }
       })
     } else if (id === 'confirm') {
-      console.log('按了確認');
       // 確認
-      //var grid = wrapper.find('.pic-grid')[0].id;
+      // var grid = wrapper.find('.pic-grid')[0].id;
       var formEl = wrapper.find('.pic-form');
       var validate = PIC.isFormValidated(formEl);
 
       if (validate) {
         switch(previousMode) {
           case "add":
+            console.log('confirm:add');
             // clear form values
             formEl.find('.pic-input').val('');
             PIC.alert('資料已新增','success');
             PIC.resultMode(wrapper);
             break;
           case "edit":
+            console.log('confirm:edit');
             // clear form values
             formEl.find('.pic-input').val('');
             PIC.alert('資料已更新','success');
             PIC.resultMode(wrapper);
             break;
           case "query":
+            console.log('confirm:query');
             PIC.resultMode(wrapper);
             break;
         }

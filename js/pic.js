@@ -145,16 +145,21 @@ window.PIC = (function () {
       // 控制項權限
       // 查 確 新 編 取 刪 列
       // E  E  E  D  D  D  E
-      workarea.find("[client-id='query']").attr("disabled", false);
+      if(workarea.attr('name') === 'detail'){
+        // 明細維護頁的「查詢」永遠是 disabled
+        workarea.find("[client-id='query']").attr("disabled", true);
+      } else {
+        workarea.find("[client-id='query']").attr("disabled", false);
+      }
       workarea.find("[client-id='confirm']").attr("disabled", false);
       workarea.find("[client-id='add']").attr("disabled", false);
-      workarea.find("[client-id='edit']").attr("disabled", true);
+      // workarea.find("[client-id='edit']").attr("disabled", true);
       workarea.find("[client-id='cancel']").attr("disabled", true);
       workarea.find("[client-id='delete']").attr("disabled", true);
       workarea.find("[client-id='print']").attr("disabled", false);
 
       // disable detail tab
-      workarea.find(".pic-tab[name='detail']").addClass('disabled');
+      // workarea.find(".pic-tab[name='detail']").addClass('disabled');
     },
     resultMode: function (workarea) {
       var grid = workarea.find('.pic-grid');
@@ -174,7 +179,7 @@ window.PIC = (function () {
       label.text('查詢結果');
 
       // Add event to edit buttons in grid
-      grid.on('click', '[client-id="btn_edit"]', function(event) {
+      grid.on('click', '.edit', function(event) {
         PIC.editMode( $(event.currentTarget) );
       });
 
@@ -182,17 +187,22 @@ window.PIC = (function () {
       // 控制項權限
       // 查 確 新 編 取 刪 列
       // E  D  E  E  D  E  D
-      workarea.find("[client-id='query']").attr("disabled", false);
+      if(workarea.attr('name') === 'detail'){
+        // 明細維護頁的「查詢」永遠是 disabled
+        workarea.find("[client-id='query']").attr("disabled", true);
+      } else {
+        workarea.find("[client-id='query']").attr("disabled", false);
+      }
       workarea.find("[client-id='confirm']").attr("disabled", true);
       workarea.find("[client-id='add']").attr("disabled", false);
-      workarea.find("[client-id='edit']").attr("disabled", false);
+      // workarea.find("[client-id='edit']").attr("disabled", false);
       workarea.find("[client-id='cancel']").attr("disabled", true);
       workarea.find("[client-id='delete']").attr("disabled", false);
       workarea.find("[client-id='print']").attr("disabled", true);
-      workarea.find("[client-id='detail']").attr("disabled", false);
+      // workarea.find("[client-id='detail']").attr("disabled", false);
 
       // disable detail tab
-      workarea.find(".pic-tab[name='detail']").addClass('disabled');
+      // workarea.find(".pic-tab[name='detail']").addClass('disabled');
     },
     editMode: function (btn) {
       var row = btn.closest("tr");
@@ -200,31 +210,31 @@ window.PIC = (function () {
       var dataGrid = grid.data('kendoGrid');
       var workarea = grid.parent('.pic-workarea');
       var label = workarea.find("[client-id='pageMode']");
-
+      console.log(workarea);
       // change label to 'edit mode'
       label.attr('pre-value', label.attr('data-value'));
       label.attr('data-value', 'edit');
       label.text('編輯');
 
       // 查詢欄位顯示選擇列的值
-      var dataItem = dataGrid.dataItem(row);
-      // $("#foo").val(dataItem.group_id);
-      // $("#foe").val(dataItem.group_name);
+      // var dataItem = dataGrid.dataItem(row);
 
       // 控制項權限
       // 查 確 新 編 取 刪 列
       // E  E  D  D  E  D  D
-      workarea.find("[client-id='query']").attr("disabled", false);
+      if(workarea.attr('name') === 'detail'){
+        // 明細維護頁的「查詢」永遠是 disabled
+        workarea.find("[client-id='query']").attr("disabled", true);
+      } else {
+        workarea.find("[client-id='query']").attr("disabled", false);
+      }
+
       workarea.find("[client-id='confirm']").attr("disabled", false);
       workarea.find("[client-id='add']").attr("disabled", true);
-      workarea.find("[client-id='edit']").attr("disabled", true);
       workarea.find("[client-id='cancel']").attr("disabled", false);
       workarea.find("[client-id='delete']").attr("disabled", true);
       workarea.find("[client-id='print']").attr("disabled", true);
-      workarea.find("[client-id='detail']").attr("disabled", true);
 
-      // disable detail tab
-      workarea.find(".pic-tab[name='detail']").addClass('disabled');
     },
     addMode: function (workarea) {
       // 清空查詢欄位
@@ -242,16 +252,21 @@ window.PIC = (function () {
       // 控制項權限
       // 查 確 新 編 取 刪 列
       // E  E  E  D  E  D  D
-      workarea.find("[client-id='query']").attr("disabled", false);
+      if(workarea.attr('name') === 'detail'){
+        // 明細維護頁的「查詢」永遠是 disabled
+        workarea.find("[client-id='query']").attr("disabled", true);
+      } else {
+        workarea.find("[client-id='query']").attr("disabled", false);
+      }
       workarea.find("[client-id='confirm']").attr("disabled", false);
       workarea.find("[client-id='add']").attr("disabled", false);
-      workarea.find("[client-id='edit']").attr("disabled", true);
+      // workarea.find("[client-id='edit']").attr("disabled", true);
       workarea.find("[client-id='cancel']").attr("disabled", false);
       workarea.find("[client-id='delete']").attr("disabled", true);
       workarea.find("[client-id='print']").attr("disabled", true);
-      workarea.find("[client-id='detail']").attr("disabled", true);
+      // workarea.find("[client-id='detail']").attr("disabled", true);
       // disable detail tab
-      workarea.find(".pic-tab[name='detail']").addClass('disabled');
+      // workarea.find(".pic-tab[name='detail']").addClass('disabled');
     }
   };
 

@@ -291,13 +291,13 @@
                         <div class="pic-form-element">
                           <label class="pic-form-element__label pic-form-element__label--required" for="">合約代號</label>
                           <div class="pic-form-element__control">
-                            <input id="" class="pic-input" type="text" placeholder="輸入合約代號" required>
+                            <input name="contract_id" id="" class="pic-input" type="text" placeholder="輸入合約代號" required>
                           </div>
                         </div>
                         <div class="pic-form-element">
                           <label class="pic-form-element__label" for="">合約名稱</label>
                           <div class="pic-form-element__control">
-                            <input id="" class="pic-input" type="text" placeholder="輸入合約名稱" >
+                            <input name="contract_name" id="" class="pic-input" type="text" placeholder="輸入合約名稱" >
                           </div>
                         </div>
                       </div>
@@ -308,30 +308,30 @@
                 <div class="pic-workarea" name="detail">
                   <div class="pic-toolbar">
                     <div class="pic-btn-group">
-                      <button class="pic-btn" client-id="btn_query" disabled>
+                      <button class="pic-btn" client-id="query" disabled>
                         <i class="fa fa-search"></i>
                         <span>查詢</span>
                       </button>
-                      <button class="pic-btn" client-id="btn_add" disabled>
+                      <button class="pic-btn" client-id="add">
                         <i class="fa fa-plus"></i>
                         <span>新增</span>
                       </button>
-                      <button class="pic-btn" client-id="btn_delete" disabled>
+                      <button class="pic-btn" client-id="delete">
                         <i class="fa fa-trash"></i>
                         <span>刪除</span>
                       </button>
-                      <button class="pic-btn" client-id="btn_print">
+                      <button class="pic-btn" client-id="print" disabled>
                         <i class="fa fa-print"></i>
                         <span>列印</span>
                       </button>
                     </div>
                     <div class="pic-toolbar__divider"></div>
                     <div class="pic-btn-group">
-                      <button class="pic-btn" client-id="btn_confirm">
+                      <button class="pic-btn" client-id="confirm" disabled>
                         <i class="fa fa-check-circle-o"></i>
                         <span>確認</span>
                       </button>
-                      <button class="pic-btn" client-id="btn_cancel">
+                      <button class="pic-btn" client-id="cancel" disabled>
                         <i class="fa fa-close"></i>
                         <span>取消</span>
                       </button>
@@ -410,7 +410,6 @@
     <script src="js/kendo.all.min.js" charset="utf-8"></script>
     <script src="js/pic.js" charset="utf-8"></script>
     <script src="js/datasource.js" charset="utf-8"></script>
-    <script src="js/tab.js" charset="utf-8"></script>
     <script src="js/toolbar.js" charset="utf-8"></script>
     <script src="js/script.js" charset="utf-8"></script>
   </body>
