@@ -164,23 +164,23 @@ $(document).ready(function() {
         width: 40
       },
       {
-        template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button><button class='pic-btn detail' style='margin-left:4px;'   client-id='btn_detail'>明細</button>",
+        template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button><button class='pic-btn detail' style='margin-left:4px;' client-id='btn_detail'>明細</button>",
         width: 80,
         attributes: {
           "class": "pic-align-center"
         }
       },
       {
-        field: "group_id",
-        title: "活動代號",
+        field: "contract_id",
+        title: "合約代號",
         width: 100,
         attributes: {
           "class": "pic-align-right"
         }
       },
       {
-        field: "group_name",
-        title: "活動名稱",
+        field: "contract_name",
+        title: "合約名稱",
         width: 230,
       },
       {
@@ -221,13 +221,11 @@ $(document).ready(function() {
   });
 
   $('#detail-grid').kendoGrid({
-    dataSource: mdData,
+    dataSource: detailData,
     height: 550,
     sortable: true,
     pageable: {
-      //refresh: true,
-      pageSize: 20,
-      //buttonCount: 5
+      pageSize: 20
     },
     columns: [
       {
@@ -243,7 +241,7 @@ $(document).ready(function() {
       },
       {
         field: "group_id",
-        title: "活動代號",
+        title: "門市代號",
         width: 100,
         attributes: {
           "class": "pic-align-right"
@@ -251,20 +249,12 @@ $(document).ready(function() {
       },
       {
         field: "group_name",
-        title: "活動名稱",
+        title: "門市名稱",
         width: 230
       },
       {
-        field: "number",
-        title: "作業簡號",
-        width: 100,
-        attributes: {
-          "class": "pic-align-right"
-        }
-      },
-      {
         field: "quantity",
-        title: "數量",
+        title: "銷售數量",
         width: 80,
         attributes: {
           "class": "pic-align-right"
@@ -272,21 +262,13 @@ $(document).ready(function() {
         format: "{0:n}"
       },
       {
-        field: "price",
-        title: "金額",
+        field: "total",
+        title: "總金額",
         width: 80,
         attributes: {
           "class": "pic-align-right"
         },
         format: "{0:n}"
-      },
-      {
-        field: "sale",
-        title: "廠商折扣",
-        width: 80,
-        attributes: {
-          "class": "pic-align-right"
-        }
       }
     ]
   });

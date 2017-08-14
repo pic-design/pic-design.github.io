@@ -158,8 +158,8 @@ $(document).ready(function(){
     var dataGrid = grid.data("kendoGrid");
     var dataItem = dataGrid.dataItem(currentRow);
 
-    var id = dataItem.group_id;
-    var name = dataItem.group_name;
+    var id = dataItem.contract_id;
+    var name = dataItem.contract_name;
 
     var masterContents = grid.closest('.pic-workareas');
     var wrapper = masterContents.closest('.pic-workarea');
@@ -168,21 +168,39 @@ $(document).ready(function(){
     masterTabs.children('.pic-tab--selected').removeClass('pic-tab--selected');
     masterContents.children('.pic-workarea--selected').removeClass('pic-workarea--selected');
 
+    // 移除 detail tab 的 disabled 狀態
     if (masterTabs.children('.disabled').length > 0) {
       masterTabs.children('.disabled').removeClass('disabled');
     }
 
-    var form = masterContents.children('.pic-workarea[name=detail]').find('.pic-form');
-    form.find('[name=group_id]').val(id);
-    form.find('[name=group_name]').val(name);
-    form.find('[name=number]').val(dataItem.number);
-    form.find('[name=quantity]').val(dataItem.quantity);
-    form.find('[name=price]').val(dataItem.price);
-    form.find('[name=sale]').val(dataItem.sale);
+    var form = masterContents.children('.pic-workarea[name=detail]').find('.pic-form--readonly');
+    form.find('[name=contract_id]').val(id);
+    form.find('[name=contract_name]').val(name);
 
     tabSwitch('detail', masterTabs);
   	PIC.resultMode($('#detail-grid').parent('.pic-workarea'));
   	// $("li[name='detail']").addClass('disabled');
   });
 
+
+  $('#detail-grid').on('click', '.edit', function(event){
+    var currentTarget = $(event.currentTarget);
+    var currentRow = currentTarget.closest('tr');
+    var grid = currentRow.closest(".pic-grid");
+    var dataGrid = grid.data("kendoGrid");
+    var dataItem = dataGrid.dataItem(currentRow);
+    var workarea = grid.closest('.pic-workareas');
+    
+    var id = dataItem.group_id;
+    var name = dataItem.group_name;
+    var quantity = dataItem.quantity;
+    var total = dataItem.total;
+    console.log([id, name, quantity, total]);
+
+    var form = workarea.find('.pic-form:not(".pic-form--readonly")');
+    form.find('[name=group_id]').val(id);
+    form.find('[name=group_name]').val(name);
+    form.find('[name=quantity]').val(quantity);
+    form.find('[name=total]').val(total);
+  });
 });

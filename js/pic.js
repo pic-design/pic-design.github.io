@@ -161,9 +161,9 @@ window.PIC = (function () {
       var label = workarea.find("[client-id='pageMode']");
       // import data to grid
       if(grid.attr('id') === 'master-grid') {
-        grid.data("kendoGrid").dataSource.data(mdData);
+        grid.data("kendoGrid").dataSource.data(masterData);
       } else if (grid.attr('id') === 'detail-grid') {
-        grid.data("kendoGrid").dataSource.data(mdData);
+        grid.data("kendoGrid").dataSource.data(detailData);
       } else if (grid.attr('id') === 'main-grid') {
         grid.data("kendoGrid").dataSource.data(mainData);
       }
