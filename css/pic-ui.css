@@ -923,12 +923,20 @@ button {
 .pic-btn-group .pic-btn:not(:first-child) {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
-  border-left: 0;
+  border-left-width: 0;
 }
 
 .pic-btn-group .pic-btn:not(:last-child) {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
+}
+
+.pic-btn-group .pic-btn:not(:last-child)[disabled] {
+  border-right-width: 0;
+}
+
+.pic-btn-group .pic-btn:not(:last-child)[disabled] + .pic-btn {
+  border-left-width: 1px;
 }
 
 .pic-panel {
