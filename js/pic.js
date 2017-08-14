@@ -55,12 +55,12 @@ window.PIC = (function () {
             result = true;
             deferred.resolve(result);
           },
-          primary: true
         },{
           text: '否',
           action: function(e){
             deferred.resolve(result);
           }
+          primary: true
         }]
       };
 
