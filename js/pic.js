@@ -54,12 +54,12 @@ window.PIC = (function () {
           action: function(e){
             result = true;
             deferred.resolve(result);
-          },
+          }
         },{
           text: '否',
           action: function(e){
             deferred.resolve(result);
-          }
+          },
           primary: true
         }]
       };
