@@ -149,6 +149,7 @@ $(document).ready(function(){
 	}
   });
 
+  // 開啟明細頁
   $("#master-grid").on('click', '.detail', function(event){
 
     var currentTarget = $(event.currentTarget);
@@ -167,10 +168,9 @@ $(document).ready(function(){
     masterTabs.children('.pic-tab--selected').removeClass('pic-tab--selected');
     masterContents.children('.pic-workarea--selected').removeClass('pic-workarea--selected');
 
-    // if (masterTabs.children('.hidden').length > 0) {
-    //   masterTabs.children('.hidden').removeClass('hidden');
-    //   masterContents.children('.hidden').removeClass('hidden');
-    // }
+    if (masterTabs.children('.disabled').length > 0) {
+      masterTabs.children('.disabled').removeClass('disabled');
+    }
 
     var form = masterContents.children('.pic-workarea[name=detail]').find('.pic-form');
     form.find('[name=group_id]').val(id);
