@@ -950,6 +950,16 @@ button {
   border-right: 1px solid #D1D2D3;
 }
 
+.pic-workarea > .pic-panel--readonly {
+  border-left: 0;
+  border-right: 0;
+  background-color: #F1F2F7;
+}
+
+.pic-workarea > .pic-panel--readonly + .pic-panel {
+  border-top: 1px solid #D1D2D3;
+}
+
 .pic-grid {
   min-height: 50px;
   flex: 1 0 0px;

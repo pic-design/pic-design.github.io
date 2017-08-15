@@ -24,7 +24,18 @@
   box-sizing: border-box;
 }
 
+
 .pic-workarea > .pic-panel {
   border-left: 1px solid $grey;
   border-right: 1px solid $grey;
+}
+
+.pic-workarea > .pic-panel--readonly {
+  border-left: 0;
+  border-right: 0;
+  background-color: $light-blue;
+
+  & + .pic-panel {
+    border-top: 1px solid $grey;
+  }
 }
