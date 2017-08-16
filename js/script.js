@@ -109,11 +109,11 @@ $(document).ready(function() {
     dataTextField: "text",
     dataValueField: "number",
     dataSource: [
-      {text: '孫小美', number: 1},
-      {text: '阿土伯', number: 2},
-      {text: '錢夫人', number: 3},
-      {text: '李逍遙', number: 4},
-      {text: '林月如', number: 5}
+      {text: '1:孫小美', number: 1},
+      {text: '2:阿土伯', number: 2},
+      {text: '3:錢夫人', number: 3},
+      {text: '4:李逍遙', number: 4},
+      {text: '5:林月如', number: 5}
     ],
     select: function(event){
       //console.log(event);
@@ -162,6 +162,7 @@ $(document).ready(function() {
     {'qs_num':'004', 'qs_name':'南洲分部'},
     {'qs_num':'005', 'qs_name':'歐洲分部'}
   ];
+  
   myWindow.on('click', '.pic-btn', function () {
     $('#qs-grid').data('kendoGrid').dataSource.data(qsData);
   });
