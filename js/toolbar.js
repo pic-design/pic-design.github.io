@@ -90,6 +90,8 @@ $('.pic-toolbar').on('click', '.pic-btn', function (event) {
             // clear form values
             formEl.find('.pic-input').val('');
             PIC.alert('資料已更新','success');
+            // restore disabled grid
+            wrapper.find('.pic-grid.disabled').removeClass('disabled');
             PIC.resultMode(wrapper);
             break;
           case "query":
@@ -126,6 +128,8 @@ $('.pic-toolbar').on('click', '.pic-btn', function (event) {
               // if user selected 'yes'
               // result is true
               formEl.find('.pic-input').val('');
+              // restore disabled grid
+              wrapper.find('.pic-grid.disabled').removeClass('disabled');          
               PIC.resultMode(wrapper);
             }
           });

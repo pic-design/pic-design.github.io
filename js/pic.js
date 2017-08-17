@@ -9,7 +9,7 @@ window.PIC = (function () {
     alert: function (content, option, title) {
       var config = {
         width: 300,
-        modal: false,
+       // modal: false,
         title: '訊息視窗',
         content: content,
         closable: false,
@@ -235,6 +235,8 @@ window.PIC = (function () {
       workarea.find("[client-id='delete']").attr("disabled", true);
       workarea.find("[client-id='print']").attr("disabled", true);
 
+      // disable data grid
+      grid.addClass('disabled');
     },
     addMode: function (workarea) {
       // 清空查詢欄位
