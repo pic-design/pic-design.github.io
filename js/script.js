@@ -103,7 +103,9 @@ $(document).ready(function() {
     select: onSelect
   });
 
-  $('.datepicker').kendoDatePicker();
+  $('.datepicker').kendoDatePicker({
+    format: 'yyyy/MM/dd'
+  });
 
   $('#person').kendoComboBox({
     dataTextField: "text",
@@ -182,7 +184,7 @@ $(document).ready(function() {
   $("#main-grid").kendoGrid({
     dataSource: [],
     height: 550,
-    sortable: true,
+    sortable: false,
     pageable: {
         //refresh: true,
         pageSize: 10,
@@ -244,7 +246,7 @@ $(document).ready(function() {
   $('#master-grid').kendoGrid({
     dataSource: [],
     height: 550,
-    sortable: true,
+    sortable: false,
     pageable: {
       //refresh: true,
       pageSize: 20,
@@ -315,7 +317,7 @@ $(document).ready(function() {
   $('#detail-grid').kendoGrid({
     dataSource: [],
     height: 550,
-    sortable: true,
+    sortable: false,
     pageable: {
       pageSize: 20
     },
