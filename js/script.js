@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // global variables on opend tabs
-  var tabsOpened = ['aa', 'ab', 'ca'];
+  var tabsOpened = ['home', 'aa', 'ab', 'ca'];
   var mdTabsOpend = ['master', 'detail'];
 
   var tabSwitch = function(tabName, tabs){
@@ -186,9 +186,7 @@ $(document).ready(function() {
     height: 550,
     sortable: false,
     pageable: {
-        //refresh: true,
-        pageSize: 10,
-        //buttonCount: 5
+        pageSize: 20
     },
     columns:[
       {
@@ -197,48 +195,69 @@ $(document).ready(function() {
       },
       {
         template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button>",
-        width:70,
+        width: 70,
         attributes: {
-          "class": "pic-align-center"
+          'class': 'pic-align-center'
         },
       },
       {
-        field: "group_id",
-        title: "群組代號",
-        width:230
+        field: 'group_id',
+        title: '群組代號',
+        // width: 230,
+        headerAttributes: {
+          'class': 'pic-align-center'
+        }
       },
       {
-        field: "group_name",
-        title: "群組名稱",
-        width: 230
+        field: 'group_name',
+        title: '群組名稱',
+        // width: 230,
+        headerAttributes: {
+          'class': 'pic-align-center'
+        }
       },
       {
         field:"count",
         title:"使用數量",
         attributes: {
-        	"class": "pic-align-right"
+        	'class': 'pic-align-right'
         },
-        width:80
+        // width: 80,
+        headerAttributes: {
+          'class': 'pic-align-center'
+        }
       },
       {
         field: "create_date",
         title: "建立日期",
-        width:170
+        // width: 170,
+        headerAttributes: {
+          'class': 'pic-align-center'
+        }
       },
       {
         field: "create_id",
         title: "建立人員",
-        width:170
+        // width: 170,
+        headerAttributes: {
+          'class': 'pic-align-center'
+        }
       },
       {
         field: "upd_date",
         title: "異動日期",
-        width:170
+        // width: 170
+        headerAttributes: {
+          'class': 'pic-align-center'
+        }
       },
       {
         field: "upd_id",
         title: "異動人員",
-        width:170
+        // width: 170
+        headerAttributes: {
+          'class': 'pic-align-center'
+        }
       }
     ]
   });
