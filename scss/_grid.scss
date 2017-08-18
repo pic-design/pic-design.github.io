@@ -26,18 +26,23 @@
   flex: 1 0 0px;
   min-height: 90px;
 }
-.k-widget .k-header {
+
+/* .k-widget .k-header {
   background-color: $primary;
   color: $white;
-}
-.k-grid-header .k-header {
+} */
+
+.k-grid-header th.k-header {
   background-color: #f7e5e5;
   color: $dark-grey;
+  &.pic-align-center {
+    text-align: center;
+  }
 }
 
-.k-header .k-link {
+/* .k-header .k-link {
   text-align: center;
-}
+} */
 
 .pic-grid.disabled {
   position: relative;

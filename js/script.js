@@ -191,7 +191,7 @@ $(document).ready(function() {
     columns:[
       {
         selectable: true,
-        width: 40
+        width: 31
       },
       {
         template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button>",

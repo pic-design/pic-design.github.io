@@ -976,20 +976,22 @@ button {
   min-height: 90px;
 }
 
-.k-widget .k-header {
-  background-color: #EF850D;
-  color: #FFF;
-}
-
-.k-grid-header .k-header {
+/* .k-widget .k-header {
+  background-color: $primary;
+  color: $white;
+} */
+.k-grid-header th.k-header {
   background-color: #f7e5e5;
   color: #353630;
 }
 
-.k-header .k-link {
+.k-grid-header th.k-header.pic-align-center {
   text-align: center;
 }
 
+/* .k-header .k-link {
+  text-align: center;
+} */
 .pic-grid.disabled {
   position: relative;
 }
@@ -1190,6 +1192,8 @@ button {
 
 .k-dialog .k-dialog-titlebar {
   padding: 8px;
+  background-color: #EF850D;
+  color: #FFF;
 }
 
 .k-dialog .k-dialog-titlebar .k-dialog-title {
