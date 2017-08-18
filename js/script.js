@@ -195,7 +195,7 @@ $(document).ready(function() {
     height: 550,
     sortable: false,
     pageable: {
-        pageSize: 20
+        pageSize: 10
     },
     columns:[
       {
@@ -276,9 +276,7 @@ $(document).ready(function() {
     height: 550,
     sortable: false,
     pageable: {
-      //refresh: true,
-      pageSize: 20,
-      //buttonCount: 5
+      pageSize: 10
     },
     columns: [
       {
@@ -365,7 +363,7 @@ $(document).ready(function() {
     height: 550,
     sortable: false,
     pageable: {
-      pageSize: 20
+      pageSize: 10
     },
     columns: [
       {
