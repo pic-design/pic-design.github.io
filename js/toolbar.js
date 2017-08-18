@@ -15,25 +15,25 @@ $('.pic-toolbar').on('click', '.pic-btn', function (event) {
   // if button is active
   if (disabled === false) {
     var id = $(event.currentTarget).attr('client-id');
-    console.log('current mode: '+id);
+    // console.log('current mode: '+id);
     // if button is not disabled, change page mode
     var previousMode = wrapper.children('.pic-toolbar').find("[client-id=pageMode]").attr('data-value');
-    console.log('previousMode: '+previousMode);
+    // console.log('previousMode: '+previousMode);
 
     var deferred = '';
 
     if (id === 'query') {
       // 查詢模式
       if(previousMode === 'add') {
-        deferred = PIC.confirm('是否放棄現有的新增?', 'warning', '警告訊息');
+        deferred = PIC.confirm('是否放棄現有的新增?', 'warning');
         deferred.then(function (confirmed) {
-          console.log(confirmed);
+          // console.log(confirmed);
           if (confirmed) {
             PIC.queryMode(wrapper);
           }
         })
       } else if (previousMode === 'edit') {
-        deferred = PIC.confirm('是否放棄儲存現在的資料?', 'warning', '警告訊息');
+        deferred = PIC.confirm('是否放棄儲存現在的資料?', 'warning');
         deferred.then(function (confirmed) {
           if (confirmed) {
             PIC.queryMode(wrapper);
@@ -45,14 +45,14 @@ $('.pic-toolbar').on('click', '.pic-btn', function (event) {
     } else if (id === 'add') {
       // 新增模式
       if(previousMode === 'add') {
-        deferred = PIC.confirm('是否放棄現有的新增?', 'warning', '警告訊息');
+        deferred = PIC.confirm('是否放棄現有的新增?', 'warning');
         deferred.then(function (confirmed) {
           if (confirmed) {
             PIC.addMode(wrapper);
           }
         })
       } else if (previousMode === 'edit') {
-        deferred = PIC.confirm('是否放棄儲存現在的資料?', 'warning', '警告訊息');
+        deferred = PIC.confirm('是否放棄儲存現在的資料?', 'warning');
         deferred.then(function (confirmed) {
           if (confirmed) {
              PIC.addMode(wrapper);
@@ -63,8 +63,8 @@ $('.pic-toolbar').on('click', '.pic-btn', function (event) {
       }
     } else if (id === 'delete') {
       // 刪除模式
-      console.log('delete mode');
-      deferred = PIC.confirm('是否確定要刪除?', 'danger', '警告訊息');
+      // console.log('delete mode');
+      deferred = PIC.confirm('是否確定要刪除?', 'danger');
       deferred.then(function (confirmed) {
         if (confirmed) {
           PIC.alert('資料已刪除', 'success');
@@ -102,12 +102,12 @@ $('.pic-toolbar').on('click', '.pic-btn', function (event) {
       }
 
     } else if (id === 'cancel') {
-      console.log('按了取消');
+      // console.log('按了取消');
       // 取消
       var formEl = wrapper.children('.pic-form');
       switch(previousMode) {
         case "add":
-          deferred = PIC.confirm('是否放棄現有的新增?', 'warning', '警告訊息');
+          deferred = PIC.confirm('是否放棄現有的新增?', 'warning');
           deferred.then(function (result) {
             if (result === true) {
               switch(wrapper.children('.pic-toolbar').find("[client-id=pageMode]").attr('pre-value')) {
@@ -122,7 +122,7 @@ $('.pic-toolbar').on('click', '.pic-btn', function (event) {
           });
           break;
         case "edit":
-          deferred = PIC.confirm('是否放棄儲存現在的資料?', 'warning', '警告訊息');
+          deferred = PIC.confirm('是否放棄儲存現在的資料?', 'warning');
           deferred.then(function (result) {
             if (result === true) {
               // if user selected 'yes'
