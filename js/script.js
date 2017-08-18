@@ -111,11 +111,11 @@ $(document).ready(function() {
     dataTextField: "text",
     dataValueField: "number",
     dataSource: [
-      {text: '1:孫小美', number: 1},
-      {text: '2:阿土伯', number: 2},
-      {text: '3:錢夫人', number: 3},
-      {text: '4:李逍遙', number: 4},
-      {text: '5:林月如', number: 5}
+      {text: '孫小美', number: 1},
+      {text: '阿土伯', number: 2},
+      {text: '錢夫人', number: 3},
+      {text: '李逍遙', number: 4},
+      {text: '林月如', number: 5}
     ],
     select: function(event){
       //console.log(event);
@@ -143,14 +143,20 @@ $(document).ready(function() {
             title: '門市代號',
             attributes: {
               "class": "qs-num"
-            }
+            },
+            headerAttributes: {
+              'class': 'pic-align-center'
+            }    
           },
           {
             field: 'qs_name',
             title: '門市名稱',
             attributes: {
               "class": "qs-name"
-            }
+            },
+            headerAttributes: {
+              'class': 'pic-align-center'
+            }    
           }
         ]
       })
@@ -161,8 +167,11 @@ $(document).ready(function() {
     {'qs_num':'001', 'qs_name':'亞洲分部'},
     {'qs_num':'002', 'qs_name':'非洲分部'},
     {'qs_num':'003', 'qs_name':'北美洲分部'},
-    {'qs_num':'004', 'qs_name':'南洲分部'},
-    {'qs_num':'005', 'qs_name':'歐洲分部'}
+    {'qs_num':'004', 'qs_name':'南美洲分部'},
+    {'qs_num':'005', 'qs_name':'歐洲分部'},
+    {'qs_num':'006', 'qs_name':'大洋洲分部'},
+    {'qs_num':'007', 'qs_name':'南極洲分部'},
+    {'qs_num':'008', 'qs_name':'綠洲分部'}
   ];
   
   myWindow.on('click', '.pic-btn', function () {
@@ -222,7 +231,7 @@ $(document).ready(function() {
         attributes: {
         	'class': 'pic-align-right'
         },
-        // width: 80,
+        width: 80,
         headerAttributes: {
           'class': 'pic-align-center'
         }
@@ -274,7 +283,7 @@ $(document).ready(function() {
     columns: [
       {
         selectable: true,
-        width: 40
+        width: 31
       },
       {
         template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button><button class='pic-btn detail' style='margin-left:4px;' client-id='btn_detail'>明細</button>",
@@ -289,12 +298,18 @@ $(document).ready(function() {
         width: 100,
         attributes: {
           "class": "pic-align-right"
+        },
+        headerAttributes: {
+          'class': 'pic-align-center'
         }
       },
       {
         field: "contract_name",
         title: "合約名稱",
         width: 230,
+        headerAttributes: {
+          'class': 'pic-align-center'
+        }
       },
       {
         field: "number",
@@ -302,6 +317,9 @@ $(document).ready(function() {
         width: 100,
         attributes: {
           "class": "pic-align-right"
+        },
+        headerAttributes: {
+          'class': 'pic-align-center'
         }
       },
       {
@@ -310,6 +328,9 @@ $(document).ready(function() {
         width: 80,
         attributes: {
           "class": "pic-align-right"
+        },
+        headerAttributes: {
+          'class': 'pic-align-center'
         },
         format: "{0:n}"
       },
@@ -320,6 +341,9 @@ $(document).ready(function() {
         attributes: {
           "class": "pic-align-right"
         },
+        headerAttributes: {
+          'class': 'pic-align-center'
+        },
         format: "{0:n}"
       },
       {
@@ -328,6 +352,9 @@ $(document).ready(function() {
         width: 80,
         attributes: {
           "class": "pic-align-right"
+        },
+        headerAttributes: {
+          'class': 'pic-align-center'
         }
       }
     ]
@@ -343,7 +370,7 @@ $(document).ready(function() {
     columns: [
       {
         selectable: true,
-        width: 40
+        width: 31
       },
       {
         template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button>",
@@ -355,31 +382,43 @@ $(document).ready(function() {
       {
         field: "group_id",
         title: "門市代號",
-        width: 100,
+        // width: 100,
         attributes: {
           "class": "pic-align-right"
+        },
+        headerAttributes: {
+          'class': 'pic-align-center'
         }
       },
       {
         field: "group_name",
         title: "門市名稱",
-        width: 230
+        // width: 230,
+        headerAttributes: {
+          'class': 'pic-align-center'
+        }
       },
       {
         field: "quantity",
         title: "銷售數量",
-        width: 80,
+        // width: 80,
         attributes: {
           "class": "pic-align-right"
+        },
+        headerAttributes: {
+          'class': 'pic-align-center'
         },
         format: "{0:n}"
       },
       {
         field: "total",
         title: "總金額",
-        width: 80,
+        // width: 80,
         attributes: {
           "class": "pic-align-right"
+        },
+        headerAttributes: {
+          'class': 'pic-align-center'
         },
         format: "{0:n}"
       }
