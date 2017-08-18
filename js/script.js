@@ -540,7 +540,6 @@ $(document).ready(function() {
     form.find('[name=group_name]').val(name);
     form.find('[name=quantity]').val(quantity);
     form.find('[name=total]').val(total);
-    PIC.alert('銷售數量：'+quantity+'件');
   });
 
 });
