@@ -130,11 +130,14 @@ window.PIC = (function () {
       workarea.find('.pic-form input').val('');
 
       // 清空查詢結果
-      var grid = workarea.find('.pic-grid').data('kendoGrid');
-      console.log(typeof grid);
-      if (typeof grid !== 'undefined') {
-        grid.dataSource.data([]);
+      var grid = workarea.find('.pic-grid');
+      var dataGrid = grid.data('kendoGrid');
+      // console.log(typeof dataGrid);
+      if (typeof dataGrid !== 'undefined') {
+        dataGrid.dataSource.data([]);
       }
+      // 解除 grid disable 狀態
+      grid.removeClass('disabled');
 
       // change page mode label to 'query mode'
       var label = workarea.find("[client-id='pageMode']");
