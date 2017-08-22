@@ -597,10 +597,6 @@ button {
   outline: none;
   padding: 0px 8px;
   text-decoration: none;
-  /* &:focus {
-    outline: 2px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
-  } */
 }
 
 .pic-btn:hover {
@@ -610,6 +606,10 @@ button {
 
 .pic-btn:active {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.125);
+}
+
+.pic-btn:focus {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
 }
 
 .pic-btn--primary {
@@ -747,6 +747,25 @@ button {
   width: 100%;
 }
 
+.pic-widget.disabled .k-state-default {
+  box-shadow: none !important;
+  border: 1px solid #D1D2D3 !important;
+  pointer-events: none;
+}
+
+.pic-widget.disabled .k-state-default input {
+  background-color: #eee !important;
+  color: #D1D2D3;
+}
+
+.pic-widget.disabled .k-state-default input::placeholder {
+  color: #D1D2D3;
+}
+
+.pic-widget.disabled .k-state-default span[role='button'] {
+  opacity: .4;
+}
+
 .pic-form--compact {
   padding-right: 20px;
   padding-left: 20px;
@@ -779,10 +798,15 @@ button {
 }
 
 .pic-input[disabled] {
-  cursor: not-allowed;
+  pointer-events: none;
   background-color: #eee !important;
   box-shadow: none !important;
   border: 1px solid #D1D2D3 !important;
+  color: #D1D2D3;
+}
+
+.pic-input[disabled]::placeholder {
+  color: #D1D2D3;
 }
 
 .pic-input--lg {
