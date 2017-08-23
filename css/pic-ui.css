@@ -712,7 +712,7 @@ button {
   box-sizing: border-box;
   color: #353630;
   display: block;
-  flex: 1 1 0px;
+  flex: 0 0 101px;
   text-align: right;
   padding-right: 8px;
   white-space: nowrap;
@@ -725,7 +725,7 @@ button {
 }
 
 .pic-form-element__control {
-  flex: 5 5 0px;
+  flex: 1 1 0px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -835,12 +835,8 @@ button {
   flex: 1 0 0px;
 }
 
-.pic-form__inline .pic-form-element:first-child:nth-last-child(2) .pic-form-element__control, .pic-form__inline .pic-form-element:first-child:nth-last-child(2) ~ .pic-form-element .pic-form-element__control {
-  flex: 2 2 0px;
-}
-
-.pic-form__inline .pic-form-element:first-child:nth-last-child(3) .pic-form-element__control, .pic-form__inline .pic-form-element:first-child:nth-last-child(3) ~ .pic-form-element .pic-form-element__control {
-  flex: 1 1 0px;
+.pic-form__inline .pic-form-element:not(:first-child) {
+  margin-left: 16px;
 }
 
 .pic-form > .pic-form__inline:not(:first-child) .pic-form-element {
