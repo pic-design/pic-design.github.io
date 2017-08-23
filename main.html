@@ -212,7 +212,7 @@
                     <div class="pic-form-element">
                       <label class="pic-form-element__label pic-form-element__label--required" for="foe">活動名稱</label>
                       <div class="pic-form-element__control">
-                        <input id="foe" class="pic-input" type="text" placeholder="輸入活動名稱" required>
+                        <input id="foe" class="pic-input" type="text" placeholder="輸入活動名稱" required disabled>
                       </div>
                     </div>
                   </div>
@@ -220,7 +220,7 @@
                     <div class="pic-form-element">
                       <span class="pic-form-element__label">活動日期</span>
                       <div class="pic-form-element__control">
-                        <input class="datepicker pic-widget" name="start" value="" placeholder="請選擇起始日期">
+                        <input class="datepicker pic-widget" name="start" value="" placeholder="請選擇起始日期" disabled>
                         <span class="pic-form-element__el">~</span>
                         <input class="datepicker pic-widget" name="end" value="" placeholder="請選擇結束日期">
                       </div>
@@ -406,7 +406,93 @@
               </div>
             </div>
             <div class="pic-workarea" name="ca">
-              tab 3
+              <div class="pic-toolbar">
+                <div class="pic-btn-group">
+                  <button class="pic-btn" client-id="query">
+                    <i class="fa fa-search"></i>
+                    <span>查詢</span>
+                  </button>
+                  <button class="pic-btn" client-id="add">
+                    <i class="fa fa-plus"></i>
+                    <span>新增</span>
+                  </button>
+                  <button class="pic-btn" client-id="delete" disabled>
+                    <i class="fa fa-trash"></i>
+                    <span>刪除</span>
+                  </button>
+                  <button class="pic-btn" client-id="print">
+                    <i class="fa fa-print"></i>
+                    <span>列印</span>
+                  </button>
+                </div>
+                <div class="pic-toolbar__divider"></div>
+                <div class="pic-btn-group">
+                  <button class="pic-btn" client-id="confirm">
+                    <i class="fa fa-check-circle-o"></i>
+                    <span>確認</span>
+                  </button>
+                  <button class="pic-btn" client-id="cancel">
+                    <i class="fa fa-close"></i>
+                    <span>取消</span>
+                  </button>
+                </div>
+                <div class="pic-toolbar__filler">
+                </div>
+                <div class="pic-btn-group">
+                  <span class="pic-label pic-label--info" client-id="pageMode" data-value="init" pre-value="init">初始</span>
+                </div>
+              </div>
+
+              <div class="pic-panel">
+                <div class="pic-form">
+
+                  <div class="pic-form__inline">
+                    <div class="pic-form-element">
+                      <label class="pic-form-element__label pic-form-element__label--required" for="">角色名稱</label>
+                      <div class="pic-form-element__control">
+                        <input class="pic-input" type="text" placeholder="輸入角色名稱">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pic-form__inline">
+                    <div class="pic-form-element">
+                      <label class="pic-form-element__label" for="">角色代號</label>
+                      <div class="pic-form-element__control">
+                        <input class="pic-input" type="text" placeholder="請輸入角色代號">
+                      </div>
+                    </div>
+                    <div class="pic-form-element">
+                      <label class="pic-form-element__label" for="">角色價格</label>
+                      <div class="pic-form-element__control">
+                        <input class="pic-input" type="text" placeholder="請輸入角色價格">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pic-form__inline">
+                    <div class="pic-form-element">
+                      <label class="pic-form-element__label" for="">角色權限</label>
+                      <div class="pic-form-element__control">
+                        <input class="pic-input" type="text" placeholder="請輸入角色權限">
+                      </div>
+                    </div>
+                    <div class="pic-form-element">
+                      <span class="pic-form-element__label">角色地區</span>
+                      <div class="pic-form-element__control">
+                        <input class="pic-input" type="text" placeholder="請輸入角色地區">
+                      </div>
+                    </div>
+                    <div class="pic-form-element">
+                      <span class="pic-form-element__label">角色代理人</span>
+                      <div class="pic-form-element__control">
+                        <input class="pic-input" type="text" placeholder="請輸入角色代理人">
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>

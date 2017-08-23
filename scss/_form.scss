@@ -4,7 +4,7 @@
 // 表單元素由一個 `<label>` 以及 `<input>`、`<textarea>`、`<select>` 等輸入元素所組成。
 //
 // `<label>` 需加上 `.pic-form-element__label`。
-// 輸入欄位如果有一個以上，需要用 `<div class=".pic-form-element__control"/>` 的控制項包起來，以顯示設計好的佈局。
+// 輸入欄位如果有一個以上，需要用 `<div class="pic-form-element__control"/>` 的控制項包起來，以顯示設計好的佈局。
 // 在水平及行內排列時 `.pic-form-element__label` 及 `.pic-form-element__control` 的寬度比是1:5。
 //
 // 表單提供三種排列方式：水平（預設值）、垂直及行內。
@@ -45,16 +45,14 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  /* &:not(:first-child) {
-    margin-left: 16px;
-  } */
 }
 
 .pic-form-element__label {
   box-sizing: border-box;
   color: $dark-grey;
   display: block;
-  flex: 0 0 88px;
+  // flex: 0 0 88px;
+  flex: 1 1 0px;
   text-align: right;
   padding-right: 8px;
   white-space: nowrap;
@@ -67,9 +65,11 @@
 }
 
 .pic-form-element__control {
-  flex: 1 1 0px;
+  // flex: 1 1 0px;
+  flex: 5 5 0px;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
   .pic-form-element__el {
     flex: 0 0 auto;
     padding: 0 8px;
@@ -101,6 +101,7 @@
     }
   }
 }
+
 .pic-form--compact {
   padding-right: 20px;
   padding-left: 20px;
@@ -122,7 +123,6 @@
   width: 100%;
 
   height: 2.13em;
-  /* text-indent: .33em; */
   line-height: 1.6em;
   padding: 2px .3em;
   &:focus {
@@ -205,8 +205,18 @@
   .pic-form-element {
     flex: 1 0 0px;
     &:not(:first-child) {
-      margin-left: 16px;
+      //margin-left: 16px;
     }
+  }
+  .pic-form-element:first-child:nth-last-child(2), .pic-form-element:first-child:nth-last-child(2) ~ .pic-form-element {
+    .pic-form-element__control {
+      flex: 2 2 0px;
+    }
+  }
+  .pic-form-element:first-child:nth-last-child(3), .pic-form-element:first-child:nth-last-child(3) ~ .pic-form-element {
+    .pic-form-element__control {
+      flex: 1 1 0px;
+    }    
   }
   .pic-input {
   //  width: auto;

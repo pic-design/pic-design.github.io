@@ -1,5 +1,36 @@
 $(document).ready(function() {
 
+  // disable key events when pic-widget is disabled
+  /* $('body').on('keyup', '.pic-widget.disabled', function(event){
+    console.log('this is a disabled widget');
+    // send user to next focus element
+    var currentTarget = $(event.currentTarget);
+    console.log(currentTarget);
+    var focus = '';
+    function foo (el){
+      if (el.hasClass('k-widget') || el.hasClass('k-input')) {
+        el.focus();
+        return true;
+      }else{
+        console.log('missing focus element');
+        return false;
+      }
+    }
+
+    if(event.key = 'Tab'){
+      if(event.shiftKey === false){
+        focus = currentTarget.next();
+        if (focus.length === 1) {
+          
+        }
+        console.log(focus);
+      }else if (event.shiftKey === true){
+
+      }
+    }
+
+  }); */
+
   // global variables on opend tabs
   var tabsOpened = ['home', 'aa', 'ab', 'ca'];
   var mdTabsOpend = ['master', 'detail'];
