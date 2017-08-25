@@ -176,7 +176,7 @@ $(document).ready(function() {
               "class": "qs-num"
             },
             headerAttributes: {
-              'class': 'pic-align-center'
+              'class': 'pic-txt--center'
             }    
           },
           {
@@ -186,7 +186,7 @@ $(document).ready(function() {
               "class": "qs-name"
             },
             headerAttributes: {
-              'class': 'pic-align-center'
+              'class': 'pic-txt--center'
             }    
           }
         ]
@@ -237,7 +237,7 @@ $(document).ready(function() {
         template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button>",
         width: 70,
         attributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         },
       },
       {
@@ -245,7 +245,7 @@ $(document).ready(function() {
         title: '群組代號',
         // width: 230,
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       },
       {
@@ -253,18 +253,18 @@ $(document).ready(function() {
         title: '群組名稱',
         // width: 230,
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       },
       {
         field:"count",
         title:"使用數量",
         attributes: {
-        	'class': 'pic-align-right'
+        	'class': 'pic-txt--right'
         },
         width: 80,
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       },
       {
@@ -272,7 +272,7 @@ $(document).ready(function() {
         title: "建立日期",
         // width: 170,
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       },
       {
@@ -280,7 +280,7 @@ $(document).ready(function() {
         title: "建立人員",
         // width: 170,
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       },
       {
@@ -288,7 +288,7 @@ $(document).ready(function() {
         title: "異動日期",
         // width: 170
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       },
       {
@@ -296,7 +296,7 @@ $(document).ready(function() {
         title: "異動人員",
         // width: 170
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       }
     ]
@@ -318,7 +318,7 @@ $(document).ready(function() {
         template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button><button class='pic-btn detail' style='margin-left:4px;' client-id='btn_detail'>明細</button>",
         width: 80,
         attributes: {
-          "class": "pic-align-center"
+          "class": "pic-txt--center"
         }
       },
       {
@@ -326,10 +326,10 @@ $(document).ready(function() {
         title: "合約代號",
         width: 100,
         attributes: {
-          "class": "pic-align-right"
+          "class": "pic-txt--right"
         },
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       },
       {
@@ -337,7 +337,7 @@ $(document).ready(function() {
         title: "合約名稱",
         width: 230,
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       },
       {
@@ -345,10 +345,10 @@ $(document).ready(function() {
         title: "作業簡號",
         width: 100,
         attributes: {
-          "class": "pic-align-right"
+          "class": "pic-txt--right"
         },
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       },
       {
@@ -356,10 +356,10 @@ $(document).ready(function() {
         title: "數量",
         width: 80,
         attributes: {
-          "class": "pic-align-right"
+          "class": "pic-txt--right"
         },
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         },
         format: "{0:n}"
       },
@@ -368,10 +368,10 @@ $(document).ready(function() {
         title: "金額",
         width: 80,
         attributes: {
-          "class": "pic-align-right"
+          "class": "pic-txt--right"
         },
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         },
         format: "{0:n}"
       },
@@ -380,10 +380,10 @@ $(document).ready(function() {
         title: "廠商折扣",
         width: 80,
         attributes: {
-          "class": "pic-align-right"
+          "class": "pic-txt--right"
         },
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       }
     ]
@@ -405,7 +405,7 @@ $(document).ready(function() {
         template: "<button class='pic-btn edit' client-id='btn_edit'>編輯</button>",
         width: 60,
         attributes: {
-          "class": "pic-align-center"
+          "class": "pic-txt--center"
         }
       },
       {
@@ -413,10 +413,10 @@ $(document).ready(function() {
         title: "門市代號",
         // width: 100,
         attributes: {
-          "class": "pic-align-right"
+          "class": "pic-txt--right"
         },
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       },
       {
@@ -424,7 +424,7 @@ $(document).ready(function() {
         title: "門市名稱",
         // width: 230,
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         }
       },
       {
@@ -432,10 +432,10 @@ $(document).ready(function() {
         title: "銷售數量",
         // width: 80,
         attributes: {
-          "class": "pic-align-right"
+          "class": "pic-txt--right"
         },
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         },
         format: "{0:n}"
       },
@@ -444,16 +444,29 @@ $(document).ready(function() {
         title: "總金額",
         // width: 80,
         attributes: {
-          "class": "pic-align-right"
+          "class": "pic-txt--right"
         },
         headerAttributes: {
-          'class': 'pic-align-center'
+          'class': 'pic-txt--center'
         },
         format: "{0:n}"
       }
     ]
   });
 
+  $('#home-grid').kendoGrid({
+    columns: [
+      {
+        field: 'date',
+        title: '發佈日期',
+        width: 200
+      },
+      {        
+        field: 'content',
+        title: '訊息內容'
+      }
+  ]
+  });
 
   // Open a new tab when clicked on a treeview node
   $('.list-control').on('click', '.pic-btn', function(event){

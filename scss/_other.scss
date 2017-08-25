@@ -1,15 +1,29 @@
 // other
 
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.75em;
+  font-weight: 700;
+}
+h3 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+h4 {
+  font-size: 1.25em;
+}
 // helper classes
-.pic-align-right {
+.pic-txt--right {
   text-align: right;
 }
 
-.pic-align-left {
+.pic-txt--left {
   text-align: left;
 }
 
-.pic-align-center {
+.pic-txt--center {
   text-align: center;
 }
 

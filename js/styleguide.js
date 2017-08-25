@@ -129,7 +129,7 @@ $(".pic-grid").kendoGrid({
       field:"count",
       title:"使用數量",
       attributes: {
-        "class": "pic-align-right"
+        "class": "pic-txt--right"
       }
     },
     {
