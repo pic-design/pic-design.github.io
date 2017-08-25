@@ -460,6 +460,9 @@ $(document).ready(function() {
       {
         field: 'date',
         title: '發佈日期',
+        attributes: {
+          'class': 'pic-txt--right'
+        },
         headerAttributes: {
           'class': 'pic-txt--center'
         },
