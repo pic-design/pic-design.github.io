@@ -238,7 +238,7 @@ $(document).ready(function() {
         width: 70,
         attributes: {
           'class': 'pic-txt--center'
-        },
+        }
       },
       {
         field: 'group_id',
@@ -460,11 +460,17 @@ $(document).ready(function() {
       {
         field: 'date',
         title: '發佈日期',
+        headerAttributes: {
+          'class': 'pic-txt--center'
+        },
         width: 200
       },
       {        
         field: 'content',
-        title: '訊息內容'
+        title: '訊息內容',
+        headerAttributes: {
+          'class': 'pic-txt--center'
+        }
       }
   ]
   });
