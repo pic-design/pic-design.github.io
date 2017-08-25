@@ -455,6 +455,7 @@ $(document).ready(function() {
   });
 
   $('#home-grid').kendoGrid({
+	dataSource: homeData,
     columns: [
       {
         field: 'date',
