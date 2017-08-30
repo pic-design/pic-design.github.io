@@ -971,7 +971,7 @@ button {
   border-right: 1px solid #D1D2D3;
 }
 
-.pic-workarea > .pic-panel:nth-last-child(1) {
+.pic-workarea > div:nth-last-of-type(1) {
   border-bottom: 1px solid #D1D2D3;
 }
 
