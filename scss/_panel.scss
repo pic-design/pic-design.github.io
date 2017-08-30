@@ -28,7 +28,11 @@
 .pic-workarea > .pic-panel {
   border-left: 1px solid $grey;
   border-right: 1px solid $grey;
+  &:nth-last-child(1) {
+    border-bottom: 1px solid $grey;
+  }
 }
+
 
 .pic-workarea > .pic-panel--readonly {
   border-left: 0;

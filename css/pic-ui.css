@@ -971,6 +971,10 @@ button {
   border-right: 1px solid #D1D2D3;
 }
 
+.pic-workarea > .pic-panel:nth-last-child(1) {
+  border-bottom: 1px solid #D1D2D3;
+}
+
 .pic-workarea > .pic-panel--readonly {
   border-left: 0;
   border-right: 0;
