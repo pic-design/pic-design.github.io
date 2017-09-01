@@ -485,12 +485,13 @@ button {
   align-items: center;
   background-image: url("../img/bg-login.jpg");
   background-size: cover;
+  flex-direction: column;
 }
 
-.pic-layout--login .pic-panel {
+.pic-layout--login .pic-body__inner {
   width: 1024px;
-  max-height: 768px;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -512,7 +513,7 @@ button {
   min-width: 100px;
   min-height: 100px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .pic-header {
