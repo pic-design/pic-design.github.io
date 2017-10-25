@@ -725,6 +725,10 @@ button {
   margin-right: 4px;
 }
 
+.pic-form-element__label--textarea {
+  align-self: flex-start;
+}
+
 .pic-form-element__control {
   flex: 1 1 0px;
   display: flex;
@@ -734,16 +738,11 @@ button {
 
 .pic-form-element__control .pic-form-element__el {
   flex: 0 0 auto;
-  padding: 0 8px;
+  width: 25.44px;
   box-sizing: border-box;
-}
-
-.pic-form-element__control > .pic-input, .pic-form-element__control > .pic-widget {
-  flex: 1 1 0px;
-}
-
-.pic-widget {
-  width: 100%;
+  font-size: 16px;
+  margin: 0 9px;
+  text-align: center;
 }
 
 .pic-widget.disabled .k-state-default {
@@ -785,7 +784,8 @@ button {
   background: #FFF;
   outline: 0;
   box-sizing: border-box;
-  width: 100%;
+  width: 12.4em;
+  max-width: 100%;
   height: 2.13em;
   line-height: 1.6em;
   padding: 2px .3em;
@@ -826,6 +826,55 @@ button {
 
 .pic-input--right-el {
   margin-right: 4px;
+}
+
+.pic-textarea {
+  resize: none;
+  border-radius: 2px;
+  border: 1px solid #D1D2D3;
+  background: #FFF;
+  outline: 0;
+  box-sizing: border-box;
+  height: 45px;
+  width: 12.4em;
+  max-width: 100%;
+}
+
+.pic-textarea:focus {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.pic-textarea[disabled] {
+  pointer-events: none;
+  background-color: #eee !important;
+  box-shadow: none !important;
+  border: 1px solid #D1D2D3 !important;
+  color: #D1D2D3;
+}
+
+.pic-textarea[disabled]::placeholder {
+  color: #D1D2D3;
+}
+
+.pic-textarea--warning {
+  border-color: #F5364E;
+  background-color: #fff8ed !important;
+}
+
+.pic-textarea[readonly] {
+  background-color: #eee !important;
+}
+
+.pic-input--w2, .pic-widget--w2, .pic-textarea--w2 {
+  width: 24.8em;
+}
+
+.pic-input--w3, .pic-widget--w3, .pic-textarea--w3 {
+  width: 37.2em;
+}
+
+.pic-input--full, .pic-widget--full, .pic-textarea--full {
+  width: 100%;
 }
 
 .pic-form__inline {
