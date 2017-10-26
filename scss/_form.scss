@@ -200,7 +200,8 @@
   width: 37.2em;
 }
 .pic-input--full, .pic-widget--full, .pic-textarea--full {
-  width: 100%;
+  flex: 1;
+  width: auto;
 }
 
 // Inline form 行內排列

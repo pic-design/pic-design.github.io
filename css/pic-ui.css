@@ -873,7 +873,8 @@ button {
 }
 
 .pic-input--full, .pic-widget--full, .pic-textarea--full {
-  width: 100%;
+  flex: 1;
+  width: auto;
 }
 
 .pic-form__inline {
