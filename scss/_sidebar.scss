@@ -18,6 +18,11 @@
   display: none;
 }
 
+.pic-nav-wrapper {
+  flex: 1 0 0px;
+  overflow-y: auto;
+}
+
 .pic-function-id {
   padding-right: 8px;
   &:before {
