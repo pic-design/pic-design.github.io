@@ -242,7 +242,7 @@ $(document).ready(function() {
       },
       {
         field: 'group_id',
-        title: '群組代號',
+        title: '群組代號群組代號群組代號群組代號群組代號',
         // width: 230,
         headerAttributes: {
           'class': 'pic-txt--center'
