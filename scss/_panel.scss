@@ -28,6 +28,7 @@
 .pic-workarea > .pic-panel {
   border-left: 1px solid $grey;
   border-right: 1px solid $grey;
+  overflow-x: auto;
 }
 
 .pic-workarea > div:nth-last-of-type(1) {

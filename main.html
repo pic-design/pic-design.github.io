@@ -1,535 +1,539 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>康是美 UI Prototype</title>
-    <link rel="stylesheet" href="css/kendo.common.min.css">
-    <link rel="stylesheet" href="css/kendo.custom.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/pic-ui.css">
-  </head>
-  <body>
-    <div class="pic-layout">
-      <header class="pic-header">
-        <div class="pic-header__section">
-          <a href="#" id="ham" class="pic-btn pic-btn--flat pic-btn--lg">
-            <i class="fa fa-bars"></i>
-          </a>
-        </div>
-        <div class="pic-header__section">
-          <div>
-            <button class="pic-btn pic-btn--flat pic-text-primary-dark">
-              <i class="fa fa-user-o"></i>
-              <span>使用者</span>
-            </button>
-            <span>您好！歡迎登入康是美系統。</span>
-          </div>
-          <a class="pic-btn pic-btn--flat pic-text-primary-dark" href="index.html">
-            <i class="fa fa-power-off"></i>
-            登出
-          </a>
-        </div>
-      </header>
-      <div class="pic-body">
-        <div class="pic-sidebar">
-          <div class="pic-panel">
-            <div class="pic-form">
-              <div class="pic-form__inline">
-                <div class="pic-form-element">
-                  <div class="pic-form-element__control">
-                    <input class="pic-input pic-input--right-el" placeholder="輸入功能號碼">
-                    <button class="pic-btn">查詢</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="list-control pic-panel pic-txt--center" style="background-color: transparent;">
-            <div class="pic-btn open">
-              展開選單
-            </div>
-            <div class="pic-btn fold">
-              收合選單
-            </div>
-          </div>
-          <div class="pic-nav-wrapper">
-            <ul class="pic-nav">
-              <li class="pic-listitem" data-expanded="true">
-                主選單
-                <ul>
-                  <li class="pic-listitem">
-                    檢核報表
-                    <ul>
-                      <li name="aa">
-                        <span class="pic-function-id">10541</span>
-                        <span class="pic-function-name">現金日報</span>
-                      </li>
-                      <li name="ab">
-                        <span class="pic-function-id">14836</span>
-                        <span class="pic-function-name">Master-Detail</span>
-                      </li>
-                      <li name="ac">
-                        <span class="pic-function-id">95442</span>
-                        <span class="pic-function-name">檢核報表</span>
-                      </li>
-                      <li name="ad">
-                        <span class="pic-function-id">10533</span>
-                        <span class="pic-function-name">明細𢑥總表</span>
-                      </li>
-                      <li name="ae">
-                        <span class="pic-function-id">15860</span>
-                        <span class="pic-function-name">庫存盤點報表</span>
-                      </li>
-                      <li name="af">
-                        <span class="pic-function-id">10584</span>
-                        <span class="pic-function-name">進銷存報表</span>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="pic-listitem">
-                    未上傳門市作業
-                    <ul>
-                      <li name="ba">
-                        <span class="pic-function-id">10666</span>
-                        <span class="pic-function-name">未上傳門市檢核</span>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="pic-listitem">
-                    權限管理
-                    <ul>
-                      <li name="ca">
-                        <span class="pic-function-id">10666</span>
-                        <span class="pic-function-name">角色維護</span>
-                      </li>
-                      <li name="cb">
-                        <span class="pic-function-id">20542</span>
-                        <span class="pic-function-name">使用者維護</span>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="pic-listitem">
-                    參數管理
-                    <ul>
-                      <li name="da">
-                        <span class="pic-function-id">10646</span>
-                        <span class="pic-function-name">參數維護</span>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>        
-        </div>
-        <div class="pic-content">
-          <ul class="pic-tabs">
-            <li class="pic-tab" name="home">
-              <div class="pic-tab__inner">
-                首頁
-              </div>
-            </li>
-            <li class="pic-tab pic-tab--selected" name="aa">
-              <div class="pic-tab__inner">
-                現金日報
-                <span class="pic-stack">
-                  <i class="pic-stack__big fa fa-circle"></i>
-                  <i class="pic-stack__normal fa fa-remove"></i>
-                </span>
-              </div>
-            </li>
-            <li class="pic-tab" name="ab">
-              <div class="pic-tab__inner">
-                Master-Detail
-                <span class="pic-stack">
-                  <i class="pic-stack__big fa fa-circle"></i>
-                  <i class="pic-stack__normal fa fa-remove"></i>
-                </span>
-              </div>
-            </li>
-            <li class="pic-tab" name="ca">
-              <div class="pic-tab__inner">
-                角色維護
-                <span class="pic-stack">
-                  <i class="pic-stack__big fa fa-circle"></i>
-                  <i class="pic-stack__normal fa fa-remove"></i>
-                </span>
-              </div>
-            </li>
-          </ul>
-          <div class="pic-workareas">
-            <div class="pic-workarea" name="home">
-              <h1 class="pic-txt--center">門市帳務系統公告</h1>
-              <div id="home-grid"></div>
-            </div>
-            <div class="pic-workarea pic-workarea--selected" name="aa">
-              <div class="pic-toolbar">
-                <div class="pic-btn-group">
-                  <button class="pic-btn" client-id="query">
-                    <i class="fa fa-search"></i>
-                    <span>查詢</span>
-                  </button>
-                  <button class="pic-btn" client-id="add">
-                    <i class="fa fa-plus"></i>
-                    <span>新增</span>
-                  </button>
-                  <button class="pic-btn" client-id="delete" disabled>
-                    <i class="fa fa-trash"></i>
-                    <span>刪除</span>
-                  </button>
-                  <button class="pic-btn" client-id="print">
-                    <i class="fa fa-print"></i>
-                    <span>列印</span>
-                  </button>
-                </div>
-                <div class="pic-toolbar__divider"></div>
-                <div class="pic-btn-group">
-                  <button class="pic-btn" client-id="confirm">
-                    <i class="fa fa-check-circle-o"></i>
-                    <span>確認</span>
-                  </button>
-                  <button class="pic-btn" client-id="cancel">
-                    <i class="fa fa-close"></i>
-                    <span>取消</span>
-                  </button>
-                </div>
-                <div class="pic-toolbar__filler">
-                </div>
-                <div class="pic-btn-group">
-                  <span class="pic-label pic-label--info" client-id="pageMode" data-value="init" pre-value="init">初始</span>
-                </div>
-              </div>
-              <div class="pic-panel">
-                <div class="pic-form">
-                  <div class="pic-form__inline">
-                    <div class="pic-form-element">
-                      <label class="pic-form-element__label pic-form-element__label--required" for="foo">門市代號</label>
-                      <div class="pic-quick-search pic-form-element__control">
-                        <input class="pic-input" id="foo" placeholder="請輸入門市代號" name="num" required>
-                        <button class="pic-btn" type="button" name="button">
-                          <i class="fa fa-ellipsis-h"></i>
-                        </button>
-                        <input class="pic-input" type="text" name="name" readonly>
-                      </div>
-                    </div>
-                    <div class="pic-form-element">
-                      <label class="pic-form-element__label pic-form-element__label--required" for="foe">活動名稱</label>
-                      <div class="pic-form-element__control">
-                        <input id="foe" class="pic-input" type="text" placeholder="輸入活動名稱" required>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="pic-form__inline">
-                    <div class="pic-form-element">
-                      <span class="pic-form-element__label">活動日期</span>
-                      <div class="pic-form-element__control">
-                        <input class="datepicker pic-widget" name="start" value="" placeholder="請選擇起始日期" disabled>
-                        <span class="pic-form-element__el">~</span>
-                        <input class="datepicker pic-widget" name="end" value="" placeholder="請選擇結束日期">
-                      </div>
-                    </div>
-                    <div class="pic-form-element">
-                      <span class="pic-form-element__label">活動地點</span>  
-                      <div class="pic-form-element__control">
-                          <input class="pic-input pic-input--w2" >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="pic-form__inline">
-                    <div class="pic-form-element">
-                      <span class="pic-form-element__label">負責人</span>
-                      <div class="pic-form-element__control">
-                        <input class="pic-widget" id="person" placeholder="選擇負責人">
-                        <span class="pic-form-element__el" >:</span>
-                        <input class="pic-input" type="text" name="" value="" readonly>
-                      </div>
-                    </div>  
-                  </div>
-                  <div class="pic-form__inline">
-                    <div class="pic-form-element">
-                      <label for="" class="pic-form-element__label pic-form-element__label--textarea">備註</label>
-                      <div class="pic-form-element__control">
-                        <textarea class="pic-textarea pic-textarea--w2" ></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="pic-grid" id="main-grid">
 
-              </div>
+<head>
+  <meta charset="utf-8">
+  <title>康是美 UI Prototype</title>
+  <link rel="stylesheet" href="css/kendo.common.min.css">
+  <link rel="stylesheet" href="css/kendo.custom.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/pic-ui.css">
+</head>
 
+<body>
+  <div class="pic-layout">
+    <header class="pic-header">
+      <div class="pic-header__section">
+        <a href="#" id="ham" class="pic-btn pic-btn--flat pic-btn--lg">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <div class="pic-header__section">
+        <div>
+          <button class="pic-btn pic-btn--flat pic-text-primary-dark">
+            <i class="fa fa-user-o"></i>
+            <span>使用者</span>
+          </button>
+          <span>您好！歡迎登入康是美系統。</span>
+        </div>
+        <a class="pic-btn pic-btn--flat pic-text-primary-dark" href="index.html">
+          <i class="fa fa-power-off"></i>
+          登出
+        </a>
+      </div>
+    </header>
+    <div class="pic-body">
+      <div class="pic-sidebar">
+        <div class="pic-panel">
+          <div class="pic-form">
+            <div class="pic-form__inline">
+              <div class="pic-form-element">
+                <div class="pic-form-element__control">
+                  <input class="pic-input pic-input--right-el" placeholder="輸入功能號碼">
+                  <button class="pic-btn">查詢</button>
+                </div>
+              </div>
             </div>
-            <div class="pic-workarea" name="ab">
-              <!-- master-detail -->
-              <ul class="pic-tabs">
-                <li class="pic-tab pic-tab--selected" name="master">
-                  <div class="pic-tab__inner">
-                    Master
-                  </div>
+          </div>
+        </div>
+        <div class="list-control pic-panel pic-txt--center" style="background-color: transparent;">
+          <div class="pic-btn open">
+            展開選單
+          </div>
+          <div class="pic-btn fold">
+            收合選單
+          </div>
+        </div>
+        <div class="pic-nav-wrapper">
+          <ul class="pic-nav">
+            <li class="pic-listitem" data-expanded="true">
+              主選單
+              <ul>
+                <li class="pic-listitem">
+                  檢核報表
+                  <ul>
+                    <li name="aa">
+                      <span class="pic-function-id">10541</span>
+                      <span class="pic-function-name">現金日報</span>
+                    </li>
+                    <li name="ab">
+                      <span class="pic-function-id">14836</span>
+                      <span class="pic-function-name">Master-Detail</span>
+                    </li>
+                    <li name="ac">
+                      <span class="pic-function-id">95442</span>
+                      <span class="pic-function-name">檢核報表</span>
+                    </li>
+                    <li name="ad">
+                      <span class="pic-function-id">10533</span>
+                      <span class="pic-function-name">明細𢑥總表</span>
+                    </li>
+                    <li name="ae">
+                      <span class="pic-function-id">15860</span>
+                      <span class="pic-function-name">庫存盤點報表</span>
+                    </li>
+                    <li name="af">
+                      <span class="pic-function-id">10584</span>
+                      <span class="pic-function-name">進銷存報表</span>
+                    </li>
+                  </ul>
                 </li>
-                <li class="pic-tab disabled" name="detail">
-                  <div class="pic-tab__inner">
-                    明細維護
-                  </div>
+                <li class="pic-listitem">
+                  未上傳門市作業
+                  <ul>
+                    <li name="ba">
+                      <span class="pic-function-id">10666</span>
+                      <span class="pic-function-name">未上傳門市檢核</span>
+                    </li>
+                  </ul>
+                </li>
+                <li class="pic-listitem">
+                  權限管理
+                  <ul>
+                    <li name="ca">
+                      <span class="pic-function-id">10666</span>
+                      <span class="pic-function-name">角色維護</span>
+                    </li>
+                    <li name="cb">
+                      <span class="pic-function-id">20542</span>
+                      <span class="pic-function-name">使用者維護</span>
+                    </li>
+                  </ul>
+                </li>
+                <li class="pic-listitem">
+                  參數管理
+                  <ul>
+                    <li name="da">
+                      <span class="pic-function-id">10646</span>
+                      <span class="pic-function-name">參數維護</span>
+                    </li>
+                  </ul>
                 </li>
               </ul>
-              <div class="pic-workareas">
-
-                <div class="pic-workarea pic-workarea--selected" name="master">
-                  <div class="pic-toolbar">
-                    <div class="pic-btn-group">
-                      <button class="pic-btn" client-id="query">
-                        <i class="fa fa-search"></i>
-                        <span>查詢</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="pic-content">
+        <ul class="pic-tabs">
+          <li class="pic-tab" name="home">
+            <div class="pic-tab__inner">
+              首頁
+            </div>
+          </li>
+          <li class="pic-tab pic-tab--selected" name="aa">
+            <div class="pic-tab__inner">
+              現金日報
+              <span class="pic-stack">
+                <i class="pic-stack__big fa fa-circle"></i>
+                <i class="pic-stack__normal fa fa-remove"></i>
+              </span>
+            </div>
+          </li>
+          <li class="pic-tab" name="ab">
+            <div class="pic-tab__inner">
+              Master-Detail
+              <span class="pic-stack">
+                <i class="pic-stack__big fa fa-circle"></i>
+                <i class="pic-stack__normal fa fa-remove"></i>
+              </span>
+            </div>
+          </li>
+          <li class="pic-tab" name="ca">
+            <div class="pic-tab__inner">
+              角色維護
+              <span class="pic-stack">
+                <i class="pic-stack__big fa fa-circle"></i>
+                <i class="pic-stack__normal fa fa-remove"></i>
+              </span>
+            </div>
+          </li>
+        </ul>
+        <div class="pic-workareas">
+          <div class="pic-workarea" name="home">
+            <h1 class="pic-txt--center">門市帳務系統公告</h1>
+            <div id="home-grid"></div>
+          </div>
+          <div class="pic-workarea pic-workarea--selected" name="aa">
+            <div class="pic-toolbar">
+              <div class="pic-btn-group">
+                <button class="pic-btn" client-id="query">
+                  <i class="fa fa-search"></i>
+                  <span>查詢</span>
+                </button>
+                <button class="pic-btn" client-id="add">
+                  <i class="fa fa-plus"></i>
+                  <span>新增</span>
+                </button>
+                <button class="pic-btn" client-id="delete" disabled>
+                  <i class="fa fa-trash"></i>
+                  <span>刪除</span>
+                </button>
+                <button class="pic-btn" client-id="print">
+                  <i class="fa fa-print"></i>
+                  <span>列印</span>
+                </button>
+              </div>
+              <div class="pic-toolbar__divider"></div>
+              <div class="pic-btn-group">
+                <button class="pic-btn" client-id="confirm">
+                  <i class="fa fa-check-circle-o"></i>
+                  <span>確認</span>
+                </button>
+                <button class="pic-btn" client-id="cancel">
+                  <i class="fa fa-close"></i>
+                  <span>取消</span>
+                </button>
+              </div>
+              <div class="pic-toolbar__filler">
+              </div>
+              <div class="pic-btn-group">
+                <span class="pic-label pic-label--info" client-id="pageMode" data-value="init" pre-value="init">初始</span>
+              </div>
+            </div>
+            <div class="pic-panel">
+              <div class="pic-form">
+                <div class="pic-form__inline">
+                  <div class="pic-form-element">
+                    <label class="pic-form-element__label pic-form-element__label--required" for="foo">門市代號</label>
+                    <div class="pic-quick-search pic-form-element__control">
+                      <input class="pic-input" id="foo" placeholder="請輸入門市代號" name="num" required>
+                      <button class="pic-btn" type="button" name="button">
+                        <i class="fa fa-ellipsis-h"></i>
                       </button>
-                      <button class="pic-btn" client-id="add">
-                        <i class="fa fa-plus"></i>
-                        <span>新增</span>
-                      </button>
-                      <button class="pic-btn" client-id="delete" disabled>
-                        <i class="fa fa-trash"></i>
-                        <span>刪除</span>
-                      </button>
-                      <button class="pic-btn" client-id="print">
-                        <i class="fa fa-print"></i>
-                        <span>列印</span>
-                      </button>
-                    </div>
-                    <div class="pic-toolbar__divider"></div>
-                    <div class="pic-btn-group">
-                      <button class="pic-btn" client-id="confirm">
-                        <i class="fa fa-check-circle-o"></i>
-                        <span>確認</span>
-                      </button>
-                      <button class="pic-btn" client-id="cancel">
-                        <i class="fa fa-close"></i>
-                        <span>取消</span>
-                      </button>
-                    </div>
-                    <div class="pic-toolbar__filler"></div>
-                    <div class="pic-btn-group">
-                      <span class="pic-label pic-label--info" client-id="pageMode" data-value="init" pre-value="init">初始</span>
+                      <input class="pic-input" type="text" name="name" readonly>
                     </div>
                   </div>
-                  <div class="pic-panel">
-                    <div class="pic-form">
-                      <div class="pic-form__inline">
-                        <div class="pic-form-element">
-                          <label class="pic-form-element__label pic-form-element__label--required" for="">合約代號</label>
-                          <div class="pic-form-element__control">
-                            <input name="contract_id" id="" class="pic-input" type="text" placeholder="輸入合約代號" required>
-                          </div>
-                        </div>
-                        <div class="pic-form-element">
-                          <label class="pic-form-element__label" for="">合約名稱</label>
-                          <div class="pic-form-element__control">
-                            <input name="contract_name" id="" class="pic-input" type="text" placeholder="輸入合約名稱" >
-                          </div>
-                        </div>
-                      </div>
+                  <div class="pic-form-element">
+                    <label class="pic-form-element__label pic-form-element__label--required" for="foe">活動名稱</label>
+                    <div class="pic-form-element__control">
+                      <input id="foe" class="pic-input" type="text" placeholder="輸入活動名稱" required>
                     </div>
                   </div>
-                  <div class="pic-grid md-grid" id="master-grid"> </div>
                 </div>
-                <div class="pic-workarea" name="detail">
-                  <div class="pic-toolbar">
-                    <div class="pic-btn-group">
-                      <button class="pic-btn" client-id="query" disabled>
-                        <i class="fa fa-search"></i>
-                        <span>查詢</span>
-                      </button>
-                      <button class="pic-btn" client-id="add">
-                        <i class="fa fa-plus"></i>
-                        <span>新增</span>
-                      </button>
-                      <button class="pic-btn" client-id="delete">
-                        <i class="fa fa-trash"></i>
-                        <span>刪除</span>
-                      </button>
-                      <button class="pic-btn" client-id="print" disabled>
-                        <i class="fa fa-print"></i>
-                        <span>列印</span>
-                      </button>
-                    </div>
-                    <div class="pic-toolbar__divider"></div>
-                    <div class="pic-btn-group">
-                      <button class="pic-btn" client-id="confirm" disabled>
-                        <i class="fa fa-check-circle-o"></i>
-                        <span>確認</span>
-                      </button>
-                      <button class="pic-btn" client-id="cancel" disabled>
-                        <i class="fa fa-close"></i>
-                        <span>取消</span>
-                      </button>
-                    </div>
-                    <div class="pic-toolbar__filler"></div>
-                    <div class="pic-btn-group">
-                      <span class="pic-label pic-label--info" client-id="pageMode" data-value="Init" pre-value="Init">初始</span>
+                <div class="pic-form__inline">
+                  <div class="pic-form-element">
+                    <span class="pic-form-element__label">活動日期</span>
+                    <div class="pic-form-element__control">
+                      <input class="datepicker pic-widget" name="start" value="" placeholder="請選擇起始日期" disabled>
+                      <span class="pic-form-element__el">~</span>
+                      <input class="datepicker pic-widget" name="end" value="" placeholder="請選擇結束日期">
                     </div>
                   </div>
-                  <div class="pic-panel pic-panel--readonly">
-                    <div class="pic-form pic-form--readonly">
-                      <div class="pic-form__inline">
-                        <div class="pic-form-element">
-                          <label class="pic-form-element__label" for="">合約代號</label>
-                          <div class="pic-form-element__control">
-                            <input name="contract_id" id="" class="pic-input" type="text" placeholder="輸入合約代號" readonly>
-                          </div>
-                        </div>
-                        <div class="pic-form-element">
-                          <label class="pic-form-element__label" for="">合約名稱</label>
-                          <div class="pic-form-element__control">
-                            <input name="contract_name" id="" class="pic-input" type="text" placeholder="輸入合約名稱" readonly>
-                          </div>
-                        </div>
-                      </div>
+                  <div class="pic-form-element">
+                    <span class="pic-form-element__label">活動地點</span>
+                    <div class="pic-form-element__control">
+                      <input class="pic-input pic-input--w2">
                     </div>
                   </div>
-                  <div class="pic-panel">
-                    <div class="pic-form">
-                      <div class="pic-form__inline">
-                        <div class="pic-form-element">
-                          <label class="pic-form-element__label" for="">門市代號</label>
-                          <div class="pic-form-element__control">
-                            <input name="group_id" class="pic-input" type="text" placeholder="輸入門市代號" required>
-                          </div>
-                        </div>
-                        <div class="pic-form-element">
-                          <label class="pic-form-element__label" for="">門市名稱</label>
-                          <div class="pic-form-element__control">
-                            <input name="group_name" class="pic-input" type="text" placeholder="輸入門市名稱">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pic-form__inline">
-                        <div class="pic-form-element">
-                          <label class="pic-form-element__label" for="">銷售數量</label>
-                          <div class="pic-form-element__control">
-                            <input name="quantity" class="pic-input" type="text" placeholder="輸入銷售數量">
-                          </div>
-                        </div>
-                        <div class="pic-form-element">
-                          <label class="pic-form-element__label" for="">總金額</label>
-                          <div class="pic-form-element__control">
-                            <input name="total" class="pic-input" type="text" placeholder="輸入總金額">
-                          </div>
-                        </div>
-                      </div>
+                </div>
+                <div class="pic-form__inline">
+                  <div class="pic-form-element">
+                    <span class="pic-form-element__label">負責人</span>
+                    <div class="pic-form-element__control">
+                      <input class="pic-widget" id="person" placeholder="選擇負責人">
+                      <span class="pic-form-element__el">:</span>
+                      <input class="pic-input" type="text" name="" value="" readonly>
                     </div>
                   </div>
-                  <div class="pic-grid" id="detail-grid">
-
+                </div>
+                <div class="pic-form__inline">
+                  <div class="pic-form-element">
+                    <label for="" class="pic-form-element__label pic-form-element__label--textarea">備註</label>
+                    <div class="pic-form-element__control">
+                      <textarea class="pic-textarea pic-textarea--w2"></textarea>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="pic-workarea" name="ca">
-              <div class="pic-toolbar">
-                <div class="pic-btn-group">
-                  <button class="pic-btn" client-id="query">
-                    <i class="fa fa-search"></i>
-                    <span>查詢</span>
-                  </button>
-                  <button class="pic-btn" client-id="add">
-                    <i class="fa fa-plus"></i>
-                    <span>新增</span>
-                  </button>
-                  <button class="pic-btn" client-id="delete" disabled>
-                    <i class="fa fa-trash"></i>
-                    <span>刪除</span>
-                  </button>
-                  <button class="pic-btn" client-id="print">
-                    <i class="fa fa-print"></i>
-                    <span>列印</span>
-                  </button>
-                </div>
-                <div class="pic-toolbar__divider"></div>
-                <div class="pic-btn-group">
-                  <button class="pic-btn" client-id="confirm">
-                    <i class="fa fa-check-circle-o"></i>
-                    <span>確認</span>
-                  </button>
-                  <button class="pic-btn" client-id="cancel">
-                    <i class="fa fa-close"></i>
-                    <span>取消</span>
-                  </button>
-                </div>
-                <div class="pic-toolbar__filler">
-                </div>
-                <div class="pic-btn-group">
-                  <span class="pic-label pic-label--info" client-id="pageMode" data-value="init" pre-value="init">初始</span>
-                </div>
-              </div>
+            <div class="pic-grid" id="main-grid">
 
-              <div class="pic-panel">
-                <div class="pic-form">
+            </div>
 
-                  <div class="pic-form__inline">
-                    <div class="pic-form-element">
-                      <span class="pic-form-element__label">活動地點</span>
-                      <div class="pic-form-element__control">
-                        <input type="text" class="pic-input" placeholder="活動地點">
-                      </div>
-                    </div>
-                    <div class="pic-form-element">
-                      <span class="pic-form-element__label">活動網站</span>
-                      <div class="pic-form-element__control">
-                        <input type="text" class="pic-input" placeholder="活動網站">
-                      </div>
-                    </div>
-                    <div class="pic-form-element">
-                      <span class="pic-form-element__label">聯絡電話</span>
-                      <div class="pic-form-element__control">
-                        <input type="text" class="pic-input" placeholder="聯絡電話">
-                      </div>
-                    </div>
+          </div>
+          <div class="pic-workarea" name="ab">
+            <!-- master-detail -->
+            <ul class="pic-tabs">
+              <li class="pic-tab pic-tab--selected" name="master">
+                <div class="pic-tab__inner">
+                  Master
+                </div>
+              </li>
+              <li class="pic-tab disabled" name="detail">
+                <div class="pic-tab__inner">
+                  明細維護
+                </div>
+              </li>
+            </ul>
+            <div class="pic-workareas">
+
+              <div class="pic-workarea pic-workarea--selected" name="master">
+                <div class="pic-toolbar">
+                  <div class="pic-btn-group">
+                    <button class="pic-btn" client-id="query">
+                      <i class="fa fa-search"></i>
+                      <span>查詢</span>
+                    </button>
+                    <button class="pic-btn" client-id="add">
+                      <i class="fa fa-plus"></i>
+                      <span>新增</span>
+                    </button>
+                    <button class="pic-btn" client-id="delete" disabled>
+                      <i class="fa fa-trash"></i>
+                      <span>刪除</span>
+                    </button>
+                    <button class="pic-btn" client-id="print">
+                      <i class="fa fa-print"></i>
+                      <span>列印</span>
+                    </button>
                   </div>
-
-                  <div class="pic-form__inline">
-                    <div class="pic-form-element">
-                      <label class="pic-form-element__label" for="">角色權限</label>
-                      <div class="pic-form-element__control">
-                        <input class="pic-input" type="text" placeholder="請輸入角色權限">
-                      </div>
-                    </div>
-                    <div class="pic-form-element">
-                      <span class="pic-form-element__label">角色地區</span>
-                      <div class="pic-form-element__control">
-                        <input class="pic-input" type="text" placeholder="請輸入角色地區">
-                      </div>
-                    </div>
-                    <div class="pic-form-element">
-                      <span class="pic-form-element__label">角色代理人</span>
-                      <div class="pic-form-element__control">
-                        <input class="pic-input" type="text" placeholder="請輸入角色代理人">
-                      </div>
-                    </div>
+                  <div class="pic-toolbar__divider"></div>
+                  <div class="pic-btn-group">
+                    <button class="pic-btn" client-id="confirm">
+                      <i class="fa fa-check-circle-o"></i>
+                      <span>確認</span>
+                    </button>
+                    <button class="pic-btn" client-id="cancel">
+                      <i class="fa fa-close"></i>
+                      <span>取消</span>
+                    </button>
                   </div>
-
-                  <div class="pic-form__inline">
-                    <div class="pic-form-element">
-                        <label class="pic-form-element__label">備註</label>
+                  <div class="pic-toolbar__filler"></div>
+                  <div class="pic-btn-group">
+                    <span class="pic-label pic-label--info" client-id="pageMode" data-value="init" pre-value="init">初始</span>
+                  </div>
+                </div>
+                <div class="pic-panel">
+                  <div class="pic-form">
+                    <div class="pic-form__inline">
+                      <div class="pic-form-element">
+                        <label class="pic-form-element__label pic-form-element__label--required" for="">合約代號</label>
                         <div class="pic-form-element__control">
-                          <textarea class="pic-textarea"></textarea>
+                          <input name="contract_id" id="" class="pic-input" type="text" placeholder="輸入合約代號" required>
                         </div>
+                      </div>
+                      <div class="pic-form-element">
+                        <label class="pic-form-element__label" for="">合約名稱</label>
+                        <div class="pic-form-element__control">
+                          <input name="contract_name" id="" class="pic-input" type="text" placeholder="輸入合約名稱">
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </div>
+                <div class="pic-grid md-grid" id="master-grid"> </div>
+              </div>
+              <div class="pic-workarea" name="detail">
+                <div class="pic-toolbar">
+                  <div class="pic-btn-group">
+                    <button class="pic-btn" client-id="query" disabled>
+                      <i class="fa fa-search"></i>
+                      <span>查詢</span>
+                    </button>
+                    <button class="pic-btn" client-id="add">
+                      <i class="fa fa-plus"></i>
+                      <span>新增</span>
+                    </button>
+                    <button class="pic-btn" client-id="delete">
+                      <i class="fa fa-trash"></i>
+                      <span>刪除</span>
+                    </button>
+                    <button class="pic-btn" client-id="print" disabled>
+                      <i class="fa fa-print"></i>
+                      <span>列印</span>
+                    </button>
+                  </div>
+                  <div class="pic-toolbar__divider"></div>
+                  <div class="pic-btn-group">
+                    <button class="pic-btn" client-id="confirm" disabled>
+                      <i class="fa fa-check-circle-o"></i>
+                      <span>確認</span>
+                    </button>
+                    <button class="pic-btn" client-id="cancel" disabled>
+                      <i class="fa fa-close"></i>
+                      <span>取消</span>
+                    </button>
+                  </div>
+                  <div class="pic-toolbar__filler"></div>
+                  <div class="pic-btn-group">
+                    <span class="pic-label pic-label--info" client-id="pageMode" data-value="Init" pre-value="Init">初始</span>
+                  </div>
+                </div>
+                <div class="pic-panel pic-panel--readonly">
+                  <div class="pic-form pic-form--readonly">
+                    <div class="pic-form__inline">
+                      <div class="pic-form-element">
+                        <label class="pic-form-element__label" for="">合約代號</label>
+                        <div class="pic-form-element__control">
+                          <input name="contract_id" id="" class="pic-input" type="text" placeholder="輸入合約代號" readonly>
+                        </div>
+                      </div>
+                      <div class="pic-form-element">
+                        <label class="pic-form-element__label" for="">合約名稱</label>
+                        <div class="pic-form-element__control">
+                          <input name="contract_name" id="" class="pic-input" type="text" placeholder="輸入合約名稱" readonly>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pic-panel">
+                  <div class="pic-form">
+                    <div class="pic-form__inline">
+                      <div class="pic-form-element">
+                        <label class="pic-form-element__label" for="">門市代號</label>
+                        <div class="pic-form-element__control">
+                          <input name="group_id" class="pic-input" type="text" placeholder="輸入門市代號" required>
+                        </div>
+                      </div>
+                      <div class="pic-form-element">
+                        <label class="pic-form-element__label" for="">門市名稱</label>
+                        <div class="pic-form-element__control">
+                          <input name="group_name" class="pic-input" type="text" placeholder="輸入門市名稱">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pic-form__inline">
+                      <div class="pic-form-element">
+                        <label class="pic-form-element__label" for="">銷售數量</label>
+                        <div class="pic-form-element__control">
+                          <input name="quantity" class="pic-input" type="text" placeholder="輸入銷售數量">
+                        </div>
+                      </div>
+                      <div class="pic-form-element">
+                        <label class="pic-form-element__label" for="">總金額</label>
+                        <div class="pic-form-element__control">
+                          <input name="total" class="pic-input" type="text" placeholder="輸入總金額">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pic-grid" id="detail-grid">
 
                 </div>
               </div>
             </div>
           </div>
-        </div>
+          <div class="pic-workarea" name="ca">
+            <div class="pic-toolbar">
+              <div class="pic-btn-group">
+                <button class="pic-btn" client-id="query">
+                  <i class="fa fa-search"></i>
+                  <span>查詢</span>
+                </button>
+                <button class="pic-btn" client-id="add">
+                  <i class="fa fa-plus"></i>
+                  <span>新增</span>
+                </button>
+                <button class="pic-btn" client-id="delete" disabled>
+                  <i class="fa fa-trash"></i>
+                  <span>刪除</span>
+                </button>
+                <button class="pic-btn" client-id="print">
+                  <i class="fa fa-print"></i>
+                  <span>列印</span>
+                </button>
+              </div>
+              <div class="pic-toolbar__divider"></div>
+              <div class="pic-btn-group">
+                <button class="pic-btn" client-id="confirm">
+                  <i class="fa fa-check-circle-o"></i>
+                  <span>確認</span>
+                </button>
+                <button class="pic-btn" client-id="cancel">
+                  <i class="fa fa-close"></i>
+                  <span>取消</span>
+                </button>
+              </div>
+              <div class="pic-toolbar__filler">
+              </div>
+              <div class="pic-btn-group">
+                <span class="pic-label pic-label--info" client-id="pageMode" data-value="init" pre-value="init">初始</span>
+              </div>
+            </div>
 
+            <div class="pic-panel">
+              <div class="pic-form">
+
+                <div class="pic-form__inline">
+                  <div class="pic-form-element">
+                    <span class="pic-form-element__label">活動地點</span>
+                    <div class="pic-form-element__control">
+                      <input type="text" class="pic-input" placeholder="活動地點">
+                    </div>
+                  </div>
+                  <div class="pic-form-element">
+                    <span class="pic-form-element__label">活動網站</span>
+                    <div class="pic-form-element__control">
+                      <input type="text" class="pic-input" placeholder="活動網站">
+                    </div>
+                  </div>
+                  <div class="pic-form-element">
+                    <span class="pic-form-element__label">聯絡電話</span>
+                    <div class="pic-form-element__control">
+                      <input type="text" class="pic-input" placeholder="聯絡電話">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pic-form__inline">
+                  <div class="pic-form-element">
+                    <label class="pic-form-element__label" for="">角色權限</label>
+                    <div class="pic-form-element__control">
+                      <input class="pic-input" type="text" placeholder="請輸入角色權限">
+                    </div>
+                  </div>
+                  <div class="pic-form-element">
+                    <span class="pic-form-element__label">角色地區</span>
+                    <div class="pic-form-element__control">
+                      <input class="pic-input" type="text" placeholder="請輸入角色地區">
+                    </div>
+                  </div>
+                  <div class="pic-form-element">
+                    <span class="pic-form-element__label">角色代理人</span>
+                    <div class="pic-form-element__control">
+                      <input class="pic-input" type="text" placeholder="請輸入角色代理人">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pic-form__inline">
+                  <div class="pic-form-element">
+                    <label class="pic-form-element__label">備註</label>
+                    <div class="pic-form-element__control">
+                      <textarea class="pic-textarea"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
-    <div class="" id="window"> </div>
-    <script src="js/jquery.min.js" charset="utf-8"></script>
-    <script src="js/kendo.all.min.js" charset="utf-8"></script>
-    <script src="js/pic.js" charset="utf-8"></script>
-    <script src="js/datasource.js" charset="utf-8"></script>
-    <script src="js/toolbar.js" charset="utf-8"></script>
-    <script src="js/script.js" charset="utf-8"></script>
-  </body>
+  </div>
+  <div class="" id="window"> </div>
+  <script src="js/jquery.min.js" charset="utf-8"></script>
+  <script src="js/kendo.all.min.js" charset="utf-8"></script>
+  <script src="js/pic.js" charset="utf-8"></script>
+  <script src="js/datasource.js" charset="utf-8"></script>
+  <script src="js/toolbar.js" charset="utf-8"></script>
+  <script src="js/script.js" charset="utf-8"></script>
+  <script src="js/split.min.js" charset="utf-8"></script>
+</body>
+
 </html>

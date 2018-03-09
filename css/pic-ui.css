@@ -466,6 +466,16 @@ button {
   background-color: transparent;
 }
 
+.gutter {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+}
+
 .pic-layout {
   display: flex;
   flex-direction: column;
@@ -541,21 +551,27 @@ button {
 } */
 .pic-sidebar {
   background-color: rgba(255, 224, 190, 0.3);
-  /* min-width: 214px; */
+  min-width: 214px;
   border: 1px solid #d1d2d3;
   box-sizing: border-box;
-  /* border-right: 1px solid #d1d2d3; */
-  width: 214px;
+  margin-right: 4px;
   display: flex;
   flex-direction: column;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .pic-sidebar .k-treeview {
   flex: 1 0 auto;
+  height: 100%;
+  overflow-x: auto;
 }
 
-.pic-sidebar--hidden {
+.pic-sidebar .pic-form-element__control {
+  justify-content: center;
+}
+
+.pic-sidebar--hidden,
+.pic-sidebar--hidden ~ .gutter {
   display: none;
 }
 
@@ -578,7 +594,7 @@ button {
 
 .pic-content {
   background-color: #fafafa;
-  flex: 1 0 0px;
+  flex: 1 1 0px;
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
@@ -1024,6 +1040,7 @@ button {
 .pic-workarea > .pic-panel {
   border-left: 1px solid #D1D2D3;
   border-right: 1px solid #D1D2D3;
+  overflow-x: auto;
 }
 
 .pic-workarea > div:nth-last-of-type(1) {

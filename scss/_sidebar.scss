@@ -1,20 +1,25 @@
 .pic-sidebar {
   background-color: rgba($primary-light, .3);
-  /* min-width: 214px; */
+  min-width: 214px;
   border: 1px solid #d1d2d3;
   box-sizing: border-box;
-  /* border-right: 1px solid #d1d2d3; */
-  width: 214px;
+  // width: 214px;
+  margin-right: 4px;
   display: flex;
   flex-direction: column;
-  overflow-x: auto;
+  overflow-x: hidden;
   .k-treeview {
     flex: 1 0 auto;
-
+    height: 100%;
+    overflow-x: auto;
+  }
+  .pic-form-element__control {
+    justify-content: center;
   }
 }
 
-.pic-sidebar--hidden {
+.pic-sidebar--hidden,
+.pic-sidebar--hidden ~ .gutter {
   display: none;
 }
 

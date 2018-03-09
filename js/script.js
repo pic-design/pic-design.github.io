@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
   // disable key events when pic-widget is disabled
   /* $('body').on('keyup', '.pic-widget.disabled', function(event){
@@ -31,11 +31,26 @@ $(document).ready(function() {
 
   }); */
 
+  var split = Split(['.pic-sidebar', '.pic-content'], {
+    sizes: [18, 82],
+    gutterSize: 6,
+    elementStyle: function (dimension, size, gutterSize) {
+      return {
+        'flex-basis': 'calc(' + size + '% - ' + gutterSize + 'px)'
+      }
+    },
+    gutterStyle: function (dimension, gutterSize) {
+      return {
+        'flex-basis': gutterSize + 'px'
+      }
+    }
+  });
+
   // global variables on opend tabs
   var tabsOpened = ['home', 'aa', 'ab', 'ca'];
   var mdTabsOpend = ['master', 'detail'];
 
-  var tabSwitch = function(tabName, tabs){
+  var tabSwitch = function (tabName, tabs) {
     // console.log(tabName);
     // console.log(tabs.siblings('.pic-workareas'));
     // Set selected tab and tab-content to normal
@@ -43,11 +58,11 @@ $(document).ready(function() {
     tabs.siblings('.pic-workareas').children('.pic-workarea--selected').removeClass('pic-workarea--selected');
 
     // Show selcted tab and tab-content
-    tabs.find('[name='+ tabName +']').addClass('pic-tab--selected');
-    tabs.siblings('.pic-workareas').children('[name='+ tabName +']').addClass('pic-workarea--selected');
+    tabs.find('[name=' + tabName + ']').addClass('pic-tab--selected');
+    tabs.siblings('.pic-workareas').children('[name=' + tabName + ']').addClass('pic-workarea--selected');
   };
 
-  var newTab = function(tabName, fName){
+  var newTab = function (tabName, fName) {
     // add new value in tabsOpened array
     tabsOpened.push(tabName);
     var tabs = $('.pic-tabs').first();
@@ -74,13 +89,13 @@ $(document).ready(function() {
     );
   };
 
-  var onSelect = function(event){
+  var onSelect = function (event) {
     var el = $(event.node);
     var name = el.attr('name');
     // console.log(el);
     // Check if the selected function is opened
     // console.log($.inArray(name, tabsOpened));
-    if(name){
+    if (name) {
       if ($.inArray(name, tabsOpened) < 0) {
         // function is not opened
         // Create a new tab
@@ -93,7 +108,7 @@ $(document).ready(function() {
     }
   };
 
-  var detailTab = function(event){
+  var detailTab = function (event) {
 
     var currentTarget = $(event.currentTarget);
     var currentRow = currentTarget.closest('tr');
@@ -122,7 +137,7 @@ $(document).ready(function() {
     tabSwitch(id, masterTabs);
   };
 
-  $('#ham').on('click', function(){
+  $('#ham').on('click', function () {
     if ($('.pic-sidebar').hasClass('pic-sidebar--hidden')) {
       $('.pic-sidebar').removeClass('pic-sidebar--hidden');
     } else {
@@ -142,13 +157,13 @@ $(document).ready(function() {
     dataTextField: "text",
     dataValueField: "number",
     dataSource: [
-      {text: '孫小美', number: 1},
-      {text: '阿土伯', number: 2},
-      {text: '錢夫人', number: 3},
-      {text: '李逍遙', number: 4},
-      {text: '林月如', number: 5}
+      { text: '孫小美', number: 1 },
+      { text: '阿土伯', number: 2 },
+      { text: '錢夫人', number: 3 },
+      { text: '李逍遙', number: 4 },
+      { text: '林月如', number: 5 }
     ],
-    select: function(event){
+    select: function (event) {
       //console.log(event);
       var number = event.dataItem.number;
       var sender = event.sender;
@@ -164,7 +179,7 @@ $(document).ready(function() {
     width: '300px',
     content: 'quick-search.html',
     visible: false,
-    open: function(){
+    open: function () {
       $('#qs-grid').kendoGrid({
         dataSource: [],
         height: 165,
@@ -177,7 +192,7 @@ $(document).ready(function() {
             },
             headerAttributes: {
               'class': 'pic-txt--center'
-            }    
+            }
           },
           {
             field: 'qs_name',
@@ -187,7 +202,7 @@ $(document).ready(function() {
             },
             headerAttributes: {
               'class': 'pic-txt--center'
-            }    
+            }
           }
         ]
       })
@@ -195,21 +210,21 @@ $(document).ready(function() {
   });
 
   var qsData = [
-    {'qs_num':'001', 'qs_name':'亞洲分部'},
-    {'qs_num':'002', 'qs_name':'非洲分部'},
-    {'qs_num':'003', 'qs_name':'北美洲分部'},
-    {'qs_num':'004', 'qs_name':'南美洲分部'},
-    {'qs_num':'005', 'qs_name':'歐洲分部'},
-    {'qs_num':'006', 'qs_name':'大洋洲分部'},
-    {'qs_num':'007', 'qs_name':'南極洲分部'},
-    {'qs_num':'008', 'qs_name':'綠洲分部'}
+    { 'qs_num': '001', 'qs_name': '亞洲分部' },
+    { 'qs_num': '002', 'qs_name': '非洲分部' },
+    { 'qs_num': '003', 'qs_name': '北美洲分部' },
+    { 'qs_num': '004', 'qs_name': '南美洲分部' },
+    { 'qs_num': '005', 'qs_name': '歐洲分部' },
+    { 'qs_num': '006', 'qs_name': '大洋洲分部' },
+    { 'qs_num': '007', 'qs_name': '南極洲分部' },
+    { 'qs_num': '008', 'qs_name': '綠洲分部' }
   ];
-  
+
   myWindow.on('click', '.pic-btn', function () {
     $('#qs-grid').data('kendoGrid').dataSource.data(qsData);
   });
 
-  myWindow.on('click', 'tr', function(event){
+  myWindow.on('click', 'tr', function (event) {
     var currentTarget = $(event.currentTarget);
 
     $('.pic-quick-search').find('.pic-input[name="num"]').val(currentTarget.find('.qs-num').text());
@@ -217,7 +232,7 @@ $(document).ready(function() {
     myWindow.data('kendoWindow').close();
   });
 
-  $('.pic-quick-search').on('click', '.pic-btn', function(){
+  $('.pic-quick-search').on('click', '.pic-btn', function () {
     myWindow.data('kendoWindow').center().open();
   })
 
@@ -226,9 +241,9 @@ $(document).ready(function() {
     height: 550,
     sortable: false,
     pageable: {
-        pageSize: 10
+      pageSize: 10
     },
-    columns:[
+    columns: [
       {
         selectable: true,
         width: 31
@@ -242,7 +257,7 @@ $(document).ready(function() {
       },
       {
         field: 'group_id',
-        title: '群組代號群組代號群組代號群組代號',
+        title: '群組代號',
         // width: 230,
         headerAttributes: {
           'class': 'pic-txt--center'
@@ -257,10 +272,10 @@ $(document).ready(function() {
         }
       },
       {
-        field:"count",
-        title:"使用數量",
+        field: "count",
+        title: "使用數量",
         attributes: {
-        	'class': 'pic-txt--right'
+          'class': 'pic-txt--right'
         },
         width: 80,
         headerAttributes: {
@@ -455,7 +470,7 @@ $(document).ready(function() {
   });
 
   $('#home-grid').kendoGrid({
-	dataSource: homeData,
+    dataSource: homeData,
     columns: [
       {
         field: 'date',
@@ -468,18 +483,18 @@ $(document).ready(function() {
         },
         width: 200
       },
-      {        
+      {
         field: 'content',
         title: '訊息內容',
         headerAttributes: {
           'class': 'pic-txt--center'
         }
       }
-  ]
+    ]
   });
 
   // Open a new tab when clicked on a treeview node
-  $('.list-control').on('click', '.pic-btn', function(event){
+  $('.list-control').on('click', '.pic-btn', function (event) {
     var currentTarget = $(event.currentTarget);
     if (currentTarget.hasClass('open')) {
       $(".pic-nav").data("kendoTreeView").expand(".k-item");
@@ -489,13 +504,13 @@ $(document).ready(function() {
   });
 
   // Tab function
-  $(".pic-tabs").on("click", '.pic-tab', function(event){
+  $(".pic-tabs").on("click", '.pic-tab', function (event) {
     var tabs = $(event.delegateTarget);
     var tabContents = tabs.siblings('.pic-workareas');
     var currentTarget = $(event.currentTarget);
     var target = $(event.target);
     var name = currentTarget.attr('name');
-	  if(!(currentTarget.attr('disabled') == 'disabled')){
+    if (!(currentTarget.attr('disabled') == 'disabled')) {
       var tabsArray = '';
       if (currentTarget.parents('.pic-workarea').length > 0) {
         // master-detail tab
@@ -517,10 +532,10 @@ $(document).ready(function() {
         // console.log(tabsArray);
         // if no tab is selected, select the tab in front of the closed one
         var tabSelected = tabs.children('.pic-tab--selected');
-        if(tabSelected.length === 0) {
+        if (tabSelected.length === 0) {
           var newSelectedTabIndex = index - 1;
           if (newSelectedTabIndex < 0) {
-          newSelectedTabIndex = 0;
+            newSelectedTabIndex = 0;
           }
           var newSelectedTabName = tabsArray[newSelectedTabIndex];
           $('.pic-tab[name=' + newSelectedTabName + ']').addClass('pic-tab--selected');
@@ -534,8 +549,8 @@ $(document).ready(function() {
   });
 
   // 開啟明細頁
-  $("#master-grid").on('click', function(event){
-    
+  $("#master-grid").on('click', function (event) {
+
     var target = $(event.target);
     var currentRow = target.closest('tr');
     var grid = currentRow.closest(".pic-grid");
@@ -549,25 +564,25 @@ $(document).ready(function() {
     var wrapper = mdWorkareas.closest('.pic-workarea');
     var mdTabs = wrapper.children('.pic-tabs');
 
-    if(target.hasClass('detail')){
+    if (target.hasClass('detail')) {
       // remove 'selected' classes
       mdTabs.children('.pic-tab--selected').removeClass('pic-tab--selected');
       mdWorkareas.children('.pic-workarea--selected').removeClass('pic-workarea--selected');
-      
+
       // 移除 detail tab 的 disabled 狀態
       if (mdTabs.children('.disabled').length > 0) {
         mdTabs.children('.disabled').removeClass('disabled');
       }
-  
+
       // put values of selected data into the form on detail tab
       var readonlyDetailForm = mdWorkareas.children('.pic-workarea[name=detail]').find('.pic-form--readonly');
       readonlyDetailForm.find('[name=contract_id]').val(id);
       readonlyDetailForm.find('[name=contract_name]').val(name);
-      
+
       // switch to detail tab
       tabSwitch('detail', mdTabs);
       PIC.resultMode($('#detail-grid').parent('.pic-workarea'));
-      
+
     } else if (target.hasClass('edit')) {
       var masterForm = mdWorkareas.children('.pic-workarea[name=master]').find('.pic-form');
       masterForm.find('[name=contract_id]').val(id);
@@ -576,14 +591,14 @@ $(document).ready(function() {
   });
 
 
-  $('#detail-grid').on('click', '.edit', function(event){
+  $('#detail-grid').on('click', '.edit', function (event) {
     var currentTarget = $(event.currentTarget);
     var currentRow = currentTarget.closest('tr');
     var grid = currentRow.closest(".pic-grid");
     var dataGrid = grid.data("kendoGrid");
     var dataItem = dataGrid.dataItem(currentRow);
     var workarea = grid.closest('.pic-workareas');
-    
+
     var id = dataItem.group_id;
     var name = dataItem.group_name;
     var quantity = dataItem.quantity;
